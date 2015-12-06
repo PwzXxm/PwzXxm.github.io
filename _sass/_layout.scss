@@ -267,6 +267,9 @@
   width: 300px;
   height: 200px;
   position: relative;
+  @include media-query($on-palm) {
+    display: none;
+  }
 }
 
 .about-img {
