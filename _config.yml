@@ -1,12 +1,11 @@
 # Site settings
 title: PwzXxm
 email: cepheidfov@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  blablabla
+description: ʕ •ᴥ•ʔ
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://pwzxxm.com" # the base hostname & protocol for your site
-# twitter_username: jekyllrb
 github_username:  PwzXxm
+paginate: 10
 
 # Build settings
 markdown: kramdown

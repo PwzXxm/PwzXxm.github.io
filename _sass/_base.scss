@@ -173,6 +173,10 @@ pre {
 }
 
 
+.about-wrapper {
+    @extend %clearfix;
+}
+
 
 /**
  * Clearfix

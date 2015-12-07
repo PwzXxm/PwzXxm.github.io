@@ -106,9 +106,9 @@
   margin-bottom: $spacing-unit / 2;
 }
 
-.contact-list,
-.social-media-list,
-.desc-list {
+.col1-list,
+.col2-list,
+.col3-list {
   list-style: none;
   margin-left: 0;
 }
@@ -274,7 +274,6 @@
 
 .about-img {
   position: absolute;
-  z-index: 2;
   margin-top: -110px;
   margin-left: 50px;
 }
@@ -290,4 +289,16 @@
   height: 20%;
   width: 100%;
   background-color: #ffffff;
+}
+
+.about-page {
+  text-align: center;
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: $spacing-unit;
+  }
+  margin-top: $spacing-unit * 5;
+  margin-bottom: $spacing-unit * 5;
 }

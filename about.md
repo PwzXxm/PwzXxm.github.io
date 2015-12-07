@@ -1,7 +1,7 @@
 ---
-layout: page
-title: About
+layout: about
 permalink: /about/
 ---
+Just wanna have some funs.
 
-building...
+<p> o(*≧▽≦)ツ┏━┓</p>
