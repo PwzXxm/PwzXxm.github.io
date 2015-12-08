@@ -5,7 +5,10 @@ description: ʕ •ᴥ•ʔ
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://pwzxxm.com" # the base hostname & protocol for your site
 github_username:  PwzXxm
-paginate: 10
+
+# pagination
+paginate: 5
+paginate_limit: 4
 
 # Build settings
 markdown: kramdown

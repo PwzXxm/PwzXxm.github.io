@@ -2,7 +2,11 @@
 layout: post
 title:  "Welcome to Jekyll!"
 date:   2015-12-02 10:41:31 +1100
+tags:
+- welcome
 ---
+![test](/img/about-me-big.png)
+
 `_posts`
 
 {% highlight ruby %}

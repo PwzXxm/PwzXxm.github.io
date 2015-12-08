@@ -180,10 +180,8 @@
 
 .post-list {
   margin-left: 0;
+  margin-right: 330px;
 
-  h2 {
-    margin-bottom: 0;
-  }
   list-style: none;
 
   a {
@@ -191,24 +189,24 @@
   }
 
   > li {
-    margin-bottom: $spacing-unit;
-    //    padding-left: $spacing-unit;
-    //    padding-top: $spacing-unit/2;
-    //    padding-bottom: $spacing-unit/2;
+    margin-bottom: $spacing-unit*2;
     //    background-color: #FFF;
   }
 }
 
-.post-meta {
-  font-size: $small-font-size;
+.post-data {
+  margin-top: -10px;
+  margin-bottom: -10px;
   color: $grey-color;
 }
 
 .post-link {
   display: block;
-  font-size: 24px;
 }
 
+.post-more {
+  font-size: $base-font-size*0.8;
+}
 
 
 /**
@@ -264,9 +262,10 @@
 }
 
 .aboutme {
-  width: 300px;
-  height: 200px;
+  width: 230px;
+  height: 160px;
   position: relative;
+  margin-bottom: $spacing-unit;
   @include media-query($on-palm) {
     display: none;
   }
@@ -274,8 +273,10 @@
 
 .about-img {
   position: absolute;
-  margin-top: -110px;
-  margin-left: 50px;
+  height: 100px;
+  width: 100px;
+  margin-top: -70px;
+  margin-left: 65px;
 }
 
 .about-above {
