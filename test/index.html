@@ -56,7 +56,9 @@
     <h1 class="post-title" itemprop="name headline">test1</h1>
     <p class="post-meta">
       <time datetime="2015-12-04T00:00:00+11:00" itemprop="datePublished">
+        
         Dec 4, 2015
+        
       </time>
     </p>
   </header>
@@ -72,12 +74,16 @@
 <span class="tags">
   <ul>
     
+    
     Tags:
     
     <li><a href="/tags/#test">test</a></li>
     
+    
   </ul>
 </span>
+
+<p id="ex"></p>
 
 <div id="disqus_thread"></div>
 <script>
@@ -86,10 +92,13 @@
 * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
 */
 var disqus_config = function () {
-var disqus_developer = 1; // Comment out when the site is live
-var disqus_shortname = 'pwzxxm'
-//this.page.url = http://pwzxxm.com; // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = /test/; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  //var disqus_developer = 1; // Comment out when the site is live
+  var disqus_shortname = 'pwzxxm'
+  //this.page.url = http://pwzxxm.com; // Replace PAGE_URL with your page's canonical URL variable
+  
+  this.page.identifier = /test/; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  this.language="en";
+  
 };
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');

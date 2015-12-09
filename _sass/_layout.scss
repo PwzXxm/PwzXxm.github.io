@@ -79,19 +79,20 @@
   padding-left: $spacing-unit / 2;
 }
 
+// original percentage: 35 20 45
 .footer-col-1 {
-  width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-  width:         calc(35% - (#{$spacing-unit} / 2));
+  width: -webkit-calc(33% - (#{$spacing-unit} / 2));
+  width:         calc(33% - (#{$spacing-unit} / 2));
 }
 
 .footer-col-2 {
-  width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-  width:         calc(20% - (#{$spacing-unit} / 2));
+  width: -webkit-calc(33% - (#{$spacing-unit} / 2));
+  width:         calc(33% - (#{$spacing-unit} / 2));
 }
 
 .footer-col-3 {
-  width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-  width:         calc(45% - (#{$spacing-unit} / 2));
+  width: -webkit-calc(33% - (#{$spacing-unit} / 2));
+  width:         calc(33% - (#{$spacing-unit} / 2));
   color: $grey-color;
 }
 
@@ -144,14 +145,12 @@
   }
 
   > li {
-    margin-bottom: $spacing-unit*2;
+    margin-bottom: $spacing-unit*1.5;
     h2 {
       margin-bottom: -2px;
     }
     .post-data {
       color: $grey-color;
-      margin-top: 10px;
-      margin-bottom: -10px;
     }
 
     .post-link {
@@ -225,25 +224,27 @@
 */
 .side-bar {
   float: right;
-  width: 230px;
+  width: 240px;
+  margin-bottom: $spacing-unit*3;
   @include media-query($on-palm) {
     display: none;
+    margin-bottom: $spacing-unit;
   }
 }
 
 .aboutme {
-  width: 230px;
+  width: 240px;
   height: 160px;
   position: relative;
-  margin-bottom: $spacing-unit*3;
+  margin-bottom: $spacing-unit;
 }
 
 .about-img {
   position: absolute;
   height: 100px;
   width: 100px;
-  margin-top: -70px;
-  margin-left: 65px;
+  margin-top: -80px;
+  margin-left: 70px;
 }
 
 .about-above {

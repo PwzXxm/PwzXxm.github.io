@@ -8,7 +8,11 @@ comments: true
     <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
     <p class="post-meta">
       <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {% if page.is_default_language %}
         {{ page.date | date: "%b %-d, %Y" }}
+        {% else %}
+        {{ page.date | date: "%Y年%-m月%-d号" }}
+        {% endif %}
       </time>
     </p>
   </header>
@@ -23,12 +27,21 @@ comments: true
 <span class="tags">
   <ul>
     {% assign sorted_tags = page.tags | sort %}
+    {% if page.is_default_language %}
     Tags:
     {% for tag in sorted_tags %}
     <li><a href="/tags/#{{ tag }}">{{ tag }}</a></li>
     {% endfor %}
+    {% else %}
+    标签：
+    {% for tag in sorted_tags %}
+    <li><a href="/cn/tags/#{{ tag }}">{{ tag }}</a></li>
+    {% endfor %}
+    {% endif %}
   </ul>
 </span>
+
+<p id="ex"></p>
 
 <div id="disqus_thread"></div>
 <script>
@@ -37,10 +50,15 @@ comments: true
 * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
 */
 var disqus_config = function () {
-var disqus_developer = 1; // Comment out when the site is live
-var disqus_shortname = 'pwzxxm'
-//this.page.url = {{ site.url }}; // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = {{ page.url }}; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  //var disqus_developer = 1; // Comment out when the site is live
+  var disqus_shortname = 'pwzxxm'
+  //this.page.url = {{ site.url }}; // Replace PAGE_URL with your page's canonical URL variable
+  {% if page.is_default_language %}
+  this.page.identifier = {{ page.url }}; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  this.language="en";
+  {% else %}
+  this.page.identifier = {{ page.url }}/cn; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  {% endif %}
 };
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');
