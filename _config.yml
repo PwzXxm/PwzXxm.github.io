@@ -6,8 +6,11 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://pwzxxm.com" # the base hostname & protocol for your site
 github_username:  PwzXxm
 
+gems:
+- jekyll-multiple-languages
+- jekyll-sitemap
+
 # multi-lang
-gems:           ['jekyll-multiple-languages']
 languages:          ['en', 'cn']
 # If not config, the first of languages will be the default
 language_default:   'en'
