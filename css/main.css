@@ -173,21 +173,6 @@ pre {
     line-height: 1.5; }
     .site-nav .page-link:not(:last-child) {
       margin-right: 20px; }
-  @media screen and (max-width: 600px) {
-    .site-nav {
-      position: absolute;
-      top: 9px;
-      right: 15px;
-      background-color: #F6F6F6;
-      border: 1px solid #e8e8e8;
-      border-radius: 5px;
-      text-align: right; }
-      .site-nav .page-link {
-        display: block;
-        padding: 5px 10px;
-        margin-left: 20px; }
-        .site-nav .page-link:not(:last-child) {
-          margin-right: 0; } }
 
 /**
 * Site footer
@@ -269,7 +254,8 @@ pre {
       margin-bottom: -2px; }
     .post-list > li .post-data {
       color: #828282;
-      margin-top: 10px; }
+      margin-top: 10px;
+      margin-bottom: -10px; }
     .post-list > li .post-link {
       display: block; }
     .post-list > li .post-meta {

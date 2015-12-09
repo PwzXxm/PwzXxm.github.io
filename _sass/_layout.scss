@@ -39,26 +39,6 @@
       margin-right: 20px;
     }
   }
-
-  @include media-query($on-palm) {
-    position: absolute;
-    top: 9px;
-    right: $spacing-unit / 2;
-    background-color: $background-color;
-    border: 1px solid $grey-color-light;
-    border-radius: 5px;
-    text-align: right;
-
-    .page-link {
-      display: block;
-      padding: 5px 10px;
-
-      &:not(:last-child) {
-        margin-right: 0;
-      }
-      margin-left: 20px;
-    }
-  }
 }
 
 
@@ -171,6 +151,7 @@
     .post-data {
       color: $grey-color;
       margin-top: 10px;
+      margin-bottom: -10px;
     }
 
     .post-link {

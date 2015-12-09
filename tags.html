@@ -10,14 +10,16 @@ permalink: /tags/
 {% assign t = tag | first %}
 {% assign posts = tag | last %}
 <div class="blog-list-container" id="{{ t }}-container">
-  {% assign numPosts = posts | size %}
-  <span class="single-tag">{{ t }} ({{posts|size}})</span>
+  {% assign numPosts = posts | size | divided_by: 2 %}
+  <span class="single-tag">{{ t }} ({{ numPosts }})</span>
   <ul class="blog-list">
     {% for post in posts %}
     {% if post.tags contains t %}
+    {% if post.language == page.language %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>
     </li>
+    {% endif %}
     {% endif %}
     {% endfor %}
   </ul>

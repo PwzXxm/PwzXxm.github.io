@@ -41,6 +41,8 @@
     {% endfor %}
 {% endif %}
 
+
+{% if totalpages != 1 %}
 <p id="pagination-label" class="pagination-label sr-only" aria-hidden="true">Pagination</p>
 
 <ul class="pagination" role="navigation" aria-labelledby="pagination-label">
@@ -99,3 +101,4 @@
     {% endif %}
 
 </ul>
+{% endif %}
