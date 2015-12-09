@@ -1,0 +1,28 @@
+<div class="side-bar">
+  <div class="aboutme">
+    <div class="about-above">
+    </div>
+    <div class="about-img">
+      <a href="/about">
+        <img src="/img/about-me-small.png" />
+      </a>
+    </div>
+
+    <div class="about-below">
+    </div>
+  </div>
+
+  <div class="tags">
+    <h3><a href="/tags">Tags</a></h3>
+    <ul class="blog-tags-list">
+      {% assign sorted_tags = site.tags | sort %}
+      {% for tag in sorted_tags %}
+      {% assign t = tag | first %}
+      {% assign posts = tag | last %}
+      <li class="tag">
+        <a href="/tags/#{{ t }}">{{ t }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

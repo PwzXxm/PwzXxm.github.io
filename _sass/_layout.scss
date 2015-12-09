@@ -49,35 +49,6 @@
     border-radius: 5px;
     text-align: right;
 
-    .menu-icon {
-      display: block;
-      float: right;
-      width: 36px;
-      height: 26px;
-      line-height: 0;
-      padding-top: 10px;
-      text-align: center;
-
-      > svg {
-        width: 18px;
-        height: 15px;
-
-        path {
-          fill: $grey-color-dark;
-        }
-      }
-    }
-
-    .trigger {
-      clear: both;
-      display: none;
-    }
-
-    &:hover .trigger {
-      display: block;
-      padding-bottom: 5px;
-    }
-
     .page-link {
       display: block;
       padding: 5px 10px;
@@ -181,6 +152,10 @@
 .post-list {
   margin-left: 0;
   margin-right: 330px;
+  @include media-query($on-palm) {
+    margin-right: 0px;
+  }
+
 
   list-style: none;
 
@@ -259,16 +234,17 @@
 */
 .side-bar {
   float: right;
+  width: 230px;
+  @include media-query($on-palm) {
+    display: none;
+  }
 }
 
 .aboutme {
   width: 230px;
   height: 160px;
   position: relative;
-  margin-bottom: $spacing-unit;
-  @include media-query($on-palm) {
-    display: none;
-  }
+  margin-bottom: $spacing-unit*3;
 }
 
 .about-img {
@@ -302,4 +278,54 @@
   }
   margin-top: $spacing-unit * 5;
   margin-bottom: $spacing-unit * 5;
+}
+
+/**
+* Tags
+*/
+
+
+.tags {
+  a {
+    color: $text-color;
+  }
+  ul {
+    margin-top: -10px;
+    list-style: none;
+    margin-left: 0;
+    li {
+      display: inline-block;
+      background-color: #EEEEEE;
+      padding: 0 5px 0 5px;
+      margin: 2px 0 2px 0;
+      a {
+        color: #2273b6;
+      }
+    }
+  }
+}
+
+.hidden {
+  display: none!important;
+  visibility: hidden!important;
+}
+
+.blog-list-container {
+  ul {
+    list-style: none;
+    margin-left: $spacing-unit;
+    margin-bottom: $spacing-unit;
+    li {
+      margin: 5px 0 5px 0;
+    }
+  }
+  a {
+    color: $text-color;
+  }
+  .single-tag {
+      background-color: #EEEEEE;
+      padding: 0 5px 0 5px;
+      margin: 2px 0 2px 0;
+      color: #2273b6;
+  }
 }

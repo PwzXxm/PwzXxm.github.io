@@ -78,6 +78,10 @@ $pages-item-active-color:   white !default;
       display: inline-block;
     }
 
+    .offset-1 {
+      display: inline-block;
+    }
+
     // Show indicators on smaller screen when other pages are hidden
     // This way we'll never have "<previous 1 3 4 5 next>"
     // But we'll have "<previous 1 ... 3 4 5 next>"

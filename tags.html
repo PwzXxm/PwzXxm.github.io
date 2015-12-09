@@ -1,21 +1,34 @@
 ---
 layout: default
+Title: Tags
 permalink: /tags/
 ---
 
-{% for tag in site.tags %}
-  {% assign t = tag | first %}
-  {% assign posts = tag | last %}
+{% include sidebar.html %}
 
-{{ t | downcase }}
-<ul>
-{% for post in posts %}
-  {% if post.tags contains t %}
-  <li>
-    <a href="{{ post.url }}">{{ post.title }}</a>
-    <span class="date">{{ post.date | date: "%B %-d, %Y"  }}</span>
-  </li>
-  {% endif %}
-{% endfor %}
-</ul>
+{% for tag in site.tags %}
+{% assign t = tag | first %}
+{% assign posts = tag | last %}
+<div class="blog-list-container" id="{{ t }}-container">
+  {% assign numPosts = posts | size %}
+  <span class="single-tag">{{ t }} ({{posts|size}})</span>
+  <ul class="blog-list">
+    {% for post in posts %}
+    {% if post.tags contains t %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+
+<script>
+if(window.location.hash) {
+  var tag = window.location.hash.split('#')[1];
+  filter(tag);
+}
+</script>
+
+
 {% endfor %}

@@ -7,7 +7,7 @@ url: "http://pwzxxm.com" # the base hostname & protocol for your site
 github_username:  PwzXxm
 
 # pagination
-paginate: 5
+paginate: 8
 paginate_limit: 4
 
 # Build settings

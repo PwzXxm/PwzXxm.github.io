@@ -34,6 +34,11 @@
             color: $pages-item-active-color;
           }
         }
+        &.previous, &.next {
+          .pagination-item {
+            font-size: 10px;
+          }
+        }
       }
     }
   }
