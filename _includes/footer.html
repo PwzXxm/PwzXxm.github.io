@@ -8,8 +8,20 @@
       <div class="footer-col footer-col-1">
         <ul class="col1-list">
           {{ site.description }}
-          <li><a href="/tags">Tags</a></li>
-          <li><a href="/about">About</a></li>
+          <li>
+            {% if page.is_default_language %}
+            <a href="/tags">Tags</a>
+            {% else %}
+            <a href="/cn/tags">标签们</a>
+            {% endif %}
+          </li>
+          <li>
+            {% if page.is_default_language %}
+            <a href="/about">About</a>
+            {% else %}
+            <a href="/cn/about">关于我</a>
+            {% endif %}
+          </li>
         </ul>
       </div>
 
@@ -39,3 +51,4 @@
   </div>
 
 </footer>
+<script id="dsq-count-scr" src="//pwzxxm.disqus.com/count.js" async></script>
