@@ -3,10 +3,10 @@
   <channel>
     <title>PwzXxm</title>
     <description>Learning and sharing algorithms, computer science blog</description>
-    <link>http://pwzxxm.com/</link>
-    <atom:link href="http://pwzxxm.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 10 Dec 2015 16:33:38 +1100</pubDate>
-    <lastBuildDate>Thu, 10 Dec 2015 16:33:38 +1100</lastBuildDate>
+    <link>https://www.pwzxxm.com/</link>
+    <atom:link href="https://www.pwzxxm.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 10 Dec 2015 17:27:55 +1100</pubDate>
+    <lastBuildDate>Thu, 10 Dec 2015 17:27:55 +1100</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -14,8 +14,8 @@
         <description>&lt;p&gt;欢迎光临～ 么么哒～&lt;/p&gt;
 </description>
         <pubDate>Thu, 10 Dec 2015 00:00:00 +1100</pubDate>
-        <link>http://pwzxxm.com/cn/welcome/</link>
-        <guid isPermaLink="true">http://pwzxxm.com/cn/welcome/</guid>
+        <link>https://www.pwzxxm.com/cn/welcome/</link>
+        <guid isPermaLink="true">https://www.pwzxxm.com/cn/welcome/</guid>
         
         <category>welcome</category>
         
@@ -27,8 +27,8 @@
         <description>&lt;p&gt;Welcome to the site. Love you.&lt;/p&gt;
 </description>
         <pubDate>Thu, 10 Dec 2015 00:00:00 +1100</pubDate>
-        <link>http://pwzxxm.com/welcome/</link>
-        <guid isPermaLink="true">http://pwzxxm.com/welcome/</guid>
+        <link>https://www.pwzxxm.com/welcome/</link>
+        <guid isPermaLink="true">https://www.pwzxxm.com/welcome/</guid>
         
         <category>welcome</category>
         
