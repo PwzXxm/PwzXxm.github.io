@@ -3,8 +3,8 @@ title: PwzXxm
 email: cepheidfov@gmail.com
 description: Learning and sharing algorithms, computer science blog
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.pwzxxm.com" # the base hostname & protocol for your site
-enforce_ssl: www.pwzxxm.com
+url: "https://pwzxxm.com" # the base hostname & protocol for your site
+enforce_ssl: pwzxxm.com
 github_username:  PwzXxm
 
 gems:
