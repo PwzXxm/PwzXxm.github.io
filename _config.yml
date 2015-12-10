@@ -22,18 +22,6 @@ paginate: 10
 paginate_limit: 5
 
 # Build settings
-markdown: kramdown
+markdown:  redcarpet-pygments
+highlighter: pygments
 permalink: /:title/
-defaults:
-  -
-    scope:
-      path: _posts/en
-    values:
-      layout: default
-      lang: en
-  -
-    scope:
-      path: _posts/zh
-    values:
-      layout: default
-      lang: zh
