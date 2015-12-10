@@ -1,44 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://pwzxxm.com/cn/code-test/</loc>
-    <lastmod>2015-12-09T00:00:00+11:00</lastmod>
+    <loc>http://pwzxxm.com/cn/welcome/</loc>
+    <lastmod>2015-12-10T00:00:00+11:00</lastmod>
   </url>
   <url>
-    <loc>http://pwzxxm.com/code-test/</loc>
-    <lastmod>2015-12-09T00:00:00+11:00</lastmod>
-  </url>
-  <url>
-    <loc>http://pwzxxm.com/test3/</loc>
-    <lastmod>2015-12-06T00:00:00+11:00</lastmod>
-  </url>
-  <url>
-    <loc>http://pwzxxm.com/cn/test2/</loc>
-    <lastmod>2015-12-05T00:00:00+11:00</lastmod>
-  </url>
-  <url>
-    <loc>http://pwzxxm.com/test2/</loc>
-    <lastmod>2015-12-05T00:00:00+11:00</lastmod>
-  </url>
-  <url>
-    <loc>http://pwzxxm.com/cn/test3/</loc>
-    <lastmod>2015-12-04T00:00:00+11:00</lastmod>
-  </url>
-  <url>
-    <loc>http://pwzxxm.com/test/</loc>
-    <lastmod>2015-12-04T00:00:00+11:00</lastmod>
-  </url>
-  <url>
-    <loc>http://pwzxxm.com/cn/test/</loc>
-    <lastmod>2015-12-04T00:00:00+11:00</lastmod>
-  </url>
-  <url>
-    <loc>http://pwzxxm.com/hello/</loc>
-    <lastmod>2015-12-03T00:00:00+11:00</lastmod>
-  </url>
-  <url>
-    <loc>http://pwzxxm.com/cn/hello/</loc>
-    <lastmod>2015-12-03T00:00:00+11:00</lastmod>
+    <loc>http://pwzxxm.com/welcome/</loc>
+    <lastmod>2015-12-10T00:00:00+11:00</lastmod>
   </url>
   <url>
     <loc>http://pwzxxm.com/cn/about/</loc>

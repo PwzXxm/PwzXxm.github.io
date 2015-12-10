@@ -159,6 +159,8 @@ blockquote {
       }
     }
     */ }
+  .site-nav .chinese {
+    margin-left: 10px; }
 
 /**
 * Site footer
