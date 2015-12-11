@@ -5,7 +5,7 @@ description: Learning and sharing algorithms, computer science blog
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://pwzxxm.com" # the base hostname & protocol for your site
 github_username:  PwzXxm
-
+exclude: ["README.md"]
 gems:
 - jekyll-multiple-languages
 - jekyll-sitemap
