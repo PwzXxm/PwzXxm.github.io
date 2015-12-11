@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PwzXxm</title>
-    <description>Learning and sharing algorithms, computer science blog</description>
+    <description>Learning and sharing computer science ideas. Enjoy what you are passionated about.</description>
     <link>http://pwzxxm.com/</link>
     <atom:link href="http://pwzxxm.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 11 Dec 2015 16:13:34 +1100</pubDate>
-    <lastBuildDate>Fri, 11 Dec 2015 16:13:34 +1100</lastBuildDate>
+    <pubDate>Fri, 11 Dec 2015 16:27:36 +1100</pubDate>
+    <lastBuildDate>Fri, 11 Dec 2015 16:27:36 +1100</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
