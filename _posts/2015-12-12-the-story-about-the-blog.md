@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "The story about the blog"
+title: "The Story About the Blog"
 date: 2015-12-12
 tags:
 - blog
