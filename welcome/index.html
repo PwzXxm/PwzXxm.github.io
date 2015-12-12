@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Tags</title>
-  <meta name="description" content="Learning and sharing computer science ideas. Enjoy what you are passionated about.">
+  <title>Welcome</title>
+  <meta name="description" content="Welcome to the site. Love you.">
 
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="http://pwzxxm.com/cn/tags/">
+  <link rel="canonical" href="http://pwzxxm.com/welcome/">
   <link rel="alternate" type="application/rss+xml" title="PwzXxm" href="http://pwzxxm.com/feed.xml">
 </head>
 
@@ -33,18 +33,18 @@
   <div class="wrapper">
 
     
-    <a class="site-title" href="/cn">PwzXxm</a>
+    <a class="site-title" href="/">PwzXxm</a>
     
 
     <nav class="site-nav">
       <span class="english">
       
-      <a href="/tags/">EN</a>
+      <a href="/welcome/" style="color: #cdcdcd">EN</a>
       
     </span>
     <span class="chinese">
       
-      <a href="/cn/tags/" style="color: #cdcdcd">中</a>
+      <a href="/cn/welcome/">中</a>
       
     </span>
     </nav>
@@ -56,105 +56,66 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="side-bar">
-  <div class="aboutme">
-    <div class="about-above">
-    </div>
-    <div class="about-img">
-      
-      <a href="/cn/about"><img src="/img/about-me-small.png" /></a>
-      
-    </div>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-    <div class="about-below">
-    </div>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Welcome</h1>
+    <p class="post-meta">
+      <time datetime="2015-12-10T00:00:00+11:00" itemprop="datePublished">
+        
+        Dec 10, 2015
+        
+      </time>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Welcome to the site. Love you.</p>
+
   </div>
 
-  <div class="tags">
-    <h3><a href="/tags">
-      
-      <a href="/cn/tags">全部标签</a>
-      
-    </a></h3>
-    <ul class="blog-tags-list">
-      
-      
-      
-      
-      <li class="blog-tag-item" id="welcome-item">
-        <a href onclick="filter('welcome'); return false;">welcome</a>
-        <script>
-        function filter(tag) {
-          setActiveTag(tag);
-          showContainer(tag);
-        }
-        function setActiveTag(tag) {
-          // loop through all items and remove active class
-          var items = document.getElementsByClassName('blog-tag-item');
-          for(var i=0; i < items.length; i++) {
-            items[i].setAttribute('class', 'blog-tag-item');
-          }
-
-          // set the selected tag's item to active
-          var item = document.getElementById(tag + '-item');
-          if(item) {
-            item.setAttribute('class', 'blog-tag-item active');
-          }
-        }
-
-        function showContainer(tag) {
-          // loop through all lists and hide them
-          var lists = document.getElementsByClassName('blog-list-container');
-          for(var i=0; i < lists.length; i++) {
-            lists[i].setAttribute('class', 'blog-list-container hidden');
-          }
-
-          // remove the hidden class from the list corresponding to the selected tag
-          var list = document.getElementById(tag + '-container');
-          if(list) {
-            list.setAttribute('class', 'blog-list-container');
-          }
-        }
-        </script>
-      </li>
-      
-    </ul>
-</div>
-</div>
+</article>
 
 
-
-
-
-<div class="blog-list-container" id="welcome-container">
-  
-  <span class="single-tag">welcome (1)</span>
-  <ul class="blog-list">
+<span class="tags">
+  <ul>
     
     
+    Tags:
     
-    
-    
-    
-    
-    <li>
-      <a href="/cn/welcome/">欢迎</a>
-    </li>
-    
+    <li><a href="/tags/#welcome">welcome</a></li>
     
     
   </ul>
-</div>
+</span>
 
+<p id="ex"></p>
+
+<div id="disqus_thread"></div>
 <script>
-if(window.location.hash) {
-  var tag = window.location.hash.split('#')[1];
-  filter(tag);
-}
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+var disqus_config = function () {
+  //var disqus_developer = 1; // Comment out when the site is live
+  var disqus_shortname = 'pwzxxm'
+  //this.page.url = http://pwzxxm.com; // Replace PAGE_URL with your page's canonical URL variable
+  
+  this.page.identifier = /welcome/; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  this.language="en";
+  
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//pwzxxm.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
 </script>
-
-
-
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
       </div>
     </div>
@@ -171,12 +132,12 @@ if(window.location.hash) {
           ʕ •ᴥ•ʔ
           <li>
             
-            <a href="/cn/tags">标签们</a>
+            <a href="/tags">Tags</a>
             
           </li>
           <li>
             
-            <a href="/cn/about">关于我</a>
+            <a href="/about">About</a>
             
           </li>
         </ul>
