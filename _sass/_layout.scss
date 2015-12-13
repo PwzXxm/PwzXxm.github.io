@@ -139,6 +139,7 @@
 .post-list {
   margin-left: 0;
   margin-right: 330px;
+  margin-bottom: $spacing-unit*3;
   @include media-query($on-palm) {
     margin-right: 0px;
   }
@@ -153,10 +154,15 @@
   > li {
     margin-bottom: $spacing-unit*1.5;
     h2 {
-      margin-bottom: -2px;
+      margin-bottom: 2px;
     }
     .post-data {
       color: $grey-color;
+      margin-top: 5px;
+      margin-bottom: -20px;
+      a {
+        color: #2273b6;
+      }
     }
 
     .post-link {
@@ -174,6 +180,7 @@
     }
     .post-more {
       font-size: $base-font-size*0.8;
+      color: $grey-color;
     }
   }
 }

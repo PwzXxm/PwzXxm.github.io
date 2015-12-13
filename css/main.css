@@ -65,10 +65,10 @@ h1, h2, h3, h4, h5, h6 {
  * Links
  */
 a {
-  color: #aaaaaa;
+  color: #3881bd;
   text-decoration: none; }
   a:visited {
-    color: #848484; }
+    color: #3274a9; }
   a:hover {
     color: #555555;
     text-decoration: underline; }
@@ -230,6 +230,7 @@ blockquote {
 .post-list {
   margin-left: 0;
   margin-right: 330px;
+  margin-bottom: 90px;
   list-style: none; }
   @media screen and (max-width: 600px) {
     .post-list {
@@ -239,9 +240,13 @@ blockquote {
   .post-list > li {
     margin-bottom: 45px; }
     .post-list > li h2 {
-      margin-bottom: -2px; }
+      margin-bottom: 2px; }
     .post-list > li .post-data {
-      color: #828282; }
+      color: #828282;
+      margin-top: 5px;
+      margin-bottom: -20px; }
+      .post-list > li .post-data a {
+        color: #2273b6; }
     .post-list > li .post-link {
       display: block; }
     .post-list > li .post-meta {
@@ -252,7 +257,8 @@ blockquote {
         margin: 2px 0 2px 0;
         color: #2273b6; }
     .post-list > li .post-more {
-      font-size: 12.8px; }
+      font-size: 12.8px;
+      color: #828282; }
 
 /**
 * Posts
