@@ -3,11 +3,352 @@
   <channel>
     <title>PwzXxm</title>
     <description>Learning and sharing computer science ideas. Enjoy what you are passionated about.</description>
-    <link>http://pwzxxm.com/</link>
-    <atom:link href="http://pwzxxm.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 13 Dec 2015 19:47:56 +1100</pubDate>
-    <lastBuildDate>Sun, 13 Dec 2015 19:47:56 +1100</lastBuildDate>
+    <link>http://www.pwzxxm.com/</link>
+    <atom:link href="http://www.pwzxxm.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 16 Dec 2015 23:55:12 +1100</pubDate>
+    <lastBuildDate>Wed, 16 Dec 2015 23:55:12 +1100</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>Using Jekyll + Github Pages to build a blog</title>
+        <description>&lt;h2&gt;Why Jekyll and Github Pages&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; is an static site generator, it is simple to use with YAML front matter. It is quite convenient to blog with markdown and Jekyll supports it build-in. &lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt; provide the space to host the website for free. Both of them are well-documented, and works well with each other. One thing that makes they works well but not perfect is that although Github Pages can generate the website using Jekyll but as it generates in safe mode, it does not support Jekyll plugin. However, the good news is we can generate the site locally and then push it to Github. It sounds like not convenient but we can write a bash script to do so automatically in one step. We will talk about it later.&lt;/p&gt;
+
+&lt;h2&gt;Preparations&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Know &lt;a href=&quot;http://jekyllrb.com/docs/frontmatter/&quot;&gt;YAML front matter&lt;/a&gt; is something you can put at the front of a script and it can automatically
+
+&lt;ul&gt;
+&lt;li&gt;have part of the layout and tags you defined before&lt;/li&gt;
+&lt;li&gt;define variables ([Liquid]tags(http://liquidmarkup.org/))&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;If you don&amp;#39;t know HMTL, CSS or JavaScript, you would better check out &lt;a href=&quot;http://www.w3schools.com/&quot;&gt;W3School&lt;/a&gt; and at least know the basic of them.&lt;/li&gt;
+&lt;li&gt;Be able to using &lt;code class=&quot;inline-code&quot;&gt;git&lt;/code&gt; commands, if not please check &lt;a href=&quot;http://rogerdudler.github.io/git-guide/&quot;&gt;Git tutorial&lt;/a&gt; or search on Google. You could use a desktop version instead of command lines, but I think it&amp;#39;s better to try comment line once because it may help you to have a better understanding of how it works.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;Set up repository&lt;/h2&gt;
+
+&lt;p&gt;Following the steps on &lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt; to initiate the repository. &lt;strong&gt;Caution: If you are building user/organisation pages, please use &lt;code class=&quot;inline-code&quot;&gt;master&lt;/code&gt; branch, if you are building project pages, please use &lt;code class=&quot;inline-code&quot;&gt;gh-pages&lt;/code&gt; instead.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2&gt;Install and Initiate&lt;/h2&gt;
+
+&lt;p&gt;Steps are shown &lt;a href=&quot;https://help.github.com/articles/using-jekyll-with-pages/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;After installation, to initiate a basic theme Jekyll website at current folder, simply run&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;Jekyll new .
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;git init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If you have a error says the directory is not empty, just move all files to other directory and move them back after initiation.&lt;/p&gt;
+
+&lt;h2&gt;Running Jekyll and Test Websites Locally&lt;/h2&gt;
+
+&lt;p&gt;If you use &lt;code class=&quot;inline-code&quot;&gt;bundler&lt;/code&gt;, you need to use &lt;code class=&quot;inline-code&quot;&gt;bundle exec jekyll server&lt;/code&gt; or &lt;code class=&quot;inline-code&quot;&gt;bundle exec jekyll serve&lt;/code&gt;.&lt;br&gt;For those who don&amp;#39;t, please use &lt;code class=&quot;inline-code&quot;&gt;jekyll server&lt;/code&gt; or &lt;code class=&quot;inline-code&quot;&gt;jekyll serve&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Leave command window as it is running and then open your browser and navigate to &lt;code class=&quot;inline-code&quot;&gt;http://localhost:4000&lt;/code&gt; and you can see your site locally.&lt;/p&gt;
+
+&lt;h2&gt;Configuring&lt;/h2&gt;
+
+&lt;h3&gt;_config.yml file&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;inline-code&quot;&gt;_config.yml&lt;/code&gt; contains settings for the website, check out details at the official website &lt;a href=&quot;http://jekyllrb.com/docs/configuration/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Variables&lt;/th&gt;
+&lt;th&gt;Usage&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;title&lt;/td&gt;
+&lt;td&gt;The title of the website, by default it will shown at the website and the search result in a search engine&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;email&lt;/td&gt;
+&lt;td&gt;It is used in the contact list if you choose to use it&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;description&lt;/td&gt;
+&lt;td&gt;By default it is used in the meta tag in the head and shown in the footer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;baseurl&lt;/td&gt;
+&lt;td&gt;the subpath of your site, e.g. &lt;code class=&quot;inline-code&quot;&gt;/blog&lt;/code&gt; will have &lt;code class=&quot;inline-code&quot;&gt;www.pwzxxm./com/blog&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;url&lt;/td&gt;
+&lt;td&gt;the base hostname and protocol for the site, e.g. &lt;code class=&quot;inline-code&quot;&gt;http://www.pwzxxm.com&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;github_username&lt;br&gt;twitter_username&lt;/td&gt;
+&lt;td&gt;shown in the contact list in the footer if you wish&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;markdown&lt;/td&gt;
+&lt;td&gt;which markdown engine you want to use, e.g. &lt;code class=&quot;inline-code&quot;&gt;kramdown&lt;/code&gt; &lt;code class=&quot;inline-code&quot;&gt;redcarpet&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;highlighter&lt;/td&gt;
+&lt;td&gt;which syntax highlighter you want to use, e.g. &lt;code class=&quot;inline-code&quot;&gt;pygments&lt;/code&gt; &lt;code class=&quot;inline-code&quot;&gt;rouge&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;permalink&lt;/td&gt;
+&lt;td&gt;set to &lt;code class=&quot;inline-code&quot;&gt;pretty&lt;/code&gt; will have url like &lt;code class=&quot;inline-code&quot;&gt;site_url/time/title&lt;/code&gt; &lt;br&gt; you can set your own like &lt;code class=&quot;inline-code&quot;&gt;/:title/&lt;/code&gt; &lt;a href=&quot;http://jekyllrb.com/docs/permalinks/&quot;&gt;See details&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pagination&lt;/td&gt;
+&lt;td&gt;the number of posts you want to display on each page&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;h3&gt;Host your website using custom domain&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;you need to buy a domain from a domain registrar, like &lt;a href=&quot;https://godaddy.com&quot;&gt;Godaddy&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;add a &lt;code class=&quot;inline-code&quot;&gt;CNAME&lt;/code&gt; file which contains your custom domain name in the root of your repository.&lt;/li&gt;
+&lt;li&gt;If your custom domain is a subdomain (like &lt;code class=&quot;inline-code&quot;&gt;www.pwzxxm.com&lt;/code&gt; or &lt;code class=&quot;inline-code&quot;&gt;blog.pwzxxm.com&lt;/code&gt;), then you need to add a &lt;code class=&quot;inline-code&quot;&gt;CNAME&lt;/code&gt; record in your domain provider or DNS server provider if you are using custom DNS service.&lt;/li&gt;
+&lt;li&gt;If your domain is an apex domain (only have one dot in your custom domain), you need to set up &lt;code class=&quot;inline-code&quot;&gt;A&lt;/code&gt;, &lt;code class=&quot;inline-code&quot;&gt;ALIAS&lt;/code&gt; or &lt;code class=&quot;inline-code&quot;&gt;ANAME&lt;/code&gt; records. Add &lt;code class=&quot;inline-code&quot;&gt;192.30.252.153&lt;/code&gt; and &lt;code class=&quot;inline-code&quot;&gt;192.30.252.154&lt;/code&gt; to your records.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/&quot;&gt;Find more details&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Pagination&lt;/h3&gt;
+
+&lt;p&gt;There are two basic scripts can do pagination on &lt;a href=&quot;http://jekyllrb.com/docs/pagination/&quot;&gt;Jekyll official documentation&lt;/a&gt;.
+However, I found this pagination from &lt;a href=&quot;http://www.timble.net/blog/2015/05/07/better-pagination-for-jekyll.html&quot;&gt;Timble&lt;/a&gt; which is awesome.&lt;/p&gt;
+
+&lt;h3&gt;Multi-language site&lt;/h3&gt;
+
+&lt;p&gt;Check out &lt;a href=&quot;http://jekyll-langs.liaohuqiu.net/&quot;&gt;Jekyll Multi Language Plugin&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Build the site locally if you use plugins&lt;/h3&gt;
+
+&lt;p&gt;The problem is Github build Jekyll websites in safe mode so the plugin won&amp;#39;t work. However, we can create a &amp;#39;dummy&amp;#39; repository to generate the site first and then move the content in &lt;code class=&quot;inline-code&quot;&gt;_site&lt;/code&gt; folder to the original repository.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;generate the site locally using &lt;code class=&quot;inline-code&quot;&gt;bundle exec jekyll serve build&lt;/code&gt; or &lt;code class=&quot;inline-code&quot;&gt;jekyll build&lt;/code&gt; in the &amp;#39;dummy&amp;#39; repository.&lt;/li&gt;
+&lt;li&gt;copy all files to the actual repository excludes &lt;code class=&quot;inline-code&quot;&gt;README.md.&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;cut the files under  &lt;code class=&quot;inline-code&quot;&gt;_site&lt;/code&gt; folders to the root path of the repository.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;inline-code&quot;&gt;touch .nojekyll&lt;/code&gt; to disable github to generate the site&lt;/li&gt;
+&lt;li&gt;commit all changes.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Here is a bash script:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;comment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;push_commit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;git commit -a -m &amp;#39;$comment&amp;#39;&amp;quot;&lt;/span&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# commit and push changes&lt;/span&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cd ~/git/local&amp;#39;&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# modify PATH here&lt;/span&gt;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;bundle exec jekyll build&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;git add .&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$push_commit&lt;/span&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;git push --all origin&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# copy remove in pwzxxm.github.io&lt;/span&gt;
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cd ~/git/PwzXxm.github.io&amp;#39;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# modify PATH here&lt;/span&gt;
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cp ./README.md ~/git/&amp;#39;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# modify where you want to temporally put the README.md&lt;/span&gt;
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;rm -rf ./*&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cp -r ~/git/local/* ./&amp;#39;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# modify PATH here&lt;/span&gt;
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cp -r _site/* ./&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;rm -rf _site/*&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cp ~/git/README.md ./&amp;#39;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# put the file back&lt;/span&gt;
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;touch .nojekyll&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# commit and push changes&lt;/span&gt;
+&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;git add .&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$push_commit&lt;/span&gt;
+&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;git push --all origin&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Done&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To use it, simply copy it to a &lt;code class=&quot;inline-code&quot;&gt;yourchoice.sh&lt;/code&gt; file, change the paths in the file and give it permission to run, and run it.&lt;/p&gt;
+
+&lt;h2&gt;This Site&lt;/h2&gt;
+
+&lt;p&gt;If you like the style or you want to know the codes behind it, just check out:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/PwzXxm/PwzXxm.github.io&quot;&gt;Pwzxxm.github.io&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/PwzXxm/local-site&quot;&gt;local site&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can grap and use any code from my site as you wish. However, the content of this site is copyright, if you want to use any posts please contact me.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 15 Dec 2015 00:00:00 +1100</pubDate>
+        <link>http://www.pwzxxm.com/building-blog/</link>
+        <guid isPermaLink="true">http://www.pwzxxm.com/building-blog/</guid>
+        
+        <category>blog</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>使用Jekyll＋Github Pages搭建博客</title>
+        <description>&lt;h2&gt;为什么选择 Jekyll 和 Github Pages&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://jekyll.bootcss.com/&quot;&gt;Jekyll&lt;/a&gt;是一个静态网页生成器，使用YAML头信息可以很方便地使用各种布局，内置markdown，新的文章只需加入文件夹即可。&lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt;可以提供免费空间，免费无限流量来给网页当虚拟主机。他们俩配合起来相当默契，而且网上也有很多资料。但是有一点美中不足的是Github Pages是在安全模式下运行的，也就是说它并不支持Jekyll的插件。然而我们可以在本地带着插件生成好网站再放到Github上。虽然听起来不太方便，但是有脚本让我们一步实现。这点我们后面详细说。&lt;/p&gt;
+
+&lt;h2&gt;准备&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;了解&lt;a href=&quot;http://jekyllrb.com/docs/frontmatter/&quot;&gt;YAML front matter&lt;/a&gt;可以让包含头文件的文件自动：
+
+&lt;ul&gt;
+&lt;li&gt;拥有部分或全部布局及定义的重复标签&lt;/li&gt;
+&lt;li&gt;变量 (&lt;a href=&quot;http://liquidmarkup.org/&quot;&gt;Liquid&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;如果完全不了解HTML, CSS和JavaScript, 请查看&lt;a href=&quot;http://www.w3schools.com/&quot;&gt;W3School&lt;/a&gt;，至少了解基本用法。&lt;/li&gt;
+&lt;li&gt;了解&lt;code class=&quot;inline-code&quot;&gt;git&lt;/code&gt;命令，如果不请查看&lt;a href=&quot;http://rogerdudler.github.io/git-guide/&quot;&gt;Git tutorial&lt;/a&gt;或者其他资料。希望能至少使用命令行一次了解流程，这对以后会有所帮助。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;创建仓库&lt;/h2&gt;
+
+&lt;p&gt;详细步骤在&lt;a href=&quot;https://pages.github.com/&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;如果是个人／机构网站，请使用&lt;code class=&quot;inline-code&quot;&gt;master&lt;/code&gt;分支，如果是项目网站，请使用&lt;code class=&quot;inline-code&quot;&gt;gh-pages&lt;/code&gt;分支&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2&gt;安装和初始化&lt;/h2&gt;
+
+&lt;p&gt;步骤在&lt;a href=&quot;https://help.github.com/articles/using-jekyll-with-pages/&quot;&gt;Github help pages&lt;/a&gt;有详细解释。&lt;/p&gt;
+
+&lt;p&gt;完成安装后，初始化Jekyll在当前文件夹使用基本主题，运行&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;Jekyll new .
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;git init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;如果出现类似&lt;code class=&quot;inline-code&quot;&gt;directory is not empty&lt;/code&gt;之类的错误，先把文件夹下的内容移动到该文件夹外的临时文件夹内，运行命令后再放回原来的文件即可。&lt;/p&gt;
+
+&lt;h2&gt;本地运行Jekyll和测试网站&lt;/h2&gt;
+
+&lt;p&gt;如果您是&lt;code class=&quot;inline-code&quot;&gt;bundler&lt;/code&gt;使用者，请运行&lt;code class=&quot;inline-code&quot;&gt;bundle exec jekyll server&lt;/code&gt;或者&lt;code class=&quot;inline-code&quot;&gt;bundle exec jekyll serve&lt;/code&gt;.&lt;br&gt;如果不是，请运行&lt;code class=&quot;inline-code&quot;&gt;jekyll server&lt;/code&gt;或者&lt;code class=&quot;inline-code&quot;&gt;jekyll serve&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;让命令运行(不要用ctrl+c终止命令)，打开网页浏览器，在地址栏输入&lt;code class=&quot;inline-code&quot;&gt;http://localhost:4000&lt;/code&gt;，就能看见网站啦。&lt;/p&gt;
+
+&lt;h2&gt;配置&lt;/h2&gt;
+
+&lt;h3&gt;_config.yml文件&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;inline-code&quot;&gt;_config.yml&lt;/code&gt;文件包含了网站设定，&lt;a href=&quot;http://jekyll.bootcss.com/docs/configuration/&quot;&gt;官网&lt;/a&gt;上有详细阐述。下面介绍基本用法:&lt;/p&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;变量&lt;/th&gt;
+&lt;th&gt;用法&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;title&lt;/td&gt;
+&lt;td&gt;网站名，默认下将是网站在搜索引擎出现的名字&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;email&lt;/td&gt;
+&lt;td&gt;在contac-list中显示的邮箱地址, 默认下出现在页脚&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;description&lt;/td&gt;
+&lt;td&gt;网站描述，默认下将出现在页脚&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;baseurl&lt;/td&gt;
+&lt;td&gt;网站的子路径, 例如设置成&lt;code class=&quot;inline-code&quot;&gt;/blog&lt;/code&gt;，完整url将会变成&lt;code class=&quot;inline-code&quot;&gt;www.pwzxxm./com/blog&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;url&lt;/td&gt;
+&lt;td&gt;主机名和使用协议，完整url, 例如&lt;code class=&quot;inline-code&quot;&gt;http://www.pwzxxm.com&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;github_username&lt;br&gt;twitter_username&lt;/td&gt;
+&lt;td&gt;用于链接Github和Twitter, 默认下出现在页脚&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;markdown&lt;/td&gt;
+&lt;td&gt;使用的markdown引擎, e.g. &lt;code class=&quot;inline-code&quot;&gt;kramdown&lt;/code&gt; &lt;code class=&quot;inline-code&quot;&gt;redcarpet&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;highlighter&lt;/td&gt;
+&lt;td&gt;语法高亮引擎, e.g. &lt;code class=&quot;inline-code&quot;&gt;pygments&lt;/code&gt; &lt;code class=&quot;inline-code&quot;&gt;rouge&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;permalink&lt;/td&gt;
+&lt;td&gt;设置为&lt;code class=&quot;inline-code&quot;&gt;pretty&lt;/code&gt;url将变成这样&lt;code class=&quot;inline-code&quot;&gt;site_url/time/title&lt;/code&gt; &lt;br&gt;可以自定义例如&lt;code class=&quot;inline-code&quot;&gt;/:title/&lt;/code&gt; &lt;a href=&quot;http://jekyllrb.com/docs/permalinks/&quot;&gt;查看详情&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pagination&lt;/td&gt;
+&lt;td&gt;每页显示多少篇文章&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;h3&gt;使用自定义域名&lt;/h3&gt;
+
+&lt;p&gt;官网提供了两个基本版的页数标示，&lt;a href=&quot;http://jekyll.bootcss.com/docs/pagination/&quot;&gt;点这里&lt;/a&gt;。 然而网上有适配移动端的&lt;a href=&quot;http://www.timble.net/blog/2015/05/07/better-pagination-for-jekyll.html&quot;&gt;Timble&lt;/a&gt;，非常赞。&lt;/p&gt;
+
+&lt;h3&gt;多语言支持&lt;/h3&gt;
+
+&lt;p&gt;请查看&lt;a href=&quot;http://jekyll-langs.liaohuqiu.net/&quot;&gt;Jekyll Multi Language Plugin&lt;/a&gt;。&lt;/p&gt;
+
+&lt;h3&gt;如使用插件，在本地生成网站&lt;/h3&gt;
+
+&lt;p&gt;简单的说就是另外创建一个“僵尸”仓库，先生成网站，再把&lt;code class=&quot;inline-code&quot;&gt;_site&lt;/code&gt;文件夹下的文件放到原根目录然后禁止Github再次生成网站。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;在“僵尸”文件夹下执行&lt;code class=&quot;inline-code&quot;&gt;bundle exec jekyll serve build&lt;/code&gt; or &lt;code class=&quot;inline-code&quot;&gt;jekyll build&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;复制当前文件夹下所有文件到原仓库(****.github.io), 除了&lt;code class=&quot;inline-code&quot;&gt;README.md&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;剪切原仓库的&lt;code class=&quot;inline-code&quot;&gt;_site&lt;/code&gt;文件夹下所有文件到原仓库根目录。&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;inline-code&quot;&gt;touch .nojekyll&lt;/code&gt;禁止Github生成网站。&lt;/li&gt;
+&lt;li&gt;提交所有到Github。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;这是bash脚本：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;comment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;push_commit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;git commit -a -m &amp;#39;$comment&amp;#39;&amp;quot;&lt;/span&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# commit and push changes&lt;/span&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cd ~/git/local&amp;#39;&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# modify PATH here&lt;/span&gt;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;bundle exec jekyll build&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;git add .&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$push_commit&lt;/span&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;git push --all origin&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# copy remove in pwzxxm.github.io&lt;/span&gt;
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cd ~/git/PwzXxm.github.io&amp;#39;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# modify PATH here&lt;/span&gt;
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cp ./README.md ~/git/&amp;#39;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# modify where you want to temporally put the README.md&lt;/span&gt;
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;rm -rf ./*&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cp -r ~/git/local/* ./&amp;#39;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# modify PATH here&lt;/span&gt;
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cp -r _site/* ./&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;rm -rf _site/*&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cp ~/git/README.md ./&amp;#39;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# put the file back&lt;/span&gt;
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;touch .nojekyll&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# commit and push changes&lt;/span&gt;
+&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;git add .&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$push_commit&lt;/span&gt;
+&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;git push --all origin&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Done&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;要使用它，复制上面代码到以&lt;code class=&quot;inline-code&quot;&gt;.sh&lt;/code&gt;结尾的bash脚本文件中，修改路径，给权限，运行即可。&lt;/p&gt;
+
+&lt;h2&gt;本站代码&lt;/h2&gt;
+
+&lt;p&gt;如果想使用本站布局或想知道背后的代码，请访问&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/PwzXxm/PwzXxm.github.io&quot;&gt;Pwzxxm.github.io&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/PwzXxm/local-site&quot;&gt;local site&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;您可以使用关于本站的任何代码，但禁止转载本站内容。如有需要，联系我联系我联系我。&lt;/p&gt;
+</description>
+        <pubDate>Tue, 15 Dec 2015 00:00:00 +1100</pubDate>
+        <link>http://www.pwzxxm.com/cn/building-blog/</link>
+        <guid isPermaLink="true">http://www.pwzxxm.com/cn/building-blog/</guid>
+        
+        <category>blog</category>
+        
+        
+      </item>
     
       <item>
         <title>The Story About the Blog</title>
@@ -17,15 +358,15 @@
 
 &lt;p&gt;I was learning algorithms, c++ and practice ACM-ICPC but I stuck at graph theory and I did not have any progress on one particular problem for like three or four days. I always want to build a website and start writing some stuff. So I put other things aside and started to build this blog, and my friends give a lot of suggestions on the design of the website. Thank you.&lt;/p&gt;
 
-&lt;p&gt;There are two reasons why I really want to start this blog. One is that blogging helps me clear my thoughts. For instance, if you can teach an algorithm to a man which is new to him and he can understand the algorithm very well as your explanation is clear, you should also already have a deep understanding on this algorithm. So another reason is that I&amp;#39;m hoping someone can learn something from my blog. There a story: one day, I was trying to learn KMP (a string search algorithm), I barely understand it. I read a lot of posts from other people&amp;#39;s blog, watched youtube videos and tried to do it on a paper. Suddenly, I knew the ideas behind it. Thanks for the guys sharing their ideas and thinkings.&lt;/p&gt;
+&lt;p&gt;There are two reasons why I really want to start this blog. One is that &lt;strong&gt;blogging helps me clear my thoughts.&lt;/strong&gt; For instance, if you can teach an algorithm to a man which is new to him and he can understand the algorithm very well as your explanation is clear, you should also already have a deep understanding on this algorithm. So another reason is that &lt;strong&gt;I&amp;#39;m hoping someone can learn something from my blog.&lt;/strong&gt; There a story: one day, I was trying to learn KMP (a string search algorithm), I barely understand it. I read a lot of posts from other people&amp;#39;s blog, watched youtube videos and tried to do it on a paper. Suddenly, I knew the concept behind it. Thanks for the guys sharing their ideas and thinkings.&lt;/p&gt;
 
 &lt;p&gt;If anyone find any mistake on my blog, please feel free to contact me or leave a comment below the post. Contact details are shown on the footer on every pages of the blog.&lt;/p&gt;
 
 &lt;p&gt;Let&amp;#39;s learn together and sharing ideas!&lt;/p&gt;
 </description>
         <pubDate>Sat, 12 Dec 2015 00:00:00 +1100</pubDate>
-        <link>http://pwzxxm.com/the-story-about-the-blog/</link>
-        <guid isPermaLink="true">http://pwzxxm.com/the-story-about-the-blog/</guid>
+        <link>http://www.pwzxxm.com/the-story-about-the-blog/</link>
+        <guid isPermaLink="true">http://www.pwzxxm.com/the-story-about-the-blog/</guid>
         
         <category>blog</category>
         
@@ -40,43 +381,19 @@
 
 &lt;p&gt;原来我是在看算法，刷题做ACM和看C++的，后来看着看着卡住了，想了几天也没什么头绪。我一直想着想做个网站写点东西，就先留着坑，跑来开了这个新坑。在写的过程中，好多朋友给了设计上的建议，谢谢他们～（鞠躬）&lt;/p&gt;
 
-&lt;p&gt;开这个博客，一个是想自己理理思路，想算法啊什么的如果能说得新手明白，那自己也应该理解得差不多了；还有就是希望别人看了这个博客能有所收获吧。因为很久以前看KMP（一个字符串匹配算法）的时候，刚开始真的是云里雾里，智商不够。后来看了好多别人写的文章，突然有一瞬间看着看着就觉得自己好像会了。谢谢那些无私写作发到博客里的大牛们，如果大牛们看见有哪写的不对的也希望能及时联系我，避免误人子弟。联系方式在每页的页脚都有显示。&lt;/p&gt;
+&lt;p&gt;开这个博客，一个是想&lt;strong&gt;自己理理思路&lt;/strong&gt;，想算法啊什么的如果能说得新手明白，那自己也应该理解得差不多了；还有就是&lt;strong&gt;希望别人看了这个博客能有所收获吧&lt;/strong&gt;。因为很久以前看KMP（一个字符串匹配算法）的时候，刚开始真的是云里雾里，智商不够。后来看了好多别人写的文章，突然有一瞬间看着看着就觉得自己好像会了。谢谢那些无私写作发到博客里的大牛们，如果大牛们看见有哪写的不对的也希望能及时联系我，避免误人子弟。联系方式在每页的页脚都有显示。&lt;/p&gt;
 
-&lt;p&gt;看我发功！
-哼————哈！
-大家一起加油！！！&lt;/p&gt;
+&lt;p&gt;看我发功！&lt;/p&gt;
+
+&lt;p&gt;哼————哈！&lt;/p&gt;
+
+&lt;p&gt;大家一起加油！！！&lt;/p&gt;
 </description>
         <pubDate>Sat, 12 Dec 2015 00:00:00 +1100</pubDate>
-        <link>http://pwzxxm.com/cn/the-story-about-the-blog/</link>
-        <guid isPermaLink="true">http://pwzxxm.com/cn/the-story-about-the-blog/</guid>
+        <link>http://www.pwzxxm.com/cn/the-story-about-the-blog/</link>
+        <guid isPermaLink="true">http://www.pwzxxm.com/cn/the-story-about-the-blog/</guid>
         
         <category>blog</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>Welcome</title>
-        <description>&lt;p&gt;Welcome to the site. Love you.&lt;/p&gt;
-</description>
-        <pubDate>Thu, 10 Dec 2015 00:00:00 +1100</pubDate>
-        <link>http://pwzxxm.com/welcome/</link>
-        <guid isPermaLink="true">http://pwzxxm.com/welcome/</guid>
-        
-        <category>welcome</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>欢迎</title>
-        <description>&lt;p&gt;欢迎光临～ 么么哒～&lt;/p&gt;
-</description>
-        <pubDate>Thu, 10 Dec 2015 00:00:00 +1100</pubDate>
-        <link>http://pwzxxm.com/cn/welcome/</link>
-        <guid isPermaLink="true">http://pwzxxm.com/cn/welcome/</guid>
-        
-        <category>welcome</category>
         
         
       </item>

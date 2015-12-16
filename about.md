@@ -3,6 +3,6 @@ layout: about
 title: about
 permalink: /about/
 ---
-Just wanna have some funs.
+Finally, he had no more words.
 
 <p> o(*≧▽≦)ツ┏━┓</p>

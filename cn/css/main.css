@@ -243,10 +243,12 @@ blockquote {
       margin-bottom: 2px; }
     .post-list > li .post-data {
       color: #828282;
-      margin-top: 5px;
-      margin-bottom: -20px; }
+      margin-top: 10px;
+      margin-bottom: -15px; }
       .post-list > li .post-data a {
         color: #2273b6; }
+      .post-list > li .post-data h1, .post-list > li .post-data h2, .post-list > li .post-data h3, .post-list > li .post-data h4 {
+        font-size: 16px; }
     .post-list > li .post-link {
       display: block; }
     .post-list > li .post-meta {
@@ -267,30 +269,37 @@ blockquote {
   margin-bottom: 30px; }
 
 .post-title {
-  font-size: 42px;
+  font-size: 36px;
+  font-weight: bold;
   letter-spacing: -1px;
   line-height: 1; }
   @media screen and (max-width: 800px) {
     .post-title {
-      font-size: 36px; } }
+      font-size: 32px; } }
 
 .post-content {
   margin-bottom: 30px; }
+  .post-content ul {
+    list-style: disc; }
   .post-content h2 {
-    font-size: 32px; }
+    font-size: 26px;
+    margin-top: 30px; }
     @media screen and (max-width: 800px) {
       .post-content h2 {
-        font-size: 28px; } }
+        font-size: 22px; } }
   .post-content h3 {
-    font-size: 26px; }
+    font-size: 20px;
+    margin-top: 30px; }
     @media screen and (max-width: 800px) {
       .post-content h3 {
-        font-size: 22px; } }
+        font-size: 18px; } }
   .post-content h4 {
-    font-size: 20px; }
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 30px; }
     @media screen and (max-width: 800px) {
       .post-content h4 {
-        font-size: 18px; } }
+        font-size: 10px; } }
 
 /**
 * sidebar
@@ -372,6 +381,35 @@ blockquote {
   padding: 0 5px 0 5px;
   margin: 2px 0 2px 0;
   color: #2273b6; }
+
+table {
+  font-size: 14px;
+  border-collapse: collapse;
+  margin: 20px 0 0;
+  padding: 0; }
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+  margin: 0;
+  padding: 0; }
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8; }
+
+table tr th[align="center"], table tr td[align="center"] {
+  text-align: center; }
+
+table tr th, table tr td {
+  border: 1px solid #ccc;
+  text-align: left;
+  margin: 0;
+  padding: 6px 13px; }
+
+.not-found {
+  text-align: center; }
+  .not-found a {
+    font-size: 20px; }
 
 .sr-only {
   position: absolute;
@@ -459,7 +497,7 @@ blockquote {
 
 ul.pagination {
   padding: 0;
-  margin: 1em 0;
+  margin: 16px 0;
   text-align: center; }
   ul.pagination li {
     margin: 0 3px;
@@ -494,7 +532,14 @@ pre {
   white-space: pre;
   overflow-x: auto;
   word-break: inherit;
-  word-wrap: inherit; }
+  word-wrap: inherit;
+  padding-right: 30px; }
+
+code.inline-code {
+  font-family: monospace;
+  background: #eeeeee;
+  padding-left: 3px;
+  padding-right: 3px; }
 
 pre a::before {
   content: counter(line-numbering);

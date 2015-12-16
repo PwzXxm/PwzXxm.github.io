@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>使用Jekyll＋Github Pages搭建博客</title>
+  <meta name="description" content="为什么选择 Jekyll 和 Github PagesJekyll是一个静态网页生成器，使用YAML头信息可以很方便地使用各种布局，内置markdown，新的文章只需加入文件夹即可。Github Pages可以提供免费空间，免费无限流量来给网页当虚拟主机。他们俩配合起来相当默契，而且网上也有很多资料。但是有一点美...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="canonical" href="http://www.pwzxxm.com/cn/building-blog/">
+  <link rel="alternate" type="application/rss+xml" title="PwzXxm" href="http://www.pwzxxm.com/feed.xml">
+</head>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71107137-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    
+    <a class="site-title" href="/cn">PwzXxm</a>
+    
+
+    <nav class="site-nav">
+      <span class="english">
+      
+      <a href="/building-blog/">EN</a>
+      
+    </span>
+    <span class="chinese">
+      
+      <a href="/cn/building-blog/" style="color: #cdcdcd">中</a>
+      
+    </span>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">使用Jekyll＋Github Pages搭建博客</h1>
+    <p class="post-meta">
+      <time datetime="2015-12-15T00:00:00+11:00" itemprop="datePublished">
+        
+        2015年12月15号
+        
+      </time>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h2>为什么选择 Jekyll 和 Github Pages</h2>
+
+<p><a href="http://jekyll.bootcss.com/">Jekyll</a>是一个静态网页生成器，使用YAML头信息可以很方便地使用各种布局，内置markdown，新的文章只需加入文件夹即可。<a href="https://pages.github.com/">Github Pages</a>可以提供免费空间，免费无限流量来给网页当虚拟主机。他们俩配合起来相当默契，而且网上也有很多资料。但是有一点美中不足的是Github Pages是在安全模式下运行的，也就是说它并不支持Jekyll的插件。然而我们可以在本地带着插件生成好网站再放到Github上。虽然听起来不太方便，但是有脚本让我们一步实现。这点我们后面详细说。</p>
+
+<h2>准备</h2>
+
+<ol>
+<li>了解<a href="http://jekyllrb.com/docs/frontmatter/">YAML front matter</a>可以让包含头文件的文件自动：
+
+<ul>
+<li>拥有部分或全部布局及定义的重复标签</li>
+<li>变量 (<a href="http://liquidmarkup.org/">Liquid</a>)</li>
+</ul></li>
+<li>如果完全不了解HTML, CSS和JavaScript, 请查看<a href="http://www.w3schools.com/">W3School</a>，至少了解基本用法。</li>
+<li>了解<code class="inline-code">git</code>命令，如果不请查看<a href="http://rogerdudler.github.io/git-guide/">Git tutorial</a>或者其他资料。希望能至少使用命令行一次了解流程，这对以后会有所帮助。</li>
+</ol>
+
+<h2>创建仓库</h2>
+
+<p>详细步骤在<a href="https://pages.github.com/">这里</a>。</p>
+
+<p><strong>如果是个人／机构网站，请使用<code class="inline-code">master</code>分支，如果是项目网站，请使用<code class="inline-code">gh-pages</code>分支</strong></p>
+
+<h2>安装和初始化</h2>
+
+<p>步骤在<a href="https://help.github.com/articles/using-jekyll-with-pages/">Github help pages</a>有详细解释。</p>
+
+<p>完成安装后，初始化Jekyll在当前文件夹使用基本主题，运行</p>
+<div class="highlight"><pre><code class="text"><a name="line-1"></a>Jekyll new .
+<a name="line-2"></a>git init
+</code></pre></div>
+<p>如果出现类似<code class="inline-code">directory is not empty</code>之类的错误，先把文件夹下的内容移动到该文件夹外的临时文件夹内，运行命令后再放回原来的文件即可。</p>
+
+<h2>本地运行Jekyll和测试网站</h2>
+
+<p>如果您是<code class="inline-code">bundler</code>使用者，请运行<code class="inline-code">bundle exec jekyll server</code>或者<code class="inline-code">bundle exec jekyll serve</code>.<br>如果不是，请运行<code class="inline-code">jekyll server</code>或者<code class="inline-code">jekyll serve</code>。</p>
+
+<p>让命令运行(不要用ctrl+c终止命令)，打开网页浏览器，在地址栏输入<code class="inline-code">http://localhost:4000</code>，就能看见网站啦。</p>
+
+<h2>配置</h2>
+
+<h3>_config.yml文件</h3>
+
+<p><code class="inline-code">_config.yml</code>文件包含了网站设定，<a href="http://jekyll.bootcss.com/docs/configuration/">官网</a>上有详细阐述。下面介绍基本用法:</p>
+
+<table><thead>
+<tr>
+<th>变量</th>
+<th>用法</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>title</td>
+<td>网站名，默认下将是网站在搜索引擎出现的名字</td>
+</tr>
+<tr>
+<td>email</td>
+<td>在contac-list中显示的邮箱地址, 默认下出现在页脚</td>
+</tr>
+<tr>
+<td>description</td>
+<td>网站描述，默认下将出现在页脚</td>
+</tr>
+<tr>
+<td>baseurl</td>
+<td>网站的子路径, 例如设置成<code class="inline-code">/blog</code>，完整url将会变成<code class="inline-code">www.pwzxxm./com/blog</code></td>
+</tr>
+<tr>
+<td>url</td>
+<td>主机名和使用协议，完整url, 例如<code class="inline-code">http://www.pwzxxm.com</code></td>
+</tr>
+<tr>
+<td>github_username<br>twitter_username</td>
+<td>用于链接Github和Twitter, 默认下出现在页脚</td>
+</tr>
+<tr>
+<td>markdown</td>
+<td>使用的markdown引擎, e.g. <code class="inline-code">kramdown</code> <code class="inline-code">redcarpet</code></td>
+</tr>
+<tr>
+<td>highlighter</td>
+<td>语法高亮引擎, e.g. <code class="inline-code">pygments</code> <code class="inline-code">rouge</code></td>
+</tr>
+<tr>
+<td>permalink</td>
+<td>设置为<code class="inline-code">pretty</code>url将变成这样<code class="inline-code">site_url/time/title</code> <br>可以自定义例如<code class="inline-code">/:title/</code> <a href="http://jekyllrb.com/docs/permalinks/">查看详情</a></td>
+</tr>
+<tr>
+<td>pagination</td>
+<td>每页显示多少篇文章</td>
+</tr>
+</tbody></table>
+
+<h3>使用自定义域名</h3>
+
+<p>官网提供了两个基本版的页数标示，<a href="http://jekyll.bootcss.com/docs/pagination/">点这里</a>。 然而网上有适配移动端的<a href="http://www.timble.net/blog/2015/05/07/better-pagination-for-jekyll.html">Timble</a>，非常赞。</p>
+
+<h3>多语言支持</h3>
+
+<p>请查看<a href="http://jekyll-langs.liaohuqiu.net/">Jekyll Multi Language Plugin</a>。</p>
+
+<h3>如使用插件，在本地生成网站</h3>
+
+<p>简单的说就是另外创建一个“僵尸”仓库，先生成网站，再把<code class="inline-code">_site</code>文件夹下的文件放到原根目录然后禁止Github再次生成网站。</p>
+
+<ol>
+<li>在“僵尸”文件夹下执行<code class="inline-code">bundle exec jekyll serve build</code> or <code class="inline-code">jekyll build</code>。</li>
+<li>复制当前文件夹下所有文件到原仓库(****.github.io), 除了<code class="inline-code">README.md</code>。</li>
+<li>剪切原仓库的<code class="inline-code">_site</code>文件夹下所有文件到原仓库根目录。</li>
+<li><code class="inline-code">touch .nojekyll</code>禁止Github生成网站。</li>
+<li>提交所有到Github。</li>
+</ol>
+
+<p>这是bash脚本：</p>
+<div class="highlight"><pre><code class="bash"><a name="line-1"></a><span class="c">#!/bin/bash</span>
+<a name="line-2"></a>
+<a name="line-3"></a><span class="nv">comment</span><span class="o">=</span><span class="s2">&quot;$1&quot;</span>
+<a name="line-4"></a><span class="nv">push_commit</span><span class="o">=</span><span class="s2">&quot;git commit -a -m &#39;$comment&#39;&quot;</span>
+<a name="line-5"></a>
+<a name="line-6"></a><span class="c"># commit and push changes</span>
+<a name="line-7"></a><span class="nb">eval</span> <span class="s1">&#39;cd ~/git/local&#39;</span>  <span class="c"># modify PATH here</span>
+<a name="line-8"></a><span class="nb">eval</span> <span class="s1">&#39;bundle exec jekyll build&#39;</span>
+<a name="line-9"></a><span class="nb">eval</span> <span class="s1">&#39;git add .&#39;</span>
+<a name="line-10"></a><span class="nb">eval</span> <span class="nv">$push_commit</span>
+<a name="line-11"></a><span class="nb">eval</span> <span class="s1">&#39;git push --all origin&#39;</span>
+<a name="line-12"></a>
+<a name="line-13"></a><span class="c"># copy remove in pwzxxm.github.io</span>
+<a name="line-14"></a><span class="nb">eval</span> <span class="s1">&#39;cd ~/git/PwzXxm.github.io&#39;</span> <span class="c"># modify PATH here</span>
+<a name="line-15"></a><span class="nb">eval</span> <span class="s1">&#39;cp ./README.md ~/git/&#39;</span> <span class="c"># modify where you want to temporally put the README.md</span>
+<a name="line-16"></a><span class="nb">eval</span> <span class="s1">&#39;rm -rf ./*&#39;</span>
+<a name="line-17"></a><span class="nb">eval</span> <span class="s1">&#39;cp -r ~/git/local/* ./&#39;</span> <span class="c"># modify PATH here</span>
+<a name="line-18"></a><span class="nb">eval</span> <span class="s1">&#39;cp -r _site/* ./&#39;</span>
+<a name="line-19"></a><span class="nb">eval</span> <span class="s1">&#39;rm -rf _site/*&#39;</span>
+<a name="line-20"></a><span class="nb">eval</span> <span class="s1">&#39;cp ~/git/README.md ./&#39;</span> <span class="c"># put the file back</span>
+<a name="line-21"></a><span class="nb">eval</span> <span class="s1">&#39;touch .nojekyll&#39;</span>
+<a name="line-22"></a>
+<a name="line-23"></a><span class="c"># commit and push changes</span>
+<a name="line-24"></a><span class="nb">eval</span> <span class="s1">&#39;git add .&#39;</span>
+<a name="line-25"></a><span class="nb">eval</span> <span class="nv">$push_commit</span>
+<a name="line-26"></a><span class="nb">eval</span> <span class="s1">&#39;git push --all origin&#39;</span>
+<a name="line-27"></a><span class="nb">echo</span> <span class="s2">&quot;Done&quot;</span>
+</code></pre></div>
+<p>要使用它，复制上面代码到以<code class="inline-code">.sh</code>结尾的bash脚本文件中，修改路径，给权限，运行即可。</p>
+
+<h2>本站代码</h2>
+
+<p>如果想使用本站布局或想知道背后的代码，请访问</p>
+
+<ul>
+<li><a href="https://github.com/PwzXxm/PwzXxm.github.io">Pwzxxm.github.io</a></li>
+<li><a href="https://github.com/PwzXxm/local-site">local site</a>.</li>
+</ul>
+
+<p>您可以使用关于本站的任何代码，但禁止转载本站内容。如有需要，联系我联系我联系我。</p>
+
+  </div>
+
+</article>
+
+
+<span class="tags">
+  <ul>
+    
+    
+    标签：
+    
+    <li><a href="/cn/tags/#blog">blog</a></li>
+    
+    
+  </ul>
+</span>
+
+
+<p id="ex"></p>
+
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+var disqus_config = function () {
+  //var disqus_developer = 1; // Comment out when the site is live
+  var disqus_shortname = 'pwzxxm'
+  //this.page.url = http://www.pwzxxm.com; // Replace PAGE_URL with your page's canonical URL variable
+  
+  this.page.identifier = /cn/building-blog//cn; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//pwzxxm.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">PwzXxm</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="col1-list">
+          ʕ •ᴥ•ʔ
+          <li>
+            
+            <a href="/cn/tags">标签们</a>
+            
+          </li>
+          <li>
+            
+            <a href="/cn/about">关于我</a>
+            
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="col2-list">
+          <li>
+            <a href="mailto:cepheidfov@gmail.com">
+  <span class="icon icon--email">
+    <svg viewBox="0 0 841.891 595.281">
+<g>
+	<g>
+		<defs>
+			<path id="SVGID_1_" d="M15.969,539.152V58.521l279.627,243.07L15.969,539.152z M826.031,539.152L546.349,301.648l279.682-243.24
+				V539.152z M421.029,354.871L34.388,23.519C44.785,13.8,58.797,7.726,74.166,7.726h693.498c15.539,0,29.607,5.961,39.947,15.68
+				L421.029,354.871z M521.205,325.011l286.35,245.441c-10.396,9.719-24.408,15.82-39.834,15.82H74.222
+				c-15.482,0-29.551-5.988-39.891-15.707l286.463-245.611l100.234,87.746L521.205,325.011z"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  overflow="visible"/>
+		</clipPath>
+		<rect x="-273.319" y="-281.561" clip-path="url(#SVGID_2_)" fill='#828282' width="1388.637" height="1157.121"/>
+	</g>
+</g>
+</svg>
+
+  </span>
+  Email
+</a>
+
+          </li>
+          <li>
+              <a href="/feed.xml">
+    <span class="icon icon--rss">
+      <svg viewBox="0 0 1024.000000 1024.000000">
+<g transform="translate(0.000000,1024.000000) scale(0.100000,-0.100000)"
+fill="#000000" stroke="none">
+<path d="M1475 9116 c-60 -19 -84 -34 -143 -90 -67 -63 -99 -125 -112 -213
+-12 -84 -13 -813 -1 -905 11 -83 39 -142 97 -207 63 -70 129 -100 245 -111 52
+-5 169 -16 261 -25 1285 -122 2565 -662 3579 -1508 978 -818 1721 -1972 2079
+-3232 116 -410 202 -911 226 -1310 3 -60 12 -134 19 -163 25 -98 91 -178 195
+-233 l45 -24 520 0 520 0 50 26 c63 34 150 125 177 186 30 67 32 148 14 383
+-124 1535 -666 2971 -1582 4190 -278 370 -517 638 -920 1030 -616 600 -1419
+1145 -2224 1510 -865 391 -1746 619 -2693 695 -223 18 -298 18 -352 1z"/>
+<path d="M1530 6200 c-30 -4 -77 -16 -103 -28 -70 -31 -158 -124 -188 -197
+l-24 -60 0 -460 c0 -458 0 -460 23 -517 30 -74 108 -160 176 -193 39 -19 90
+-30 206 -45 389 -51 688 -127 995 -254 128 -53 392 -190 513 -266 467 -292
+927 -759 1209 -1228 267 -442 419 -894 493 -1462 23 -183 44 -234 125 -309
+101 -92 95 -91 630 -91 451 0 466 1 522 22 42 15 74 37 114 78 124 127 134
+204 78 599 -127 903 -505 1779 -1072 2486 -263 327 -602 658 -939 913 -704
+534 -1610 898 -2483 996 -199 23 -214 24 -275 16z"/>
+<path d="M2134 3266 c-298 -49 -564 -220 -737 -473 -123 -182 -178 -369 -178
+-613 0 -143 15 -242 51 -350 94 -284 339 -548 610 -660 157 -65 215 -75 435
+-74 173 0 210 3 277 21 307 86 563 295 704 574 155 310 149 722 -17 1018 -115
+205 -326 398 -528 482 -182 76 -429 106 -617 75z"/>
+</g>
+</svg>
+
+    </span>
+    RSS
+  </a>
+
+          </li>
+          
+          <li>
+            <a href="https://github.com/PwzXxm">
+  <span class="icon icon--github">
+    <svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+
+  </span>
+  <span class="username">
+    Github
+  </span>
+</a>
+
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <ul class="col3-list">
+          <li>© 2015 PwzXxm All Rights Reserved.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script id="dsq-count-scr" src="//pwzxxm.disqus.com/count.js" async></script>
+
+
+  </body>
+
+</html>

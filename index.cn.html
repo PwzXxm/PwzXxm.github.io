@@ -6,27 +6,27 @@ layout: default
 
 <div class="home">
     {% assign posts=site.posts | where:"lang", page.lang %}
-  <ul class="post-list">
-    <!-- This loops through the paginated posts -->
-    {% for post in paginator.posts %}
-    <li>
-      <h2><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
-      <div class="post-meta">
-        {{ post.date | date: "%Y年%-m月%-d号" }}&nbsp
-        {% assign sorted_tags = post.tags | sort %}
-        标签:
-        {% for tag in sorted_tags %}
-        <a href="/cn/tags/#{{ tag }}">{{ tag }}</a>
+    <ul class="post-list">
+        <!-- This loops through the paginated posts -->
+        {% for post in paginator.posts %}
+        <li>
+            <h2><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+            <div class="post-meta">
+                {{ post.date | date: "%Y年%-m月%-d号" }}&nbsp
+                {% assign sorted_tags = post.tags | sort %}
+                标签:
+                {% for tag in sorted_tags %}
+                <a href="/cn/tags/#{{ tag }}">{{ tag }}</a>
+                {% endfor %}
+            </div>
+            <div class="post-data">
+                {{ post.excerpt | truncatewords: 50 }}
+            </div>
+            {% if post.content contains site.excerpt_separator %}
+            <a class="post-more" href="{{ post.url | prepend: site.baseurl }}">更多...</a>
+            {% endif %}
+        </li>
         {% endfor %}
-      </div>
-      <div class="post-data">
-        {{ post.excerpt }}
-      </div>
-      {% if post.content contains site.excerpt_separator %}
-      <a class="post-more" href="{{ post.url | prepend: site.baseurl }}">更多...</a>
-      {% endif %}
-    </li>
-    {% endfor %}
-  </ul>
-  {% include pagination.html %}
+    </ul>
+    {% include pagination.html %}
 </div>

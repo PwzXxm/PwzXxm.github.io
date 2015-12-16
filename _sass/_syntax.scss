@@ -10,6 +10,15 @@ pre {
     overflow-x: auto;
     word-break: inherit;
     word-wrap: inherit;
+    padding-right:30px;
+}
+
+
+code.inline-code {
+    font-family: monospace;
+    background: #eeeeee;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 
 pre a::before {

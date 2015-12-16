@@ -3,7 +3,7 @@ title: PwzXxm
 email: cepheidfov@gmail.com
 description: Learning and sharing computer science ideas. Enjoy what you are passionated about.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://pwzxxm.com" # the base hostname & protocol for your site
+url: "http://www.pwzxxm.com" # the base hostname & protocol for your site
 github_username:  PwzXxm
 exclude: ["README.md"]
 gems:
@@ -18,10 +18,12 @@ fill_default_content: true
 
 
 # pagination
-paginate: 10
+paginate: 8
 paginate_limit: 5
 
 # Build settings
 markdown:  redcarpet-pygments
+redcarpet:
+  extensions: [tables]
 highlighter: pygments
 permalink: /:title/

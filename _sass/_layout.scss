@@ -158,10 +158,13 @@
     }
     .post-data {
       color: $grey-color;
-      margin-top: 5px;
-      margin-bottom: -20px;
+      margin-top: 10px;
+      margin-bottom: -15px;
       a {
         color: #2273b6;
+      }
+      h1, h2, h3, h4{
+          font-size: $base-font-size;
       }
     }
 
@@ -195,39 +198,48 @@
 }
 
 .post-title {
-  font-size: 42px;
+  font-size: 36px;
+  font-weight: bold;
   letter-spacing: -1px;
   line-height: 1;
 
   @include media-query($on-laptop) {
-    font-size: 36px;
+    font-size: 32px;
   }
 }
 
 .post-content {
   margin-bottom: $spacing-unit;
 
-  h2 {
-    font-size: 32px;
-
-    @include media-query($on-laptop) {
-      font-size: 28px;
-    }
+  ul {
+    list-style: disc;
   }
 
-  h3 {
+  h2 {
     font-size: 26px;
+    margin-top: $spacing-unit;
 
     @include media-query($on-laptop) {
       font-size: 22px;
     }
   }
 
-  h4 {
+  h3 {
     font-size: 20px;
+    margin-top: $spacing-unit;
 
     @include media-query($on-laptop) {
       font-size: 18px;
+    }
+  }
+
+  h4 {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: $spacing-unit;
+
+    @include media-query($on-laptop) {
+      font-size: 10px;
     }
   }
 }
@@ -308,6 +320,8 @@
       }
     }
   }
+
+
 }
 
 .hidden {
@@ -332,5 +346,45 @@
     padding: 0 5px 0 5px;
     margin: 2px 0 2px 0;
     color: #2273b6;
+  }
+}
+
+
+// Table
+table
+{
+  font-size: 14px;
+	border-collapse:collapse;
+	margin:20px 0 0;
+	padding:0;
+}
+
+table tr
+{
+	border-top:1px solid #ccc;
+	background-color:#fff;
+	margin:0;
+	padding:0;
+}
+
+table tr:nth-child(2n)
+{
+	background-color:#f8f8f8;
+}
+table tr th[align="center"], table tr td[align="center"] {
+	text-align:center;
+}
+table tr th, table tr td
+{
+	border:1px solid #ccc;
+	text-align:left;
+	margin:0;
+	padding:6px 13px;
+}
+
+.not-found {
+  text-align: center;
+  a {
+      font-size:20px;
   }
 }
