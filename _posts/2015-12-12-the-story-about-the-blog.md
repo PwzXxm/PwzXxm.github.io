@@ -8,7 +8,7 @@ tags:
 
 [PwzXxm](http://www.pwzxxm.com) is my first blog and also my first website I have ever built. I knew only a little bit of HTML before I started this project. I learned CSS and JavaScript while I'm building the site. I also read a lot of source code and blog posts about how other people build their own site using [Jekyll](http://jekyllrb.com/). It took me seven days. Finally, on the 10th of December, 2015, the site went alive.
 
-Details about building the site. (click me) (not yet, still editing)
+Details about building the site, [click me]({{ site.baseurl }}/building-blog-jekyll/).
 
 I was learning algorithms, c++ and practice ACM-ICPC but I stuck at graph theory and I did not have any progress on one particular problem for like three or four days. I always want to build a website and start writing some stuff. So I put other things aside and started to build this blog, and my friends give a lot of suggestions on the design of the website. Thank you.
 
