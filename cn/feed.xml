@@ -5,8 +5,8 @@
     <description>Learning and sharing computer science ideas. Enjoy what you are passionated about.</description>
     <link>http://www.pwzxxm.com/</link>
     <atom:link href="http://www.pwzxxm.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 17 Dec 2015 00:10:03 +1100</pubDate>
-    <lastBuildDate>Thu, 17 Dec 2015 00:10:03 +1100</lastBuildDate>
+    <pubDate>Thu, 17 Dec 2015 12:08:40 +1100</pubDate>
+    <lastBuildDate>Thu, 17 Dec 2015 12:08:40 +1100</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -339,7 +339,7 @@ However, I found this pagination from &lt;a href=&quot;http://www.timble.net/blo
 &lt;li&gt;&lt;a href=&quot;https://github.com/PwzXxm/local-site&quot;&gt;local site&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;您可以使用关于本站的任何代码，但禁止转载本站内容。如有需要，联系我联系我联系我。&lt;/p&gt;
+&lt;p&gt;您可以使用关于本站的任何代码，但禁止转载本站内容。如有需要，请联系我。&lt;/p&gt;
 </description>
         <pubDate>Tue, 15 Dec 2015 00:00:00 +1100</pubDate>
         <link>http://www.pwzxxm.com/cn/building-blog-jekyll/</link>

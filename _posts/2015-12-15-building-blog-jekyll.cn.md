@@ -110,4 +110,4 @@ echo "Done"
 - [Pwzxxm.github.io](https://github.com/PwzXxm/PwzXxm.github.io)
 - [local site](https://github.com/PwzXxm/local-site).
 
-您可以使用关于本站的任何代码，但禁止转载本站内容。如有需要，联系我联系我联系我。
+您可以使用关于本站的任何代码，但禁止转载本站内容。如有需要，请联系我。
