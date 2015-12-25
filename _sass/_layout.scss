@@ -159,7 +159,7 @@
     .post-data {
       color: $grey-color;
       margin-top: 10px;
-      margin-bottom: -15px;
+      margin-bottom: -5px;
       a {
         color: #2273b6;
       }
@@ -184,6 +184,10 @@
     .post-more {
       font-size: $base-font-size*0.8;
       color: $grey-color;
+      img {
+          margin-top: -12px;
+          margin-left: -2px;
+      }
     }
   }
 }
@@ -218,6 +222,7 @@
   h2 {
     font-size: 26px;
     margin-top: $spacing-unit;
+    font-weight: bold;
 
     @include media-query($on-laptop) {
       font-size: 22px;
@@ -227,6 +232,7 @@
   h3 {
     font-size: 20px;
     margin-top: $spacing-unit;
+    font-weight: bold;
 
     @include media-query($on-laptop) {
       font-size: 18px;
@@ -336,6 +342,12 @@
     margin-bottom: $spacing-unit;
     li {
       margin: 5px 0 5px 0;
+      .blog-date {
+        display: inline-block;
+        font-size: $base-font-size*0.7;
+        color: $grey-color;
+        margin-left: 5px;
+      }
     }
   }
   a {
@@ -353,7 +365,10 @@
 // Table
 table
 {
-  font-size: 14px;
+    overflow-x: auto;
+    display: block;
+    min-width: 300px;
+    font-size: 14px;
 	border-collapse:collapse;
 	margin:20px 0 0;
 	padding:0;
@@ -371,9 +386,11 @@ table tr:nth-child(2n)
 {
 	background-color:#f8f8f8;
 }
+
 table tr th[align="center"], table tr td[align="center"] {
 	text-align:center;
 }
+
 table tr th, table tr td
 {
 	border:1px solid #ccc;
@@ -382,6 +399,7 @@ table tr th, table tr td
 	padding:6px 13px;
 }
 
+// 404 page
 .not-found {
   text-align: center;
   a {

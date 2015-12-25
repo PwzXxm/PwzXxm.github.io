@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>栈，队列和链表</title>
+  <meta name="description" content="栈，队列和链表是最基础的数据结构，它们出现在很多生活场景中，比如说堆起来的集装箱，排队坐过山车，人体蜈蚣（如果不知道就别去搜了，啦啦啦）">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="canonical" href="http://www.pwzxxm.com/cn/stack-queue-link-list/">
+  <link rel="alternate" type="application/rss+xml" title="PwzXxm" href="http://www.pwzxxm.com/feed.xml">
+</head>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-71107137-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+  <body>
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    
+    <a class="site-title" href="/cn">PwzXxm</a>
+    
+
+    <nav class="site-nav">
+      <span class="english">
+      
+      <a href="/stack-queue-link-list/">EN</a>
+      
+    </span>
+    <span class="chinese">
+      
+      <a href="/cn/stack-queue-link-list/" style="color: #cdcdcd">中</a>
+      
+    </span>
+    </nav>
+
+  </div>
+
+</header>
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">栈，队列和链表</h1>
+    <p class="post-meta">
+      <time datetime="2015-12-25T00:00:00+11:00" itemprop="datePublished">
+        
+        2015年12月25号
+        
+      </time>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>栈，队列和链表是最基础的数据结构，它们出现在很多生活场景中，比如说堆起来的集装箱，排队坐过山车，人体蜈蚣（如果不知道就别去搜了，啦啦啦）</p>
+
+<ul>
+<li><a href="#stack">栈</a>
+
+<ul>
+<li><a href="#stack-intro">简介</a></li>
+<li><a href="#stack-array-implementation">数组实现</a></li>
+<li><a href="#stack-linked-list-implementation">链表实现</a></li>
+<li><a href="#stack-c++-stl-stack">C++ STL - stack</a></li>
+</ul></li>
+<li><a href="#queue">队列</a>
+
+<ul>
+<li><a href="#q-intro">简介</a></li>
+<li><a href="#q-linked-list-implementation">链表实现</a></li>
+<li><a href="#q-c++-stl-queue">C++ STL - queue</a></li>
+<li><a href="#q-priority-queue">优先队列</a></li>
+</ul></li>
+<li><a href="#linked-list">链表</a>
+
+<ul>
+<li><a href="#ll-intro">简介</a></li>
+<li><a href="#ll-c++-struct-implementation">C++ struct 实现</a></li>
+</ul></li>
+</ul>
+
+<h2 id="栈"><a name="stack"></a> 栈</h2>
+
+<h3 id="简介"><a name="stack-intro"></a> 简介</h3>
+
+<p>栈就像堆起来的集装箱，或者是一堆书，每次加入新的元素只能在旧的之上，每次移出元素只能拿出最新加入的，所以有“<strong>后进先出</strong>”的原则(后进去的元素先出来)。</p>
+
+<p>常见操作有:</p>
+
+<table><thead>
+<tr>
+<th style="text-align: center">进栈</th>
+<th style="text-align: center">出栈</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center"><img src="/img/post/stack_push.gif" alt="stack_push"></td>
+<td style="text-align: center"><img src="/img/post/stack_pop.gif" alt="stack_pop"></td>
+</tr>
+</tbody></table>
+
+<h3 id="数组实现"><a name="stack-array-implementation"></a>  数组实现</h3>
+
+<p>一般我们用数组的第一个元素<code class="inline-code">array[0]</code>作为栈底，创建一个变量<code class="inline-code">max_index</code>来存储栈的最顶部元素在数组中的下标，也就是数组最后一个栈中元素的下标。</p>
+
+<p>进栈：<code class="inline-code">max_index += 1</code>，然后在该下标插入进栈的元素</p>
+
+<p>出栈：初始化在<code class="inline-code">max_index</code>下标的元素，<code class="inline-code">max_index -= 1</code></p>
+
+<h3 id="链表实现"><a name="stack-linked-list-implementation"></a> 链表实现</h3>
+
+<p>单向链表，用<code class="inline-code">head</code>记录栈头，每个元素都有<code class="inline-code">next</code>指向下一个元素，栈顶的<code class="inline-code">next</code>指向<code class="inline-code">NULL</code>，<code class="inline-code">size</code>纪录链表大小（栈的大小）。</p>
+
+<p>进栈：让在栈顶（链表尾部）元素的<code class="inline-code">next</code>指向新的元素，新元素的<code class="inline-code">next</code>为<code class="inline-code">null</code>，<code class="inline-code">size += 1</code></p>
+
+<p>出栈：初始化栈顶（链表尾部）元素，移动到上一个元素，设置<code class="inline-code">next</code>为<code class="inline-code">null</code>, <code class="inline-code">size -= 1</code></p>
+
+<h3 id="c-stl-stack"><a name="stack-c++-stl-stack"></a> C++ STL - stack</h3>
+<div class="highlight"><pre><code class="cpp"><a name="line-1"></a><span class="cp">#include&lt;iostream&gt;</span>
+<a name="line-2"></a><span class="cp">#include&lt;stack&gt;</span>
+<a name="line-3"></a><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<a name="line-4"></a>
+<a name="line-5"></a><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-6"></a>    <span class="cm">/* 创建一个栈，名为stk，元素类型为int */</span>
+<a name="line-7"></a>    <span class="n">stack</span> <span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">stk</span><span class="p">;</span>
+<a name="line-8"></a>
+<a name="line-9"></a>    <span class="cm">/* 使一个元素进栈 */</span>
+<a name="line-10"></a>    <span class="n">stk</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>    <span class="c1">// 1</span>
+<a name="line-11"></a>    <span class="n">stk</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>    <span class="c1">// 1 2</span>
+<a name="line-12"></a>
+<a name="line-13"></a>    <span class="cm">/*</span>
+<a name="line-14"></a><span class="cm">     * cout &lt;&lt; stk.push(3) &lt;&lt; endl;</span>
+<a name="line-15"></a><span class="cm">     * 错误！！ stk.push(3) 返回void类型</span>
+<a name="line-16"></a><span class="cm">     */</span>
+<a name="line-17"></a>
+<a name="line-18"></a>    <span class="cm">/* top() 返回栈最顶部的元素，且不改变栈 */</span>
+<a name="line-19"></a>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// print out 2</span>
+<a name="line-20"></a>
+<a name="line-21"></a>    <span class="n">stk</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<a name="line-22"></a>
+<a name="line-23"></a>    <span class="cm">/* 返回栈的大小，有多少元素 */</span>
+<a name="line-24"></a>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">stk</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// print out 3</span>
+<a name="line-25"></a>
+<a name="line-26"></a>    <span class="cm">/* 使栈顶部的元素出栈，返回void类型 */</span>
+<a name="line-27"></a>    <span class="n">stk</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<a name="line-28"></a>    <span class="n">stk</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+<a name="line-29"></a>
+<a name="line-30"></a>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">stk</span><span class="p">.</span><span class="n">top</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// print out 1</span>
+<a name="line-31"></a>
+<a name="line-32"></a>    <span class="cm">/* 查看栈是否为空，如果为空，返回真(1) */</span>
+<a name="line-33"></a>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">stk</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<a name="line-34"></a>
+<a name="line-35"></a>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-36"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="队列"><a name="queue"></a> 队列</h2>
+
+<h3 id="简介"><a name="q-intro"></a> 简介</h3>
+
+<p>队列就像排队一样，在队尾加入新的元素，在队首出队。所以队列有着“<strong>先进先出</strong>”的原则。</p>
+
+<p>常见操作有：</p>
+
+<table><thead>
+<tr>
+<th style="text-align: center">入队</th>
+<th style="text-align: center">出队</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center"><img src="/img/post/queue_enqueue.gif" alt="queue_enqueue"></td>
+<td style="text-align: center"><img src="/img/post/queue_dequeue.gif" alt="queue_dequeue"></td>
+</tr>
+</tbody></table>
+
+<h3 id="链表实现"><a name="q-linked-list-implementation"></a> 链表实现</h3>
+
+<p>使用单向链表，用<code class="inline-code">head</code>记录队列头，每个元素都有<code class="inline-code">next</code>指向下一个元素，队尾元素的<code class="inline-code">next</code>指向<code class="inline-code">NULL</code>，<code class="inline-code">size</code>纪录队列的长度。</p>
+
+<p>入队：在队尾（链表尾部）插入元素，即旧队尾的<code class="inline-code">next</code>指向新元素，新元素的<code class="inline-code">next</code>指向<code class="inline-code">null</code>，<code class="inline-code">size += 1</code></p>
+
+<p>出队：通过<code class="inline-code">next</code>移动到第二个元素，<code class="inline-code">head</code>指向第二个元素，初始化原队首（链表头部），<code class="inline-code">size -= 1</code></p>
+
+<h3 id="c-stl-queue"><a name="q-c++-stl-queue"></a> C++ STL - queue</h3>
+
+<p>基本用法和栈相同，</p>
+
+<p><strong>需要特别注意的一点是队列分别使用<code class="inline-code">front</code>和<code class="inline-code">back</code>来返回队首和队尾元素。</strong></p>
+<div class="highlight"><pre><code class="cpp"><a name="line-1"></a><span class="cp">#include&lt;iostream&gt;</span>
+<a name="line-2"></a><span class="cp">#include&lt;queue&gt;</span>
+<a name="line-3"></a><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<a name="line-4"></a>
+<a name="line-5"></a><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+<a name="line-6"></a>    <span class="n">queue</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">q</span><span class="p">;</span>
+<a name="line-7"></a>    <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// q: 1</span>
+<a name="line-8"></a>    <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="c1">// q: 1 2</span>
+<a name="line-9"></a>
+<a name="line-10"></a>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// 1</span>
+<a name="line-11"></a>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">q</span><span class="p">.</span><span class="n">back</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// 2</span>
+<a name="line-12"></a>
+<a name="line-13"></a>    <span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span> <span class="c1">// q: 1 2 3</span>
+<a name="line-14"></a>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">q</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// 3</span>
+<a name="line-15"></a>    <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span> <span class="c1">// q: 2 3</span>
+<a name="line-16"></a>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">q</span><span class="p">.</span><span class="n">front</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// 2</span>
+<a name="line-17"></a>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">q</span><span class="p">.</span><span class="n">back</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// 3</span>
+<a name="line-18"></a>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="c1">// 0</span>
+<a name="line-19"></a>
+<a name="line-20"></a>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-21"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="优先队列"><a name="q-priority-queue"></a> 优先队列</h3>
+
+<p>优先队列类似于队列，只不过每个元素都有一个优先级，出队的元素不一定是最先入队的元素，而是当前队列中优先级最高的元素。就像有人有VIP卡的可以走专属通道，有人可以插队一样，对每个元素来说并不公平，叹气。</p>
+
+<p>在C++ STL中，如果把<code class="inline-code">int</code>作为优先队列的类型， 默认情况下如果是整数的优先队列，那整数越小，则优先级越低。如果想整数越大，优先级越低，可以用<code class="inline-code">greater<int></code>, 完整声明<code class="inline-code">std::priority_queue<int, std::vector<int>, std::greater<int> q_name</code>。如有其它需求，可自定义<code class="inline-code">cmp</code>函数来完成优先级的比较。</p>
+
+<p><strong>另外需特别注意的是，优先队列取队首元素不再是用队列的<code class="inline-code">front()</code>，而是用<code class="inline-code">top()</code>。</strong></p>
+
+<h2 id="链表"><a name="linked-list"></a> 链表</h2>
+
+<h3 id="简介"><a name="ll-intro"></a> 简介</h3>
+
+<p>链表像一个个回形针串起来的链子。链表有多种结构：单向链表，双向链表，循环链表等等。主要介绍单向链表，其他类型脑补脑补ok的。</p>
+
+<p>常见操作有：</p>
+
+<ul>
+<li>添加节点</li>
+<li>销毁节点</li>
+<li>下一节点</li>
+</ul>
+
+<p><img src="/img/post/link_in.gif" alt="link_in"></p>
+
+<h3 id="c-struct-实现"><a name="ll-c++-struct-implementation"></a> C++ struct 实现</h3>
+<div class="highlight"><pre><code class="cpp"><a name="line-1"></a><span class="cp">#include&lt;iostream&gt;</span>
+<a name="line-2"></a>
+<a name="line-3"></a><span class="k">struct</span> <span class="n">Node</span> <span class="p">{</span>
+<a name="line-4"></a>    <span class="kt">int</span> <span class="n">value</span><span class="p">;</span>
+<a name="line-5"></a>    <span class="n">Node</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<a name="line-6"></a><span class="p">};</span>
+<a name="line-7"></a>
+<a name="line-8"></a><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+<a name="line-9"></a>    <span class="n">Node</span> <span class="o">*</span><span class="n">root</span><span class="p">;</span>
+<a name="line-10"></a>    <span class="n">Node</span> <span class="o">*</span><span class="n">cur</span><span class="p">;</span>
+<a name="line-11"></a>
+<a name="line-12"></a>    <span class="cm">/* 初始化链表 */</span>
+<a name="line-13"></a>    <span class="n">root</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">;</span>
+<a name="line-14"></a>    <span class="n">root</span><span class="o">-&gt;</span><span class="n">value</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<a name="line-15"></a>    <span class="n">root</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+<a name="line-16"></a>    <span class="n">cur</span> <span class="o">=</span> <span class="n">root</span><span class="p">;</span>
+<a name="line-17"></a>
+<a name="line-18"></a>    <span class="cm">/* 在链表尾部加入节点 */</span>
+<a name="line-19"></a>    <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+<a name="line-20"></a>    <span class="n">cur</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">;</span>
+<a name="line-21"></a>    <span class="n">cur</span><span class="o">-&gt;</span><span class="n">value</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+<a name="line-22"></a>    <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="c1">// linked list: 1 2</span>
+<a name="line-23"></a>
+<a name="line-24"></a>    <span class="cm">/* 在节点中间 */</span>
+<a name="line-25"></a>    <span class="n">Node</span> <span class="o">*</span><span class="n">second</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">;</span>
+<a name="line-26"></a>    <span class="n">second</span><span class="o">-&gt;</span><span class="n">value</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<a name="line-27"></a>    <span class="n">second</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">cur</span><span class="p">;</span>
+<a name="line-28"></a>    <span class="n">root</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">second</span><span class="p">;</span> <span class="c1">// linked list: 1 3 2</span>
+<a name="line-29"></a>
+<a name="line-30"></a>    <span class="cm">/* 知道数据，寻找节点 */</span>
+<a name="line-31"></a>    <span class="n">cur</span> <span class="o">=</span> <span class="n">root</span><span class="p">;</span>
+<a name="line-32"></a>    <span class="k">while</span> <span class="p">(</span><span class="n">cur</span><span class="o">-&gt;</span><span class="n">value</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-33"></a>        <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+<a name="line-34"></a>    <span class="p">}</span>
+<a name="line-35"></a>    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>  <span class="c1">// 3</span>
+<a name="line-36"></a>
+<a name="line-37"></a>    <span class="cm">/* 遍历到链表尾部 */</span>
+<a name="line-38"></a>    <span class="k">while</span> <span class="p">(</span><span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-39"></a>        <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+<a name="line-40"></a>    <span class="p">}</span>
+<a name="line-41"></a>    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">value</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// 2</span>
+<a name="line-42"></a>
+<a name="line-43"></a>    <span class="cm">/* 删除节点 */</span>
+<a name="line-44"></a>    <span class="n">Node</span> <span class="o">*</span><span class="n">last</span><span class="p">;</span>
+<a name="line-45"></a>    <span class="n">cur</span> <span class="o">=</span> <span class="n">root</span><span class="p">;</span>
+<a name="line-46"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">cur</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+<a name="line-47"></a>        <span class="p">;</span> <span class="c1">// empty list</span>
+<a name="line-48"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">cur</span><span class="o">-&gt;</span><span class="n">value</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// if we want to delete the first node</span>
+<a name="line-49"></a>        <span class="n">root</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+<a name="line-50"></a>        <span class="k">delete</span> <span class="n">cur</span><span class="p">;</span>
+<a name="line-51"></a>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a name="line-52"></a>        <span class="k">while</span> <span class="p">(</span><span class="n">cur</span><span class="o">-&gt;</span><span class="n">value</span> <span class="o">!=</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-53"></a>            <span class="n">last</span> <span class="o">=</span> <span class="n">cur</span><span class="p">;</span>
+<a name="line-54"></a>            <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+<a name="line-55"></a>        <span class="p">}</span>
+<a name="line-56"></a>
+<a name="line-57"></a>        <span class="k">if</span> <span class="p">(</span><span class="n">cur</span><span class="o">-&gt;</span><span class="n">value</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-58"></a>            <span class="n">last</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+<a name="line-59"></a>            <span class="k">delete</span> <span class="n">cur</span><span class="p">;</span>
+<a name="line-60"></a>        <span class="p">}</span>
+<a name="line-61"></a>    <span class="p">}</span>
+<a name="line-62"></a><span class="p">}</span>
+</code></pre></div>
+  </div>
+
+</article>
+
+
+<span class="tags">
+  <ul>
+    
+    
+    标签：
+    
+    <li><a href="/cn/tags/#data-structure">data-structure</a></li>
+    
+    
+  </ul>
+</span>
+
+
+<p id="ex"></p>
+
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+var disqus_config = function () {
+  //var disqus_developer = 1; // Comment out when the site is live
+  var disqus_shortname = 'pwzxxm'
+  //this.page.url = http://www.pwzxxm.com; // Replace PAGE_URL with your page's canonical URL variable
+  
+  this.page.identifier = /cn/stack-queue-link-list//cn; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//pwzxxm.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+      </div>
+    </div>
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">PwzXxm</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="col1-list">
+          ʕ •ᴥ•ʔ
+          <li>
+            
+            <a href="/cn/tags">标签们</a>
+            
+          </li>
+          <li>
+            
+            <a href="/cn/about">关于我</a>
+            
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="col2-list">
+          <li>
+            <a href="mailto:cepheidfov@gmail.com">
+  <span class="icon icon--email">
+    <svg viewBox="0 0 841.891 595.281">
+<g>
+	<g>
+		<defs>
+			<path id="SVGID_1_" d="M15.969,539.152V58.521l279.627,243.07L15.969,539.152z M826.031,539.152L546.349,301.648l279.682-243.24
+				V539.152z M421.029,354.871L34.388,23.519C44.785,13.8,58.797,7.726,74.166,7.726h693.498c15.539,0,29.607,5.961,39.947,15.68
+				L421.029,354.871z M521.205,325.011l286.35,245.441c-10.396,9.719-24.408,15.82-39.834,15.82H74.222
+				c-15.482,0-29.551-5.988-39.891-15.707l286.463-245.611l100.234,87.746L521.205,325.011z"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  overflow="visible"/>
+		</clipPath>
+		<rect x="-273.319" y="-281.561" clip-path="url(#SVGID_2_)" fill='#828282' width="1388.637" height="1157.121"/>
+	</g>
+</g>
+</svg>
+
+  </span>
+  Email
+</a>
+
+          </li>
+          <li>
+              <a href="/feed.xml">
+    <span class="icon icon--rss">
+      <svg viewBox="0 0 1024.000000 1024.000000">
+<g transform="translate(0.000000,1024.000000) scale(0.100000,-0.100000)"
+fill="#000000" stroke="none">
+<path d="M1475 9116 c-60 -19 -84 -34 -143 -90 -67 -63 -99 -125 -112 -213
+-12 -84 -13 -813 -1 -905 11 -83 39 -142 97 -207 63 -70 129 -100 245 -111 52
+-5 169 -16 261 -25 1285 -122 2565 -662 3579 -1508 978 -818 1721 -1972 2079
+-3232 116 -410 202 -911 226 -1310 3 -60 12 -134 19 -163 25 -98 91 -178 195
+-233 l45 -24 520 0 520 0 50 26 c63 34 150 125 177 186 30 67 32 148 14 383
+-124 1535 -666 2971 -1582 4190 -278 370 -517 638 -920 1030 -616 600 -1419
+1145 -2224 1510 -865 391 -1746 619 -2693 695 -223 18 -298 18 -352 1z"/>
+<path d="M1530 6200 c-30 -4 -77 -16 -103 -28 -70 -31 -158 -124 -188 -197
+l-24 -60 0 -460 c0 -458 0 -460 23 -517 30 -74 108 -160 176 -193 39 -19 90
+-30 206 -45 389 -51 688 -127 995 -254 128 -53 392 -190 513 -266 467 -292
+927 -759 1209 -1228 267 -442 419 -894 493 -1462 23 -183 44 -234 125 -309
+101 -92 95 -91 630 -91 451 0 466 1 522 22 42 15 74 37 114 78 124 127 134
+204 78 599 -127 903 -505 1779 -1072 2486 -263 327 -602 658 -939 913 -704
+534 -1610 898 -2483 996 -199 23 -214 24 -275 16z"/>
+<path d="M2134 3266 c-298 -49 -564 -220 -737 -473 -123 -182 -178 -369 -178
+-613 0 -143 15 -242 51 -350 94 -284 339 -548 610 -660 157 -65 215 -75 435
+-74 173 0 210 3 277 21 307 86 563 295 704 574 155 310 149 722 -17 1018 -115
+205 -326 398 -528 482 -182 76 -429 106 -617 75z"/>
+</g>
+</svg>
+
+    </span>
+    RSS
+  </a>
+
+          </li>
+          
+          <li>
+            <a href="https://github.com/PwzXxm">
+  <span class="icon icon--github">
+    <svg viewBox="0 0 16 16"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+
+  </span>
+  <span class="username">
+    Github
+  </span>
+</a>
+
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <ul class="col3-list">
+          <li>© 2015 PwzXxm All Rights Reserved.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script id="dsq-count-scr" src="//pwzxxm.disqus.com/count.js" async></script>
+
+  </body>
+
+</html>

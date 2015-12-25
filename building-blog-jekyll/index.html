@@ -28,7 +28,6 @@
 
 
   <body>
-
     <header class="site-header">
 
   <div class="wrapper">
@@ -54,7 +53,6 @@
 
 </header>
 
-
     <div class="page-content">
       <div class="wrapper">
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
@@ -71,28 +69,28 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h2>Why Jekyll and Github Pages</h2>
+    <h2 id="why-jekyll-and-github-pages">Why Jekyll and Github Pages</h2>
 
 <p><a href="https://jekyllrb.com/">Jekyll</a> is an static site generator, it is simple to use with YAML front matter. It is quite convenient to blog with markdown and Jekyll supports it build-in. <a href="https://pages.github.com/">Github Pages</a> provide the space to host the website for free. Both of them are well-documented, and works well with each other. One thing that makes they works well but not perfect is that although Github Pages can generate the website using Jekyll but as it generates in safe mode, it does not support Jekyll plugin. However, the good news is we can generate the site locally and then push it to Github. It sounds like not convenient but we can write a bash script to do so automatically in one step. We will talk about it later.</p>
 
-<h2>Preparations</h2>
+<h2 id="preparations">Preparations</h2>
 
 <ol>
 <li>Know <a href="http://jekyllrb.com/docs/frontmatter/">YAML front matter</a> is something you can put at the front of a script and it can automatically
 
 <ul>
 <li>have part of the layout and tags you defined before</li>
-<li>define variables ([Liquid]tags(http://liquidmarkup.org/))</li>
+<li>define variables ([Liquid]tags(<a href="http://liquidmarkup.org/)">http://liquidmarkup.org/)</a>)</li>
 </ul></li>
 <li>If you don&#39;t know HMTL, CSS or JavaScript, you would better check out <a href="http://www.w3schools.com/">W3School</a> and at least know the basic of them.</li>
 <li>Be able to using <code class="inline-code">git</code> commands, if not please check <a href="http://rogerdudler.github.io/git-guide/">Git tutorial</a> or search on Google. You could use a desktop version instead of command lines, but I think it&#39;s better to try comment line once because it may help you to have a better understanding of how it works.</li>
 </ol>
 
-<h2>Set up repository</h2>
+<h2 id="set-up-repository">Set up repository</h2>
 
 <p>Following the steps on <a href="https://pages.github.com/">Github Pages</a> to initiate the repository. <strong>Caution: If you are building user/organisation pages, please use <code class="inline-code">master</code> branch, if you are building project pages, please use <code class="inline-code">gh-pages</code> instead.</strong></p>
 
-<h2>Install and Initiate</h2>
+<h2 id="install-and-initiate">Install and Initiate</h2>
 
 <p>Steps are shown <a href="https://help.github.com/articles/using-jekyll-with-pages/">here</a>.</p>
 
@@ -102,15 +100,15 @@
 </code></pre></div>
 <p>If you have a error says the directory is not empty, just move all files to other directory and move them back after initiation.</p>
 
-<h2>Running Jekyll and Test Websites Locally</h2>
+<h2 id="running-jekyll-and-test-websites-locally">Running Jekyll and Test Websites Locally</h2>
 
 <p>If you use <code class="inline-code">bundler</code>, you need to use <code class="inline-code">bundle exec jekyll server</code> or <code class="inline-code">bundle exec jekyll serve</code>.<br>For those who don&#39;t, please use <code class="inline-code">jekyll server</code> or <code class="inline-code">jekyll serve</code>.</p>
 
 <p>Leave command window as it is running and then open your browser and navigate to <code class="inline-code">http://localhost:4000</code> and you can see your site locally.</p>
 
-<h2>Configuring</h2>
+<h2 id="configuring">Configuring</h2>
 
-<h3>_config.yml file</h3>
+<h3 id="_config-yml-file">_config.yml file</h3>
 
 <p><code class="inline-code">_config.yml</code> contains settings for the website, check out details at the official website <a href="http://jekyllrb.com/docs/configuration/">here</a>.</p>
 
@@ -162,7 +160,7 @@
 </tr>
 </tbody></table>
 
-<h3>Host your website using custom domain</h3>
+<h3 id="host-your-website-using-custom-domain">Host your website using custom domain</h3>
 
 <ul>
 <li>you need to buy a domain from a domain registrar, like <a href="https://godaddy.com">Godaddy</a>.</li>
@@ -172,16 +170,16 @@
 <li><a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/">Find more details</a></li>
 </ul>
 
-<h3>Pagination</h3>
+<h3 id="pagination">Pagination</h3>
 
 <p>There are two basic scripts can do pagination on <a href="http://jekyllrb.com/docs/pagination/">Jekyll official documentation</a>.
 However, I found this pagination from <a href="http://www.timble.net/blog/2015/05/07/better-pagination-for-jekyll.html">Timble</a> which is awesome.</p>
 
-<h3>Multi-language site</h3>
+<h3 id="multi-language-site">Multi-language site</h3>
 
 <p>Check out <a href="http://jekyll-langs.liaohuqiu.net/">Jekyll Multi Language Plugin</a>.</p>
 
-<h3>Build the site locally if you use plugins</h3>
+<h3 id="build-the-site-locally-if-you-use-plugins">Build the site locally if you use plugins</h3>
 
 <p>The problem is Github build Jekyll websites in safe mode so the plugin won&#39;t work. However, we can create a &#39;dummy&#39; repository to generate the site first and then move the content in <code class="inline-code">_site</code> folder to the original repository.</p>
 
@@ -224,7 +222,7 @@ However, I found this pagination from <a href="http://www.timble.net/blog/2015/0
 </code></pre></div>
 <p>To use it, simply copy it to a <code class="inline-code">yourchoice.sh</code> file, change the paths in the file and give it permission to run, and run it.</p>
 
-<h2>This Site</h2>
+<h2 id="this-site">This Site</h2>
 
 <p>If you like the style or you want to know the codes behind it, just check out:</p>
 
@@ -283,7 +281,6 @@ s.setAttribute('data-timestamp', +new Date());
 
       </div>
     </div>
-
     <footer class="site-footer">
 
   <div class="wrapper">
@@ -402,7 +399,6 @@ l-24 -60 0 -460 c0 -458 0 -460 23 -517 30 -74 108 -160 176 -193 39 -19 90
 })();
 </script>
 <script id="dsq-count-scr" src="//pwzxxm.disqus.com/count.js" async></script>
-
 
   </body>
 

@@ -28,7 +28,6 @@
 
 
   <body>
-
     <header class="site-header">
 
   <div class="wrapper">
@@ -54,7 +53,6 @@
 
 </header>
 
-
     <div class="page-content">
       <div class="wrapper">
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
@@ -71,11 +69,11 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h2>为什么选择 Jekyll 和 Github Pages</h2>
+    <h2 id="为什么选择-jekyll-和-github-pages">为什么选择 Jekyll 和 Github Pages</h2>
 
 <p><a href="http://jekyll.bootcss.com/">Jekyll</a>是一个静态网页生成器，使用YAML头信息可以很方便地使用各种布局，内置markdown，新的文章只需加入文件夹即可。<a href="https://pages.github.com/">Github Pages</a>可以提供免费空间，免费无限流量来给网页当虚拟主机。他们俩配合起来相当默契，而且网上也有很多资料。但是有一点美中不足的是Github Pages是在安全模式下运行的，也就是说它并不支持Jekyll的插件。然而我们可以在本地带着插件生成好网站再放到Github上。虽然听起来不太方便，但是有脚本让我们一步实现。这点我们后面详细说。</p>
 
-<h2>准备</h2>
+<h2 id="准备">准备</h2>
 
 <ol>
 <li>了解<a href="http://jekyllrb.com/docs/frontmatter/">YAML front matter</a>可以让包含头文件的文件自动：
@@ -88,13 +86,13 @@
 <li>了解<code class="inline-code">git</code>命令，如果不请查看<a href="http://rogerdudler.github.io/git-guide/">Git tutorial</a>或者其他资料。希望能至少使用命令行一次了解流程，这对以后会有所帮助。</li>
 </ol>
 
-<h2>创建仓库</h2>
+<h2 id="创建仓库">创建仓库</h2>
 
 <p>详细步骤在<a href="https://pages.github.com/">这里</a>。</p>
 
 <p><strong>如果是个人／机构网站，请使用<code class="inline-code">master</code>分支，如果是项目网站，请使用<code class="inline-code">gh-pages</code>分支</strong></p>
 
-<h2>安装和初始化</h2>
+<h2 id="安装和初始化">安装和初始化</h2>
 
 <p>步骤在<a href="https://help.github.com/articles/using-jekyll-with-pages/">Github help pages</a>有详细解释。</p>
 
@@ -104,15 +102,15 @@
 </code></pre></div>
 <p>如果出现类似<code class="inline-code">directory is not empty</code>之类的错误，先把文件夹下的内容移动到该文件夹外的临时文件夹内，运行命令后再放回原来的文件即可。</p>
 
-<h2>本地运行Jekyll和测试网站</h2>
+<h2 id="本地运行jekyll和测试网站">本地运行Jekyll和测试网站</h2>
 
 <p>如果您是<code class="inline-code">bundler</code>使用者，请运行<code class="inline-code">bundle exec jekyll server</code>或者<code class="inline-code">bundle exec jekyll serve</code>.<br>如果不是，请运行<code class="inline-code">jekyll server</code>或者<code class="inline-code">jekyll serve</code>。</p>
 
 <p>让命令运行(不要用ctrl+c终止命令)，打开网页浏览器，在地址栏输入<code class="inline-code">http://localhost:4000</code>，就能看见网站啦。</p>
 
-<h2>配置</h2>
+<h2 id="配置">配置</h2>
 
-<h3>_config.yml文件</h3>
+<h3 id="_config-yml文件">_config.yml文件</h3>
 
 <p><code class="inline-code">_config.yml</code>文件包含了网站设定，<a href="http://jekyll.bootcss.com/docs/configuration/">官网</a>上有详细阐述。下面介绍基本用法:</p>
 
@@ -164,15 +162,15 @@
 </tr>
 </tbody></table>
 
-<h3>使用自定义域名</h3>
+<h3 id="使用自定义域名">使用自定义域名</h3>
 
 <p>官网提供了两个基本版的页数标示，<a href="http://jekyll.bootcss.com/docs/pagination/">点这里</a>。 然而网上有适配移动端的<a href="http://www.timble.net/blog/2015/05/07/better-pagination-for-jekyll.html">Timble</a>，非常赞。</p>
 
-<h3>多语言支持</h3>
+<h3 id="多语言支持">多语言支持</h3>
 
 <p>请查看<a href="http://jekyll-langs.liaohuqiu.net/">Jekyll Multi Language Plugin</a>。</p>
 
-<h3>如使用插件，在本地生成网站</h3>
+<h3 id="如使用插件，在本地生成网站">如使用插件，在本地生成网站</h3>
 
 <p>简单的说就是另外创建一个“僵尸”仓库，先生成网站，再把<code class="inline-code">_site</code>文件夹下的文件放到原根目录然后禁止Github再次生成网站。</p>
 
@@ -215,7 +213,7 @@
 </code></pre></div>
 <p>要使用它，复制上面代码到以<code class="inline-code">.sh</code>结尾的bash脚本文件中，修改路径，给权限，运行即可。</p>
 
-<h2>本站代码</h2>
+<h2 id="本站代码">本站代码</h2>
 
 <p>如果想使用本站布局或想知道背后的代码，请访问</p>
 
@@ -273,7 +271,6 @@ s.setAttribute('data-timestamp', +new Date());
 
       </div>
     </div>
-
     <footer class="site-footer">
 
   <div class="wrapper">
@@ -392,7 +389,6 @@ l-24 -60 0 -460 c0 -458 0 -460 23 -517 30 -74 108 -160 176 -193 39 -19 90
 })();
 </script>
 <script id="dsq-count-scr" src="//pwzxxm.disqus.com/count.js" async></script>
-
 
   </body>
 

@@ -5,192 +5,527 @@
     <description>Learning and sharing computer science ideas. Enjoy what you are passionated about.</description>
     <link>http://www.pwzxxm.com/</link>
     <atom:link href="http://www.pwzxxm.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 17 Dec 2015 12:08:40 +1100</pubDate>
-    <lastBuildDate>Thu, 17 Dec 2015 12:08:40 +1100</lastBuildDate>
+    <pubDate>Fri, 25 Dec 2015 19:01:55 +1100</pubDate>
+    <lastBuildDate>Fri, 25 Dec 2015 19:01:55 +1100</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
-        <title>Using Jekyll + Github Pages to build a blog</title>
-        <description>&lt;h2&gt;Why Jekyll and Github Pages&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; is an static site generator, it is simple to use with YAML front matter. It is quite convenient to blog with markdown and Jekyll supports it build-in. &lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt; provide the space to host the website for free. Both of them are well-documented, and works well with each other. One thing that makes they works well but not perfect is that although Github Pages can generate the website using Jekyll but as it generates in safe mode, it does not support Jekyll plugin. However, the good news is we can generate the site locally and then push it to Github. It sounds like not convenient but we can write a bash script to do so automatically in one step. We will talk about it later.&lt;/p&gt;
-
-&lt;h2&gt;Preparations&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Know &lt;a href=&quot;http://jekyllrb.com/docs/frontmatter/&quot;&gt;YAML front matter&lt;/a&gt; is something you can put at the front of a script and it can automatically
+        <title>Stack, Queue and Linked Lists</title>
+        <description>&lt;p&gt;Stack, queue and Linked lists are basic data structures. They appear in our daily life. For example, stacks of intermodal containers at the port, waiting in line(queue) to ride a roller coaster and the film The Human Centipede，if you know it.&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;have part of the layout and tags you defined before&lt;/li&gt;
-&lt;li&gt;define variables ([Liquid]tags(http://liquidmarkup.org/))&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#stack&quot;&gt;Stack&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#stack-intro&quot;&gt;Intro&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#stack-array-implementation&quot;&gt;Array Implementation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#stack-linked-list-implementation&quot;&gt;Linked List Implementation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#stack-c++-stl-stack&quot;&gt;C++ STL - stack&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;If you don&amp;#39;t know HMTL, CSS or JavaScript, you would better check out &lt;a href=&quot;http://www.w3schools.com/&quot;&gt;W3School&lt;/a&gt; and at least know the basic of them.&lt;/li&gt;
-&lt;li&gt;Be able to using &lt;code class=&quot;inline-code&quot;&gt;git&lt;/code&gt; commands, if not please check &lt;a href=&quot;http://rogerdudler.github.io/git-guide/&quot;&gt;Git tutorial&lt;/a&gt; or search on Google. You could use a desktop version instead of command lines, but I think it&amp;#39;s better to try comment line once because it may help you to have a better understanding of how it works.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;a href=&quot;#queue&quot;&gt;Queue&lt;/a&gt;
 
-&lt;h2&gt;Set up repository&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#q-intro&quot;&gt;Intro&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#q-linked-list-implementation&quot;&gt;Linked List Implementation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#q-c++-stl-queue&quot;&gt;C++ STL - queue&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#q-priority-queue&quot;&gt;Priority Queue&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#linked-list&quot;&gt;Linked List&lt;/a&gt;
 
-&lt;p&gt;Following the steps on &lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt; to initiate the repository. &lt;strong&gt;Caution: If you are building user/organisation pages, please use &lt;code class=&quot;inline-code&quot;&gt;master&lt;/code&gt; branch, if you are building project pages, please use &lt;code class=&quot;inline-code&quot;&gt;gh-pages&lt;/code&gt; instead.&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#ll-intro&quot;&gt;Intro&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#ll-c++-struct-implementation&quot;&gt;C++ Struct Implementation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;h2&gt;Install and Initiate&lt;/h2&gt;
+&lt;h2 id=&quot;stack&quot;&gt;&lt;a name=&quot;stack&quot;&gt;&lt;/a&gt;Stack&lt;/h2&gt;
 
-&lt;p&gt;Steps are shown &lt;a href=&quot;https://help.github.com/articles/using-jekyll-with-pages/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&quot;intro&quot;&gt;&lt;a name=&quot;stack-intro&quot;&gt;&lt;/a&gt;Intro&lt;/h3&gt;
 
-&lt;p&gt;After installation, to initiate a basic theme Jekyll website at current folder, simply run&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;Jekyll new .
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;git init
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;If you have a error says the directory is not empty, just move all files to other directory and move them back after initiation.&lt;/p&gt;
+&lt;p&gt;Stack is like a stack of intermodal containers, or a stack of book. Every time you want to put a new item, you put above the original stack, not between or below. Every time you want to remove a item, you need to start from the top, remove the item which is latest added. Hence, there is a principle called &amp;quot;&lt;strong&gt;LIFO&lt;/strong&gt;&amp;quot;, Last In, First Out.&lt;/p&gt;
 
-&lt;h2&gt;Running Jekyll and Test Websites Locally&lt;/h2&gt;
-
-&lt;p&gt;If you use &lt;code class=&quot;inline-code&quot;&gt;bundler&lt;/code&gt;, you need to use &lt;code class=&quot;inline-code&quot;&gt;bundle exec jekyll server&lt;/code&gt; or &lt;code class=&quot;inline-code&quot;&gt;bundle exec jekyll serve&lt;/code&gt;.&lt;br&gt;For those who don&amp;#39;t, please use &lt;code class=&quot;inline-code&quot;&gt;jekyll server&lt;/code&gt; or &lt;code class=&quot;inline-code&quot;&gt;jekyll serve&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Leave command window as it is running and then open your browser and navigate to &lt;code class=&quot;inline-code&quot;&gt;http://localhost:4000&lt;/code&gt; and you can see your site locally.&lt;/p&gt;
-
-&lt;h2&gt;Configuring&lt;/h2&gt;
-
-&lt;h3&gt;_config.yml file&lt;/h3&gt;
-
-&lt;p&gt;&lt;code class=&quot;inline-code&quot;&gt;_config.yml&lt;/code&gt; contains settings for the website, check out details at the official website &lt;a href=&quot;http://jekyllrb.com/docs/configuration/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Common operations:&lt;/p&gt;
 
 &lt;table&gt;&lt;thead&gt;
 &lt;tr&gt;
-&lt;th&gt;Variables&lt;/th&gt;
-&lt;th&gt;Usage&lt;/th&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;push&lt;/th&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;pop&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;&lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;title&lt;/td&gt;
-&lt;td&gt;The title of the website, by default it will shown at the website and the search result in a search engine&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;email&lt;/td&gt;
-&lt;td&gt;It is used in the contact list if you choose to use it&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;description&lt;/td&gt;
-&lt;td&gt;By default it is used in the meta tag in the head and shown in the footer&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;baseurl&lt;/td&gt;
-&lt;td&gt;the subpath of your site, e.g. &lt;code class=&quot;inline-code&quot;&gt;/blog&lt;/code&gt; will have &lt;code class=&quot;inline-code&quot;&gt;www.pwzxxm./com/blog&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;url&lt;/td&gt;
-&lt;td&gt;the base hostname and protocol for the site, e.g. &lt;code class=&quot;inline-code&quot;&gt;http://www.pwzxxm.com&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;github_username&lt;br&gt;twitter_username&lt;/td&gt;
-&lt;td&gt;shown in the contact list in the footer if you wish&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;markdown&lt;/td&gt;
-&lt;td&gt;which markdown engine you want to use, e.g. &lt;code class=&quot;inline-code&quot;&gt;kramdown&lt;/code&gt; &lt;code class=&quot;inline-code&quot;&gt;redcarpet&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;highlighter&lt;/td&gt;
-&lt;td&gt;which syntax highlighter you want to use, e.g. &lt;code class=&quot;inline-code&quot;&gt;pygments&lt;/code&gt; &lt;code class=&quot;inline-code&quot;&gt;rouge&lt;/code&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;permalink&lt;/td&gt;
-&lt;td&gt;set to &lt;code class=&quot;inline-code&quot;&gt;pretty&lt;/code&gt; will have url like &lt;code class=&quot;inline-code&quot;&gt;site_url/time/title&lt;/code&gt; &lt;br&gt; you can set your own like &lt;code class=&quot;inline-code&quot;&gt;/:title/&lt;/code&gt; &lt;a href=&quot;http://jekyllrb.com/docs/permalinks/&quot;&gt;See details&lt;/a&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;pagination&lt;/td&gt;
-&lt;td&gt;the number of posts you want to display on each page&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;/img/post/stack_push.gif&quot; alt=&quot;stack_push&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;/img/post/stack_pop.gif&quot; alt=&quot;stack_pop&quot;&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 
-&lt;h3&gt;Host your website using custom domain&lt;/h3&gt;
+&lt;h3 id=&quot;array-implementation&quot;&gt;&lt;a name=&quot;stack-array-implementation&quot;&gt;&lt;/a&gt; Array Implementation&lt;/h3&gt;
 
-&lt;ul&gt;
-&lt;li&gt;you need to buy a domain from a domain registrar, like &lt;a href=&quot;https://godaddy.com&quot;&gt;Godaddy&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;add a &lt;code class=&quot;inline-code&quot;&gt;CNAME&lt;/code&gt; file which contains your custom domain name in the root of your repository.&lt;/li&gt;
-&lt;li&gt;If your custom domain is a subdomain (like &lt;code class=&quot;inline-code&quot;&gt;www.pwzxxm.com&lt;/code&gt; or &lt;code class=&quot;inline-code&quot;&gt;blog.pwzxxm.com&lt;/code&gt;), then you need to add a &lt;code class=&quot;inline-code&quot;&gt;CNAME&lt;/code&gt; record in your domain provider or DNS server provider if you are using custom DNS service.&lt;/li&gt;
-&lt;li&gt;If your domain is an apex domain (only have one dot in your custom domain), you need to set up &lt;code class=&quot;inline-code&quot;&gt;A&lt;/code&gt;, &lt;code class=&quot;inline-code&quot;&gt;ALIAS&lt;/code&gt; or &lt;code class=&quot;inline-code&quot;&gt;ANAME&lt;/code&gt; records. Add &lt;code class=&quot;inline-code&quot;&gt;192.30.252.153&lt;/code&gt; and &lt;code class=&quot;inline-code&quot;&gt;192.30.252.154&lt;/code&gt; to your records.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/&quot;&gt;Find more details&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Usually we use the first item in the array &lt;code class=&quot;inline-code&quot;&gt;array[0]&lt;/code&gt; as the bottom of the stack, create index &lt;code class=&quot;inline-code&quot;&gt;max-index&lt;/code&gt; to store the index of the top item, in other words, the index of the last item in the stack.&lt;/p&gt;
 
-&lt;h3&gt;Pagination&lt;/h3&gt;
+&lt;p&gt;Push: &lt;code class=&quot;inline-code&quot;&gt;max_index += 1&lt;/code&gt;, and at the index of max_index add the item&lt;/p&gt;
 
-&lt;p&gt;There are two basic scripts can do pagination on &lt;a href=&quot;http://jekyllrb.com/docs/pagination/&quot;&gt;Jekyll official documentation&lt;/a&gt;.
-However, I found this pagination from &lt;a href=&quot;http://www.timble.net/blog/2015/05/07/better-pagination-for-jekyll.html&quot;&gt;Timble&lt;/a&gt; which is awesome.&lt;/p&gt;
+&lt;p&gt;Pop: delete the item at the index &lt;code class=&quot;inline-code&quot;&gt;max_index&lt;/code&gt;, &lt;code class=&quot;inline-code&quot;&gt;max_index -= 1&lt;/code&gt;&lt;/p&gt;
 
-&lt;h3&gt;Multi-language site&lt;/h3&gt;
+&lt;h3 id=&quot;linked-list-implementation&quot;&gt;&lt;a name=&quot;stack-linked-list-implementation&quot;&gt;&lt;/a&gt; Linked List Implementation&lt;/h3&gt;
 
-&lt;p&gt;Check out &lt;a href=&quot;http://jekyll-langs.liaohuqiu.net/&quot;&gt;Jekyll Multi Language Plugin&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Using singly linked list, use &lt;code class=&quot;inline-code&quot;&gt;head&lt;/code&gt; to store the bottom of the stack, each item has &lt;code class=&quot;inline-code&quot;&gt;next&lt;/code&gt; pointing at the next item. The top item&amp;#39;s &lt;code class=&quot;inline-code&quot;&gt;next&lt;/code&gt; points to &lt;code class=&quot;inline-code&quot;&gt;NULL&lt;/code&gt;, &lt;code class=&quot;inline-code&quot;&gt;size&lt;/code&gt; stores the size of the stack (the length of the linked list).&lt;/p&gt;
 
-&lt;h3&gt;Build the site locally if you use plugins&lt;/h3&gt;
+&lt;p&gt;push: change the &lt;code class=&quot;inline-code&quot;&gt;next&lt;/code&gt; variable of the top item in stack(last item in list) to the new item, let &lt;code class=&quot;inline-code&quot;&gt;next&lt;/code&gt; of the new item points to &lt;code class=&quot;inline-code&quot;&gt;NULL&lt;/code&gt;, &lt;code class=&quot;inline-code&quot;&gt;size += 1&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;The problem is Github build Jekyll websites in safe mode so the plugin won&amp;#39;t work. However, we can create a &amp;#39;dummy&amp;#39; repository to generate the site first and then move the content in &lt;code class=&quot;inline-code&quot;&gt;_site&lt;/code&gt; folder to the original repository.&lt;/p&gt;
+&lt;p&gt;pop: delete the top item in stack (last item in list), &lt;code class=&quot;inline-code&quot;&gt;max-index -= 1&lt;/code&gt;, set &lt;code class=&quot;inline-code&quot;&gt;next&lt;/code&gt; of the new last item to &lt;code class=&quot;inline-code&quot;&gt;NULL&lt;/code&gt;&lt;/p&gt;
 
-&lt;ol&gt;
-&lt;li&gt;generate the site locally using &lt;code class=&quot;inline-code&quot;&gt;bundle exec jekyll serve build&lt;/code&gt; or &lt;code class=&quot;inline-code&quot;&gt;jekyll build&lt;/code&gt; in the &amp;#39;dummy&amp;#39; repository.&lt;/li&gt;
-&lt;li&gt;copy all files to the actual repository excludes &lt;code class=&quot;inline-code&quot;&gt;README.md.&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;cut the files under  &lt;code class=&quot;inline-code&quot;&gt;_site&lt;/code&gt; folders to the root path of the repository.&lt;/li&gt;
-&lt;li&gt;&lt;code class=&quot;inline-code&quot;&gt;touch .nojekyll&lt;/code&gt; to disable github to generate the site&lt;/li&gt;
-&lt;li&gt;commit all changes.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Here is a bash script:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;comment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt;
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;push_commit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;git commit -a -m &amp;#39;$comment&amp;#39;&amp;quot;&lt;/span&gt;
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# commit and push changes&lt;/span&gt;
-&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cd ~/git/local&amp;#39;&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# modify PATH here&lt;/span&gt;
-&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;bundle exec jekyll build&amp;#39;&lt;/span&gt;
-&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;git add .&amp;#39;&lt;/span&gt;
-&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$push_commit&lt;/span&gt;
-&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;git push --all origin&amp;#39;&lt;/span&gt;
+&lt;h3 id=&quot;c-stl-stack&quot;&gt;&lt;a name=&quot;stack-c++-stl-stack&quot;&gt;&lt;/a&gt; C++ STL - stack&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;cpp&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;iostream&amp;gt;&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;stack&amp;gt;&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;cm&quot;&gt;/* create a stack named stk and its elements are int type */&lt;/span&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;cm&quot;&gt;/* push an element to the stack */&lt;/span&gt;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;stk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// 1&lt;/span&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;stk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// 1 2&lt;/span&gt;
 &lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# copy remove in pwzxxm.github.io&lt;/span&gt;
-&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cd ~/git/PwzXxm.github.io&amp;#39;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# modify PATH here&lt;/span&gt;
-&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cp ./README.md ~/git/&amp;#39;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# modify where you want to temporally put the README.md&lt;/span&gt;
-&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;rm -rf ./*&amp;#39;&lt;/span&gt;
-&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cp -r ~/git/local/* ./&amp;#39;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# modify PATH here&lt;/span&gt;
-&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cp -r _site/* ./&amp;#39;&lt;/span&gt;
-&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;rm -rf _site/*&amp;#39;&lt;/span&gt;
-&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cp ~/git/README.md ./&amp;#39;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# put the file back&lt;/span&gt;
-&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;touch .nojekyll&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cm&quot;&gt;     * cout &amp;lt;&amp;lt; stk.push(3) &amp;lt;&amp;lt; endl;&lt;/span&gt;
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cm&quot;&gt;     * error!! stk.push(3) returns void&lt;/span&gt;
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cm&quot;&gt;     */&lt;/span&gt;
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;cm&quot;&gt;/* top() returns the top element in the stack and it does NOT change the stack */&lt;/span&gt;
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// print out 2&lt;/span&gt;
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;stk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# commit and push changes&lt;/span&gt;
-&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;git add .&amp;#39;&lt;/span&gt;
-&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$push_commit&lt;/span&gt;
-&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;git push --all origin&amp;#39;&lt;/span&gt;
-&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Done&amp;quot;&lt;/span&gt;
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;cm&quot;&gt;/* gives the size of the stack - how many elements are there */&lt;/span&gt;
+&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// print out 3&lt;/span&gt;
+&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;cm&quot;&gt;/* pop the top element from the stack, return void as well */&lt;/span&gt;
+&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;stk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;a name=&quot;line-28&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;stk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;a name=&quot;line-29&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-30&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// print out 1&lt;/span&gt;
+&lt;a name=&quot;line-31&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-32&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;cm&quot;&gt;/* check if the stack is empty, if it is empty, returns true(1) */&lt;/span&gt;
+&lt;a name=&quot;line-33&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-34&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-35&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-36&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;To use it, simply copy it to a &lt;code class=&quot;inline-code&quot;&gt;yourchoice.sh&lt;/code&gt; file, change the paths in the file and give it permission to run, and run it.&lt;/p&gt;
+&lt;h2 id=&quot;queue&quot;&gt;&lt;a name=&quot;queue&quot;&gt;&lt;/a&gt;Queue&lt;/h2&gt;
 
-&lt;h2&gt;This Site&lt;/h2&gt;
+&lt;h3 id=&quot;intro&quot;&gt;&lt;a name=&quot;q-intro&quot;&gt;&lt;/a&gt; Intro&lt;/h3&gt;
 
-&lt;p&gt;If you like the style or you want to know the codes behind it, just check out:&lt;/p&gt;
+&lt;p&gt;Queue is like the queue in our life, wait in line to check out. Each new item add to the end of a queue, and the item at the front goes out first. Hence, Queue has the principle of &amp;quot;&lt;strong&gt;FIFO&lt;/strong&gt;&amp;quot; (First In, First Out).&lt;/p&gt;
+
+&lt;p&gt;Common operations:&lt;/p&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;enqueue&lt;/th&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;dequeue&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;/img/post/queue_enqueue.gif&quot; alt=&quot;queue_enqueue&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;/img/post/queue_dequeue.gif&quot; alt=&quot;queue_dequeue&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;h3 id=&quot;linked-list-implementation&quot;&gt;&lt;a name=&quot;q-linked-list-implementation&quot;&gt;&lt;/a&gt;Linked List Implementation&lt;/h3&gt;
+
+&lt;p&gt;Using singly linked list, use &lt;code class=&quot;inline-code&quot;&gt;head&lt;/code&gt; to track the head of a queue, each item has a variable &lt;code class=&quot;inline-code&quot;&gt;next&lt;/code&gt; pointing to the next item, &lt;code class=&quot;inline-code&quot;&gt;next&lt;/code&gt; of the last item in the queue points to &lt;code class=&quot;inline-code&quot;&gt;NULL&lt;/code&gt;, &lt;code class=&quot;inline-code&quot;&gt;size&lt;/code&gt; tracks the length of the queue.&lt;/p&gt;
+
+&lt;p&gt;Enqueue: append the new item at the end of the queue/list, &lt;code class=&quot;inline-code&quot;&gt;next&lt;/code&gt; of the old last item points to the new item just appended, &lt;code class=&quot;inline-code&quot;&gt;size += 1&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Dequeue: Using &lt;code class=&quot;inline-code&quot;&gt;next&lt;/code&gt; to navigate to the second item, &lt;code class=&quot;inline-code&quot;&gt;head&lt;/code&gt; points to the second item, delete the first item, &lt;code class=&quot;inline-code&quot;&gt;size -= 1&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;c-stl-queue&quot;&gt;&lt;a name=&quot;q-c++-stl-queue&quot;&gt;&lt;/a&gt; C++ STL - queue&lt;/h3&gt;
+
+&lt;p&gt;Almost the same as &lt;code class=&quot;inline-code&quot;&gt;stack&lt;/code&gt;!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Caution: &lt;code class=&quot;inline-code&quot;&gt;queue&lt;/code&gt; uses &lt;code class=&quot;inline-code&quot;&gt;front&lt;/code&gt; and &lt;code class=&quot;inline-code&quot;&gt;back&lt;/code&gt; to get the first and last item respectively.&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;cpp&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;iostream&amp;gt;&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;queue&amp;gt;&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// q: 1&lt;/span&gt;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// q: 1 2&lt;/span&gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;front&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 1&lt;/span&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 2&lt;/span&gt;
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// q: 1 2 3&lt;/span&gt;
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 3&lt;/span&gt;
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// q: 2 3&lt;/span&gt;
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;front&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 2&lt;/span&gt;
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 3&lt;/span&gt;
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 0&lt;/span&gt;
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;priority-queue&quot;&gt;&lt;a name=&quot;q-priority-queue&quot;&gt;&lt;/a&gt; Priority Queue&lt;/h3&gt;
+
+&lt;p&gt;Priority Queue is similar as queue, however each item has a priority. The first item to be dequeued maybe not the most front of the queue, it is now which the item has the highest priority. It&amp;#39;s like someone who have VIP cards, or someone is a queue-jumper, not fair for these items waiting, right? sigh.&lt;/p&gt;
+
+&lt;p&gt;In C++ STL, if you use &lt;code class=&quot;inline-code&quot;&gt;int&lt;/code&gt; as items in a priority queue, it is default that the smaller the integer is, the less priority it has. If you want the opposite, which is larger integer, less priority, you could use &lt;code class=&quot;inline-code&quot;&gt;great&lt;int&gt;&lt;/code&gt;, fully declaration&lt;code class=&quot;inline-code&quot;&gt;std::priority_queue&lt;int, std::vector&lt;int&gt;, std::greater&lt;int&gt; q_name&lt;/code&gt;. If you want other custom compare methods, you might need to custom &lt;code class=&quot;inline-code&quot;&gt;cmp&lt;/code&gt; function to complete priority comparison.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Caution: Priority Queue uses &lt;code class=&quot;inline-code&quot;&gt;front()&lt;/code&gt; to get the first item, NOT &lt;code class=&quot;inline-code&quot;&gt;top()&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;linked-list&quot;&gt;&lt;a name=&quot;linked-list&quot;&gt;&lt;/a&gt;Linked List&lt;/h2&gt;
+
+&lt;h3 id=&quot;intro&quot;&gt;&lt;a name=&quot;ll-intro&quot;&gt;&lt;/a&gt; Intro&lt;/h3&gt;
+
+&lt;p&gt;Linked list is like linked paper clips, have you tired before? Linked list have several structures: singly linked list, doubly linked list, multiply linked list and others. We only show singly linked list here as others can be implemented with the understanding of singly linked list.&lt;/p&gt;
+
+&lt;p&gt;Common operations:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/PwzXxm/PwzXxm.github.io&quot;&gt;Pwzxxm.github.io&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/PwzXxm/local-site&quot;&gt;local site&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;add nodes&lt;/li&gt;
+&lt;li&gt;delete nodes&lt;/li&gt;
+&lt;li&gt;next node&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;You can grap and use any code from my site as you wish. However, the content of this site is copyright, if you want to use any posts please contact me.&lt;/p&gt;
-</description>
-        <pubDate>Tue, 15 Dec 2015 00:00:00 +1100</pubDate>
-        <link>http://www.pwzxxm.com/building-blog-jekyll/</link>
-        <guid isPermaLink="true">http://www.pwzxxm.com/building-blog-jekyll/</guid>
+&lt;p&gt;&lt;img src=&quot;/img/post/link_in.gif&quot; alt=&quot;link_in&quot;&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;c-struct-implementation&quot;&gt;&lt;a name=&quot;ll-c++-struct-implementation&quot;&gt;&lt;/a&gt; C++ Struct Implementation&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;cpp&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;iostream&amp;gt;&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;cm&quot;&gt;/* Initialize the linked list */&lt;/span&gt;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;cm&quot;&gt;/* add Node at the end of the list */&lt;/span&gt;
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// linked list: 1 2&lt;/span&gt;
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;cm&quot;&gt;/* add Node between two Nodes */&lt;/span&gt;
+&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;second&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-28&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// linked list: 1 3 2&lt;/span&gt;
+&lt;a name=&quot;line-29&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-30&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;cm&quot;&gt;/* known value, find Node */&lt;/span&gt;
+&lt;a name=&quot;line-31&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-32&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-33&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-34&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-35&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 3&lt;/span&gt;
+&lt;a name=&quot;line-36&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-37&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;cm&quot;&gt;/* traverse to the last Node */&lt;/span&gt;
+&lt;a name=&quot;line-38&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-39&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-40&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-41&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 2&lt;/span&gt;
+&lt;a name=&quot;line-42&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-43&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;cm&quot;&gt;/* delete Node */&lt;/span&gt;
+&lt;a name=&quot;line-44&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-45&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-46&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;a name=&quot;line-47&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// empty list&lt;/span&gt;
+&lt;a name=&quot;line-48&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// if we want to delete the first node&lt;/span&gt;
+&lt;a name=&quot;line-49&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-50&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-51&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-52&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-53&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;n&quot;&gt;last&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-54&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-55&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-56&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-57&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-58&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;n&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-59&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-60&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-61&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-62&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        <pubDate>Fri, 25 Dec 2015 00:00:00 +1100</pubDate>
+        <link>http://www.pwzxxm.com/stack-queue-link-list/</link>
+        <guid isPermaLink="true">http://www.pwzxxm.com/stack-queue-link-list/</guid>
         
-        <category>blog</category>
+        <category>data-structure</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>栈，队列和链表</title>
+        <description>&lt;p&gt;栈，队列和链表是最基础的数据结构，它们出现在很多生活场景中，比如说堆起来的集装箱，排队坐过山车，人体蜈蚣（如果不知道就别去搜了，啦啦啦）&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#stack&quot;&gt;栈&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#stack-intro&quot;&gt;简介&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#stack-array-implementation&quot;&gt;数组实现&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#stack-linked-list-implementation&quot;&gt;链表实现&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#stack-c++-stl-stack&quot;&gt;C++ STL - stack&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#queue&quot;&gt;队列&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#q-intro&quot;&gt;简介&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#q-linked-list-implementation&quot;&gt;链表实现&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#q-c++-stl-queue&quot;&gt;C++ STL - queue&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#q-priority-queue&quot;&gt;优先队列&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#linked-list&quot;&gt;链表&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#ll-intro&quot;&gt;简介&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#ll-c++-struct-implementation&quot;&gt;C++ struct 实现&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;栈&quot;&gt;&lt;a name=&quot;stack&quot;&gt;&lt;/a&gt; 栈&lt;/h2&gt;
+
+&lt;h3 id=&quot;简介&quot;&gt;&lt;a name=&quot;stack-intro&quot;&gt;&lt;/a&gt; 简介&lt;/h3&gt;
+
+&lt;p&gt;栈就像堆起来的集装箱，或者是一堆书，每次加入新的元素只能在旧的之上，每次移出元素只能拿出最新加入的，所以有“&lt;strong&gt;后进先出&lt;/strong&gt;”的原则(后进去的元素先出来)。&lt;/p&gt;
+
+&lt;p&gt;常见操作有:&lt;/p&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;进栈&lt;/th&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;出栈&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;/img/post/stack_push.gif&quot; alt=&quot;stack_push&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;/img/post/stack_pop.gif&quot; alt=&quot;stack_pop&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;h3 id=&quot;数组实现&quot;&gt;&lt;a name=&quot;stack-array-implementation&quot;&gt;&lt;/a&gt;  数组实现&lt;/h3&gt;
+
+&lt;p&gt;一般我们用数组的第一个元素&lt;code class=&quot;inline-code&quot;&gt;array[0]&lt;/code&gt;作为栈底，创建一个变量&lt;code class=&quot;inline-code&quot;&gt;max_index&lt;/code&gt;来存储栈的最顶部元素在数组中的下标，也就是数组最后一个栈中元素的下标。&lt;/p&gt;
+
+&lt;p&gt;进栈：&lt;code class=&quot;inline-code&quot;&gt;max_index += 1&lt;/code&gt;，然后在该下标插入进栈的元素&lt;/p&gt;
+
+&lt;p&gt;出栈：初始化在&lt;code class=&quot;inline-code&quot;&gt;max_index&lt;/code&gt;下标的元素，&lt;code class=&quot;inline-code&quot;&gt;max_index -= 1&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;链表实现&quot;&gt;&lt;a name=&quot;stack-linked-list-implementation&quot;&gt;&lt;/a&gt; 链表实现&lt;/h3&gt;
+
+&lt;p&gt;单向链表，用&lt;code class=&quot;inline-code&quot;&gt;head&lt;/code&gt;记录栈头，每个元素都有&lt;code class=&quot;inline-code&quot;&gt;next&lt;/code&gt;指向下一个元素，栈顶的&lt;code class=&quot;inline-code&quot;&gt;next&lt;/code&gt;指向&lt;code class=&quot;inline-code&quot;&gt;NULL&lt;/code&gt;，&lt;code class=&quot;inline-code&quot;&gt;size&lt;/code&gt;纪录链表大小（栈的大小）。&lt;/p&gt;
+
+&lt;p&gt;进栈：让在栈顶（链表尾部）元素的&lt;code class=&quot;inline-code&quot;&gt;next&lt;/code&gt;指向新的元素，新元素的&lt;code class=&quot;inline-code&quot;&gt;next&lt;/code&gt;为&lt;code class=&quot;inline-code&quot;&gt;null&lt;/code&gt;，&lt;code class=&quot;inline-code&quot;&gt;size += 1&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;出栈：初始化栈顶（链表尾部）元素，移动到上一个元素，设置&lt;code class=&quot;inline-code&quot;&gt;next&lt;/code&gt;为&lt;code class=&quot;inline-code&quot;&gt;null&lt;/code&gt;, &lt;code class=&quot;inline-code&quot;&gt;size -= 1&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;c-stl-stack&quot;&gt;&lt;a name=&quot;stack-c++-stl-stack&quot;&gt;&lt;/a&gt; C++ STL - stack&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;cpp&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;iostream&amp;gt;&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;stack&amp;gt;&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;cm&quot;&gt;/* 创建一个栈，名为stk，元素类型为int */&lt;/span&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;cm&quot;&gt;/* 使一个元素进栈 */&lt;/span&gt;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;stk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// 1&lt;/span&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;stk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;// 1 2&lt;/span&gt;
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;cm&quot;&gt;/*&lt;/span&gt;
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cm&quot;&gt;     * cout &amp;lt;&amp;lt; stk.push(3) &amp;lt;&amp;lt; endl;&lt;/span&gt;
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cm&quot;&gt;     * 错误！！ stk.push(3) 返回void类型&lt;/span&gt;
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cm&quot;&gt;     */&lt;/span&gt;
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;cm&quot;&gt;/* top() 返回栈最顶部的元素，且不改变栈 */&lt;/span&gt;
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// print out 2&lt;/span&gt;
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;stk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;cm&quot;&gt;/* 返回栈的大小，有多少元素 */&lt;/span&gt;
+&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// print out 3&lt;/span&gt;
+&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;cm&quot;&gt;/* 使栈顶部的元素出栈，返回void类型 */&lt;/span&gt;
+&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;stk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;a name=&quot;line-28&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;stk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;a name=&quot;line-29&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-30&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// print out 1&lt;/span&gt;
+&lt;a name=&quot;line-31&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-32&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;cm&quot;&gt;/* 查看栈是否为空，如果为空，返回真(1) */&lt;/span&gt;
+&lt;a name=&quot;line-33&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stk&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-34&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-35&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-36&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;队列&quot;&gt;&lt;a name=&quot;queue&quot;&gt;&lt;/a&gt; 队列&lt;/h2&gt;
+
+&lt;h3 id=&quot;简介&quot;&gt;&lt;a name=&quot;q-intro&quot;&gt;&lt;/a&gt; 简介&lt;/h3&gt;
+
+&lt;p&gt;队列就像排队一样，在队尾加入新的元素，在队首出队。所以队列有着“&lt;strong&gt;先进先出&lt;/strong&gt;”的原则。&lt;/p&gt;
+
+&lt;p&gt;常见操作有：&lt;/p&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;入队&lt;/th&gt;
+&lt;th style=&quot;text-align: center&quot;&gt;出队&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;/img/post/queue_enqueue.gif&quot; alt=&quot;queue_enqueue&quot;&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: center&quot;&gt;&lt;img src=&quot;/img/post/queue_dequeue.gif&quot; alt=&quot;queue_dequeue&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;h3 id=&quot;链表实现&quot;&gt;&lt;a name=&quot;q-linked-list-implementation&quot;&gt;&lt;/a&gt; 链表实现&lt;/h3&gt;
+
+&lt;p&gt;使用单向链表，用&lt;code class=&quot;inline-code&quot;&gt;head&lt;/code&gt;记录队列头，每个元素都有&lt;code class=&quot;inline-code&quot;&gt;next&lt;/code&gt;指向下一个元素，队尾元素的&lt;code class=&quot;inline-code&quot;&gt;next&lt;/code&gt;指向&lt;code class=&quot;inline-code&quot;&gt;NULL&lt;/code&gt;，&lt;code class=&quot;inline-code&quot;&gt;size&lt;/code&gt;纪录队列的长度。&lt;/p&gt;
+
+&lt;p&gt;入队：在队尾（链表尾部）插入元素，即旧队尾的&lt;code class=&quot;inline-code&quot;&gt;next&lt;/code&gt;指向新元素，新元素的&lt;code class=&quot;inline-code&quot;&gt;next&lt;/code&gt;指向&lt;code class=&quot;inline-code&quot;&gt;null&lt;/code&gt;，&lt;code class=&quot;inline-code&quot;&gt;size += 1&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;出队：通过&lt;code class=&quot;inline-code&quot;&gt;next&lt;/code&gt;移动到第二个元素，&lt;code class=&quot;inline-code&quot;&gt;head&lt;/code&gt;指向第二个元素，初始化原队首（链表头部），&lt;code class=&quot;inline-code&quot;&gt;size -= 1&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;c-stl-queue&quot;&gt;&lt;a name=&quot;q-c++-stl-queue&quot;&gt;&lt;/a&gt; C++ STL - queue&lt;/h3&gt;
+
+&lt;p&gt;基本用法和栈相同，&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;需要特别注意的一点是队列分别使用&lt;code class=&quot;inline-code&quot;&gt;front&lt;/code&gt;和&lt;code class=&quot;inline-code&quot;&gt;back&lt;/code&gt;来返回队首和队尾元素。&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;cpp&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;iostream&amp;gt;&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;queue&amp;gt;&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// q: 1&lt;/span&gt;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// q: 1 2&lt;/span&gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;front&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 1&lt;/span&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 2&lt;/span&gt;
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// q: 1 2 3&lt;/span&gt;
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 3&lt;/span&gt;
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// q: 2 3&lt;/span&gt;
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;front&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 2&lt;/span&gt;
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 3&lt;/span&gt;
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 0&lt;/span&gt;
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;优先队列&quot;&gt;&lt;a name=&quot;q-priority-queue&quot;&gt;&lt;/a&gt; 优先队列&lt;/h3&gt;
+
+&lt;p&gt;优先队列类似于队列，只不过每个元素都有一个优先级，出队的元素不一定是最先入队的元素，而是当前队列中优先级最高的元素。就像有人有VIP卡的可以走专属通道，有人可以插队一样，对每个元素来说并不公平，叹气。&lt;/p&gt;
+
+&lt;p&gt;在C++ STL中，如果把&lt;code class=&quot;inline-code&quot;&gt;int&lt;/code&gt;作为优先队列的类型， 默认情况下如果是整数的优先队列，那整数越小，则优先级越低。如果想整数越大，优先级越低，可以用&lt;code class=&quot;inline-code&quot;&gt;greater&lt;int&gt;&lt;/code&gt;, 完整声明&lt;code class=&quot;inline-code&quot;&gt;std::priority_queue&lt;int, std::vector&lt;int&gt;, std::greater&lt;int&gt; q_name&lt;/code&gt;。如有其它需求，可自定义&lt;code class=&quot;inline-code&quot;&gt;cmp&lt;/code&gt;函数来完成优先级的比较。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;另外需特别注意的是，优先队列取队首元素不再是用队列的&lt;code class=&quot;inline-code&quot;&gt;front()&lt;/code&gt;，而是用&lt;code class=&quot;inline-code&quot;&gt;top()&lt;/code&gt;。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;链表&quot;&gt;&lt;a name=&quot;linked-list&quot;&gt;&lt;/a&gt; 链表&lt;/h2&gt;
+
+&lt;h3 id=&quot;简介&quot;&gt;&lt;a name=&quot;ll-intro&quot;&gt;&lt;/a&gt; 简介&lt;/h3&gt;
+
+&lt;p&gt;链表像一个个回形针串起来的链子。链表有多种结构：单向链表，双向链表，循环链表等等。主要介绍单向链表，其他类型脑补脑补ok的。&lt;/p&gt;
+
+&lt;p&gt;常见操作有：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;添加节点&lt;/li&gt;
+&lt;li&gt;销毁节点&lt;/li&gt;
+&lt;li&gt;下一节点&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/post/link_in.gif&quot; alt=&quot;link_in&quot;&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;c-struct-实现&quot;&gt;&lt;a name=&quot;ll-c++-struct-implementation&quot;&gt;&lt;/a&gt; C++ struct 实现&lt;/h3&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;cpp&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;iostream&amp;gt;&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;cm&quot;&gt;/* 初始化链表 */&lt;/span&gt;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;cm&quot;&gt;/* 在链表尾部加入节点 */&lt;/span&gt;
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// linked list: 1 2&lt;/span&gt;
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;cm&quot;&gt;/* 在节点中间 */&lt;/span&gt;
+&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;second&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-28&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// linked list: 1 3 2&lt;/span&gt;
+&lt;a name=&quot;line-29&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-30&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;cm&quot;&gt;/* 知道数据，寻找节点 */&lt;/span&gt;
+&lt;a name=&quot;line-31&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-32&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-33&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-34&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-35&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;// 3&lt;/span&gt;
+&lt;a name=&quot;line-36&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-37&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;cm&quot;&gt;/* 遍历到链表尾部 */&lt;/span&gt;
+&lt;a name=&quot;line-38&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-39&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-40&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-41&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 2&lt;/span&gt;
+&lt;a name=&quot;line-42&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-43&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;cm&quot;&gt;/* 删除节点 */&lt;/span&gt;
+&lt;a name=&quot;line-44&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;Node&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-45&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-46&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;a name=&quot;line-47&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// empty list&lt;/span&gt;
+&lt;a name=&quot;line-48&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// if we want to delete the first node&lt;/span&gt;
+&lt;a name=&quot;line-49&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;n&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-50&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-51&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-52&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-53&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;n&quot;&gt;last&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-54&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-55&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-56&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-57&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-58&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;n&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-59&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;k&quot;&gt;delete&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cur&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-60&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-61&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-62&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        <pubDate>Fri, 25 Dec 2015 00:00:00 +1100</pubDate>
+        <link>http://www.pwzxxm.com/cn/stack-queue-link-list/</link>
+        <guid isPermaLink="true">http://www.pwzxxm.com/cn/stack-queue-link-list/</guid>
+        
+        <category>data-structure</category>
         
         
       </item>
     
       <item>
         <title>使用Jekyll＋Github Pages搭建博客</title>
-        <description>&lt;h2&gt;为什么选择 Jekyll 和 Github Pages&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;为什么选择-jekyll-和-github-pages&quot;&gt;为什么选择 Jekyll 和 Github Pages&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://jekyll.bootcss.com/&quot;&gt;Jekyll&lt;/a&gt;是一个静态网页生成器，使用YAML头信息可以很方便地使用各种布局，内置markdown，新的文章只需加入文件夹即可。&lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt;可以提供免费空间，免费无限流量来给网页当虚拟主机。他们俩配合起来相当默契，而且网上也有很多资料。但是有一点美中不足的是Github Pages是在安全模式下运行的，也就是说它并不支持Jekyll的插件。然而我们可以在本地带着插件生成好网站再放到Github上。虽然听起来不太方便，但是有脚本让我们一步实现。这点我们后面详细说。&lt;/p&gt;
 
-&lt;h2&gt;准备&lt;/h2&gt;
+&lt;h2 id=&quot;准备&quot;&gt;准备&lt;/h2&gt;
 
 &lt;ol&gt;
 &lt;li&gt;了解&lt;a href=&quot;http://jekyllrb.com/docs/frontmatter/&quot;&gt;YAML front matter&lt;/a&gt;可以让包含头文件的文件自动：
@@ -203,13 +538,13 @@ However, I found this pagination from &lt;a href=&quot;http://www.timble.net/blo
 &lt;li&gt;了解&lt;code class=&quot;inline-code&quot;&gt;git&lt;/code&gt;命令，如果不请查看&lt;a href=&quot;http://rogerdudler.github.io/git-guide/&quot;&gt;Git tutorial&lt;/a&gt;或者其他资料。希望能至少使用命令行一次了解流程，这对以后会有所帮助。&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2&gt;创建仓库&lt;/h2&gt;
+&lt;h2 id=&quot;创建仓库&quot;&gt;创建仓库&lt;/h2&gt;
 
 &lt;p&gt;详细步骤在&lt;a href=&quot;https://pages.github.com/&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;如果是个人／机构网站，请使用&lt;code class=&quot;inline-code&quot;&gt;master&lt;/code&gt;分支，如果是项目网站，请使用&lt;code class=&quot;inline-code&quot;&gt;gh-pages&lt;/code&gt;分支&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h2&gt;安装和初始化&lt;/h2&gt;
+&lt;h2 id=&quot;安装和初始化&quot;&gt;安装和初始化&lt;/h2&gt;
 
 &lt;p&gt;步骤在&lt;a href=&quot;https://help.github.com/articles/using-jekyll-with-pages/&quot;&gt;Github help pages&lt;/a&gt;有详细解释。&lt;/p&gt;
 
@@ -219,15 +554,15 @@ However, I found this pagination from &lt;a href=&quot;http://www.timble.net/blo
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;如果出现类似&lt;code class=&quot;inline-code&quot;&gt;directory is not empty&lt;/code&gt;之类的错误，先把文件夹下的内容移动到该文件夹外的临时文件夹内，运行命令后再放回原来的文件即可。&lt;/p&gt;
 
-&lt;h2&gt;本地运行Jekyll和测试网站&lt;/h2&gt;
+&lt;h2 id=&quot;本地运行jekyll和测试网站&quot;&gt;本地运行Jekyll和测试网站&lt;/h2&gt;
 
 &lt;p&gt;如果您是&lt;code class=&quot;inline-code&quot;&gt;bundler&lt;/code&gt;使用者，请运行&lt;code class=&quot;inline-code&quot;&gt;bundle exec jekyll server&lt;/code&gt;或者&lt;code class=&quot;inline-code&quot;&gt;bundle exec jekyll serve&lt;/code&gt;.&lt;br&gt;如果不是，请运行&lt;code class=&quot;inline-code&quot;&gt;jekyll server&lt;/code&gt;或者&lt;code class=&quot;inline-code&quot;&gt;jekyll serve&lt;/code&gt;。&lt;/p&gt;
 
 &lt;p&gt;让命令运行(不要用ctrl+c终止命令)，打开网页浏览器，在地址栏输入&lt;code class=&quot;inline-code&quot;&gt;http://localhost:4000&lt;/code&gt;，就能看见网站啦。&lt;/p&gt;
 
-&lt;h2&gt;配置&lt;/h2&gt;
+&lt;h2 id=&quot;配置&quot;&gt;配置&lt;/h2&gt;
 
-&lt;h3&gt;_config.yml文件&lt;/h3&gt;
+&lt;h3 id=&quot;_config-yml文件&quot;&gt;_config.yml文件&lt;/h3&gt;
 
 &lt;p&gt;&lt;code class=&quot;inline-code&quot;&gt;_config.yml&lt;/code&gt;文件包含了网站设定，&lt;a href=&quot;http://jekyll.bootcss.com/docs/configuration/&quot;&gt;官网&lt;/a&gt;上有详细阐述。下面介绍基本用法:&lt;/p&gt;
 
@@ -279,15 +614,15 @@ However, I found this pagination from &lt;a href=&quot;http://www.timble.net/blo
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
 
-&lt;h3&gt;使用自定义域名&lt;/h3&gt;
+&lt;h3 id=&quot;使用自定义域名&quot;&gt;使用自定义域名&lt;/h3&gt;
 
 &lt;p&gt;官网提供了两个基本版的页数标示，&lt;a href=&quot;http://jekyll.bootcss.com/docs/pagination/&quot;&gt;点这里&lt;/a&gt;。 然而网上有适配移动端的&lt;a href=&quot;http://www.timble.net/blog/2015/05/07/better-pagination-for-jekyll.html&quot;&gt;Timble&lt;/a&gt;，非常赞。&lt;/p&gt;
 
-&lt;h3&gt;多语言支持&lt;/h3&gt;
+&lt;h3 id=&quot;多语言支持&quot;&gt;多语言支持&lt;/h3&gt;
 
 &lt;p&gt;请查看&lt;a href=&quot;http://jekyll-langs.liaohuqiu.net/&quot;&gt;Jekyll Multi Language Plugin&lt;/a&gt;。&lt;/p&gt;
 
-&lt;h3&gt;如使用插件，在本地生成网站&lt;/h3&gt;
+&lt;h3 id=&quot;如使用插件，在本地生成网站&quot;&gt;如使用插件，在本地生成网站&lt;/h3&gt;
 
 &lt;p&gt;简单的说就是另外创建一个“僵尸”仓库，先生成网站，再把&lt;code class=&quot;inline-code&quot;&gt;_site&lt;/code&gt;文件夹下的文件放到原根目录然后禁止Github再次生成网站。&lt;/p&gt;
 
@@ -330,7 +665,7 @@ However, I found this pagination from &lt;a href=&quot;http://www.timble.net/blo
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;要使用它，复制上面代码到以&lt;code class=&quot;inline-code&quot;&gt;.sh&lt;/code&gt;结尾的bash脚本文件中，修改路径，给权限，运行即可。&lt;/p&gt;
 
-&lt;h2&gt;本站代码&lt;/h2&gt;
+&lt;h2 id=&quot;本站代码&quot;&gt;本站代码&lt;/h2&gt;
 
 &lt;p&gt;如果想使用本站布局或想知道背后的代码，请访问&lt;/p&gt;
 
@@ -344,6 +679,181 @@ However, I found this pagination from &lt;a href=&quot;http://www.timble.net/blo
         <pubDate>Tue, 15 Dec 2015 00:00:00 +1100</pubDate>
         <link>http://www.pwzxxm.com/cn/building-blog-jekyll/</link>
         <guid isPermaLink="true">http://www.pwzxxm.com/cn/building-blog-jekyll/</guid>
+        
+        <category>blog</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Using Jekyll + Github Pages to build a blog</title>
+        <description>&lt;h2 id=&quot;why-jekyll-and-github-pages&quot;&gt;Why Jekyll and Github Pages&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; is an static site generator, it is simple to use with YAML front matter. It is quite convenient to blog with markdown and Jekyll supports it build-in. &lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt; provide the space to host the website for free. Both of them are well-documented, and works well with each other. One thing that makes they works well but not perfect is that although Github Pages can generate the website using Jekyll but as it generates in safe mode, it does not support Jekyll plugin. However, the good news is we can generate the site locally and then push it to Github. It sounds like not convenient but we can write a bash script to do so automatically in one step. We will talk about it later.&lt;/p&gt;
+
+&lt;h2 id=&quot;preparations&quot;&gt;Preparations&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Know &lt;a href=&quot;http://jekyllrb.com/docs/frontmatter/&quot;&gt;YAML front matter&lt;/a&gt; is something you can put at the front of a script and it can automatically
+
+&lt;ul&gt;
+&lt;li&gt;have part of the layout and tags you defined before&lt;/li&gt;
+&lt;li&gt;define variables ([Liquid]tags(&lt;a href=&quot;http://liquidmarkup.org/)&quot;&gt;http://liquidmarkup.org/)&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;If you don&amp;#39;t know HMTL, CSS or JavaScript, you would better check out &lt;a href=&quot;http://www.w3schools.com/&quot;&gt;W3School&lt;/a&gt; and at least know the basic of them.&lt;/li&gt;
+&lt;li&gt;Be able to using &lt;code class=&quot;inline-code&quot;&gt;git&lt;/code&gt; commands, if not please check &lt;a href=&quot;http://rogerdudler.github.io/git-guide/&quot;&gt;Git tutorial&lt;/a&gt; or search on Google. You could use a desktop version instead of command lines, but I think it&amp;#39;s better to try comment line once because it may help you to have a better understanding of how it works.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;set-up-repository&quot;&gt;Set up repository&lt;/h2&gt;
+
+&lt;p&gt;Following the steps on &lt;a href=&quot;https://pages.github.com/&quot;&gt;Github Pages&lt;/a&gt; to initiate the repository. &lt;strong&gt;Caution: If you are building user/organisation pages, please use &lt;code class=&quot;inline-code&quot;&gt;master&lt;/code&gt; branch, if you are building project pages, please use &lt;code class=&quot;inline-code&quot;&gt;gh-pages&lt;/code&gt; instead.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;install-and-initiate&quot;&gt;Install and Initiate&lt;/h2&gt;
+
+&lt;p&gt;Steps are shown &lt;a href=&quot;https://help.github.com/articles/using-jekyll-with-pages/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;After installation, to initiate a basic theme Jekyll website at current folder, simply run&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;Jekyll new .
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;git init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;If you have a error says the directory is not empty, just move all files to other directory and move them back after initiation.&lt;/p&gt;
+
+&lt;h2 id=&quot;running-jekyll-and-test-websites-locally&quot;&gt;Running Jekyll and Test Websites Locally&lt;/h2&gt;
+
+&lt;p&gt;If you use &lt;code class=&quot;inline-code&quot;&gt;bundler&lt;/code&gt;, you need to use &lt;code class=&quot;inline-code&quot;&gt;bundle exec jekyll server&lt;/code&gt; or &lt;code class=&quot;inline-code&quot;&gt;bundle exec jekyll serve&lt;/code&gt;.&lt;br&gt;For those who don&amp;#39;t, please use &lt;code class=&quot;inline-code&quot;&gt;jekyll server&lt;/code&gt; or &lt;code class=&quot;inline-code&quot;&gt;jekyll serve&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Leave command window as it is running and then open your browser and navigate to &lt;code class=&quot;inline-code&quot;&gt;http://localhost:4000&lt;/code&gt; and you can see your site locally.&lt;/p&gt;
+
+&lt;h2 id=&quot;configuring&quot;&gt;Configuring&lt;/h2&gt;
+
+&lt;h3 id=&quot;_config-yml-file&quot;&gt;_config.yml file&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;inline-code&quot;&gt;_config.yml&lt;/code&gt; contains settings for the website, check out details at the official website &lt;a href=&quot;http://jekyllrb.com/docs/configuration/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Variables&lt;/th&gt;
+&lt;th&gt;Usage&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;title&lt;/td&gt;
+&lt;td&gt;The title of the website, by default it will shown at the website and the search result in a search engine&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;email&lt;/td&gt;
+&lt;td&gt;It is used in the contact list if you choose to use it&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;description&lt;/td&gt;
+&lt;td&gt;By default it is used in the meta tag in the head and shown in the footer&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;baseurl&lt;/td&gt;
+&lt;td&gt;the subpath of your site, e.g. &lt;code class=&quot;inline-code&quot;&gt;/blog&lt;/code&gt; will have &lt;code class=&quot;inline-code&quot;&gt;www.pwzxxm./com/blog&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;url&lt;/td&gt;
+&lt;td&gt;the base hostname and protocol for the site, e.g. &lt;code class=&quot;inline-code&quot;&gt;http://www.pwzxxm.com&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;github_username&lt;br&gt;twitter_username&lt;/td&gt;
+&lt;td&gt;shown in the contact list in the footer if you wish&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;markdown&lt;/td&gt;
+&lt;td&gt;which markdown engine you want to use, e.g. &lt;code class=&quot;inline-code&quot;&gt;kramdown&lt;/code&gt; &lt;code class=&quot;inline-code&quot;&gt;redcarpet&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;highlighter&lt;/td&gt;
+&lt;td&gt;which syntax highlighter you want to use, e.g. &lt;code class=&quot;inline-code&quot;&gt;pygments&lt;/code&gt; &lt;code class=&quot;inline-code&quot;&gt;rouge&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;permalink&lt;/td&gt;
+&lt;td&gt;set to &lt;code class=&quot;inline-code&quot;&gt;pretty&lt;/code&gt; will have url like &lt;code class=&quot;inline-code&quot;&gt;site_url/time/title&lt;/code&gt; &lt;br&gt; you can set your own like &lt;code class=&quot;inline-code&quot;&gt;/:title/&lt;/code&gt; &lt;a href=&quot;http://jekyllrb.com/docs/permalinks/&quot;&gt;See details&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pagination&lt;/td&gt;
+&lt;td&gt;the number of posts you want to display on each page&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;h3 id=&quot;host-your-website-using-custom-domain&quot;&gt;Host your website using custom domain&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;you need to buy a domain from a domain registrar, like &lt;a href=&quot;https://godaddy.com&quot;&gt;Godaddy&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;add a &lt;code class=&quot;inline-code&quot;&gt;CNAME&lt;/code&gt; file which contains your custom domain name in the root of your repository.&lt;/li&gt;
+&lt;li&gt;If your custom domain is a subdomain (like &lt;code class=&quot;inline-code&quot;&gt;www.pwzxxm.com&lt;/code&gt; or &lt;code class=&quot;inline-code&quot;&gt;blog.pwzxxm.com&lt;/code&gt;), then you need to add a &lt;code class=&quot;inline-code&quot;&gt;CNAME&lt;/code&gt; record in your domain provider or DNS server provider if you are using custom DNS service.&lt;/li&gt;
+&lt;li&gt;If your domain is an apex domain (only have one dot in your custom domain), you need to set up &lt;code class=&quot;inline-code&quot;&gt;A&lt;/code&gt;, &lt;code class=&quot;inline-code&quot;&gt;ALIAS&lt;/code&gt; or &lt;code class=&quot;inline-code&quot;&gt;ANAME&lt;/code&gt; records. Add &lt;code class=&quot;inline-code&quot;&gt;192.30.252.153&lt;/code&gt; and &lt;code class=&quot;inline-code&quot;&gt;192.30.252.154&lt;/code&gt; to your records.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/&quot;&gt;Find more details&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;pagination&quot;&gt;Pagination&lt;/h3&gt;
+
+&lt;p&gt;There are two basic scripts can do pagination on &lt;a href=&quot;http://jekyllrb.com/docs/pagination/&quot;&gt;Jekyll official documentation&lt;/a&gt;.
+However, I found this pagination from &lt;a href=&quot;http://www.timble.net/blog/2015/05/07/better-pagination-for-jekyll.html&quot;&gt;Timble&lt;/a&gt; which is awesome.&lt;/p&gt;
+
+&lt;h3 id=&quot;multi-language-site&quot;&gt;Multi-language site&lt;/h3&gt;
+
+&lt;p&gt;Check out &lt;a href=&quot;http://jekyll-langs.liaohuqiu.net/&quot;&gt;Jekyll Multi Language Plugin&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;build-the-site-locally-if-you-use-plugins&quot;&gt;Build the site locally if you use plugins&lt;/h3&gt;
+
+&lt;p&gt;The problem is Github build Jekyll websites in safe mode so the plugin won&amp;#39;t work. However, we can create a &amp;#39;dummy&amp;#39; repository to generate the site first and then move the content in &lt;code class=&quot;inline-code&quot;&gt;_site&lt;/code&gt; folder to the original repository.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;generate the site locally using &lt;code class=&quot;inline-code&quot;&gt;bundle exec jekyll serve build&lt;/code&gt; or &lt;code class=&quot;inline-code&quot;&gt;jekyll build&lt;/code&gt; in the &amp;#39;dummy&amp;#39; repository.&lt;/li&gt;
+&lt;li&gt;copy all files to the actual repository excludes &lt;code class=&quot;inline-code&quot;&gt;README.md.&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;cut the files under  &lt;code class=&quot;inline-code&quot;&gt;_site&lt;/code&gt; folders to the root path of the repository.&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;inline-code&quot;&gt;touch .nojekyll&lt;/code&gt; to disable github to generate the site&lt;/li&gt;
+&lt;li&gt;commit all changes.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Here is a bash script:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;#!/bin/bash&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;comment&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;$1&amp;quot;&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;push_commit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;git commit -a -m &amp;#39;$comment&amp;#39;&amp;quot;&lt;/span&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# commit and push changes&lt;/span&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cd ~/git/local&amp;#39;&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# modify PATH here&lt;/span&gt;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;bundle exec jekyll build&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;git add .&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$push_commit&lt;/span&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;git push --all origin&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# copy remove in pwzxxm.github.io&lt;/span&gt;
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cd ~/git/PwzXxm.github.io&amp;#39;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# modify PATH here&lt;/span&gt;
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cp ./README.md ~/git/&amp;#39;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# modify where you want to temporally put the README.md&lt;/span&gt;
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;rm -rf ./*&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cp -r ~/git/local/* ./&amp;#39;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# modify PATH here&lt;/span&gt;
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cp -r _site/* ./&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;rm -rf _site/*&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;cp ~/git/README.md ./&amp;#39;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# put the file back&lt;/span&gt;
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;touch .nojekyll&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;&lt;span class=&quot;c&quot;&gt;# commit and push changes&lt;/span&gt;
+&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;git add .&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$push_commit&lt;/span&gt;
+&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;git push --all origin&amp;#39;&lt;/span&gt;
+&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Done&amp;quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;To use it, simply copy it to a &lt;code class=&quot;inline-code&quot;&gt;yourchoice.sh&lt;/code&gt; file, change the paths in the file and give it permission to run, and run it.&lt;/p&gt;
+
+&lt;h2 id=&quot;this-site&quot;&gt;This Site&lt;/h2&gt;
+
+&lt;p&gt;If you like the style or you want to know the codes behind it, just check out:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/PwzXxm/PwzXxm.github.io&quot;&gt;Pwzxxm.github.io&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/PwzXxm/local-site&quot;&gt;local site&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can grap and use any code from my site as you wish. However, the content of this site is copyright, if you want to use any posts please contact me.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 15 Dec 2015 00:00:00 +1100</pubDate>
+        <link>http://www.pwzxxm.com/building-blog-jekyll/</link>
+        <guid isPermaLink="true">http://www.pwzxxm.com/building-blog-jekyll/</guid>
         
         <category>blog</category>
         

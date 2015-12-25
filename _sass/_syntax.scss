@@ -13,10 +13,16 @@ pre {
     padding-right:30px;
 }
 
+pre,
+code {
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 12.5px;
+}
 
 code.inline-code {
+    font-size: 16px;
     font-family: monospace;
-    background: #eeeeee;
+    background: #e3e3e3;
     padding-left: 3px;
     padding-right: 3px;
 }
@@ -53,13 +59,6 @@ pre a:last-of-type::before {
 pre a:only-of-type::before {
   padding: 10px;
 }
-
-pre,
-code {
-  font-size: 15px;
-}
-
-
 
 pre {
   overflow-x: auto;

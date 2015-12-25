@@ -245,7 +245,7 @@ blockquote {
     .post-list > li .post-data {
       color: #828282;
       margin-top: 10px;
-      margin-bottom: -15px; }
+      margin-bottom: -5px; }
       .post-list > li .post-data a {
         color: #2273b6; }
       .post-list > li .post-data h1, .post-list > li .post-data h2, .post-list > li .post-data h3, .post-list > li .post-data h4 {
@@ -262,6 +262,9 @@ blockquote {
     .post-list > li .post-more {
       font-size: 12.8px;
       color: #828282; }
+      .post-list > li .post-more img {
+        margin-top: -12px;
+        margin-left: -2px; }
 
 /**
 * Posts
@@ -284,13 +287,15 @@ blockquote {
     list-style: disc; }
   .post-content h2 {
     font-size: 26px;
-    margin-top: 30px; }
+    margin-top: 30px;
+    font-weight: bold; }
     @media screen and (max-width: 800px) {
       .post-content h2 {
         font-size: 22px; } }
   .post-content h3 {
     font-size: 20px;
-    margin-top: 30px; }
+    margin-top: 30px;
+    font-weight: bold; }
     @media screen and (max-width: 800px) {
       .post-content h3 {
         font-size: 18px; } }
@@ -375,6 +380,11 @@ blockquote {
   margin-bottom: 30px; }
   .blog-list-container ul li {
     margin: 5px 0 5px 0; }
+    .blog-list-container ul li .blog-date {
+      display: inline-block;
+      font-size: 11.2px;
+      color: #828282;
+      margin-left: 5px; }
 .blog-list-container a {
   color: #555555; }
 .blog-list-container .single-tag {
@@ -384,6 +394,9 @@ blockquote {
   color: #2273b6; }
 
 table {
+  overflow-x: auto;
+  display: block;
+  min-width: 300px;
   font-size: 14px;
   border-collapse: collapse;
   margin: 20px 0 0;
@@ -536,9 +549,15 @@ pre {
   word-wrap: inherit;
   padding-right: 30px; }
 
+pre,
+code {
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 12.5px; }
+
 code.inline-code {
+  font-size: 16px;
   font-family: monospace;
-  background: #eeeeee;
+  background: #e3e3e3;
   padding-left: 3px;
   padding-right: 3px; }
 
@@ -571,10 +590,6 @@ pre a:last-of-type::before {
 
 pre a:only-of-type::before {
   padding: 10px; }
-
-pre,
-code {
-  font-size: 15px; }
 
 pre {
   overflow-x: auto; }

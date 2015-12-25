@@ -1,0 +1,6 @@
+User-agent: Googlebot
+Disallow: /tags
+Disallow: /cn/tags
+Disallow: /about
+Disallow: /cn/about
+Sitemap: https://www.pwzxxm.com/sitemap.xml
