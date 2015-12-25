@@ -43,7 +43,7 @@ Using singly linked list, use `head` to store the bottom of the stack, each item
 
 push: change the `next` variable of the top item in stack(last item in list) to the new item, let `next` of the new item points to `NULL`, `size += 1`
 
-pop: delete the top item in stack (last item in list), `max-index -= 1`, set `next` of the new last item to `NULL`
+pop: delete the top item in stack (last item in list), `size -= 1`, set `next` of the new last item to `NULL`
 
 ###<a name="stack-c++-stl-stack"></a> C++ STL - stack
 ``` cpp

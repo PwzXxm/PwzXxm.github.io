@@ -5,8 +5,8 @@
     <description>Learning and sharing computer science ideas. Enjoy what you are passionated about.</description>
     <link>http://www.pwzxxm.com/</link>
     <atom:link href="http://www.pwzxxm.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 25 Dec 2015 19:08:00 +1100</pubDate>
-    <lastBuildDate>Fri, 25 Dec 2015 19:08:00 +1100</lastBuildDate>
+    <pubDate>Fri, 25 Dec 2015 19:22:34 +1100</pubDate>
+    <lastBuildDate>Fri, 25 Dec 2015 19:22:34 +1100</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -72,7 +72,7 @@
 
 &lt;p&gt;push: change the &lt;code class=&quot;inline-code&quot;&gt;next&lt;/code&gt; variable of the top item in stack(last item in list) to the new item, let &lt;code class=&quot;inline-code&quot;&gt;next&lt;/code&gt; of the new item points to &lt;code class=&quot;inline-code&quot;&gt;NULL&lt;/code&gt;, &lt;code class=&quot;inline-code&quot;&gt;size += 1&lt;/code&gt;&lt;/p&gt;
 
-&lt;p&gt;pop: delete the top item in stack (last item in list), &lt;code class=&quot;inline-code&quot;&gt;max-index -= 1&lt;/code&gt;, set &lt;code class=&quot;inline-code&quot;&gt;next&lt;/code&gt; of the new last item to &lt;code class=&quot;inline-code&quot;&gt;NULL&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;pop: delete the top item in stack (last item in list), &lt;code class=&quot;inline-code&quot;&gt;size -= 1&lt;/code&gt;, set &lt;code class=&quot;inline-code&quot;&gt;next&lt;/code&gt; of the new last item to &lt;code class=&quot;inline-code&quot;&gt;NULL&lt;/code&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;c-stl-stack&quot;&gt;&lt;a name=&quot;stack-c++-stl-stack&quot;&gt;&lt;/a&gt; C++ STL - stack&lt;/h3&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;cpp&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;iostream&amp;gt;&lt;/span&gt;
