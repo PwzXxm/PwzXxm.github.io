@@ -1,4 +1,4 @@
-User-agent: Googlebot
+User-agent: *
 Disallow: /tags
 Disallow: /cn/tags
 Disallow: /about
