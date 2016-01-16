@@ -7,6 +7,10 @@ tag: data-structure
 
 Stack, queue and Linked lists are basic data structures. They appear in our daily life. For example, stacks of intermodal containers at the port, waiting in line(queue) to ride a roller coaster and the film The Human Centipede，if you know it.
 
+<br>
+<div class="toc">
+**Contents**
+
 - [Stack](#stack)
 	- [Intro](#stack-intro)
 	- [Array Implementation](#stack-array-implementation)
@@ -20,6 +24,10 @@ Stack, queue and Linked lists are basic data structures. They appear in our dail
 - [Linked List](#linked-list)
 	- [Intro](#ll-intro)
 	- [C++ Struct Implementation](#ll-c++-struct-implementation)
+</div>
+<br>
+
+-----
 
 ##<a name="stack"></a>Stack
 ###<a name="stack-intro"></a>Intro
@@ -85,6 +93,9 @@ int main(void) {
 }
 ```
 
+<br>
+
+-----
 
 ##<a name="queue"></a>Queue
 ###<a name="q-intro"></a> Intro
@@ -138,6 +149,10 @@ Priority Queue is similar as queue, however each item has a priority. The first 
 In C++ STL, if you use `int` as items in a priority queue, it is default that the smaller the integer is, the less priority it has. If you want the opposite, which is larger integer, less priority, you could use `great<int>`, fully declaration`std::priority_queue<int, std::vector<int>, std::greater<int> q_name`. If you want other custom compare methods, you might need to custom `cmp` function to complete priority comparison.
 
 **Caution: Priority Queue uses `front()` to get the first item, NOT `top()`**
+
+<br>
+
+-----
 
 ##<a name="linked-list"></a>Linked List
 ###<a name="ll-intro"></a> Intro

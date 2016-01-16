@@ -14,7 +14,7 @@ dl, dd, ol, ul, figure {
 body {
   font: 400 16px/1.5 "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
   color: #555555;
-  background-color: #F6F6F6;
+  background-color: #ffffff;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
   -moz-font-feature-settings: "kern" 1;
@@ -127,18 +127,19 @@ blockquote {
 * Site header
 */
 .site-header {
-  border-bottom: 3px solid #e8e8e8;
-  background-color: #FFF;
+  border-bottom: 2px solid #e8e8e8;
+  background-color: #fafafa;
   min-height: 56px;
+  z-index: 99;
   position: relative; }
   .site-header a {
     color: #000000; }
 
 .site-title {
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 300;
   line-height: 56px;
-  letter-spacing: -1px;
+  letter-spacing: 0px;
   margin-bottom: 0;
   float: left; }
 
@@ -146,20 +147,20 @@ blockquote {
   float: right;
   line-height: 56px;
   /*
-    .menu-icon {
-      display: none;
-    }
-  
-    .page-link {
-      color: $text-color;
-      line-height: $base-line-height;
-  
-      // Gaps between nav items, but not on the last one
-      &:not(:last-child) {
-        margin-right: 20px;
-      }
-    }
-    */ }
+  .menu-icon {
+  display: none;
+}
+
+.page-link {
+color: $text-color;
+line-height: $base-line-height;
+
+// Gaps between nav items, but not on the last one
+&:not(:last-child) {
+margin-right: 20px;
+}
+}
+*/ }
   .site-nav .chinese {
     margin-left: 10px; }
 
@@ -169,7 +170,7 @@ blockquote {
 .site-footer {
   border-top: 1px solid #e8e8e8;
   padding: 30px 0;
-  background-color: #F6F6F6; }
+  background-color: #ffffff; }
 
 .footer-heading {
   font-size: 18px;
@@ -223,7 +224,7 @@ blockquote {
 * Page content
 */
 .page-content {
-  padding: 30px 0; }
+  padding: 40px 0; }
 
 .page-heading {
   font-size: 20px; }
@@ -243,7 +244,7 @@ blockquote {
     .post-list > li h2 {
       margin-bottom: 2px; }
     .post-list > li .post-data {
-      color: #828282;
+      color: #9c9c9c;
       margin-top: 10px;
       margin-bottom: -5px; }
       .post-list > li .post-data a {
@@ -264,7 +265,7 @@ blockquote {
       color: #828282; }
       .post-list > li .post-more img {
         margin-top: -12px;
-        margin-left: -2px; }
+        margin-left: -5px; }
 
 /**
 * Posts
@@ -285,27 +286,39 @@ blockquote {
   margin-bottom: 30px; }
   .post-content ul {
     list-style: disc; }
+  .post-content h2, .post-content h3, .post-content h4, .post-content h5 {
+    margin-top: 30px; }
   .post-content h2 {
     font-size: 26px;
-    margin-top: 30px;
     font-weight: bold; }
     @media screen and (max-width: 800px) {
       .post-content h2 {
         font-size: 22px; } }
   .post-content h3 {
-    font-size: 20px;
-    margin-top: 30px;
+    font-size: 22px;
     font-weight: bold; }
     @media screen and (max-width: 800px) {
       .post-content h3 {
         font-size: 18px; } }
   .post-content h4 {
-    font-size: 14px;
-    font-weight: bold;
-    margin-top: 30px; }
+    font-size: 18px;
+    font-weight: bold; }
     @media screen and (max-width: 800px) {
       .post-content h4 {
-        font-size: 10px; } }
+        font-size: 14px; } }
+  .post-content h5 {
+    font-size: 14px;
+    font-weight: bold; }
+    @media screen and (max-width: 800px) {
+      .post-content h5 {
+        font-size: 12.5px; } }
+  .post-content img {
+    margin: auto;
+    overflow-x: auto; }
+  .post-content .toc {
+    font-size: 14.4px; }
+    .post-content .toc ul {
+      list-style: decimal; }
 
 /**
 * sidebar
@@ -537,11 +550,10 @@ ul.pagination {
 
 pre {
   counter-reset: line-numbering;
-  border: solid 1px #d9d9d9;
   border-radius: 0;
-  background: #fff;
+  background: #F7F7F7;
   padding: 0;
-  line-height: 23px;
+  line-height: 20px;
   margin-bottom: 30px;
   white-space: pre;
   overflow-x: auto;
@@ -551,13 +563,13 @@ pre {
 
 pre,
 code {
-  font-family: "Lucida Console", Monaco, monospace;
-  font-size: 12.5px; }
+  font-family: "PT Mono", Consolas, Monaco, Menlo, monospace;
+  font-size: 13px; }
 
 code.inline-code {
   font-size: 16px;
   font-family: monospace;
-  background: #e3e3e3;
+  background: #eeeeee;
   padding-left: 3px;
   padding-right: 3px; }
 
@@ -570,7 +582,7 @@ pre a::before {
   text-align: right;
   opacity: 0.7;
   display: inline-block;
-  color: #aaa;
+  color: #2d2d2d;
   background: #eee;
   margin-right: 16px;
   padding: 2px 10px;
@@ -613,13 +625,10 @@ pre {
   background-color: #eee8d5 !important; }
 
 .highlight .cp {
-  color: #93a1a1 !important;
-  font-weight: bold !important; }
+  color: #93a1a1 !important; }
 
 .highlight .cs {
-  color: #93a1a1 !important;
-  font-weight: bold !important;
-  font-style: italic !important; }
+  color: #93a1a1 !important; }
 
 .highlight .gd {
   background-color: #fdd !important; }
@@ -640,11 +649,7 @@ pre {
   color: #657b83 !important; }
 
 .highlight .gu {
-  color: #d33682 !important;
-  font-weight: bold !important; }
-
-.highlight .gs {
-  font-weight: bold !important; }
+  color: #d33682 !important; }
 
 .highlight .gr, .highlight .gt {
   color: #d33682 !important; }
@@ -674,11 +679,7 @@ pre {
   color: #2aa198 !important; }
 
 .highlight .c, .highlight .cm, .highlight .c1 {
-  color: #93a1a1 !important;
-  font-style: italic !important; }
-
-.highlight .k, .highlight .kc, .highlight .kd, .highlight .kp, .highlight .kr, .highlight .kt, .highlight .o, .highlight .ow {
-  font-weight: bold !important; }
+  color: #93a1a1 !important; }
 
 .highlight .k {
   color: #859900 !important; }
@@ -693,8 +694,7 @@ pre {
   color: #586e75 !important; }
 
 .highlight .nc {
-  color: #b58900 !important;
-  font-weight: bold !important; }
+  color: #b58900 !important; }
 
 .highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .mo, .highlight .il {
   color: #2aa198 !important; }
@@ -713,5 +713,4 @@ pre {
 
 .highlight .ne,
 .highlight .nf {
-  color: #dc322f !important;
-  font-weight: bold !important; }
+  color: #dc322f !important; }

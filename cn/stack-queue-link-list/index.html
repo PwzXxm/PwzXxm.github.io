@@ -13,6 +13,9 @@
   <link rel="shortcut icon" href="/img/favicon.ico">
   <link rel="canonical" href="http://www.pwzxxm.com/cn/stack-queue-link-list/">
   <link rel="alternate" type="application/rss+xml" title="PwzXxm" href="http://www.pwzxxm.com/feed.xml">
+  <script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
   <script>
@@ -28,7 +31,7 @@
 
 
   <body>
-    <header class="site-header">
+    <header class="site-header glass">
 
   <div class="wrapper">
 
@@ -71,6 +74,10 @@
   <div class="post-content" itemprop="articleBody">
     <p>栈，队列和链表是最基础的数据结构，它们出现在很多生活场景中，比如说堆起来的集装箱，排队坐过山车，人体蜈蚣（如果不知道就别去搜了，啦啦啦）</p>
 
+<p><br>
+<div class="toc">
+<strong>目录</strong></p>
+
 <ul>
 <li><a href="#stack">栈</a>
 
@@ -92,9 +99,13 @@
 
 <ul>
 <li><a href="#ll-intro">简介</a></li>
-<li><a href="#ll-c++-struct-implementation">C++ struct 实现</a></li>
+<li><a href="#ll-c++-struct-implementation">C++ struct 实现</a>
+</div>
+<br></li>
 </ul></li>
 </ul>
+
+<hr>
 
 <h2 id="栈"><a name="stack"></a> 栈</h2>
 
@@ -170,6 +181,10 @@
 <a name="line-35"></a>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <a name="line-36"></a><span class="p">}</span>
 </code></pre></div>
+<p><br></p>
+
+<hr>
+
 <h2 id="队列"><a name="queue"></a> 队列</h2>
 
 <h3 id="简介"><a name="q-intro"></a> 简介</h3>
@@ -232,6 +247,10 @@
 <p>在C++ STL中，如果把<code class="inline-code">int</code>作为优先队列的类型， 默认情况下如果是整数的优先队列，那整数越小，则优先级越低。如果想整数越大，优先级越低，可以用<code class="inline-code">greater<int></code>, 完整声明<code class="inline-code">std::priority_queue<int, std::vector<int>, std::greater<int> q_name</code>。如有其它需求，可自定义<code class="inline-code">cmp</code>函数来完成优先级的比较。</p>
 
 <p><strong>另外需特别注意的是，优先队列取队首元素不再是用队列的<code class="inline-code">front()</code>，而是用<code class="inline-code">top()</code>。</strong></p>
+
+<p><br></p>
+
+<hr>
 
 <h2 id="链表"><a name="linked-list"></a> 链表</h2>
 

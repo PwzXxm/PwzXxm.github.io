@@ -7,6 +7,10 @@ tag: data-structure
 
 栈，队列和链表是最基础的数据结构，它们出现在很多生活场景中，比如说堆起来的集装箱，排队坐过山车，人体蜈蚣（如果不知道就别去搜了，啦啦啦）
 
+<br>
+<div class="toc">
+**目录**
+
 - [栈](#stack)
 	- [简介](#stack-intro)
 	- [数组实现](#stack-array-implementation)
@@ -20,6 +24,10 @@ tag: data-structure
 - [链表](#linked-list)
 	- [简介](#ll-intro)
 	- [C++ struct 实现](#ll-c++-struct-implementation)
+</div>
+<br>
+
+-----
 
 ##<a name="stack"></a> 栈
 ###<a name="stack-intro"></a> 简介
@@ -85,6 +93,10 @@ int main(void) {
 }
 ```
 
+<br>
+
+-----
+
 ##<a name="queue"></a> 队列
 ###<a name="q-intro"></a> 简介
 队列就像排队一样，在队尾加入新的元素，在队首出队。所以队列有着“**先进先出**”的原则。
@@ -137,6 +149,10 @@ int main() {
 在C++ STL中，如果把`int`作为优先队列的类型， 默认情况下如果是整数的优先队列，那整数越小，则优先级越低。如果想整数越大，优先级越低，可以用`greater<int>`, 完整声明`std::priority_queue<int, std::vector<int>, std::greater<int> q_name`。如有其它需求，可自定义`cmp`函数来完成优先级的比较。
 
 **另外需特别注意的是，优先队列取队首元素不再是用队列的`front()`，而是用`top()`。**
+
+<br>
+
+-----
 
 ##<a name="linked-list"></a> 链表
 ###<a name="ll-intro"></a> 简介

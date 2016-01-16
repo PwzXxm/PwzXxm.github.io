@@ -13,6 +13,9 @@
   <link rel="shortcut icon" href="/img/favicon.ico">
   <link rel="canonical" href="http://www.pwzxxm.com/stack-queue-link-list/">
   <link rel="alternate" type="application/rss+xml" title="PwzXxm" href="http://www.pwzxxm.com/feed.xml">
+  <script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script>
 </head>
 
   <script>
@@ -28,7 +31,7 @@
 
 
   <body>
-    <header class="site-header">
+    <header class="site-header glass">
 
   <div class="wrapper">
 
@@ -71,6 +74,10 @@
   <div class="post-content" itemprop="articleBody">
     <p>Stack, queue and Linked lists are basic data structures. They appear in our daily life. For example, stacks of intermodal containers at the port, waiting in line(queue) to ride a roller coaster and the film The Human Centipede，if you know it.</p>
 
+<p><br>
+<div class="toc">
+<strong>Contents</strong></p>
+
 <ul>
 <li><a href="#stack">Stack</a>
 
@@ -92,9 +99,13 @@
 
 <ul>
 <li><a href="#ll-intro">Intro</a></li>
-<li><a href="#ll-c++-struct-implementation">C++ Struct Implementation</a></li>
+<li><a href="#ll-c++-struct-implementation">C++ Struct Implementation</a>
+</div>
+<br></li>
 </ul></li>
 </ul>
+
+<hr>
 
 <h2 id="stack"><a name="stack"></a>Stack</h2>
 
@@ -170,6 +181,10 @@
 <a name="line-35"></a>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <a name="line-36"></a><span class="p">}</span>
 </code></pre></div>
+<p><br></p>
+
+<hr>
+
 <h2 id="queue"><a name="queue"></a>Queue</h2>
 
 <h3 id="intro"><a name="q-intro"></a> Intro</h3>
@@ -232,6 +247,10 @@
 <p>In C++ STL, if you use <code class="inline-code">int</code> as items in a priority queue, it is default that the smaller the integer is, the less priority it has. If you want the opposite, which is larger integer, less priority, you could use <code class="inline-code">great<int></code>, fully declaration<code class="inline-code">std::priority_queue<int, std::vector<int>, std::greater<int> q_name</code>. If you want other custom compare methods, you might need to custom <code class="inline-code">cmp</code> function to complete priority comparison.</p>
 
 <p><strong>Caution: Priority Queue uses <code class="inline-code">front()</code> to get the first item, NOT <code class="inline-code">top()</code></strong></p>
+
+<p><br></p>
+
+<hr>
 
 <h2 id="linked-list"><a name="linked-list"></a>Linked List</h2>
 
