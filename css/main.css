@@ -251,6 +251,8 @@ margin-right: 20px;
         color: #2273b6; }
       .post-list > li .post-data h1, .post-list > li .post-data h2, .post-list > li .post-data h3, .post-list > li .post-data h4 {
         font-size: 16px; }
+      .post-list > li .post-data img {
+        padding: 10px 0 10px 0; }
     .post-list > li .post-link {
       display: block; }
     .post-list > li .post-meta {

@@ -3,6 +3,8 @@ layout: post
 title: "栈，队列和链表"
 date: 2015-12-25
 tag: data-structure
+images:
+  - url: /img/post/link_in.gif
 ---
 
 栈，队列和链表是最基础的数据结构，它们出现在很多生活场景中，比如说堆起来的集装箱，排队坐过山车，人体蜈蚣（如果不知道就别去搜了，啦啦啦）

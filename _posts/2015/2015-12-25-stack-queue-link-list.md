@@ -3,6 +3,8 @@ layout: post
 title: "Stack, Queue and Linked Lists"
 date: 2015-12-25
 tag: data-structure
+images:
+  - url: /img/post/link_in.gif
 ---
 
 Stack, queue and Linked lists are basic data structures. They appear in our daily life. For example, stacks of intermodal containers at the port, waiting in line(queue) to ride a roller coaster and the film The Human Centipede，if you know it.
