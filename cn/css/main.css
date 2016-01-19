@@ -127,7 +127,7 @@ blockquote {
 * Site header
 */
 .site-header {
-  border-bottom: 2px solid #e8e8e8;
+  border-bottom: 2.5px solid #e8e8e8;
   background-color: #fafafa;
   min-height: 56px;
   z-index: 99;
@@ -254,6 +254,9 @@ margin-right: 20px;
       .post-list > li .post-data img {
         max-width: 500px;
         padding: 10px 0 10px 0; }
+        @media screen and (max-width: 800px) {
+          .post-list > li .post-data img {
+            max-width: 100%; } }
     .post-list > li .post-link {
       display: block; }
     .post-list > li .post-meta {

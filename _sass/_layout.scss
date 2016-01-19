@@ -2,7 +2,7 @@
 * Site header
 */
 .site-header {
-  border-bottom: 2px solid $grey-color-light;
+  border-bottom: 2.5px solid $grey-color-light;
   background-color: $header-bg-color;
   min-height: 56px;
   z-index: 99;
@@ -170,6 +170,10 @@ margin-right: 20px;
       img {
           max-width: 500px;
           padding: 10px 0 10px 0;
+          @include media-query($on-laptop) {
+              max-width: 100%;
+
+          }
       }
     }
 
