@@ -252,6 +252,7 @@ margin-right: 20px;
       .post-list > li .post-data h1, .post-list > li .post-data h2, .post-list > li .post-data h3, .post-list > li .post-data h4 {
         font-size: 16px; }
       .post-list > li .post-data img {
+        max-width: 500px;
         padding: 10px 0 10px 0; }
     .post-list > li .post-link {
       display: block; }
