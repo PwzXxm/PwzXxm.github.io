@@ -10,11 +10,12 @@
     <meta name="description" content="Learning and sharing computer science ideas. Enjoy what you are passionated about.">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="shortcut icon" href="/img/favicon.ico">
     <link rel="canonical" href="http://www.pwzxxm.com/cn/">
     <link rel="alternate" type="application/rss+xml" title="PwzXxm" href="http://www.pwzxxm.com/feed.xml">
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon" />
     <link rel="icon" href="/img/favicon.png" type="image/x-icon" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
     <script type="text/javascript"
     src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
@@ -33,34 +34,66 @@
 
 
   <body>
-    <header class="site-header glass">
+    <header class="site-header">
 
-  <div class="wrapper">
+        <nav class="site-nav">
+            <ul>
+                <li>
+                    
+                    <a class="header-icon" href="/cn">博客</a>
+                    
+                </li>
+                <li>
+                    
+                    <a class="header-icon" href="/cn/projects">项目</a>
+                    
+                </li>
+                <li>
+                    
+                    <a class="header-icon" href="/cn/tags">标签</a>
+                    
+                </li>
+                <li>
+                    
+                    <a class="header-icon" href="/cn/about">关于</a>
+                    
+                </li>
+                <li>
+                    
+                    <a class="header-icon" href="/index.html">EN</a>
+                    
+                    <!--
+                    <span class="english">
+                        
+                        <a href="/index.html">EN</a>
+                        
+                    </span>
+                    <span class="chinese">
+                        
+                        <a href="/cn/index.html" style="color: #cdcdcd">中</a>
+                        
+                    </span>
+                -->
+                </li>
+            </ul>
+        </nav>
 
-    
-    <a class="site-title" href="/cn">PwzXxm</a>
-    
+    <div class="wrapper">
+        <div class="site-title">
+            PwzXxm
+            <div class="site-subtitle">
+                Try to be great
+            </div>
+        </div>
 
-    <nav class="site-nav">
-      <span class="english">
-      
-      <a href="/index.html">EN</a>
-      
-    </span>
-    <span class="chinese">
-      
-      <a href="/cn/index.html" style="color: #cdcdcd">中</a>
-      
-    </span>
-    </nav>
-
-  </div>
+    </div>
 
 </header>
 
     <div class="page-content">
       <div class="wrapper">
         <div class="side-bar">
+    <!--
   <div class="aboutme">
     <div class="about-above">
     </div>
@@ -73,19 +106,25 @@
     <div class="about-below">
     </div>
   </div>
+  -->
 
-  <div class="tags">
+  <div class="search-bar card">
+      <div class="search-icon"><img src="/img/search.svg" /></div>
+      <input type="text" id="search-input" placeholder="Search" /> <br />
+  </div>
+
+  <div class="tags card">
     <h3>
       
-      <a href="/cn/tags">全部标签</a>
+      <a href="/cn/tags">标签</a>
       
     </h3>
-    <ul class="blog-tags-list">
+    <ul>
       
       
       
       
-      <li class="tag">
+      <li>
         
         <a href="/cn/tags/#blog">blog</a>
         
@@ -93,7 +132,7 @@
       
       
       
-      <li class="tag">
+      <li>
         
         <a href="/cn/tags/#data-structure">data-structure</a>
         
@@ -109,89 +148,101 @@
     <ul class="post-list">
         <!-- This loops through the paginated posts -->
         
-        <li>
+        <li class="card">
             <h2><a class="post-link" href="/cn/binary-tree/">二叉树</a></h2>
-            <div class="post-meta">
-                2016年1月15号&nbsp
-                
-                标签:
-                
-                <a href="/cn/tags/#data-structure">data-structure</a>
-                
-            </div>
             <div class="post-data">
-                <p>二叉树之所以叫二叉树，是因为它每一个节点都至多有两个叉，又形似一棵树。树有根，有枝，有叶，只不过一般我们在计算机中所说的树都是根在上，叶在下的。</p>
-
+                <!--
                 
                 <img src="/img/post/full_binary_tree.gif" alt="" title="">
+            -->
+                <p>二叉树之所以叫二叉树，是因为它每一个节点都至多有两个叉，又形似一棵树。树有根，有枝，有叶，只不过一般我们在计算机中所说的树都是根在上，叶在下的。</p>
+
             </div>
             
-<a class="post-more" href="/cn/binary-tree/"><img src="/img/readmore.gif"/> 更多...</a>
-            
-        </li>
-        
-        <li>
-            <h2><a class="post-link" href="/cn/stack-queue-link-list/">栈，队列和链表</a></h2>
+                <!--
             <div class="post-meta">
-                2015年12月25号&nbsp
+                发布于2016年1月15号&nbsp
                 
-                标签:
                 
                 <a href="/cn/tags/#data-structure">data-structure</a>
                 
             </div>
-            <div class="post-data">
-                <p>栈，队列和链表是最基础的数据结构，它们出现在很多生活场景中，比如说堆起来的集装箱，排队坐过山车，人体蜈蚣（如果不知道就别去搜了，啦啦啦）</p>
-
-                
-                <img src="/img/post/link_in.gif" alt="" title="">
-            </div>
-            
-<a class="post-more" href="/cn/stack-queue-link-list/"><img src="/img/readmore.gif"/> 更多...</a>
+        -->
+            <a class="post-more" href="/cn/binary-tree/">阅读更多</a>
             
         </li>
         
-        <li>
-            <h2><a class="post-link" href="/cn/building-blog-jekyll/">使用Jekyll＋Github Pages搭建博客</a></h2>
+        <li class="card">
+            <h2><a class="post-link" href="/cn/stack-queue-link-list/">栈，队列和链表</a></h2>
+            <div class="post-data">
+                <!--
+                
+                <img src="/img/post/link_in.gif" alt="" title="">
+            -->
+                <p>栈，队列和链表是最基础的数据结构，它们出现在很多生活场景中，比如说堆起来的集装箱，排队坐过山车，人体蜈蚣（如果不知道就别去搜了，啦啦啦）</p>
+
+            </div>
+            
+                <!--
             <div class="post-meta">
-                2015年12月15号&nbsp
+                发布于2015年12月25号&nbsp
                 
-                标签:
                 
-                <a href="/cn/tags/#blog">blog</a>
+                <a href="/cn/tags/#data-structure">data-structure</a>
                 
             </div>
+        -->
+            <a class="post-more" href="/cn/stack-queue-link-list/">阅读更多</a>
+            
+        </li>
+        
+        <li class="card">
+            <h2><a class="post-link" href="/cn/building-blog-jekyll/">使用Jekyll＋Github Pages搭建博客</a></h2>
             <div class="post-data">
+                <!--
+                
+                <img src="" alt="" title="">
+            -->
                 <h2 id="为什么选择-jekyll-和-github-pages">为什么选择 Jekyll 和 Github Pages</h2>
 
 <p><a href="http://jekyll.bootcss.com/">Jekyll</a>是一个静态网页生成器，使用YAML头信息可以很方便地使用各种布局，内置markdown，新的文章只需加入文件夹即可。<a href="https://pages.github.com/">Github Pages</a>可以提供免费空间，免费无限流量来给网页当虚拟主机。他们俩配合起来相当默契，而且网上也有很多资料。但是有一点美中不足的是Github Pages是在安全模式下运行的，也就是说它并不支持Jekyll的插件。然而我们可以在本地带着插件生成好网站再放到Github上。虽然听起来不太方便，但是有脚本让我们一步实现。这点我们后面详细说。</p>
 
-                
-                <img src="" alt="" title="">
             </div>
             
-<a class="post-more" href="/cn/building-blog-jekyll/"><img src="/img/readmore.gif"/> 更多...</a>
-            
-        </li>
-        
-        <li>
-            <h2><a class="post-link" href="/cn/the-story-about-the-blog/">这个博客那些事</a></h2>
+                <!--
             <div class="post-meta">
-                2015年12月12号&nbsp
+                发布于2015年12月15号&nbsp
                 
-                标签:
                 
                 <a href="/cn/tags/#blog">blog</a>
                 
             </div>
+        -->
+            <a class="post-more" href="/cn/building-blog-jekyll/">阅读更多</a>
+            
+        </li>
+        
+        <li class="card">
+            <h2><a class="post-link" href="/cn/the-story-about-the-blog/">这个博客那些事</a></h2>
             <div class="post-data">
-                <p><a href="http://www.pwzxxm.com/cn/index.html">PwzXxm</a>是我的第一个网站，也是第一个博客。一开始只知道一点点基本的HTML，后来一边学CSS，JavaScript，用<a href="https://jekyllrb.com/">Jekyll</a>东拼西凑，花了7天时间，在2015年12月10日终于把它基本上都写完了。写完的时候真是感觉能内裤外穿一垛冲天。</p>
-
+                <!--
                 
                 <img src="" alt="" title="">
+            -->
+                <p><a href="http://www.pwzxxm.com/cn/index.html">PwzXxm</a>是我的第一个网站，也是第一个博客。一开始只知道一点点基本的HTML，后来一边学CSS，JavaScript，用<a href="https://jekyllrb.com/">Jekyll</a>东拼西凑，花了7天时间，在2015年12月10日终于把它基本上都写完了。写完的时候真是感觉能内裤外穿一垛冲天。</p>
+
             </div>
             
-<a class="post-more" href="/cn/the-story-about-the-blog/"><img src="/img/readmore.gif"/> 更多...</a>
+                <!--
+            <div class="post-meta">
+                发布于2015年12月12号&nbsp
+                
+                
+                <a href="/cn/tags/#blog">blog</a>
+                
+            </div>
+        -->
+            <a class="post-more" href="/cn/the-story-about-the-blog/">阅读更多</a>
             
         </li>
         
