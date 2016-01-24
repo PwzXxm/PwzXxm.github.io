@@ -175,7 +175,7 @@
     > li {
         background-color: #ffffff;
         margin-bottom: $spacing-unit;
-        padding: $spacing-unit $spacing-unit*1.5 $spacing-unit*1.2 $spacing-unit*1.5;
+        padding: 25px 40px 25px 40px;
 
         a {
             color: #000;
@@ -400,19 +400,20 @@
         list-style: none;
         margin: -5px 0 5px 0;
         li {
-            opacity: 0.25;
+            opacity: 0.4;
             display: inline-block;
             border: 1px solid #000;
             -webkit-border-radius: 1000px;
             -moz-border-radius: 1000px;
             border-radius: 1000px;
-            padding: 0 7px 0 7px;
-            margin: 2px 5px 2px 0;
+            padding: 0 10px 0 10px;
+            margin: 1px 1px 5px 6px;
+            transition: all 0.5s ease;
             a {
                 color: #000;
             }
             &:hover {
-                opacity: 0.54;
+                opacity: 0.87;
             }
         }
     }
@@ -425,11 +426,17 @@
     visibility: hidden!important;
 }
 
+.blog-list-wrapper {
+    margin-right: 280px;
+
+}
+
 .blog-list-container {
+    margin-bottom: 0;
+    padding: 25px 40px 25px 40px;
     ul {
         list-style: none;
-        margin-left: $spacing-unit;
-        margin-bottom: $spacing-unit;
+        margin: 0 0 0 0;
         li {
             margin: 5px 0 5px 0;
             .blog-date {
@@ -444,10 +451,8 @@
         color: $text-color;
     }
     .single-tag {
-        background-color: #EEEEEE;
-        padding: 0 5px 0 5px;
-        margin: 2px 0 2px 0;
-        color: #2273b6;
+        color: #2196F3;
+        text-transform: capitalize;
     }
 }
 

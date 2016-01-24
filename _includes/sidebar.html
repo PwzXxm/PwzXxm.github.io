@@ -1,4 +1,5 @@
 <div class="side-bar">
+    <!--
   <div class="aboutme">
     <div class="about-above">
     </div>
@@ -13,13 +14,19 @@
     <div class="about-below">
     </div>
   </div>
+  -->
 
-  <div class="tags">
+  <div class="search-bar card">
+      <div class="search-icon"><img src="/img/search.svg" /></div>
+      <input type="text" id="search-input" placeholder="Search" /> <br />
+  </div>
+  
+  <div class="tags card">
     <h3><a href="/tags">
       {% if page.is_default_language %}
-      <a href="/tags">All Tags</a>
+      <a href="/tags">Featured tags</a>
       {% else %}
-      <a href="/cn/tags">全部标签</a>
+      <a href="/cn/tags">标签</a>
       {% endif %}
     </a></h3>
     <ul class="blog-tags-list">

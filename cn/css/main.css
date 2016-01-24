@@ -11,7 +11,7 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-  font: 400 16px/1.5 "Roboto", sans-serif;
+  font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #555555;
   background-color: #eeeeee;
   -webkit-text-size-adjust: 100%;
@@ -248,7 +248,7 @@ blockquote {
   .post-list > li {
     background-color: #ffffff;
     margin-bottom: 30px;
-    padding: 30px 45px 36px 45px; }
+    padding: 25px 40px 25px 40px; }
     .post-list > li a {
       color: #000; }
     .post-list > li .post-data {
@@ -417,41 +417,45 @@ blockquote {
     list-style: none;
     margin: -5px 0 5px 0; }
     .tags ul li {
-      opacity: 0.25;
+      opacity: 0.4;
       display: inline-block;
       border: 1px solid #000;
       -webkit-border-radius: 1000px;
       -moz-border-radius: 1000px;
       border-radius: 1000px;
-      padding: 0 7px 0 7px;
-      margin: 2px 5px 2px 0; }
+      padding: 0 10px 0 10px;
+      margin: 1px 1px 5px 6px;
+      transition: all 0.5s ease; }
       .tags ul li a {
         color: #000; }
       .tags ul li:hover {
-        opacity: 0.54; }
+        opacity: 0.87; }
 
 .hidden {
   display: none !important;
   visibility: hidden !important; }
 
-.blog-list-container ul {
-  list-style: none;
-  margin-left: 30px;
-  margin-bottom: 30px; }
-  .blog-list-container ul li {
-    margin: 5px 0 5px 0; }
-    .blog-list-container ul li .blog-date {
-      display: inline-block;
-      font-size: 11.2px;
-      color: #828282;
-      margin-left: 5px; }
-.blog-list-container a {
-  color: #555555; }
-.blog-list-container .single-tag {
-  background-color: #EEEEEE;
-  padding: 0 5px 0 5px;
-  margin: 2px 0 2px 0;
-  color: #2273b6; }
+.blog-list-wrapper {
+  margin-right: 280px; }
+
+.blog-list-container {
+  margin-bottom: 0;
+  padding: 25px 40px 25px 40px; }
+  .blog-list-container ul {
+    list-style: none;
+    margin: 0 0 0 0; }
+    .blog-list-container ul li {
+      margin: 5px 0 5px 0; }
+      .blog-list-container ul li .blog-date {
+        display: inline-block;
+        font-size: 11.2px;
+        color: #828282;
+        margin-left: 5px; }
+  .blog-list-container a {
+    color: #555555; }
+  .blog-list-container .single-tag {
+    color: #2196F3;
+    text-transform: capitalize; }
 
 table {
   overflow-x: auto;

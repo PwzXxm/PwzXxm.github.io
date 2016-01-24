@@ -9,6 +9,7 @@ permalink: /tags/
 {% for tag in site.tags %}
 {% assign t = tag | first %}
 {% assign posts = tag | last %}
+<div class="blog-list-wrapper card">
 <div class="blog-list-container" id="{{ t }}-container">
   {% assign numPosts = posts | size | divided_by: 2 %}
   <span class="single-tag">{{ t }} ({{ numPosts }})</span>
@@ -34,6 +35,7 @@ permalink: /tags/
     {% endif %}
     {% endfor %}
   </ul>
+</div>
 </div>
 
 <script>
