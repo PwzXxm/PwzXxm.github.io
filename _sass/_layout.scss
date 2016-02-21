@@ -164,8 +164,7 @@
 }
 
 .post-list {
-    margin-left: 0;
-    margin-right: 260px;
+    margin-left: 0 0 0 0;
     color: #000;
     @media only screen and (max-width: 800px) {
         margin-right: 0px;
@@ -191,6 +190,32 @@
             }
         }
 
+        .slide
+        {
+            text-decoration:none;
+            display: inline-block;
+            color:#607D8B;
+        }
+
+        .slide:after
+        {
+            content: "";
+            display: block;
+            height: 3px;
+            width: 0;
+            background: transparent;
+            transition: width .5s ease, background-color .5s ease;
+            -webkit-transition: width .5s ease, background-color .5s ease;
+            -moz-transition: width .5s ease, background-color .5s ease;
+            margin: auto;
+        }
+
+        .slide:hover:after
+        {
+            width: 100%;
+            background: #607D8B;
+        }
+
         .post-link {
             text-decoration: none;
             transition: all 0.5s ease;
@@ -206,7 +231,7 @@
             margin-bottom: 50px;
             color: #9d9d9d;
             padding-bottom: 50px;
-            border-bottom: 1px solid #bdbdbd;
+            border-bottom: 1px solid $grey-color-light;
             a {
                 transition: all 0.5s ease;
                 color: #9d9d9d;
@@ -406,7 +431,7 @@ opacity: 0.4;
     color: #878787;
     margin-bottom: 20px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #bdbdbd;
+    border-bottom: 1px solid $grey-color-light;
     h3 {
         font-weight: bold;
         margin-bottom: 20px;
