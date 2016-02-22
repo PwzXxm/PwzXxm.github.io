@@ -22,9 +22,9 @@
         padding: 144px 0 144px 0;
         font-family: sans-serif;
         font-weight: 300;
-        transition: opacity 1s ease;
-        -webkit-transition: opacity 1s ease;
-        -moz-transition: opacity 1s ease;
+        transition: opacity 0.8s ease;
+        -webkit-transition: opacity 0.8s ease;
+        -moz-transition: opacity 0.8s ease;
         transition-delay: 0.6s;
 
         .site-subtitle {
@@ -59,9 +59,9 @@
     background: transparentize(#fff, .1);
     border-bottom: 1px solid $grey-color-light;
     .site-title {
-        transition: opacity 0s ease;
-        -webkit-transition: opacity 0s ease;
-        -moz-transition: opacity 0s ease;
+        transition: opacity 0.1s ease;
+        -webkit-transition: opacity 0.1s ease;
+        -moz-transition: opacity 0.1s ease;
         opacity: 0;
         display: none;
     }

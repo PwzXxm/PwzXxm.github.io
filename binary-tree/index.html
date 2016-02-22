@@ -33,45 +33,43 @@
   <body>
     <header class="site-header">
 
-        <nav class="site-nav">
-            <ul>
-                <li>
-                    
-                    <a class="header-icon" href="/">Blog</a>
-                    
-                </li>
-                <li>
-                    
-                    <a class="header-icon" href="/projects">Projects</a>
-                    
-                </li>
-                <li>
-                    
-                    <a class="header-icon" href="/tags">Tags</a>
-                    
-                </li>
-                <li>
-                    
-                    <a class="header-icon" href="/about">About</a>
-                    
-                </li>
-                <li>
-                    
-                    <a class="header-icon" href="/cn/binary-tree/">中</a>
-                    
-                </li>
-            </ul>
-        </nav>
+    <nav class="site-nav">
+        <ul>
+            <li>
+                
+                <a class="header-icon" href="/">Blog</a>
+                
+            </li>
+            <li>
+                
+                <a class="header-icon" href="/projects">Projects</a>
+                
+            </li>
+            <li>
+                
+                <a class="header-icon" href="/tags">Tags</a>
+                
+            </li>
+            <li>
+                
+                <a class="header-icon" href="/about">About</a>
+                
+            </li>
+            <li>
+                
+                <a class="header-icon" href="/cn/binary-tree/">中</a>
+                
+            </li>
+        </ul>
+    </nav>
 
-    <div class="wrapper">
-        <div class="site-title">
-            PwzXxm
-            <div class="site-subtitle">
-                Try to be great
-            </div>
+    <div class="site-title">
+        PwzXxm
+        <div class="site-subtitle">
+            Try to be great
         </div>
-
     </div>
+
 
 </header>
     <div class="page-content">
@@ -432,8 +430,9 @@ l-24 -60 0 -460 c0 -458 0 -460 23 -517 30 -74 108 -160 176 -193 39 -19 90
 <script src="/js/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script>
-var lastScroll = 0;
+//var lastScroll = 0;
 $(window).scroll(function() {
+    /*
     var st = $(this).scrollTop();
     if (st < lastScroll) {
         $('.site-header').addClass("sticky");
@@ -443,7 +442,7 @@ $(window).scroll(function() {
         $('.site-header').removeClass("sticky");
         $('.page-content').removeClass("padding-more");
     }
-    /*
+    */
     if ($(this).scrollTop() > 1){
         $('.site-header').addClass("sticky");
         $('.page-content').addClass("padding-more");
@@ -452,8 +451,7 @@ $(window).scroll(function() {
         $('.site-header').removeClass("sticky");
         $('.page-content').removeClass("padding-more");
     }
-    */
-    lastScroll = st;
+    //lastScroll = st;
 });
 </script>
 <script>
