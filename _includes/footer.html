@@ -51,6 +51,20 @@
   </div>
 
 </footer>
+<script src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 1){
+        $('.site-header').addClass("sticky");
+        $('.page-content').addClass("padding-more");
+    }
+    else{
+        $('.site-header').removeClass("sticky");
+        $('.page-content').removeClass("padding-more");
+    }
+});
+</script>
 <script>
 (function(){
     var bp = document.createElement('script');

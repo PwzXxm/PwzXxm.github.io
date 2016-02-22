@@ -16,9 +16,6 @@
     <link rel="icon" href="/img/favicon.png" type="image/x-icon" />
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
-    <script type="text/javascript"
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
 </head>
 
   <script>
@@ -62,18 +59,6 @@
                     
                     <a class="header-icon" href="/404.html">EN</a>
                     
-                    <!--
-                    <span class="english">
-                        
-                        <a href="/404.html">EN</a>
-                        
-                    </span>
-                    <span class="chinese">
-                        
-                        <a href="/cn/404.html" style="color: #cdcdcd">中</a>
-                        
-                    </span>
-                -->
                 </li>
             </ul>
         </nav>
@@ -89,7 +74,6 @@
     </div>
 
 </header>
-
     <div class="page-content">
       <div class="wrapper">
         <div class="not-found">
@@ -213,6 +197,20 @@ l-24 -60 0 -460 c0 -458 0 -460 23 -517 30 -74 108 -160 176 -193 39 -19 90
   </div>
 
 </footer>
+<script src="/js/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 1){
+        $('.site-header').addClass("sticky");
+        $('.page-content').addClass("padding-more");
+    }
+    else{
+        $('.site-header').removeClass("sticky");
+        $('.page-content').removeClass("padding-more");
+    }
+});
+</script>
 <script>
 (function(){
     var bp = document.createElement('script');
