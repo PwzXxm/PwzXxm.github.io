@@ -432,7 +432,18 @@ l-24 -60 0 -460 c0 -458 0 -460 23 -517 30 -74 108 -160 176 -193 39 -19 90
 <script src="/js/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script>
+var lastScroll = 0;
 $(window).scroll(function() {
+    var st = $(this).scrollTop();
+    if (st < lastScroll) {
+        $('.site-header').addClass("sticky");
+        $('.page-content').addClass("padding-more");
+    }
+    if (st == 0) {
+        $('.site-header').removeClass("sticky");
+        $('.page-content').removeClass("padding-more");
+    }
+    /*
     if ($(this).scrollTop() > 1){
         $('.site-header').addClass("sticky");
         $('.page-content').addClass("padding-more");
@@ -441,6 +452,8 @@ $(window).scroll(function() {
         $('.site-header').removeClass("sticky");
         $('.page-content').removeClass("padding-more");
     }
+    */
+    lastScroll = st;
 });
 </script>
 <script>

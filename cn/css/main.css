@@ -133,7 +133,7 @@ blockquote {
   background-size: cover;
   height: 400px;
   width: 100%;
-  z-index: 99;
+  z-index: 10;
   position: relative; }
   .site-header .site-title {
     opacity: 1;
@@ -172,7 +172,8 @@ blockquote {
     transition: opacity 0s ease;
     -webkit-transition: opacity 0s ease;
     -moz-transition: opacity 0s ease;
-    opacity: 0; }
+    opacity: 0;
+    display: none; }
 
 .site-nav {
   font-size: 14px;
@@ -254,6 +255,7 @@ blockquote {
 * Page content
 */
 .page-content {
+  z-index: 5;
   padding: 50px 0;
   margin-bottom: 60px; }
 
