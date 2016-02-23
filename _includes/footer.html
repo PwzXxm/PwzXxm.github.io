@@ -1,82 +1,82 @@
 <footer class="site-footer">
 
-  <div class="wrapper">
+    <div class="wrapper">
 
-    <h2 class="footer-heading">{{ site.title }}</h2>
+        <h2 class="footer-heading">{{ site.title }}</h2>
 
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="col1-list">
-          ʕ •ᴥ•ʔ
-          <li>
-            {% if page.is_default_language %}
-            <a href="/tags">Tags</a>
-            {% else %}
-            <a href="/cn/tags">标签们</a>
-            {% endif %}
-          </li>
-          <li>
-            {% if page.is_default_language %}
-            <a href="/about">About</a>
-            {% else %}
-            <a href="/cn/about">关于我</a>
-            {% endif %}
-          </li>
-        </ul>
-      </div>
+        <div class="footer-col-wrapper">
+            <div class="footer-col footer-col-1">
+                <ul class="col1-list">
+                    ʕ •ᴥ•ʔ
+                    <li>
+                        {% if page.is_default_language %}
+                        <a href="/tags">Tags</a>
+                        {% else %}
+                        <a href="/cn/tags">标签们</a>
+                        {% endif %}
+                    </li>
+                    <li>
+                        {% if page.is_default_language %}
+                        <a href="/about">About</a>
+                        {% else %}
+                        <a href="/cn/about">关于我</a>
+                        {% endif %}
+                    </li>
+                </ul>
+            </div>
 
-      <div class="footer-col footer-col-2">
-        <ul class="col2-list">
-          <li>
-            {% include icon-email.html %}
-          </li>
-          <li>
-            {% include icon-rss.html %}
-          </li>
-          {% if site.github_username %}
-          <li>
-            {% include icon-github.html username=site.github_username %}
-          </li>
-          {% endif %}
-        </ul>
-      </div>
+            <div class="footer-col footer-col-2">
+                <ul class="col2-list">
+                    <li>
+                        {% include icon-email.html %}
+                    </li>
+                    <li>
+                        {% include icon-rss.html %}
+                    </li>
+                    {% if site.github_username %}
+                    <li>
+                        {% include icon-github.html username=site.github_username %}
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
 
-      <div class="footer-col footer-col-3">
-        <ul class="col3-list">
-          <li>© 2015 PwzXxm All Rights Reserved.</li>
-        </ul>
-      </div>
+            <div class="footer-col footer-col-3">
+                <ul class="col3-list">
+                    <li>© 2015 PwzXxm All Rights Reserved.</li>
+                </ul>
+            </div>
+        </div>
+
     </div>
-
-  </div>
 
 </footer>
 <script src="/js/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script>
-//var lastScroll = 0;
-$(window).scroll(function() {
-    /*
-    var st = $(this).scrollTop();
-    if (st < lastScroll) {
-        $('.site-header').addClass("sticky");
-        $('.page-content').addClass("padding-more");
-    }
-    if (st == 0) {
-        $('.site-header').removeClass("sticky");
-        $('.page-content').removeClass("padding-more");
-    }
-    */
-    if ($(this).scrollTop() > 1){
-        $('.site-header').addClass("sticky");
-        $('.page-content').addClass("padding-more");
-    }
-    else{
-        $('.site-header').removeClass("sticky");
-        $('.page-content').removeClass("padding-more");
-    }
-    //lastScroll = st;
-});
+var h = $(window).height();
+var h2 = $(document).height();
+if (h2-h > 400) {
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 1){
+            if (!($('.site-header').hasClass("sticky"))) {
+                $('.site-header').addClass("sticky");
+                $('.site-title').detach();
+                $('.page-content').css("padding-top", "400px");
+                $('.page-content').animate({paddingTop:'105px'},"slow");
+            }
+        }
+        else{
+            $('.site-header').removeClass("sticky");
+            var numTitle = $('.site-title').length;
+            if (numTitle < 1) {
+                $('.site-header').append('<div class="site-title" style="opacity:0;">PwzXxm<div class="site-subtitle">Try to be great</div></div>');
+                $('.site-title').delay(500).animate({opacity:'1'}, "slow");
+            }
+            $('.page-content').css("padding-top", "50px");
+        }
+    });
+}
 </script>
 <script>
 (function(){

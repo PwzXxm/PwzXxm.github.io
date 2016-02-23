@@ -143,11 +143,7 @@ blockquote {
     text-align: center;
     padding: 144px 0 144px 0;
     font-family: sans-serif;
-    font-weight: 300;
-    transition: opacity 0.8s ease;
-    -webkit-transition: opacity 0.8s ease;
-    -moz-transition: opacity 0.8s ease;
-    transition-delay: 0.6s; }
+    font-weight: 300; }
     .site-header .site-title .site-subtitle {
       opacity: 0.54;
       font-size: 16px; }
@@ -168,12 +164,6 @@ blockquote {
   height: 54px;
   background: rgba(255, 255, 255, 0.9);
   border-bottom: 1px solid #e8e8e8; }
-  .sticky .site-title {
-    transition: opacity 0.1s ease;
-    -webkit-transition: opacity 0.1s ease;
-    -moz-transition: opacity 0.1s ease;
-    opacity: 0;
-    display: none; }
 
 .site-nav {
   font-size: 14px;
@@ -320,9 +310,6 @@ blockquote {
       color: #2196F3; }
       .post-list > li .post-more:hover {
         text-shadow: 0 3px 2px rgba(0, 0, 0, 0.1); }
-
-.padding-more {
-  padding-top: 104px; }
 
 /**
 * Posts
