@@ -483,9 +483,6 @@ blockquote {
           .tags ul li a:hover {
             color: #607D8B;
             border: 1px solid #607D8B; } }
-        .tags ul li a:active {
-          color: #607D8B;
-          border: 1px solid #607D8B; }
   @media screen and (max-width: 600px) {
     .tags {
       padding-top: 10px;

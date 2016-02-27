@@ -478,14 +478,10 @@
                 border-radius: 1000px;
                 padding: 4.5px 11px 4.5px 11px;
                 @media only screen and (min-width : 800px) {
-                &:hover {
-                    color: #607D8B;
-                    border: 1px solid #607D8B;
-                }
-            }
-                &:active {
-                    color: #607D8B;
-                    border: 1px solid #607D8B;
+                    &:hover {
+                        color: #607D8B;
+                        border: 1px solid #607D8B;
+                    }
                 }
             }
         }
