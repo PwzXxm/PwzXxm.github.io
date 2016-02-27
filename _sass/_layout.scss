@@ -35,9 +35,11 @@
         text-transform: uppercase;
         font-size: 13px;
 
-        &:hover {
-            text-shadow: 0 2px 5px rgba(0,0,0,0.15);
-            text-decoration: none;
+        @media only screen and (min-width : 800px) {
+            &:hover {
+                text-shadow: 0 2px 5px rgba(0,0,0,0.15);
+                text-decoration: none;
+            }
         }
 
     }
@@ -240,29 +242,31 @@
     font-size: 20px;
 }
 
-.slide
-{
-    text-decoration:none;
-    display: inline-block;
-}
+@media only screen and (min-width : 800px) {
+    .slide
+    {
+        text-decoration:none;
+        display: inline-block;
+    }
 
-.slide:after
-{
-    content: "";
-    display: block;
-    height: 3px;
-    width: 0;
-    background: transparent;
-    transition: width .5s ease, background-color .5s ease;
-    -webkit-transition: width .5s ease, background-color .5s ease;
-    -moz-transition: width .5s ease, background-color .5s ease;
-    margin: auto;
-}
+    .slide:after
+    {
+        content: "";
+        display: block;
+        height: 3px;
+        width: 0;
+        background: transparent;
+        transition: width .5s ease, background-color .5s ease;
+        -webkit-transition: width .5s ease, background-color .5s ease;
+        -moz-transition: width .5s ease, background-color .5s ease;
+        margin: auto;
+    }
 
-.slide:hover:after
-{
-    width: 100%;
-    background: #607D8B;
+    .slide:hover:after
+    {
+        width: 100%;
+        background: #607D8B;
+    }
 }
 
 .post-list {
@@ -299,8 +303,10 @@
             transition: all 0.5s ease;
             color: #4a4a4a;
             font-weight: bold;
-            &:hover {
-                color: #607D8B;
+            @media only screen and (min-width : 800px) {
+                &:hover {
+                    color: #607D8B;
+                }
             }
         }
 
@@ -313,21 +319,15 @@
             a {
                 transition: all 0.5s ease;
                 color: #9d9d9d;
-                &:hover {
-                    color: #607D8B;
+                @media only screen and (min-width : 800px) {
+                    &:hover {
+                        color: #607D8B;
+                    }
                 }
             }
             @include media-query($on-palm) {
                 margin-bottom: 30px;
                 padding-bottom: 30px;
-            }
-        }
-
-        .post-more {
-            font-size: $base-font-size*0.8;
-            color: #2196F3;
-            &:hover {
-                text-shadow: 0 3px 2px rgba(0,0,0,0.1);
             }
         }
     }
@@ -477,7 +477,13 @@
                 -moz-border-radius: 1000px;
                 border-radius: 1000px;
                 padding: 4.5px 11px 4.5px 11px;
+                @media only screen and (min-width : 800px) {
                 &:hover {
+                    color: #607D8B;
+                    border: 1px solid #607D8B;
+                }
+            }
+                &:active {
                     color: #607D8B;
                     border: 1px solid #607D8B;
                 }
@@ -517,18 +523,22 @@
         }
     }
 
-    .slide:after
-    {
-        height: 1px;
-    }
+    @media only screen and (min-width : 800px) {
+        .slide:after
+        {
+            height: 1px;
+        }
 
-    .slide:hover:after
-    {
-        background: lighten($text-color, 30%);
+        .slide:hover:after
+        {
+            background: lighten($text-color, 30%);
+        }
+        a {
+            text-decoration: none;
+            transition: all 0.5s ease;
+        }
     }
     a {
-        text-decoration: none;
-        transition: all 0.5s ease;
         color: $text-color;
     }
     .single-tag {

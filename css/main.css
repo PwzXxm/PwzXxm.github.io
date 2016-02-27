@@ -151,9 +151,10 @@ blockquote {
     font-weight: bold;
     text-transform: uppercase;
     font-size: 13px; }
-    .site-header a:hover {
-      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-      text-decoration: none; }
+    @media only screen and (min-width: 800px) {
+      .site-header a:hover {
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+        text-decoration: none; } }
   @media screen and (max-width: 600px) {
     .site-header {
       background-image: none;
@@ -301,25 +302,25 @@ blockquote {
 .page-heading {
   font-size: 20px; }
 
-.slide {
-  text-decoration: none;
-  display: inline-block; }
+@media only screen and (min-width: 800px) {
+  .slide {
+    text-decoration: none;
+    display: inline-block; }
 
-.slide:after {
-  content: "";
-  display: block;
-  height: 3px;
-  width: 0;
-  background: transparent;
-  transition: width .5s ease, background-color .5s ease;
-  -webkit-transition: width .5s ease, background-color .5s ease;
-  -moz-transition: width .5s ease, background-color .5s ease;
-  margin: auto; }
+  .slide:after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 0;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+    -webkit-transition: width .5s ease, background-color .5s ease;
+    -moz-transition: width .5s ease, background-color .5s ease;
+    margin: auto; }
 
-.slide:hover:after {
-  width: 100%;
-  background: #607D8B; }
-
+  .slide:hover:after {
+    width: 100%;
+    background: #607D8B; } }
 .post-list {
   color: #000;
   margin-left: 30px;
@@ -344,8 +345,9 @@ blockquote {
       transition: all 0.5s ease;
       color: #4a4a4a;
       font-weight: bold; }
-      .post-list > li .post-link:hover {
-        color: #607D8B; }
+      @media only screen and (min-width: 800px) {
+        .post-list > li .post-link:hover {
+          color: #607D8B; } }
     .post-list > li .post-meta {
       font-size: 14.4px;
       margin-bottom: 50px;
@@ -355,17 +357,13 @@ blockquote {
       .post-list > li .post-meta a {
         transition: all 0.5s ease;
         color: #9d9d9d; }
-        .post-list > li .post-meta a:hover {
-          color: #607D8B; }
+        @media only screen and (min-width: 800px) {
+          .post-list > li .post-meta a:hover {
+            color: #607D8B; } }
       @media screen and (max-width: 600px) {
         .post-list > li .post-meta {
           margin-bottom: 30px;
           padding-bottom: 30px; } }
-    .post-list > li .post-more {
-      font-size: 12.8px;
-      color: #2196F3; }
-      .post-list > li .post-more:hover {
-        text-shadow: 0 3px 2px rgba(0, 0, 0, 0.1); }
 
 /**
 * Posts
@@ -481,7 +479,11 @@ blockquote {
         -moz-border-radius: 1000px;
         border-radius: 1000px;
         padding: 4.5px 11px 4.5px 11px; }
-        .tags ul li a:hover {
+        @media only screen and (min-width: 800px) {
+          .tags ul li a:hover {
+            color: #607D8B;
+            border: 1px solid #607D8B; } }
+        .tags ul li a:active {
           color: #607D8B;
           border: 1px solid #607D8B; }
   @media screen and (max-width: 600px) {
@@ -510,13 +512,15 @@ blockquote {
         font-size: 11.2px;
         color: #828282;
         margin-left: 5px; }
-  .blog-list-container .slide:after {
-    height: 1px; }
-  .blog-list-container .slide:hover:after {
-    background: #a2a2a2; }
+  @media only screen and (min-width: 800px) {
+    .blog-list-container .slide:after {
+      height: 1px; }
+    .blog-list-container .slide:hover:after {
+      background: #a2a2a2; }
+    .blog-list-container a {
+      text-decoration: none;
+      transition: all 0.5s ease; } }
   .blog-list-container a {
-    text-decoration: none;
-    transition: all 0.5s ease;
     color: #555555; }
   .blog-list-container .single-tag {
     color: #607D8B;
