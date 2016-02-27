@@ -1,21 +1,4 @@
 <div class="side-bar">
-    <!--
-  <div class="aboutme">
-    <div class="about-above">
-    </div>
-    <div class="about-img">
-      {% if page.is_default_language %}
-      <a href="/about"><img src="/img/about-me-small.png" /></a>
-      {% else %}
-      <a href="/cn/about"><img src="/img/about-me-small.png" /></a>
-      {% endif %}
-    </div>
-
-    <div class="about-below">
-    </div>
-  </div>
-    -->
-
   <div class="tags">
     <h3>
       {% if page.is_default_language %}
@@ -23,7 +6,7 @@
       {% else %}
       标签
       {% endif %}
-    </a></h3>
+    </h3>
     <ul class="blog-tags-list">
       {% assign sorted_tags = site.tags | sort %}
       {% for tag in sorted_tags %}

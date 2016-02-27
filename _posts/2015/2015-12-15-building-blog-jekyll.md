@@ -13,7 +13,7 @@ tags:
 ## Preparations
 1. Know [YAML front matter](http://jekyllrb.com/docs/frontmatter/) is something you can put at the front of a script and it can automatically
     - have part of the layout and tags you defined before
-    - define variables ([Liquid]tags(http://liquidmarkup.org/))
+    - define variables ([Liquid](http://liquidmarkup.org/))
 2. If you don't know HMTL, CSS or JavaScript, you would better check out [W3School](http://www.w3schools.com/) and at least know the basic of them.
 3. Be able to using `git` commands, if not please check [Git tutorial](http://rogerdudler.github.io/git-guide/) or search on Google. You could use a desktop version instead of command lines, but I think it's better to try comment line once because it may help you to have a better understanding of how it works.
 

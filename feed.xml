@@ -5,8 +5,8 @@
     <description>Learning and sharing computer science ideas. Enjoy what you are passionated about.</description>
     <link>http://www.pwzxxm.com/</link>
     <atom:link href="http://www.pwzxxm.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 23 Feb 2016 16:54:11 +1100</pubDate>
-    <lastBuildDate>Tue, 23 Feb 2016 16:54:11 +1100</lastBuildDate>
+    <pubDate>Sat, 27 Feb 2016 12:28:29 +1100</pubDate>
+    <lastBuildDate>Sat, 27 Feb 2016 12:28:29 +1100</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -1116,7 +1116,7 @@
 
 &lt;ul&gt;
 &lt;li&gt;have part of the layout and tags you defined before&lt;/li&gt;
-&lt;li&gt;define variables ([Liquid]tags(&lt;a href=&quot;http://liquidmarkup.org/)&quot;&gt;http://liquidmarkup.org/)&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;define variables (&lt;a href=&quot;http://liquidmarkup.org/&quot;&gt;Liquid&lt;/a&gt;)&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;If you don&amp;#39;t know HMTL, CSS or JavaScript, you would better check out &lt;a href=&quot;http://www.w3schools.com/&quot;&gt;W3School&lt;/a&gt; and at least know the basic of them.&lt;/li&gt;
 &lt;li&gt;Be able to using &lt;code class=&quot;inline-code&quot;&gt;git&lt;/code&gt; commands, if not please check &lt;a href=&quot;http://rogerdudler.github.io/git-guide/&quot;&gt;Git tutorial&lt;/a&gt; or search on Google. You could use a desktop version instead of command lines, but I think it&amp;#39;s better to try comment line once because it may help you to have a better understanding of how it works.&lt;/li&gt;

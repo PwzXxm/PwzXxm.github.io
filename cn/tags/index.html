@@ -4,7 +4,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <title>Tags</title>
     <meta name="description" content="Learning and sharing computer science ideas. Enjoy what you are passionated about.">
@@ -32,35 +33,43 @@
 
   <body>
     <header class="site-header">
-
     <nav class="site-nav">
-        <ul>
-            <li>
-                
-                <a class="header-icon" href="/cn">博客</a>
-                
-            </li>
-            <li>
-                
-                <a class="header-icon" href="/cn/projects">项目</a>
-                
-            </li>
-            <li>
-                
-                <a class="header-icon" href="/cn/tags">标签</a>
-                
-            </li>
-            <li>
-                
-                <a class="header-icon" href="/cn/about">关于</a>
-                
-            </li>
-            <li>
-                
-                <a class="header-icon" href="/tags/">EN</a>
-                
-            </li>
-        </ul>
+        <a href="#" class="menu-icon" id="button">
+            <svg viewBox="0 0 18 15">
+                <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+                <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+                <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+        </a>
+        <div class="trigger">
+            <ul>
+                <li>
+                    
+                    <a class="header-icon" href="/cn">博客</a>
+                    
+                </li>
+                <li>
+                    
+                    <a class="header-icon" href="/cn/projects">项目</a>
+                    
+                </li>
+                <li>
+                    
+                    <a class="header-icon" href="/cn/tags">标签</a>
+                    
+                </li>
+                <li>
+                    
+                    <a class="header-icon" href="/cn/about">关于</a>
+                    
+                </li>
+                <li>
+                    
+                    <a class="header-icon" href="/tags/">EN</a>
+                    
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <div class="site-title">
@@ -75,27 +84,12 @@
     <div class="page-content">
       <div class="wrapper">
         <div class="side-bar">
-    <!--
-  <div class="aboutme">
-    <div class="about-above">
-    </div>
-    <div class="about-img">
-      
-      <a href="/cn/about"><img src="/img/about-me-small.png" /></a>
-      
-    </div>
-
-    <div class="about-below">
-    </div>
-  </div>
-    -->
-
   <div class="tags">
     <h3>
       
       标签
       
-    </a></h3>
+    </h3>
     <ul class="blog-tags-list">
       
       
@@ -194,7 +188,7 @@
     
     <li>
       
-      <a href="/cn/building-blog-jekyll/">使用Jekyll＋Github Pages搭建博客</a>
+      <a class="slide" href="/cn/building-blog-jekyll/">使用Jekyll＋Github Pages搭建博客</a>
       <div class = "blog-date">
         2015年12月15号
       </div>
@@ -216,7 +210,7 @@
     
     <li>
       
-      <a href="/cn/the-story-about-the-blog/">这个博客那些事</a>
+      <a class="slide" href="/cn/the-story-about-the-blog/">这个博客那些事</a>
       <div class = "blog-date">
         2015年12月12号
       </div>
@@ -252,7 +246,7 @@ if(window.location.hash) {
     
     <li>
       
-      <a href="/cn/binary-tree/">二叉树</a>
+      <a class="slide" href="/cn/binary-tree/">二叉树</a>
       <div class = "blog-date">
         2016年1月15号
       </div>
@@ -266,7 +260,7 @@ if(window.location.hash) {
     
     <li>
       
-      <a href="/cn/stack-queue-link-list/">栈，队列和链表</a>
+      <a class="slide" href="/cn/stack-queue-link-list/">栈，队列和链表</a>
       <div class = "blog-date">
         2015年12月25号
       </div>
@@ -408,7 +402,7 @@ l-24 -60 0 -460 c0 -458 0 -460 23 -517 30 -74 108 -160 176 -193 39 -19 90
 <script>
 var h = $(window).height();
 var h2 = $(document).height();
-if (h2-h > 400) {
+if (h2-h > 400 && ($(window).width() > 600)) {
     $(window).scroll(function() {
         if ($(this).scrollTop() > 1){
             if (!($('.site-header').hasClass("sticky"))) {
@@ -429,6 +423,20 @@ if (h2-h > 400) {
         }
     });
 }
+
+$(document).ready(function(){
+    $('a#button').click(function(){
+        $('.trigger').toggleClass("show");
+    });
+});
+
+$(document).on('click', function(event) {
+    if (!$(event.target).closest('.site-nav').length) {
+        if ($('.trigger').hasClass("show")) {
+            $('.trigger').toggleClass("show");
+        }
+    }
+});
 </script>
 <script>
 (function(){

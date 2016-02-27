@@ -18,12 +18,12 @@ permalink: /tags/
     {% if post.language == page.language %}
     <li>
       {% if page.is_default_language %}
-      <a href="{{ post.url }}">{{ post.title }}</a>
+      <a class="slide" href="{{ post.url }}">{{ post.title }}</a>
       <div class = "blog-date">
         {{ post.date | date: "%b %-d, %Y" }}
       </div>
       {% else %}
-      <a href="{{ post.url }}">{{ post.title }}</a>
+      <a class="slide" href="{{ post.url }}">{{ post.title }}</a>
       <div class = "blog-date">
         {{ post.date | date: "%Y年%-m月%-d号" }}
       </div>

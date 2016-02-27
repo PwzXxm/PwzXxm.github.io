@@ -4,43 +4,69 @@ comments: true
 ---
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {% if page.is_default_language %}
-        {{ page.date | date: "%b %-d, %Y" }}
-        {% else %}
-        {{ page.date | date: "%Y年%-m月%-d号" }}
-        {% endif %}
-      </time>
-    </p>
-  </header>
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+        <p class="post-meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                {% if page.is_default_language %}
+                {{ page.date | date: "%b %-d, %Y" }}
+                {% else %}
+                {{ page.date | date: "%Y年%-m月%-d号" }}
+                {% endif %}
+            </time>
+        </p>
+    </header>
 
-  <div class="post-content" itemprop="articleBody">
-    {{ content }}
-  </div>
+    <div class="post-content" itemprop="articleBody">
+        {{ content }}
+    </div>
 
 </article>
 
 
 <span class="tags">
-  <ul>
-    {% assign sorted_tags = page.tags | sort %}
-    {% if page.is_default_language %}
-    Tags:
-    {% for tag in sorted_tags %}
-    <li><a href="/tags/#{{ tag }}">{{ tag }}</a></li>
-    {% endfor %}
-    {% else %}
-    标签：
-    {% for tag in sorted_tags %}
-    <li><a href="/cn/tags/#{{ tag }}">{{ tag }}</a></li>
-    {% endfor %}
-    {% endif %}
-  </ul>
+    <ul>
+        {% assign sorted_tags = page.tags | sort %}
+        {% if page.is_default_language %}
+        Tags:
+        {% for tag in sorted_tags %}
+        <li><a href="/tags/#{{ tag }}">{{ tag }}</a></li>
+        {% endfor %}
+        {% else %}
+        标签：
+        {% for tag in sorted_tags %}
+        <li><a href="/cn/tags/#{{ tag }}">{{ tag }}</a></li>
+        {% endfor %}
+        {% endif %}
+    </ul>
 </span>
 
+<!--
+<span class = "share-f">
+    <a href="http://twitter.com/share?url={{ page.url | prepend: site.url }}&text={{ post.excerpt | truncate: 20 }}">
+        Twitter
+    </a>
+
+    <a href="https://plus.google.com/share?url={{ page.url | prepend: site.url }}">
+        Google Plus
+    </a>
+
+    <a href="http://www.facebook.com/sharer/sharer.php?u={{ page.url | prepend: site.url }}">
+        Facebook
+    </a>
+
+    <a href="http://reddit.com/submit?url={{ page.url | prepend: site.url }}&title={{ page.title }}">
+        Reddit
+    </a>
+
+    <a href="javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:'',r='http://www.douban.com/recommend/?url='+e(d.location.href)+'&title='+e(d.title)+'&sel='+e(s)+'&v=1',w=450,h=330,x=function(){if(!window.open(r,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width='+w+',height='+h+',left='+(screen.width-w)/2+',top='+(screen.height-h)/2))location.href=r+'&r=1'};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()"><img src="http://img6.douban.com/pics/fw2douban_s.png" alt="推荐到豆瓣" />
+    </a>
+
+    <a href="mailto:?subject={{ page.title }}&body={{ page.url | prepend: site.url }}">
+        Email
+    </a>
+</span>
+-->
 
 <p id="ex"></p>
 
@@ -51,15 +77,15 @@ comments: true
 * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
 */
 var disqus_config = function () {
-  //var disqus_developer = 1; // Comment out when the site is live
-  var disqus_shortname = 'pwzxxm'
-  //this.page.url = {{ site.url }}; // Replace PAGE_URL with your page's canonical URL variable
-  {% if page.is_default_language %}
-  this.page.identifier = {{ page.url }}; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-  this.language="en";
-  {% else %}
-  this.page.identifier = {{ page.url }}/cn; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-  {% endif %}
+    //var disqus_developer = 1; // Comment out when the site is live
+    var disqus_shortname = 'pwzxxm'
+    //this.page.url = {{ site.url }}; // Replace PAGE_URL with your page's canonical URL variable
+    {% if page.is_default_language %}
+    this.page.identifier = {{ page.url }}; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    this.language="en";
+    {% else %}
+    this.page.identifier = {{ page.url }}/cn; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    {% endif %}
 };
 (function() { // DON'T EDIT BELOW THIS LINE
 var d = document, s = d.createElement('script');

@@ -56,7 +56,7 @@
 <script>
 var h = $(window).height();
 var h2 = $(document).height();
-if (h2-h > 400) {
+if (h2-h > 400 && ($(window).width() > 600)) {
     $(window).scroll(function() {
         if ($(this).scrollTop() > 1){
             if (!($('.site-header').hasClass("sticky"))) {
@@ -77,6 +77,20 @@ if (h2-h > 400) {
         }
     });
 }
+
+$(document).ready(function(){
+    $('a#button').click(function(){
+        $('.trigger').toggleClass("show");
+    });
+});
+
+$(document).on('click', function(event) {
+    if (!$(event.target).closest('.site-nav').length) {
+        if ($('.trigger').hasClass("show")) {
+            $('.trigger').toggleClass("show");
+        }
+    }
+});
 </script>
 <script>
 (function(){
