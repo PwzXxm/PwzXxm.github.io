@@ -7,11 +7,11 @@
     <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <title>The Story About the Blog</title>
-    <meta name="description" content="PwzXxm is my first blog and also my first website I have ever built. I knew only a little bit of HTML before I started this project. I learned CSS and JavaSc...">
+    <title>POJ 3187 Backward Digits Sums</title>
+    <meta name="description" content="题意：有特定顺序1到N个数字(\(1\le N \le 10\))，将相邻的两个数字相加得到下一行，直到只剩下一个数字。类似于杨辉三角形。$$ 1, 2, 3 $$$$ 3, 5 $$$$ 8 $$">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://www.pwzxxm.com/the-story-about-the-blog/">
+    <link rel="canonical" href="http://www.pwzxxm.com/cn/poj-3187/">
     <link rel="alternate" type="application/rss+xml" title="PwzXxm" href="http://www.pwzxxm.com/feed.xml">
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon" />
     <link rel="icon" href="/img/favicon.png" type="image/x-icon" />
@@ -45,27 +45,27 @@
             <ul>
                 <li>
                     
-                    <a class="header-icon" href="/">Blog</a>
+                    <a class="header-icon" href="/cn">博客</a>
                     
                 </li>
                 <li>
                     
-                    <a class="header-icon" href="/projects">Projects</a>
+                    <a class="header-icon" href="/cn/projects">项目</a>
                     
                 </li>
                 <li>
                     
-                    <a class="header-icon" href="/tags">Tags</a>
+                    <a class="header-icon" href="/cn/tags">标签</a>
                     
                 </li>
                 <li>
                     
-                    <a class="header-icon" href="/about">About</a>
+                    <a class="header-icon" href="/cn/about">关于</a>
                     
                 </li>
                 <li>
                     
-                    <a class="header-icon" href="/cn/the-story-about-the-blog/">中</a>
+                    <a class="header-icon" href="/poj-3187/">EN</a>
                     
                 </li>
             </ul>
@@ -86,31 +86,77 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">The Story About the Blog</h1>
+        <h1 class="post-title" itemprop="name headline">POJ 3187 Backward Digits Sums</h1>
         <p class="post-meta">
-            <time datetime="2015-12-12T00:00:00+11:00" itemprop="datePublished">
+            <time datetime="2016-03-14T00:00:00+11:00" itemprop="datePublished">
                 
-                Dec 12, 2015
+                2016年3月14号
                 
             </time>
         </p>
     </header>
 
     <div class="post-content" itemprop="articleBody">
-        <p><a href="http://www.pwzxxm.com">PwzXxm</a> is my first blog and also my first website I have ever built. I knew only a little bit of HTML before I started this project. I learned CSS and JavaScript while I&#39;m building the site. I also read a lot of source code and blog posts about how other people build their own site using <a href="http://jekyllrb.com/">Jekyll</a>. It took me seven days. Finally, on the 10th of December, 2015, the site went alive.</p>
+        <h3 id="题意：">题意：</h3>
 
-<p>Details about building the site, <a href="/building-blog-jekyll/">click me</a>.</p>
+<p>有特定顺序1到N个数字(\(1\le N \le 10\))，将相邻的两个数字相加得到下一行，直到只剩下一个数字。类似于杨辉三角形。
+$$ 1, 2, 3 $$
+$$ 3, 5 $$
+$$ 8 $$</p>
 
-<p>I was learning algorithms, c++ and practice ACM-ICPC but I stuck at graph theory and I did not have any progress on one particular problem for like three or four days. I always want to build a website and start writing some stuff. So I put other things aside and started to build this blog, and my friends give a lot of suggestions on the design of the website. Thank you.</p>
+<p>给定N和最后的和sum，求字典序最小的一组整数。</p>
 
-<p>There are two reasons why I really want to start this blog. One is that <strong>blogging helps me clear my thoughts.</strong> For instance, if you can teach an algorithm to a man which is new to him and he can understand the algorithm very well as your explanation is clear, you should also already have a deep understanding on this algorithm. So another reason is that <strong>I&#39;m hoping someone can learn something from my blog.</strong> There a story: one day, I was trying to learn KMP (a string search algorithm), I barely understand it. I read a lot of posts from other people&#39;s blog, watched youtube videos and tried to do it on a paper. Suddenly, I knew the concept behind it. Thanks for the guys sharing their ideas and thinkings.</p>
+<p>链接：<a href="http://poj.org/problem?id=3187">http://poj.org/problem?id=3187</a></p>
 
-<p>If anyone find any mistake on my blog, please feel free to contact me or leave a comment below the post. Contact details are shown on the footer on every pages of the blog.</p>
+<h3 id="助攻">助攻:</h3>
 
-<p>Let&#39;s learn together and sharing ideas!</p>
+<ol>
+<li><p>注意题目是问1到N个整数，不是从1到10内找出所有排列。</p></li>
+<li><p>STL中<code class="inline-code">next_permutation()</code>的结果默认是升序排列的。</p></li>
+</ol>
 
-<p><img src="/img/post/blog_story.jpeg" alt="blog_story"></p>
+<p><br>
+<br>
+<br>
+<br>
+<br></p>
 
+<h3 id="题解">题解:</h3>
+
+<p>用<code class="inline-code">next_permutation()</code>生成所有可能的排列，模拟计算三角形。因为排列本来就按字典序排列，找到的第一个解就是题目的解。</p>
+<div class="highlight"><pre><code class="cpp"><a name="line-1"></a><span class="cp">#include&lt;iostream&gt;</span>
+<a name="line-2"></a><span class="cp">#include&lt;algorithm&gt;</span>
+<a name="line-3"></a><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<a name="line-4"></a>
+<a name="line-5"></a><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">sum</span><span class="p">,</span> <span class="n">ans</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">11</span><span class="p">];</span>
+<a name="line-6"></a>
+<a name="line-7"></a><span class="kt">void</span> <span class="nf">solve</span><span class="p">()</span> <span class="p">{</span>
+<a name="line-8"></a>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+<a name="line-9"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">ans</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">sum</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-10"></a>        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">sum</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<a name="line-11"></a>        <span class="k">return</span><span class="p">;</span>
+<a name="line-12"></a>    <span class="p">}</span>
+<a name="line-13"></a>    <span class="k">do</span> <span class="p">{</span>
+<a name="line-14"></a>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<a name="line-15"></a>            <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
+<a name="line-16"></a>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-17"></a>            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+<a name="line-18"></a>                <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
+<a name="line-19"></a>        <span class="p">}</span>
+<a name="line-20"></a>        <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">sum</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-21"></a>            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
+<a name="line-22"></a>            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<a name="line-23"></a>            <span class="k">return</span><span class="p">;</span>
+<a name="line-24"></a>        <span class="p">}</span>
+<a name="line-25"></a>    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">next_permutation</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">ans</span><span class="o">+</span><span class="n">n</span><span class="p">));</span>
+<a name="line-26"></a><span class="p">}</span>
+<a name="line-27"></a>
+<a name="line-28"></a><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-29"></a>    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">sum</span><span class="p">;</span>
+<a name="line-30"></a>    <span class="n">solve</span><span class="p">();</span>
+<a name="line-31"></a>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-32"></a><span class="p">}</span>
+</code></pre></div>
     </div>
 
 </article>
@@ -120,9 +166,11 @@
     <ul>
         
         
-        Tags:
+        标签：
         
-        <li><a href="/tags/#blog">blog</a></li>
+        <li><a href="/cn/tags/#POJ">POJ</a></li>
+        
+        <li><a href="/cn/tags/#brute force">brute force</a></li>
         
         
     </ul>
@@ -130,26 +178,26 @@
 
 <!--
 <span class = "share-f">
-    <a href="http://twitter.com/share?url=http://www.pwzxxm.com/the-story-about-the-blog/&text=">
+    <a href="http://twitter.com/share?url=http://www.pwzxxm.com/cn/poj-3187/&text=">
         Twitter
     </a>
 
-    <a href="https://plus.google.com/share?url=http://www.pwzxxm.com/the-story-about-the-blog/">
+    <a href="https://plus.google.com/share?url=http://www.pwzxxm.com/cn/poj-3187/">
         Google Plus
     </a>
 
-    <a href="http://www.facebook.com/sharer/sharer.php?u=http://www.pwzxxm.com/the-story-about-the-blog/">
+    <a href="http://www.facebook.com/sharer/sharer.php?u=http://www.pwzxxm.com/cn/poj-3187/">
         Facebook
     </a>
 
-    <a href="http://reddit.com/submit?url=http://www.pwzxxm.com/the-story-about-the-blog/&title=The Story About the Blog">
+    <a href="http://reddit.com/submit?url=http://www.pwzxxm.com/cn/poj-3187/&title=POJ 3187 Backward Digits Sums">
         Reddit
     </a>
 
     <a href="javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:'',r='http://www.douban.com/recommend/?url='+e(d.location.href)+'&title='+e(d.title)+'&sel='+e(s)+'&v=1',w=450,h=330,x=function(){if(!window.open(r,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width='+w+',height='+h+',left='+(screen.width-w)/2+',top='+(screen.height-h)/2))location.href=r+'&r=1'};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()"><img src="http://img6.douban.com/pics/fw2douban_s.png" alt="推荐到豆瓣" />
     </a>
 
-    <a href="mailto:?subject=The Story About the Blog&body=http://www.pwzxxm.com/the-story-about-the-blog/">
+    <a href="mailto:?subject=POJ 3187 Backward Digits Sums&body=http://www.pwzxxm.com/cn/poj-3187/">
         Email
     </a>
 </span>
@@ -168,8 +216,7 @@ var disqus_config = function () {
     var disqus_shortname = 'pwzxxm'
     //this.page.url = http://www.pwzxxm.com; // Replace PAGE_URL with your page's canonical URL variable
     
-    this.page.identifier = /the-story-about-the-blog/; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    this.language="en";
+    this.page.identifier = /cn/poj-3187//cn; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     
 };
 (function() { // DON'T EDIT BELOW THIS LINE
@@ -197,12 +244,12 @@ s.setAttribute('data-timestamp', +new Date());
                     ʕ •ᴥ•ʔ
                     <li>
                         
-                        <a href="/tags">Tags</a>
+                        <a href="/cn/tags">标签们</a>
                         
                     </li>
                     <li>
                         
-                        <a href="/about">About</a>
+                        <a href="/cn/about">关于我</a>
                         
                     </li>
                 </ul>

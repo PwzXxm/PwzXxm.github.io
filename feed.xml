@@ -5,199 +5,153 @@
     <description>Learning and sharing computer science ideas. Enjoy what you are passionated about.</description>
     <link>http://www.pwzxxm.com/</link>
     <atom:link href="http://www.pwzxxm.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 27 Feb 2016 12:56:28 +1100</pubDate>
-    <lastBuildDate>Sat, 27 Feb 2016 12:56:28 +1100</lastBuildDate>
+    <pubDate>Mon, 14 Mar 2016 13:57:23 +1100</pubDate>
+    <lastBuildDate>Mon, 14 Mar 2016 13:57:23 +1100</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
-        <title>Binary Tree</title>
-        <description>&lt;p&gt;Binary tree is called so because of its shape. It&amp;#39;s like a tree, it have leaves and a root. In computer science, the &amp;quot;tree&amp;quot; is usually upside down, the root at the top and leaves grow below it. It is binary so it every node only can have 0, 1 or 2 leaves.&lt;/p&gt;
+        <title>POJ 3187 Backward Digits Sums</title>
+        <description>&lt;h3 id=&quot;problem-description&quot;&gt;Problem Description:&lt;/h3&gt;
+
+&lt;p&gt;There are 1 to N digits (\(1\le N \le 10\)) in certain order. Add adjacent numbers together to get the next line, until the there is only one number left.(Just like Pascal&amp;#39;s triangle)
+For example, there are 3 integers:
+$$ 1, 2, 3 $$
+$$ 3, 5 $$
+$$ 8 $$&lt;/p&gt;
+
+&lt;p&gt;So, given N and the final sum, find the lexicographically least ordering of integers.&lt;/p&gt;
+
+&lt;p&gt;Link: &lt;a href=&quot;http://poj.org/problem?id=3187&quot;&gt;http://poj.org/problem?id=3187&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;hints&quot;&gt;Hints:&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Be aware of that the question is asking 1 to N digits, so we don&amp;#39;t have to test all possible permutations from 1 to 10.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The results of &lt;code class=&quot;inline-code&quot;&gt;next_permutation()&lt;/code&gt; in STL are in ascending order in default.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;p&gt;&lt;br&gt;
-&lt;div class=&quot;toc&quot;&gt;
-&lt;strong&gt;Contents&lt;/strong&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#terminologies&quot;&gt;Terminologies&lt;/a&gt;
+&lt;h3 id=&quot;solution&quot;&gt;Solution:&lt;/h3&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#leaf-node&quot;&gt;Leaf Node&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#inner-node&quot;&gt;Inner Node&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#height-and-depth&quot;&gt;Height and Depth&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#types&quot;&gt;Types&lt;/a&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#full-binary-tree&quot;&gt;Full Binary Tree&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#complete-binary-tree&quot;&gt;Complete Binary Tree&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#implementation&quot;&gt;Implementation&lt;/a&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#array&quot;&gt;Array&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#struct-or-class&quot;&gt;Struct or Class&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#tree-traversal&quot;&gt;Tree Traversal&lt;/a&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#depth-first-search&quot;&gt;Depth First Search (DFS)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#breadth-first-search&quot;&gt;Breadth First Search (BFS)&lt;/a&gt;
-&lt;/div&gt;
-&lt;br&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;terminologies&quot;&gt;Terminologies&lt;/h2&gt;
-
-&lt;h3 id=&quot;leaf-node&quot;&gt;Leaf Node&lt;/h3&gt;
-
-&lt;p&gt;The node do NOT have any child nodes.&lt;/p&gt;
-
-&lt;h3 id=&quot;inner-node&quot;&gt;Inner Node&lt;/h3&gt;
-
-&lt;p&gt;The Node between the leaf node and the root.&lt;/p&gt;
-
-&lt;h3 id=&quot;height-and-depth&quot;&gt;Height and Depth&lt;/h3&gt;
-
-&lt;p&gt;Height and Depth of the &lt;strong&gt;tree&lt;/strong&gt; are basically the same thing which indicates how many levels the tree have, usually starts at 0.&lt;/p&gt;
-
-&lt;p&gt;However, the height and depth of the &lt;strong&gt;node&lt;/strong&gt; is different. The &lt;strong&gt;height&lt;/strong&gt; and &lt;strong&gt;depth&lt;/strong&gt; of a node is the distance on longest path to the leaf node and root respectively.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/post/depth_height.gif&quot; alt=&quot;depth_height&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;types&quot;&gt;Types&lt;/h2&gt;
-
-&lt;h3 id=&quot;full-binary-tree&quot;&gt;Full Binary Tree&lt;/h3&gt;
-
-&lt;p&gt;Every node in the tree has either 0 or 2 children.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/post/full_binary_tree.gif&quot; alt=&quot;full_bt&quot;&gt;
-&lt;img src=&quot;/img/post/full_binary_tree_1.gif&quot; alt=&quot;full_b_1&quot;&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;complete-binary-tree&quot;&gt;Complete Binary Tree&lt;/h3&gt;
-
-&lt;p&gt;Every level except possibly the last level, has maximum number of nodes. All nodes in the last level are all at the left of the tree continuously.&lt;/p&gt;
-
-&lt;table&gt;&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Total number of nodes \(k\)&lt;/th&gt;
-&lt;th&gt;Height of tree \(h\)&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;\(2^h \le k \lt 2^{h+1} - 1\)&lt;/td&gt;
-&lt;td&gt;\(h = \lfloor\log_2k\rfloor\)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/post/complete_binary_tree.gif&quot; alt=&quot;complete_bt&quot;&gt;
-&lt;img src=&quot;/img/post/complete_binary_tree_1.gif&quot; alt=&quot;complete_bt_1&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;implementation&quot;&gt;Implementation&lt;/h2&gt;
-
-&lt;h3 id=&quot;array&quot;&gt;Array&lt;/h3&gt;
-
-&lt;p&gt;Array can be used to store a tree, usually in breadth-first order. It is quite good at store a complete binary tree as it will not waste spaces. The root is store at the index \(i = 0\), and its children are stored in \(i = 1\) and \(i = 2\). It has property that &lt;strong&gt;A node at \(i\), its children at \(2i + 1\) (left) and \(2i + 2\) (right)&lt;/strong&gt;. However, it wastes a lot of spaces when storing other trees other than complete binary trees.&lt;/p&gt;
-
-&lt;h3 id=&quot;struct-or-class&quot;&gt;Struct or Class&lt;/h3&gt;
-
-&lt;p&gt;Creating nodes and connect them to their parents.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;cpp&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h2 id=&quot;tree-traversal&quot;&gt;Tree Traversal&lt;/h2&gt;
-
-&lt;h3 id=&quot;depth-first-search-dfs&quot;&gt;&lt;a name=&quot;depth-first-search&quot;&gt;&lt;/a&gt; Depth First Search (DFS)&lt;/h3&gt;
-
-&lt;p&gt;Search the tree in the priority of depth. Using recursive calls for tree traversal is usually a good idea.&lt;/p&gt;
-
-&lt;h4 id=&quot;pre-order&quot;&gt;Pre-order&lt;/h4&gt;
-
-&lt;p&gt;Root-Left-Right&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Starts from the root&lt;/li&gt;
-&lt;li&gt;If left subtree has element in it, go to left. If not, go right.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id=&quot;in-order&quot;&gt;In-order&lt;/h4&gt;
-
-&lt;p&gt;Left-Root-Right&lt;/p&gt;
-
-&lt;h4 id=&quot;post-order&quot;&gt;Post-order&lt;/h4&gt;
-
-&lt;p&gt;Left-Right-Root&lt;/p&gt;
-
-&lt;h4 id=&quot;determine-a-unique-tree&quot;&gt;Determine a unique tree&lt;/h4&gt;
-
-&lt;p&gt;There are only two ways to determine a unique tree given two types of traverse order.&lt;/p&gt;
-
-&lt;h5 id=&quot;pre-order-and-in-order&quot;&gt;Pre-order and In-order&lt;/h5&gt;
-
-&lt;p&gt;The first element of a pre-order must be the root of the tree. Then find the same element in the In-order, we can divide the tree into two subtrees, left and right. Using the length of the left and right subtrees to find the sequences in pre-order respectively, then we can find the root element for left and right subtrees. Recursive repeat this process.&lt;/p&gt;
-
-&lt;h5 id=&quot;in-order-and-post-order&quot;&gt;In-order and Post-order&lt;/h5&gt;
-
-&lt;p&gt;Similar as above, except the root element is the last element in post-order traversal.&lt;/p&gt;
-
-&lt;h4 id=&quot;tips&quot;&gt;Tips&lt;/h4&gt;
-
-&lt;p&gt;Rather than remembering the sequence, there is another way to remembering the  order.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Draw a continuous line, starts and ends at the root of the tree, starts from left, around the tree&lt;/li&gt;
-&lt;li&gt;Try following:
-
-&lt;ul&gt;
-&lt;li&gt;Pre-order: draw a dot at the &lt;strong&gt;left&lt;/strong&gt; of each node&lt;/li&gt;
-&lt;li&gt;In-order: draw a dot at the &lt;strong&gt;bottom&lt;/strong&gt; of each node&lt;/li&gt;
-&lt;li&gt;Post-order: draw a dot at the &lt;strong&gt;right&lt;/strong&gt; of each node&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Follow the line we drew, the sequence of touching dots is the sequence of traversal.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;table&gt;&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Pre-order&lt;/th&gt;
-&lt;th&gt;In-order&lt;/th&gt;
-&lt;th&gt;Post-order&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;&lt;img src=&quot;/img/post/Sorted_binary_tree_preorder.svg&quot; alt=&quot;preorder_line&quot;&gt;&lt;/td&gt;
-&lt;td&gt;&lt;img src=&quot;/img/post/Sorted_binary_tree_inorder.svg&quot; alt=&quot;inorder_line&quot;&gt;&lt;/td&gt;
-&lt;td&gt;&lt;img src=&quot;/img/post/Sorted_binary_tree_postorder.svg&quot; alt=&quot;postorder_line&quot;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-
-&lt;h3 id=&quot;breadth-first-search-bfs&quot;&gt;&lt;a name=&quot;breadth-first-search&quot;&gt;&lt;/a&gt; Breadth First Search (BFS)&lt;/h3&gt;
-
-&lt;p&gt;Traverse from the root to bottom, go thought each level first.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/post/Sorted_binary_tree_breadth-first_traversal.svg&quot; alt=&quot;bfs&quot;&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 15 Jan 2016 00:00:00 +1100</pubDate>
-        <link>http://www.pwzxxm.com/binary-tree/</link>
-        <guid isPermaLink="true">http://www.pwzxxm.com/binary-tree/</guid>
+&lt;p&gt;Use &lt;code class=&quot;inline-code&quot;&gt;next_permutation()&lt;/code&gt; to check all possibilities and stimulate the triangle additions. Since the permutation is already in lexicographical order, when we get the find the first result, it is the final answer.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;cpp&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;iostream&amp;gt;&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;algorithm&amp;gt;&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;                &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot; &amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next_permutation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-28&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-29&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-30&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;solve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;a name=&quot;line-31&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-32&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        <pubDate>Mon, 14 Mar 2016 00:00:00 +1100</pubDate>
+        <link>http://www.pwzxxm.com/poj-3187/</link>
+        <guid isPermaLink="true">http://www.pwzxxm.com/poj-3187/</guid>
         
-        <category>data-structure</category>
+        <category>POJ</category>
+        
+        <category>brute force</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>POJ 3187 Backward Digits Sums</title>
+        <description>&lt;h3 id=&quot;题意：&quot;&gt;题意：&lt;/h3&gt;
+
+&lt;p&gt;有特定顺序1到N个数字(\(1\le N \le 10\))，将相邻的两个数字相加得到下一行，直到只剩下一个数字。类似于杨辉三角形。
+$$ 1, 2, 3 $$
+$$ 3, 5 $$
+$$ 8 $$&lt;/p&gt;
+
+&lt;p&gt;给定N和最后的和sum，求字典序最小的一组整数。&lt;/p&gt;
+
+&lt;p&gt;链接：&lt;a href=&quot;http://poj.org/problem?id=3187&quot;&gt;http://poj.org/problem?id=3187&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;助攻&quot;&gt;助攻:&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;注意题目是问1到N个整数，不是从1到10内找出所有排列。&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;STL中&lt;code class=&quot;inline-code&quot;&gt;next_permutation()&lt;/code&gt;的结果默认是升序排列的。&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;题解&quot;&gt;题解:&lt;/h3&gt;
+
+&lt;p&gt;用&lt;code class=&quot;inline-code&quot;&gt;next_permutation()&lt;/code&gt;生成所有可能的排列，模拟计算三角形。因为排列本来就按字典序排列，找到的第一个解就是题目的解。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;cpp&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;iostream&amp;gt;&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;algorithm&amp;gt;&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;solve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;                &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot; &amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;next_permutation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;
+&lt;a name=&quot;line-28&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-29&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-30&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;solve&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;a name=&quot;line-31&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-32&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        <pubDate>Mon, 14 Mar 2016 00:00:00 +1100</pubDate>
+        <link>http://www.pwzxxm.com/cn/poj-3187/</link>
+        <guid isPermaLink="true">http://www.pwzxxm.com/cn/poj-3187/</guid>
+        
+        <category>POJ</category>
+        
+        <category>brute force</category>
         
         
       </item>
@@ -389,6 +343,199 @@
         <pubDate>Fri, 15 Jan 2016 00:00:00 +1100</pubDate>
         <link>http://www.pwzxxm.com/cn/binary-tree/</link>
         <guid isPermaLink="true">http://www.pwzxxm.com/cn/binary-tree/</guid>
+        
+        <category>data-structure</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Binary Tree</title>
+        <description>&lt;p&gt;Binary tree is called so because of its shape. It&amp;#39;s like a tree, it have leaves and a root. In computer science, the &amp;quot;tree&amp;quot; is usually upside down, the root at the top and leaves grow below it. It is binary so it every node only can have 0, 1 or 2 leaves.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;
+&lt;div class=&quot;toc&quot;&gt;
+&lt;strong&gt;Contents&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#terminologies&quot;&gt;Terminologies&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#leaf-node&quot;&gt;Leaf Node&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#inner-node&quot;&gt;Inner Node&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#height-and-depth&quot;&gt;Height and Depth&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#types&quot;&gt;Types&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#full-binary-tree&quot;&gt;Full Binary Tree&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#complete-binary-tree&quot;&gt;Complete Binary Tree&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#implementation&quot;&gt;Implementation&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#array&quot;&gt;Array&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#struct-or-class&quot;&gt;Struct or Class&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#tree-traversal&quot;&gt;Tree Traversal&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#depth-first-search&quot;&gt;Depth First Search (DFS)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#breadth-first-search&quot;&gt;Breadth First Search (BFS)&lt;/a&gt;
+&lt;/div&gt;
+&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;terminologies&quot;&gt;Terminologies&lt;/h2&gt;
+
+&lt;h3 id=&quot;leaf-node&quot;&gt;Leaf Node&lt;/h3&gt;
+
+&lt;p&gt;The node do NOT have any child nodes.&lt;/p&gt;
+
+&lt;h3 id=&quot;inner-node&quot;&gt;Inner Node&lt;/h3&gt;
+
+&lt;p&gt;The Node between the leaf node and the root.&lt;/p&gt;
+
+&lt;h3 id=&quot;height-and-depth&quot;&gt;Height and Depth&lt;/h3&gt;
+
+&lt;p&gt;Height and Depth of the &lt;strong&gt;tree&lt;/strong&gt; are basically the same thing which indicates how many levels the tree have, usually starts at 0.&lt;/p&gt;
+
+&lt;p&gt;However, the height and depth of the &lt;strong&gt;node&lt;/strong&gt; is different. The &lt;strong&gt;height&lt;/strong&gt; and &lt;strong&gt;depth&lt;/strong&gt; of a node is the distance on longest path to the leaf node and root respectively.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/post/depth_height.gif&quot; alt=&quot;depth_height&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;types&quot;&gt;Types&lt;/h2&gt;
+
+&lt;h3 id=&quot;full-binary-tree&quot;&gt;Full Binary Tree&lt;/h3&gt;
+
+&lt;p&gt;Every node in the tree has either 0 or 2 children.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/post/full_binary_tree.gif&quot; alt=&quot;full_bt&quot;&gt;
+&lt;img src=&quot;/img/post/full_binary_tree_1.gif&quot; alt=&quot;full_b_1&quot;&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;complete-binary-tree&quot;&gt;Complete Binary Tree&lt;/h3&gt;
+
+&lt;p&gt;Every level except possibly the last level, has maximum number of nodes. All nodes in the last level are all at the left of the tree continuously.&lt;/p&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Total number of nodes \(k\)&lt;/th&gt;
+&lt;th&gt;Height of tree \(h\)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;\(2^h \le k \lt 2^{h+1} - 1\)&lt;/td&gt;
+&lt;td&gt;\(h = \lfloor\log_2k\rfloor\)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/post/complete_binary_tree.gif&quot; alt=&quot;complete_bt&quot;&gt;
+&lt;img src=&quot;/img/post/complete_binary_tree_1.gif&quot; alt=&quot;complete_bt_1&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;implementation&quot;&gt;Implementation&lt;/h2&gt;
+
+&lt;h3 id=&quot;array&quot;&gt;Array&lt;/h3&gt;
+
+&lt;p&gt;Array can be used to store a tree, usually in breadth-first order. It is quite good at store a complete binary tree as it will not waste spaces. The root is store at the index \(i = 0\), and its children are stored in \(i = 1\) and \(i = 2\). It has property that &lt;strong&gt;A node at \(i\), its children at \(2i + 1\) (left) and \(2i + 2\) (right)&lt;/strong&gt;. However, it wastes a lot of spaces when storing other trees other than complete binary trees.&lt;/p&gt;
+
+&lt;h3 id=&quot;struct-or-class&quot;&gt;Struct or Class&lt;/h3&gt;
+
+&lt;p&gt;Creating nodes and connect them to their parents.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;cpp&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;node&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2 id=&quot;tree-traversal&quot;&gt;Tree Traversal&lt;/h2&gt;
+
+&lt;h3 id=&quot;depth-first-search-dfs&quot;&gt;&lt;a name=&quot;depth-first-search&quot;&gt;&lt;/a&gt; Depth First Search (DFS)&lt;/h3&gt;
+
+&lt;p&gt;Search the tree in the priority of depth. Using recursive calls for tree traversal is usually a good idea.&lt;/p&gt;
+
+&lt;h4 id=&quot;pre-order&quot;&gt;Pre-order&lt;/h4&gt;
+
+&lt;p&gt;Root-Left-Right&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Starts from the root&lt;/li&gt;
+&lt;li&gt;If left subtree has element in it, go to left. If not, go right.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;in-order&quot;&gt;In-order&lt;/h4&gt;
+
+&lt;p&gt;Left-Root-Right&lt;/p&gt;
+
+&lt;h4 id=&quot;post-order&quot;&gt;Post-order&lt;/h4&gt;
+
+&lt;p&gt;Left-Right-Root&lt;/p&gt;
+
+&lt;h4 id=&quot;determine-a-unique-tree&quot;&gt;Determine a unique tree&lt;/h4&gt;
+
+&lt;p&gt;There are only two ways to determine a unique tree given two types of traverse order.&lt;/p&gt;
+
+&lt;h5 id=&quot;pre-order-and-in-order&quot;&gt;Pre-order and In-order&lt;/h5&gt;
+
+&lt;p&gt;The first element of a pre-order must be the root of the tree. Then find the same element in the In-order, we can divide the tree into two subtrees, left and right. Using the length of the left and right subtrees to find the sequences in pre-order respectively, then we can find the root element for left and right subtrees. Recursive repeat this process.&lt;/p&gt;
+
+&lt;h5 id=&quot;in-order-and-post-order&quot;&gt;In-order and Post-order&lt;/h5&gt;
+
+&lt;p&gt;Similar as above, except the root element is the last element in post-order traversal.&lt;/p&gt;
+
+&lt;h4 id=&quot;tips&quot;&gt;Tips&lt;/h4&gt;
+
+&lt;p&gt;Rather than remembering the sequence, there is another way to remembering the  order.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Draw a continuous line, starts and ends at the root of the tree, starts from left, around the tree&lt;/li&gt;
+&lt;li&gt;Try following:
+
+&lt;ul&gt;
+&lt;li&gt;Pre-order: draw a dot at the &lt;strong&gt;left&lt;/strong&gt; of each node&lt;/li&gt;
+&lt;li&gt;In-order: draw a dot at the &lt;strong&gt;bottom&lt;/strong&gt; of each node&lt;/li&gt;
+&lt;li&gt;Post-order: draw a dot at the &lt;strong&gt;right&lt;/strong&gt; of each node&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Follow the line we drew, the sequence of touching dots is the sequence of traversal.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Pre-order&lt;/th&gt;
+&lt;th&gt;In-order&lt;/th&gt;
+&lt;th&gt;Post-order&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;img src=&quot;/img/post/Sorted_binary_tree_preorder.svg&quot; alt=&quot;preorder_line&quot;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&quot;/img/post/Sorted_binary_tree_inorder.svg&quot; alt=&quot;inorder_line&quot;&gt;&lt;/td&gt;
+&lt;td&gt;&lt;img src=&quot;/img/post/Sorted_binary_tree_postorder.svg&quot; alt=&quot;postorder_line&quot;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;h3 id=&quot;breadth-first-search-bfs&quot;&gt;&lt;a name=&quot;breadth-first-search&quot;&gt;&lt;/a&gt; Breadth First Search (BFS)&lt;/h3&gt;
+
+&lt;p&gt;Traverse from the root to bottom, go thought each level first.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/post/Sorted_binary_tree_breadth-first_traversal.svg&quot; alt=&quot;bfs&quot;&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 15 Jan 2016 00:00:00 +1100</pubDate>
+        <link>http://www.pwzxxm.com/binary-tree/</link>
+        <guid isPermaLink="true">http://www.pwzxxm.com/binary-tree/</guid>
         
         <category>data-structure</category>
         

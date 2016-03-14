@@ -10,26 +10,17 @@ layout: default
         <li>
             <h2><a class="slide post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
             <div class="post-data">
-                <!--
-                {% assign image = post.images[0] %}
-                {% include image.html image=image %}
-            -->
                 {{ post.excerpt | truncatewords: 50 }}
-        </div>
-        {% if post.content contains site.excerpt_separator %}
-        <div class="post-meta">
-            发布于{{ post.date | date: "%Y年%-m月%-d号" }}&nbsp
-            {% assign sorted_tags = post.tags | sort %}
-            {% for tag in sorted_tags %}
-            <a href="/cn/tags/#{{ tag }}">{{ tag }}</a>
-            {% endfor %}
-        </div>
-        <!--
-        <a class="post-more" href="{{ post.url | prepend: site.baseurl }}">阅读更多</a>
-    -->
-    {% endif %}
-</li>
-{% endfor %}
-</ul>
-{% include pagination.html %}
+            </div>
+            <div class="post-meta">
+                发布于{{ post.date | date: "%Y年%-m月%-d号" }}&nbsp
+                {% assign sorted_tags = post.tags | sort %}
+                {% for tag in sorted_tags %}
+                <a href="/cn/tags/#{{ tag }}">{{ tag }}</a>
+                {% endfor %}
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    {% include pagination.html %}
 </div>

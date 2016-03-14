@@ -231,7 +231,7 @@ $(document).ready(function(){
 $(document).on('click', function(event) {
     if (!$(event.target).closest('.site-nav').length) {
         if ($('.trigger').hasClass("show")) {
-            $('.trigger').removeClass("show");
+            $('.trigger').toggleClass("show");
         }
     }
 });
