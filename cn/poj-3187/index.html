@@ -78,9 +78,37 @@
             Try to be great
         </div>
     </div>
-
-
 </header>
+
+<div class="header-fixed site-nav">
+    <ul>
+        <li>
+            
+            <a class="header-icon" href="/cn">博客</a>
+            
+        </li>
+        <li>
+            
+            <a class="header-icon" href="/cn/projects">项目</a>
+            
+        </li>
+        <li>
+            
+            <a class="header-icon" href="/cn/tags">标签</a>
+            
+        </li>
+        <li>
+            
+            <a class="header-icon" href="/cn/about">关于</a>
+            
+        </li>
+        <li>
+            
+            <a class="header-icon" href="/poj-3187/">EN</a>
+            
+        </li>
+    </ul>
+</div>
     <div class="page-content">
       <div class="wrapper">
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
@@ -348,22 +376,13 @@ var h = $(window).height();
 var h2 = $(document).height();
 if (h2-h > 400 && ($(window).width() > 600)) {
     $(window).scroll(function() {
-        if ($(this).scrollTop() > 1){
-            if (!($('.site-header').hasClass("sticky"))) {
-                $('.site-header').addClass("sticky");
-                $('.site-title').detach();
-                $('.page-content').css("padding-top", "400px");
-                $('.page-content').animate({paddingTop:'105px'},"slow");
+        if ($(this).scrollTop() > 108){
+            if(!($('.header-fixed').hasClass("is-visible"))) {
+                $('.header-fixed').addClass("is-visible")
             }
-        }
-        else{
-            $('.site-header').removeClass("sticky");
-            var numTitle = $('.site-title').length;
-            if (numTitle < 1) {
-                $('.site-header').append('<div class="site-title" style="opacity:0;">PwzXxm<div class="site-subtitle">Try to be great</div></div>');
-                $('.site-title').delay(500).animate({opacity:'1'}, "slow");
-            }
-            $('.page-content').css("padding-top", "50px");
+        } else {
+            $('.header-fixed').removeClass("is-visible")
+            $('.header-fixed').delay(500).animate({top:'0'}, "slow")
         }
     });
 }

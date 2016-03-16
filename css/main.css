@@ -170,14 +170,31 @@ blockquote {
         .site-header .site-title .site-subtitle {
           display: none; } }
 
-.sticky {
+.header-fixed {
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
   position: fixed;
   width: 100%;
   font-size: 24px;
   line-height: 48px;
   height: 54px;
-  background: rgba(255, 255, 255, 0.9);
-  border-bottom: 1px solid #e8e8e8; }
+  background-color: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid #e8e8e8;
+  z-index: 10;
+  opacity: 0;
+  top: -54px;
+  margin-bottom: 20px; }
+  .header-fixed a {
+    color: #212121;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px; }
+
+.is-visible {
+  top: 0px;
+  opacity: 1;
+  display: block; }
 
 .site-nav {
   font-size: 14px;
@@ -293,7 +310,7 @@ blockquote {
 */
 .page-content {
   z-index: 5;
-  padding: 50px 0;
+  padding: 70px 0;
   margin-bottom: 60px; }
   @media screen and (max-width: 600px) {
     .page-content {
@@ -655,21 +672,21 @@ ul.pagination {
     list-style: none; }
     ul.pagination li.page .pagination-item {
       text-decoration: none;
-      width: 36px;
-      height: 36px;
-      border-radius: 36px;
-      line-height: 36px;
+      width: 38px;
+      height: 38px;
+      border-radius: 38px;
+      line-height: 38px;
       background: #eeeeee;
       color: #333;
       box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05); }
     ul.pagination li.page a:hover {
       background: #ddd; }
     ul.pagination li.page.current-page .pagination-item {
-      background: #555555;
+      background: #607D8B;
       box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
       color: white; }
     ul.pagination li.page.previous .pagination-item, ul.pagination li.page.next .pagination-item {
-      font-size: 10px; }
+      font-size: 12px; }
 
 pre {
   counter-reset: line-numbering;

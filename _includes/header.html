@@ -54,6 +54,44 @@
             Try to be great
         </div>
     </div>
-
-
 </header>
+
+<div class="header-fixed site-nav">
+    <ul>
+        <li>
+            {% if page.is_default_language %}
+            <a class="header-icon" href="{{ site.baseurl }}/">Blog</a>
+            {% else %}
+            <a class="header-icon" href="{{ site.baseurl }}/cn">博客</a>
+            {% endif %}
+        </li>
+        <li>
+            {% if page.is_default_language %}
+            <a class="header-icon" href="{{ site.baseurl }}/projects">Projects</a>
+            {% else %}
+            <a class="header-icon" href="{{ site.baseurl }}/cn/projects">项目</a>
+            {% endif %}
+        </li>
+        <li>
+            {% if page.is_default_language %}
+            <a class="header-icon" href="{{ site.baseurl }}/tags">Tags</a>
+            {% else %}
+            <a class="header-icon" href="{{ site.baseurl }}/cn/tags">标签</a>
+            {% endif %}
+        </li>
+        <li>
+            {% if page.is_default_language %}
+            <a class="header-icon" href="{{ site.baseurl }}/about">About</a>
+            {% else %}
+            <a class="header-icon" href="{{ site.baseurl }}/cn/about">关于</a>
+            {% endif %}
+        </li>
+        <li>
+            {% if page.is_default_language %}
+            <a class="header-icon" href="{{ site.baseurl }}/cn{{ page.url }}">中</a>
+            {% else %}
+            <a class="header-icon" href="{{ page.url_no_language }}">EN</a>
+            {% endif %}
+        </li>
+    </ul>
+</div>
