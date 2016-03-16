@@ -7,11 +7,11 @@
     <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <title>POJ 3187 Backward Digits Sums</title>
-    <meta name="description" content="Problem Description:There are 1 to N digits (\(1\le N \le 10\)) in certain order. Add adjacent numbers together to get the next line, until the there is only...">
+    <title>POJ 2376 Cleaning Shifts</title>
+    <meta name="description" content="Problem DescriptionN (\(1 \le N \le 25,000\)) cows, each cow only available for a interval of time.T (\(1 \le T \le 1,000,000\)) shifts.Find minimum number o...">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://www.pwzxxm.com/poj-3187/">
+    <link rel="canonical" href="http://www.pwzxxm.com/poj-2376/">
     <link rel="alternate" type="application/rss+xml" title="PwzXxm" href="http://www.pwzxxm.com/feed.xml">
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon" />
     <link rel="icon" href="/img/favicon.png" type="image/x-icon" />
@@ -65,7 +65,7 @@
                 </li>
                 <li>
                     
-                    <a class="header-icon" href="/cn/poj-3187/">中</a>
+                    <a class="header-icon" href="/cn/poj-2376/">中</a>
                     
                 </li>
             </ul>
@@ -104,7 +104,7 @@
         </li>
         <li>
             
-            <a class="header-icon" href="/cn/poj-3187/">中</a>
+            <a class="header-icon" href="/cn/poj-2376/">中</a>
             
         </li>
     </ul>
@@ -114,34 +114,30 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">POJ 3187 Backward Digits Sums</h1>
+        <h1 class="post-title" itemprop="name headline">POJ 2376 Cleaning Shifts</h1>
         <p class="post-meta">
-            <time datetime="2016-03-14T00:00:00+11:00" itemprop="datePublished">
+            <time datetime="2016-03-16T00:00:00+11:00" itemprop="datePublished">
                 
-                Mar 14, 2016
+                Mar 16, 2016
                 
             </time>
         </p>
     </header>
 
     <div class="post-content" itemprop="articleBody">
-        <h3 id="problem-description">Problem Description:</h3>
+        <h3 id="problem-description">Problem Description</h3>
 
-<p>There are 1 to N digits (\(1\le N \le 10\)) in certain order. Add adjacent numbers together to get the next line, until the there is only one number left.(Just like Pascal&#39;s triangle)
-For example, there are 3 integers:
-$$ 1, 2, 3 $$
-$$ 3, 5 $$
-$$ 8 $$</p>
+<p>N (\(1 \le N \le 25,000\)) cows, each cow only available for a interval of time.
+T (\(1 \le T \le 1,000,000\)) shifts.
+Find minimum number of cows to complete T shifts.</p>
 
-<p>So, given N and the final sum, find the lexicographically least ordering of integers.</p>
-
-<p>Link: <a href="http://poj.org/problem?id=3187">http://poj.org/problem?id=3187</a></p>
-
-<h3 id="notes">Notes:</h3>
+<h3 id="notes">Notes</h3>
 
 <ul>
-<li><p>Be aware of that the question is asking 1 to N digits, so we don&#39;t have to test all possible permutations from 1 to 10.</p></li>
-<li><p>The results of <code class="inline-code">next_permutation()</code> in STL are in ascending order in default.</p></li>
+<li>Each shift must has at least one cow assigned to it.</li>
+<li>A cow finishes after the end time. That is, if there are two cows, start and end at \((1, 3)\) and \((4, 10)\) respectively. It is considered as an continuous internal and accepted case for \(T = 10\).</li>
+<li>There can not have any gap between these cows&#39;s working intervals.</li>
+<li>Use <code class="inline-code">scanf()</code> for input otherwise it will run out of the time limit.</li>
 </ul>
 
 <p><br>
@@ -150,41 +146,58 @@ $$ 8 $$</p>
 <br>
 <br></p>
 
-<h3 id="solution">Solution:</h3>
+<h3 id="solution">Solution</h3>
 
-<p>Use <code class="inline-code">next_permutation()</code> to check all possibilities and stimulate the triangle additions. Since the permutation is already in lexicographical order, when we get the find the first result, it is the final answer.</p>
-<div class="highlight"><pre><code class="cpp"><a name="line-1"></a><span class="cp">#include&lt;iostream&gt;</span>
-<a name="line-2"></a><span class="cp">#include&lt;algorithm&gt;</span>
-<a name="line-3"></a><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-<a name="line-4"></a>
-<a name="line-5"></a><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">sum</span><span class="p">,</span> <span class="n">ans</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">11</span><span class="p">];</span>
+<p>Sort cows by ending time. Using greedy that for each interval, find the cow which has latest end time and before the current end time. As the vector is sorted, the first cow we find is the answer.</p>
+<div class="highlight"><pre><code class="cpp"><a name="line-1"></a><span class="cp">#include&lt;cstdio&gt;</span>
+<a name="line-2"></a><span class="cp">#include&lt;vector&gt;</span>
+<a name="line-3"></a><span class="cp">#include&lt;algorithm&gt;</span>
+<a name="line-4"></a><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<a name="line-5"></a><span class="k">typedef</span> <span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">P</span><span class="p">;</span>
 <a name="line-6"></a>
-<a name="line-7"></a><span class="kt">void</span> <span class="nf">solve</span><span class="p">()</span> <span class="p">{</span>
-<a name="line-8"></a>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
-<a name="line-9"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">ans</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">sum</span><span class="p">)</span> <span class="p">{</span>
-<a name="line-10"></a>        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">sum</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-<a name="line-11"></a>        <span class="k">return</span><span class="p">;</span>
-<a name="line-12"></a>    <span class="p">}</span>
-<a name="line-13"></a>    <span class="k">do</span> <span class="p">{</span>
-<a name="line-14"></a>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-<a name="line-15"></a>            <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
-<a name="line-16"></a>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
-<a name="line-17"></a>            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
-<a name="line-18"></a>                <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
-<a name="line-19"></a>        <span class="p">}</span>
-<a name="line-20"></a>        <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">sum</span><span class="p">)</span> <span class="p">{</span>
-<a name="line-21"></a>            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
-<a name="line-22"></a>            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-<a name="line-23"></a>            <span class="k">return</span><span class="p">;</span>
-<a name="line-24"></a>        <span class="p">}</span>
-<a name="line-25"></a>    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">next_permutation</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">ans</span><span class="o">+</span><span class="n">n</span><span class="p">));</span>
-<a name="line-26"></a><span class="p">}</span>
-<a name="line-27"></a>
-<a name="line-28"></a><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-<a name="line-29"></a>    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">sum</span><span class="p">;</span>
-<a name="line-30"></a>    <span class="n">solve</span><span class="p">();</span>
-<a name="line-31"></a>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<a name="line-32"></a><span class="p">}</span>
+<a name="line-7"></a>
+<a name="line-8"></a><span class="n">vector</span><span class="o">&lt;</span><span class="n">P</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">;</span>
+<a name="line-9"></a><span class="kt">int</span> <span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-10"></a>
+<a name="line-11"></a><span class="k">struct</span> <span class="n">cmp</span> <span class="p">{</span>
+<a name="line-12"></a>    <span class="kt">bool</span> <span class="k">operator</span><span class="p">()(</span><span class="k">const</span> <span class="n">P</span> <span class="o">&amp;</span><span class="n">l</span><span class="p">,</span> <span class="k">const</span> <span class="n">P</span> <span class="o">&amp;</span><span class="n">r</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-13"></a>        <span class="k">return</span> <span class="n">l</span><span class="p">.</span><span class="n">second</span> <span class="o">&gt;</span> <span class="n">r</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
+<a name="line-14"></a>    <span class="p">}</span>
+<a name="line-15"></a><span class="p">};</span>
+<a name="line-16"></a><span class="kt">void</span> <span class="nf">solve</span><span class="p">()</span> <span class="p">{</span>
+<a name="line-17"></a>    <span class="n">sort</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span><span class="n">cmp</span><span class="p">());</span>
+<a name="line-18"></a>    <span class="kt">int</span> <span class="n">cur</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<a name="line-19"></a>    <span class="kt">bool</span> <span class="n">find</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<a name="line-20"></a>    <span class="k">while</span> <span class="p">(</span><span class="n">cur</span> <span class="o">&lt;=</span> <span class="n">T</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-21"></a>        <span class="k">if</span> <span class="p">((</span><span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">||</span> <span class="o">!</span><span class="n">find</span> <span class="o">||</span> <span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">second</span> <span class="o">&lt;</span> <span class="n">cur</span><span class="p">))</span> <span class="p">{</span> <span class="n">ans</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="k">return</span> <span class="p">;</span> <span class="p">}</span>
+<a name="line-22"></a>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-23"></a>            <span class="k">if</span> <span class="p">(</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">first</span> <span class="o">&lt;=</span> <span class="n">cur</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-24"></a>                <span class="n">ans</span><span class="o">++</span><span class="p">;</span>
+<a name="line-25"></a>                <span class="n">cur</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">second</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+<a name="line-26"></a>                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d %d</span><span class="se">\n\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">first</span><span class="p">,</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">second</span><span class="p">);</span>
+<a name="line-27"></a>                <span class="n">v</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="n">i</span><span class="p">);</span>
+<a name="line-28"></a>                <span class="n">find</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<a name="line-29"></a>                <span class="k">break</span><span class="p">;</span>
+<a name="line-30"></a>            <span class="p">}</span>
+<a name="line-31"></a>            <span class="n">find</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+<a name="line-32"></a>        <span class="p">}</span>
+<a name="line-33"></a>    <span class="p">}</span>
+<a name="line-34"></a>    <span class="k">return</span> <span class="p">;</span>
+<a name="line-35"></a><span class="p">}</span>
+<a name="line-36"></a>
+<a name="line-37"></a><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-38"></a>    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d %d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">N</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">T</span><span class="p">);</span>
+<a name="line-39"></a>    <span class="kt">int</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">;</span>
+<a name="line-40"></a>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-41"></a>        <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d %d&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">start</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">end</span><span class="p">);</span>
+<a name="line-42"></a>        <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">P</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">));</span>
+<a name="line-43"></a>    <span class="p">}</span>
+<a name="line-44"></a>
+<a name="line-45"></a>    <span class="n">solve</span><span class="p">();</span>
+<a name="line-46"></a>    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
+<a name="line-47"></a>
+<a name="line-48"></a>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-49"></a><span class="p">}</span>
 </code></pre></div>
     </div>
 
@@ -199,7 +212,7 @@ $$ 8 $$</p>
         
         <li><a href="/tags/#POJ">POJ</a></li>
         
-        <li><a href="/tags/#brute force">brute force</a></li>
+        <li><a href="/tags/#greedy">greedy</a></li>
         
         
     </ul>
@@ -207,26 +220,26 @@ $$ 8 $$</p>
 
 <!--
 <span class = "share-f">
-    <a href="http://twitter.com/share?url=http://www.pwzxxm.com/poj-3187/&text=">
+    <a href="http://twitter.com/share?url=http://www.pwzxxm.com/poj-2376/&text=">
         Twitter
     </a>
 
-    <a href="https://plus.google.com/share?url=http://www.pwzxxm.com/poj-3187/">
+    <a href="https://plus.google.com/share?url=http://www.pwzxxm.com/poj-2376/">
         Google Plus
     </a>
 
-    <a href="http://www.facebook.com/sharer/sharer.php?u=http://www.pwzxxm.com/poj-3187/">
+    <a href="http://www.facebook.com/sharer/sharer.php?u=http://www.pwzxxm.com/poj-2376/">
         Facebook
     </a>
 
-    <a href="http://reddit.com/submit?url=http://www.pwzxxm.com/poj-3187/&title=POJ 3187 Backward Digits Sums">
+    <a href="http://reddit.com/submit?url=http://www.pwzxxm.com/poj-2376/&title=POJ 2376 Cleaning Shifts">
         Reddit
     </a>
 
     <a href="javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:'',r='http://www.douban.com/recommend/?url='+e(d.location.href)+'&title='+e(d.title)+'&sel='+e(s)+'&v=1',w=450,h=330,x=function(){if(!window.open(r,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width='+w+',height='+h+',left='+(screen.width-w)/2+',top='+(screen.height-h)/2))location.href=r+'&r=1'};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()"><img src="http://img6.douban.com/pics/fw2douban_s.png" alt="推荐到豆瓣" />
     </a>
 
-    <a href="mailto:?subject=POJ 3187 Backward Digits Sums&body=http://www.pwzxxm.com/poj-3187/">
+    <a href="mailto:?subject=POJ 2376 Cleaning Shifts&body=http://www.pwzxxm.com/poj-2376/">
         Email
     </a>
 </span>
@@ -245,7 +258,7 @@ var disqus_config = function () {
     var disqus_shortname = 'pwzxxm'
     //this.page.url = http://www.pwzxxm.com; // Replace PAGE_URL with your page's canonical URL variable
     
-    this.page.identifier = /poj-3187/; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    this.page.identifier = /poj-2376/; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     this.language="en";
     
 };
