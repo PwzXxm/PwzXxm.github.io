@@ -78,10 +78,7 @@ a {
 blockquote {
   color: #828282;
   border-left: 4px solid #e8e8e8;
-  padding-left: 15px;
-  font-size: 18px;
-  letter-spacing: -1px;
-  font-style: italic; }
+  padding-left: 15px; }
   blockquote > :last-child {
     margin-bottom: 0; }
 
@@ -693,6 +690,7 @@ pre {
   background: #F7F7F7;
   padding: 0;
   line-height: 20px;
+  margin-top: 30px;
   margin-bottom: 30px;
   white-space: pre;
   overflow-x: auto;
@@ -706,11 +704,14 @@ code {
   font-size: 14px; }
 
 code.inline-code {
-  font-size: 16px;
-  font-family: monospace;
-  background: #eeeeee;
-  padding-left: 3px;
-  padding-right: 3px; }
+  font-size: 12px;
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+  color: #607D8B;
+  background: #f7f7f7;
+  border: 1px solid #e1e1e7;
+  border-radius: 2px;
+  padding: 2px 4px 2px 4px;
+  margin: 1px 1px 1px 1px; }
 
 pre a::before {
   content: counter(line-numbering);
