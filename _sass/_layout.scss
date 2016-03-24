@@ -84,6 +84,10 @@
     }
     top: -54px;
     margin-bottom: 20px;
+
+    @include media-query($on-palm) {
+        display: none;
+    }
 }
 
 .is-visible {
@@ -93,6 +97,7 @@
 }
 
 .site-nav {
+    z-index: 20;
     font-size: 14px;
     line-height: 30px;
     letter-spacing: 1px;
@@ -382,6 +387,10 @@
 
 .post-content {
     margin-bottom: $spacing-unit;
+
+    a {
+        overflow: hidden;
+    }
 
     ul {
         list-style: disc;

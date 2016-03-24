@@ -149,7 +149,13 @@
 
 <p>用数组<code class="inline-code">sum</code>保存自原矩阵左上角到右下角坐标为\(i, j)\)该区域内所有数的和。</p>
 
-<p>如下图所示，显然有\(A = (A+B+C+D)-(B+D)-(C+D)+D\)。所以我们可以得到 <code class="inline-code">A = sum[k][l] - sum[i-1][l] - sum[j-1][k] + sum[i-1][j-1]</code>。</p>
+<p>如下图所示，显然有
+$$
+\begin{align}
+A &amp;= (A+B+C+D)\\ &amp;-(B+D)\\ &amp;-(C+D)\\ &amp;+D
+\end{align}
+$$
+所以我们可以得到 <code class="inline-code">A = sum[k][l] - sum[i-1][l] - sum[j-1][k] + sum[i-1][j-1]</code>。</p>
 
 <p><img src="/img/post/maximum_sum.png" alt="max_sum"></p>
 
@@ -438,6 +444,13 @@ l-24 -60 0 -460 c0 -458 0 -460 23 -517 30 -74 108 -160 176 -193 39 -19 90
 
 </footer>
 <script src="/js/jquery.min.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: true
+});
+</script>
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script>
 var h = $(window).height();

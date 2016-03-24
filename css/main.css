@@ -187,6 +187,9 @@ blockquote {
     font-weight: bold;
     text-transform: uppercase;
     font-size: 13px; }
+  @media screen and (max-width: 600px) {
+    .header-fixed {
+      display: none; } }
 
 .is-visible {
   top: 0px;
@@ -194,6 +197,7 @@ blockquote {
   display: block; }
 
 .site-nav {
+  z-index: 20;
   font-size: 14px;
   line-height: 30px;
   letter-spacing: 1px; }
@@ -405,6 +409,8 @@ blockquote {
 
 .post-content {
   margin-bottom: 30px; }
+  .post-content a {
+    overflow: hidden; }
   .post-content ul {
     list-style: disc; }
   .post-content h2, .post-content h3, .post-content h4, .post-content h5 {

@@ -5,8 +5,8 @@
     <description>Learning and sharing computer science ideas. Enjoy what you are passionated about.</description>
     <link>http://www.pwzxxm.com/</link>
     <atom:link href="http://www.pwzxxm.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 24 Mar 2016 10:47:18 +1100</pubDate>
-    <lastBuildDate>Thu, 24 Mar 2016 10:47:18 +1100</lastBuildDate>
+    <pubDate>Thu, 24 Mar 2016 14:04:08 +1100</pubDate>
+    <lastBuildDate>Thu, 24 Mar 2016 14:04:08 +1100</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -15,7 +15,7 @@
 
 &lt;p&gt;Given an array with size \(N \times N (N \le 100)\), find the maximum value of its subarray.&lt;/p&gt;
 
-&lt;p&gt;Link: &lt;a href=&quot;https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;amp;Itemid=8&amp;amp;page=show_problem&amp;amp;problem=44&quot;&gt;https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;amp;Itemid=8&amp;amp;page=show_problem&amp;amp;problem=44&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Link: &lt;a href=&quot;https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;amp;Itemid=8&amp;amp;page=show_problem&amp;amp;problem=44&quot;&gt;Problem on UVa&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;
 &lt;br&gt;
@@ -35,7 +35,13 @@
 
 &lt;p&gt;We build a &lt;code class=&quot;inline-code&quot;&gt;sum&lt;/code&gt; array which is the sum of the numbers in rectangle area with  the top-left of the array and bottom-right node \(i, j)\).&lt;/p&gt;
 
-&lt;p&gt;Then as we can see at the graph below, it is obvious that \(A = (A+B+C+D)-(B+D)-(C+D)+D\). Therefore we have &lt;code class=&quot;inline-code&quot;&gt;A = sum[k][l] - sum[i-1][l] - sum[j-1][k] + sum[i-1][j-1]&lt;/code&gt;. Go through every subarray to find the maximum.&lt;/p&gt;
+&lt;p&gt;Then as we can see at the graph below, it is obvious that
+$$
+\begin{align}
+A &amp;amp;= (A+B+C+D)\\ &amp;amp;-(B+D)\\ &amp;amp;-(C+D)\\ &amp;amp;+D
+\end{align}
+$$
+Therefore we have &lt;code class=&quot;inline-code&quot;&gt;A = sum[k][l] - sum[i-1][l] - sum[j-1][k] + sum[i-1][j-1]&lt;/code&gt;. Go through every subarray to find the maximum.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/post/maximum_sum.png&quot; alt=&quot;max_sum&quot;&gt;&lt;/p&gt;
 
@@ -176,7 +182,13 @@ k = the number of columns&lt;/p&gt;
 
 &lt;p&gt;用数组&lt;code class=&quot;inline-code&quot;&gt;sum&lt;/code&gt;保存自原矩阵左上角到右下角坐标为\(i, j)\)该区域内所有数的和。&lt;/p&gt;
 
-&lt;p&gt;如下图所示，显然有\(A = (A+B+C+D)-(B+D)-(C+D)+D\)。所以我们可以得到 &lt;code class=&quot;inline-code&quot;&gt;A = sum[k][l] - sum[i-1][l] - sum[j-1][k] + sum[i-1][j-1]&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;如下图所示，显然有
+$$
+\begin{align}
+A &amp;amp;= (A+B+C+D)\\ &amp;amp;-(B+D)\\ &amp;amp;-(C+D)\\ &amp;amp;+D
+\end{align}
+$$
+所以我们可以得到 &lt;code class=&quot;inline-code&quot;&gt;A = sum[k][l] - sum[i-1][l] - sum[j-1][k] + sum[i-1][j-1]&lt;/code&gt;。&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/img/post/maximum_sum.png&quot; alt=&quot;max_sum&quot;&gt;&lt;/p&gt;
 
