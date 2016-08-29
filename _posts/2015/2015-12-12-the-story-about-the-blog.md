@@ -20,4 +20,6 @@ If anyone find any mistake on my blog, please feel free to contact me or leave a
 
 Let's learn together and sharing ideas!
 
-![blog_story](/img/post/blog_story.jpeg)
+<br>
+
+![blog_story](/img/post/blog_story.jpg)

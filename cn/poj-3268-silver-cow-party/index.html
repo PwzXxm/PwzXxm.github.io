@@ -433,13 +433,16 @@ var h = $(window).height();
 var h2 = $(document).height();
 if (h2-h > 400 && ($(window).width() > 600)) {
     $(window).scroll(function() {
-        if ($(this).scrollTop() > 108){
+        if ($(this).scrollTop() > 54){
             if(!($('.header-fixed').hasClass("is-visible"))) {
-                $('.header-fixed').addClass("is-visible")
+                $('.header-fixed').addClass("is-visible");
+                $('.header-fixed').css("z-index", "50");
             }
         } else {
-            $('.header-fixed').removeClass("is-visible")
+            $('.header-fixed').animate({opcaity:'0'}, "slow");
+            $('.header-fixed').removeClass("is-visible");
             $('.header-fixed').delay(500).animate({top:'0'}, "slow")
+            $('.header-fixed').css("z-index", "-1");
         }
     });
 }

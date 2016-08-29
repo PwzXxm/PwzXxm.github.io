@@ -11,7 +11,7 @@
     background-size: cover;
     height: 400px;
     width: 100%;
-    z-index: 10;
+    z-index: 20;
 
     .site-title {
         opacity: 1;
@@ -29,20 +29,6 @@
         }
     }
 
-    a {
-        color: #212121;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-size: 13px;
-
-        @media only screen and (min-width : 800px) {
-            &:hover {
-                text-shadow: 0 2px 5px rgba(0,0,0,0.15);
-                text-decoration: none;
-            }
-        }
-
-    }
 
     @include media-query($on-palm) {
         background-image: none;
@@ -62,11 +48,25 @@
     }
 }
 
+.header-icon, .header-icon:visited {
+    color: #212121;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
+    @media only screen and (min-width : 800px) {
+        &:hover {
+            text-shadow: 0 2px 5px rgba(0,0,0,0.15);
+            text-decoration: none;
+        }
+    }
+}
+
 .header-fixed {
     transition: all 0.5s ease;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
 
+    z-index: 50;
     position:fixed;
     width: 100%;
     font-size: 24px;
@@ -74,16 +74,9 @@
     height: 54px;
     background-color: rgba(255,255,255,.95);
     border-bottom: 1px solid $grey-color-light;
-    z-index: 10;
-    opacity: 0;
-    a {
-        color: #212121;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-size: 13px;
-    }
-    top: -54px;
     margin-bottom: 20px;
+    top: -54px;
+    opacity: 0;
 
     @include media-query($on-palm) {
         display: none;

@@ -68,7 +68,7 @@ a {
   color: #1E88E5;
   text-decoration: none; }
   a:visited {
-    color: #187bd1; }
+    color: #166dba; }
   a:hover {
     color: #555555; }
 
@@ -130,7 +130,7 @@ blockquote {
   background-size: cover;
   height: 400px;
   width: 100%;
-  z-index: 10; }
+  z-index: 20; }
   .site-header .site-title {
     opacity: 1;
     color: #4A4A4A;
@@ -143,15 +143,6 @@ blockquote {
     .site-header .site-title .site-subtitle {
       opacity: 0.54;
       font-size: 16px; }
-  .site-header a {
-    color: #212121;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 13px; }
-    @media only screen and (min-width: 800px) {
-      .site-header a:hover {
-        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-        text-decoration: none; } }
   @media screen and (max-width: 600px) {
     .site-header {
       background-image: none;
@@ -167,10 +158,21 @@ blockquote {
         .site-header .site-title .site-subtitle {
           display: none; } }
 
+.header-icon, .header-icon:visited {
+  color: #212121;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 13px; }
+  @media only screen and (min-width: 800px) {
+    .header-icon:hover, .header-icon:visited:hover {
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+      text-decoration: none; } }
+
 .header-fixed {
   transition: all 0.5s ease;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
+  z-index: 50;
   position: fixed;
   width: 100%;
   font-size: 24px;
@@ -178,15 +180,9 @@ blockquote {
   height: 54px;
   background-color: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid #e8e8e8;
-  z-index: 10;
-  opacity: 0;
+  margin-bottom: 20px;
   top: -54px;
-  margin-bottom: 20px; }
-  .header-fixed a {
-    color: #212121;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 13px; }
+  opacity: 0; }
   @media screen and (max-width: 600px) {
     .header-fixed {
       display: none; } }

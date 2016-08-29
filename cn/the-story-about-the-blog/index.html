@@ -133,11 +133,11 @@
 
 <p>开这个博客，一个是想<strong>自己理理思路</strong>，想算法啊什么的如果能说得新手明白，那自己也应该理解得差不多了；还有就是<strong>希望别人看了这个博客能有所收获吧</strong>。因为很久以前看KMP（一个字符串匹配算法）的时候，刚开始真的是云里雾里，智商不够。后来看了好多别人写的文章，突然有一瞬间看着看着就觉得自己好像会了。谢谢那些无私写作发到博客里的大牛们，如果大牛们看见有哪写的不对的也希望能及时联系我，避免误人子弟。联系方式在每页的页脚都有显示。</p>
 
-<p>看我发功！</p>
-
-<p>哼————哈！</p>
-
 <p>大家一起加油！！！</p>
+
+<p><br></p>
+
+<p><img src="/img/post/blog_story.jpg" alt="blog_story"></p>
 
     </div>
 
@@ -335,13 +335,16 @@ var h = $(window).height();
 var h2 = $(document).height();
 if (h2-h > 400 && ($(window).width() > 600)) {
     $(window).scroll(function() {
-        if ($(this).scrollTop() > 108){
+        if ($(this).scrollTop() > 54){
             if(!($('.header-fixed').hasClass("is-visible"))) {
-                $('.header-fixed').addClass("is-visible")
+                $('.header-fixed').addClass("is-visible");
+                $('.header-fixed').css("z-index", "50");
             }
         } else {
-            $('.header-fixed').removeClass("is-visible")
+            $('.header-fixed').animate({opcaity:'0'}, "slow");
+            $('.header-fixed').removeClass("is-visible");
             $('.header-fixed').delay(500).animate({top:'0'}, "slow")
+            $('.header-fixed').css("z-index", "-1");
         }
     });
 }
