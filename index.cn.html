@@ -13,7 +13,7 @@ layout: default
                 {{ post.excerpt | truncatewords: 50 }}
             </div>
             <div class="post-meta">
-                发布于{{ post.date | date: "%Y年%-m月%-d号" }}&nbsp
+                发布于{{ post.date | date: "%Y年%-m月%-d号" }}&nbsp&nbsp&nbsp
                 {% assign sorted_tags = post.tags | sort %}
                 {% for tag in sorted_tags %}
                 <a href="/cn/tags/#{{ tag }}">{{ tag }}</a>

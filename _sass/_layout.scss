@@ -301,7 +301,8 @@
         background-color: #ffffff;
 
         .post-data {
-            color: #939393;
+            //color: #939393;
+            color: #757575;
             font-weight: normal;
             h1, h2, h3, h4, h5 {
                 font-size: $base-font-size;
@@ -331,13 +332,14 @@
         .post-meta {
             font-size: $base-font-size*0.9;
             margin-bottom: 50px;
-            color: #9d9d9d;
+            //color: #9d9d9d;
+            color: #9E9E9E;
             padding-bottom: 50px;
             border-bottom: 1px solid $grey-color-light;
             a {
                 margin-right: 5px;
                 transition: all 0.5s ease;
-                color: #9d9d9d;
+                color: #9E9E9E;
                 @media only screen and (min-width : 800px) {
                     &:hover {
                         color: #607D8B;
@@ -544,16 +546,23 @@
     @media only screen and (min-width : 800px) {
         .slide:after
         {
-            height: 1px;
+            //height: 1px;
+            height: 0.5px;
         }
 
         .slide:hover:after
         {
-            background: lighten($text-color, 30%);
+            //background: lighten($text-color, 30%);
+            background: #78909C;
         }
         a {
             text-decoration: none;
             transition: all 0.5s ease;
+        @media only screen and (min-width : 800px) {
+                &:hover {
+                    color: #78909c;
+                }
+            }
         }
     }
     a {

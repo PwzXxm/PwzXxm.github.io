@@ -7,11 +7,11 @@
     <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <title>Binary Tree</title>
-    <meta name="description" content="Binary tree is called so because of its shape. It&#39;s like a tree, it have leaves and a root. In computer science, the &quot;tree&quot; is usually upside d...">
+    <title>Pwzxxm - computer programming blog</title>
+    <meta name="description" content="Learning and sharing computer science ideas. Enjoy what you are passionated about.">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://www.pwzxxm.com/binary-tree/">
+    <link rel="canonical" href="http://www.pwzxxm.com/page2/">
     <link rel="alternate" type="application/rss+xml" title="PwzXxm" href="http://www.pwzxxm.com/feed.xml">
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon" />
     <link rel="icon" href="/img/favicon.png" type="image/x-icon" />
@@ -65,7 +65,7 @@
                 </li>
                 <li>
                     
-                    <a class="header-icon" href="/cn/binary-tree/">中</a>
+                    <a class="header-icon" href="/cn/page2/index.html">中</a>
                     
                 </li>
             </ul>
@@ -104,280 +104,102 @@
         </li>
         <li>
             
-            <a class="header-icon" href="/cn/binary-tree/">中</a>
+            <a class="header-icon" href="/cn/page2/index.html">中</a>
             
         </li>
     </ul>
 </div>
     <div class="page-content">
       <div class="wrapper">
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+        <div class="home">
+    
+    <ul class="post-list">
+        <!-- This loops through the paginated posts -->
+        
+        <li>
+            <h2><a class="slide post-link" href="/the-story-about-the-blog/">The Story About the Blog</a></h2>
+            <div class="post-data">
+                <p><a href="http://www.pwzxxm.com">PwzXxm</a> is my first blog and also my first website I have ever built. I knew only a little bit of HTML before I started this project. I learned CSS and JavaScript while I&#39;m building the site. I also read a lot of source code and blog posts about how other people build their own site using <a href="http://jekyllrb.com/">Jekyll</a>. It took me seven days. Finally, on the 10th of December, 2015, the site went alive.</p>
 
-    <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">Binary Tree</h1>
-        <p class="post-meta">
-            <time datetime="2016-01-15T00:00:00+11:00" itemprop="datePublished">
+            </div>
+            <div class="post-meta">
+                Posted on Dec 12, 2015&nbsp&nbsp&nbsp
                 
-                Jan 15, 2016
                 
-            </time>
-        </p>
-    </header>
-
-    <div class="post-content" itemprop="articleBody">
-        <p>Binary tree is called so because of its shape. It&#39;s like a tree, it have leaves and a root. In computer science, the &quot;tree&quot; is usually upside down, the root at the top and leaves grow below it. It is binary so it every node only can have 0, 1 or 2 leaves.</p>
-
-<p><br>
-<div class="toc">
-<strong>Contents</strong></p>
-
-<ul>
-<li><a href="#terminologies">Terminologies</a>
-
-<ul>
-<li><a href="#leaf-node">Leaf Node</a></li>
-<li><a href="#inner-node">Inner Node</a></li>
-<li><a href="#height-and-depth">Height and Depth</a></li>
-</ul></li>
-<li><a href="#types">Types</a>
-
-<ul>
-<li><a href="#full-binary-tree">Full Binary Tree</a></li>
-<li><a href="#complete-binary-tree">Complete Binary Tree</a></li>
-</ul></li>
-<li><a href="#implementation">Implementation</a>
-
-<ul>
-<li><a href="#array">Array</a></li>
-<li><a href="#struct-or-class">Struct or Class</a></li>
-</ul></li>
-<li><a href="#tree-traversal">Tree Traversal</a>
-
-<ul>
-<li><a href="#depth-first-search">Depth First Search (DFS)</a></li>
-<li><a href="#breadth-first-search">Breadth First Search (BFS)</a>
-</div>
-<br></li>
-</ul></li>
-</ul>
-
-<hr>
-
-<h2 id="terminologies">Terminologies</h2>
-
-<h3 id="leaf-node">Leaf Node</h3>
-
-<p>The node do NOT have any child nodes.</p>
-
-<h3 id="inner-node">Inner Node</h3>
-
-<p>The Node between the leaf node and the root.</p>
-
-<h3 id="height-and-depth">Height and Depth</h3>
-
-<p>Height and Depth of the <strong>tree</strong> are basically the same thing which indicates how many levels the tree have, usually starts at 0.</p>
-
-<p>However, the height and depth of the <strong>node</strong> is different. The <strong>height</strong> and <strong>depth</strong> of a node is the distance on longest path to the leaf node and root respectively.</p>
-
-<p><img src="/img/post/depth_height.gif" alt="depth_height"></p>
-
-<p><br></p>
-
-<hr>
-
-<h2 id="types">Types</h2>
-
-<h3 id="full-binary-tree">Full Binary Tree</h3>
-
-<p>Every node in the tree has either 0 or 2 children.</p>
-
-<p><img src="/img/post/full_binary_tree.gif" alt="full_bt">
-<img src="/img/post/full_binary_tree_1.gif" alt="full_b_1"></p>
-
-<h3 id="complete-binary-tree">Complete Binary Tree</h3>
-
-<p>Every level except possibly the last level, has maximum number of nodes. All nodes in the last level are all at the left of the tree continuously.</p>
-
-<table><thead>
-<tr>
-<th>Total number of nodes \(k\)</th>
-<th>Height of tree \(h\)</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>\(2^h \le k \lt 2^{h+1} - 1\)</td>
-<td>\(h = \lfloor\log_2k\rfloor\)</td>
-</tr>
-</tbody></table>
-
-<p><img src="/img/post/complete_binary_tree.gif" alt="complete_bt">
-<img src="/img/post/complete_binary_tree_1.gif" alt="complete_bt_1"></p>
-
-<p><br></p>
-
-<hr>
-
-<h2 id="implementation">Implementation</h2>
-
-<h3 id="array">Array</h3>
-
-<p>Array can be used to store a tree, usually in breadth-first order. It is quite good at store a complete binary tree as it will not waste spaces. The root is store at the index \(i = 0\), and its children are stored in \(i = 1\) and \(i = 2\). It has property that <strong>A node at \(i\), its children at \(2i + 1\) (left) and \(2i + 2\) (right)</strong>. However, it wastes a lot of spaces when storing other trees other than complete binary trees.</p>
-
-<h3 id="struct-or-class">Struct or Class</h3>
-
-<p>Creating nodes and connect them to their parents.</p>
-<div class="highlight"><pre><code class="cpp"><a name="line-1"></a><span class="k">struct</span> <span class="n">node</span> <span class="p">{</span>
-<a name="line-2"></a>    <span class="kt">int</span> <span class="n">data</span><span class="p">;</span>
-<a name="line-3"></a>    <span class="k">struct</span> <span class="n">node</span><span class="o">*</span> <span class="n">left</span><span class="p">;</span>
-<a name="line-4"></a>    <span class="k">struct</span> <span class="n">node</span><span class="o">*</span> <span class="n">right</span><span class="p">;</span>
-<a name="line-5"></a><span class="p">}</span>
-</code></pre></div>
-<p><br></p>
-
-<hr>
-
-<h2 id="tree-traversal">Tree Traversal</h2>
-
-<h3 id="depth-first-search-dfs"><a name="depth-first-search"></a> Depth First Search (DFS)</h3>
-
-<p>Search the tree in the priority of depth. Using recursive calls for tree traversal is usually a good idea.</p>
-
-<h4 id="pre-order">Pre-order</h4>
-
-<p>Root-Left-Right</p>
-
-<ol>
-<li>Starts from the root</li>
-<li>If left subtree has element in it, go to left. If not, go right.</li>
-</ol>
-
-<h4 id="in-order">In-order</h4>
-
-<p>Left-Root-Right</p>
-
-<h4 id="post-order">Post-order</h4>
-
-<p>Left-Right-Root</p>
-
-<h4 id="determine-a-unique-tree">Determine a unique tree</h4>
-
-<p>There are only two ways to determine a unique tree given two types of traverse order.</p>
-
-<h5 id="pre-order-and-in-order">Pre-order and In-order</h5>
-
-<p>The first element of a pre-order must be the root of the tree. Then find the same element in the In-order, we can divide the tree into two subtrees, left and right. Using the length of the left and right subtrees to find the sequences in pre-order respectively, then we can find the root element for left and right subtrees. Recursive repeat this process.</p>
-
-<h5 id="in-order-and-post-order">In-order and Post-order</h5>
-
-<p>Similar as above, except the root element is the last element in post-order traversal.</p>
-
-<h4 id="tips">Tips</h4>
-
-<p>Rather than remembering the sequence, there is another way to remembering the  order.</p>
-
-<ol>
-<li>Draw a continuous line, starts and ends at the root of the tree, starts from left, around the tree</li>
-<li>Try following:
-
-<ul>
-<li>Pre-order: draw a dot at the <strong>left</strong> of each node</li>
-<li>In-order: draw a dot at the <strong>bottom</strong> of each node</li>
-<li>Post-order: draw a dot at the <strong>right</strong> of each node</li>
-</ul></li>
-<li>Follow the line we drew, the sequence of touching dots is the sequence of traversal.</li>
-</ol>
-
-<table><thead>
-<tr>
-<th>Pre-order</th>
-<th>In-order</th>
-<th>Post-order</th>
-</tr>
-</thead><tbody>
-<tr>
-<td><img src="/img/post/Sorted_binary_tree_preorder.svg" alt="preorder_line"></td>
-<td><img src="/img/post/Sorted_binary_tree_inorder.svg" alt="inorder_line"></td>
-<td><img src="/img/post/Sorted_binary_tree_postorder.svg" alt="postorder_line"></td>
-</tr>
-</tbody></table>
-
-<h3 id="breadth-first-search-bfs"><a name="breadth-first-search"></a> Breadth First Search (BFS)</h3>
-
-<p>Traverse from the root to bottom, go thought each level first.</p>
-
-<p><img src="/img/post/Sorted_binary_tree_breadth-first_traversal.svg" alt="bfs"></p>
-
-    </div>
-
-</article>
-
-
-<span class="tags">
-    <ul>
-        
-        
-        Tags:
-        
-        <li><a href="/tags/#data-structure">data-structure</a></li>
-        
+                <a href="/tags/#blog">blog</a>
+                
+            </div>
+        </li>
         
     </ul>
-</span>
-
-<!--
-<span class = "share-f">
-    <a href="http://twitter.com/share?url=http://www.pwzxxm.com/binary-tree/&text=">
-        Twitter
-    </a>
-
-    <a href="https://plus.google.com/share?url=http://www.pwzxxm.com/binary-tree/">
-        Google Plus
-    </a>
-
-    <a href="http://www.facebook.com/sharer/sharer.php?u=http://www.pwzxxm.com/binary-tree/">
-        Facebook
-    </a>
-
-    <a href="http://reddit.com/submit?url=http://www.pwzxxm.com/binary-tree/&title=Binary Tree">
-        Reddit
-    </a>
-
-    <a href="javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:'',r='http://www.douban.com/recommend/?url='+e(d.location.href)+'&title='+e(d.title)+'&sel='+e(s)+'&v=1',w=450,h=330,x=function(){if(!window.open(r,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width='+w+',height='+h+',left='+(screen.width-w)/2+',top='+(screen.height-h)/2))location.href=r+'&r=1'};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()"><img src="http://img6.douban.com/pics/fw2douban_s.png" alt="推荐到豆瓣" />
-    </a>
-
-    <a href="mailto:?subject=Binary Tree&body=http://www.pwzxxm.com/binary-tree/">
-        Email
-    </a>
-</span>
--->
-
-<p id="ex"></p>
-
-<div id="disqus_thread"></div>
-<script>
-/**
-* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-*/
-var disqus_config = function () {
-    //var disqus_developer = 1; // Comment out when the site is live
-    var disqus_shortname = 'pwzxxm'
-    //this.page.url = http://www.pwzxxm.com; // Replace PAGE_URL with your page's canonical URL variable
     
-    this.page.identifier = /binary-tree/; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-    this.language="en";
+
     
-};
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
 
-s.src = '//pwzxxm.disqus.com/embed.js';
 
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+
+    
+    
+    
+
+
+
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+<p id="pagination-label" class="pagination-label sr-only" aria-hidden="true">Pagination</p>
+
+<ul class="pagination" role="navigation" aria-labelledby="pagination-label">
+
+    
+    <li class="page previous">
+        
+        <a class="pagination-item" href="/" rel="prev"><span class="sr-only"> page</span></a>
+        
+    </li>
+    
+
+    
+    <li class="page first">
+        <a class="pagination-item" href="/"><span class="sr-only">page </span>1</a>
+    </li>
+    <li class="pages-indicator pages-indicator--offset-"><span aria-hidden="true">...</span><span class="sr-only">Skipped pages indicator</span></li>
+    
+
+    
+        
+            
+            
+        
+    
+
+    
+    <li class="page last current-page">
+        <span class="pagination-item"><span class="sr-only">current page</span><span aria-hidden="true">2</span></span>
+    </li>
+    
+
+    
+
+</ul>
+
+
+</div>
 
       </div>
     </div>

@@ -240,6 +240,45 @@
       
       
       
+      <li class="blog-tag-item" id="USACO-item">
+        <a href onclick="filter('USACO'); return false;">USACO</a>
+        <script>
+        function filter(tag) {
+          setActiveTag(tag);
+          showContainer(tag);
+        }
+        function setActiveTag(tag) {
+          // loop through all items and remove active class
+          var items = document.getElementsByClassName('blog-tag-item');
+          for(var i=0; i < items.length; i++) {
+            items[i].setAttribute('class', 'blog-tag-item');
+          }
+
+          // set the selected tag's item to active
+          var item = document.getElementById(tag + '-item');
+          if(item) {
+            item.setAttribute('class', 'blog-tag-item active');
+          }
+        }
+
+        function showContainer(tag) {
+          // loop through all lists and hide them
+          var lists = document.getElementsByClassName('blog-list-container');
+          for(var i=0; i < lists.length; i++) {
+            lists[i].setAttribute('class', 'blog-list-container hidden');
+          }
+
+          // remove the hidden class from the list corresponding to the selected tag
+          var list = document.getElementById(tag + '-container');
+          if(list) {
+            list.setAttribute('class', 'blog-list-container');
+          }
+        }
+        </script>
+      </li>
+      
+      
+      
       <li class="blog-tag-item" id="UVa-item">
         <a href onclick="filter('UVa'); return false;">UVa</a>
         <script>
@@ -574,6 +613,10 @@ if(window.location.hash) {
     
     
     
+    
+    
+    
+    
     <li>
       
       <a class="slide" href="/poj-2376/">POJ 2376 Cleaning Shifts</a>
@@ -583,10 +626,6 @@ if(window.location.hash) {
       
     </li>
 
-    
-    
-    
-    
     
     
     
@@ -610,10 +649,6 @@ if(window.location.hash) {
     
     
     
-    
-    
-    
-    
     <li>
       
       <a class="slide" href="/poj-3187/">POJ 3187 Backward Digits Sums</a>
@@ -623,6 +658,10 @@ if(window.location.hash) {
       
     </li>
 
+    
+    
+    
+    
     
     
     
@@ -646,10 +685,6 @@ if(window.location.hash) {
     
     
     
-    
-    
-    
-    
     <li>
       
       <a class="slide" href="/poj-3187/">POJ 3187 Backward Digits Sums</a>
@@ -659,6 +694,10 @@ if(window.location.hash) {
       
     </li>
 
+    
+    
+    
+    
     
     
     
@@ -718,10 +757,6 @@ if(window.location.hash) {
     
     
     
-    
-    
-    
-    
     <li>
       
       <a class="slide" href="/poj-2376/">POJ 2376 Cleaning Shifts</a>
@@ -731,6 +766,10 @@ if(window.location.hash) {
       
     </li>
 
+    
+    
+    
+    
     
     
     
@@ -754,6 +793,10 @@ if(window.location.hash) {
     
     
     
+    
+    
+    
+    
     <li>
       
       <a class="slide" href="/uva-108/">UVa 108 Maximum Sum</a>
@@ -763,10 +806,6 @@ if(window.location.hash) {
       
     </li>
 
-    
-    
-    
-    
     
     
     
@@ -813,6 +852,42 @@ if(window.location.hash) {
       <a class="slide" href="/poj-3268-silver-cow-party/">POJ 3268 Silver Cow Party</a>
       <div class = "blog-date">
         May 14, 2016
+      </div>
+      
+    </li>
+
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+<script>
+if(window.location.hash) {
+  var tag = window.location.hash.split('#')[1];
+  filter(tag);
+}
+</script>
+
+
+
+
+<div class="blog-list-container" id="USACO-container">
+  
+  <span class="single-tag">USACO (1)</span>
+  <ul class="blog-list">
+    
+    
+    
+    <li>
+      
+      <a class="slide" href="/usaco-lamps/">USACO Party Lamps</a>
+      <div class = "blog-date">
+        Aug 31, 2016
       </div>
       
     </li>
@@ -955,7 +1030,11 @@ MathJax.Hub.Config({
     processEscapes: true
 });
 </script>
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    MathJax.Hub.Config ({
+        "HTML-CSS": { scale: 90 }
+    });
+</script>
 <script>
 var h = $(window).height();
 var h2 = $(document).height();

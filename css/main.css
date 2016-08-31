@@ -345,7 +345,7 @@ blockquote {
   .post-list > li {
     background-color: #ffffff; }
     .post-list > li .post-data {
-      color: #939393;
+      color: #757575;
       font-weight: normal; }
       .post-list > li .post-data h1, .post-list > li .post-data h2, .post-list > li .post-data h3, .post-list > li .post-data h4, .post-list > li .post-data h5 {
         font-size: 16px; }
@@ -365,13 +365,13 @@ blockquote {
     .post-list > li .post-meta {
       font-size: 14.4px;
       margin-bottom: 50px;
-      color: #9d9d9d;
+      color: #9E9E9E;
       padding-bottom: 50px;
       border-bottom: 1px solid #e8e8e8; }
       .post-list > li .post-meta a {
         margin-right: 5px;
         transition: all 0.5s ease;
-        color: #9d9d9d; }
+        color: #9E9E9E; }
         @media only screen and (min-width: 800px) {
           .post-list > li .post-meta a:hover {
             color: #607D8B; } }
@@ -527,12 +527,16 @@ blockquote {
         margin-left: 5px; }
   @media only screen and (min-width: 800px) {
     .blog-list-container .slide:after {
-      height: 1px; }
+      height: 0.5px; }
     .blog-list-container .slide:hover:after {
-      background: #a2a2a2; }
+      background: #78909C; }
     .blog-list-container a {
       text-decoration: none;
       transition: all 0.5s ease; } }
+  @media only screen and (min-width: 800px) and (min-width: 800px) {
+    .blog-list-container a:hover {
+      color: #78909c; } }
+
   .blog-list-container a {
     color: #555555; }
   .blog-list-container .single-tag {
