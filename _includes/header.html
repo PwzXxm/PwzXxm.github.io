@@ -25,6 +25,13 @@
                 </li>
                 <li>
                     {% if page.is_default_language %}
+                    <a class="header-icon" href="{{ site.baseurl }}/friendsblogs/">Links</a>
+                    {% else %}
+                    <a class="header-icon" href="{{ site.baseurl }}/cn/friendsblogs">链接</a>
+                    {% endif %}
+                </li>
+                <li>
+                    {% if page.is_default_language %}
                     <a class="header-icon" href="{{ site.baseurl }}/tags/">Tags</a>
                     {% else %}
                     <a class="header-icon" href="{{ site.baseurl }}/cn/tags/">标签</a>

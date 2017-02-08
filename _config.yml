@@ -1,6 +1,6 @@
 # Site settings
 title: PwzXxm
-email: pwzxxm@gmail.com
+email: cepheidfov@gmail.com
 description: Learning and sharing computer science ideas. Enjoy what you are passionated about.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.pwzxxm.com" # the base hostname & protocol for your site
@@ -23,6 +23,7 @@ paginate_limit: 5
 
 # Build settings
 markdown:  redcarpet-pygments
+# markdown:  redcarpet
 redcarpet:
   extensions: ["tables", "no_intra_emphasis", "autolink", "fenced_code_blocks", "with_toc_data"]
 highlighter: pygments
