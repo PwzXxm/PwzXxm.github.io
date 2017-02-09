@@ -5,15 +5,13 @@
     <description>Learning and sharing computer science ideas. Enjoy what you are passionated about.</description>
     <link>http://www.pwzxxm.com/</link>
     <atom:link href="http://www.pwzxxm.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 08 Feb 2017 17:05:36 +1100</pubDate>
-    <lastBuildDate>Wed, 08 Feb 2017 17:05:36 +1100</lastBuildDate>
+    <pubDate>Thu, 09 Feb 2017 18:20:32 +1100</pubDate>
+    <lastBuildDate>Thu, 09 Feb 2017 18:20:32 +1100</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
         <title>USACO Party Lamps</title>
-        <description>&lt;h3 id=&quot;problem-description&quot;&gt;Problem Description&lt;/h3&gt;
-
-&lt;p&gt;A set of N \((10 \le N \le 100)\) lamps, numbered from 1 to N.&lt;/p&gt;
+        <description>&lt;p&gt;A set of N \((10 \le N \le 100)\) lamps, numbered from 1 to N.&lt;/p&gt;
 
 &lt;p&gt;Four types of button:&lt;/p&gt;
 
@@ -213,9 +211,7 @@
     
       <item>
         <title>USACO Party Lamps</title>
-        <description>&lt;h3 id=&quot;题意&quot;&gt;题意&lt;/h3&gt;
-
-&lt;p&gt;有 N \((10 \le N \le 100)\) 盏亮瞎眼的灯，从 1 到 N 编号。&lt;/p&gt;
+        <description>&lt;p&gt;有 N \((10 \le N \le 100)\) 盏亮瞎眼的灯，从 1 到 N 编号。&lt;/p&gt;
 
 &lt;p&gt;有四种按钮：&lt;/p&gt;
 
@@ -415,9 +411,7 @@
     
       <item>
         <title>POJ 3268 Silver Cow Party</title>
-        <description>&lt;h3 id=&quot;problem-description&quot;&gt;Problem Description&lt;/h3&gt;
-
-&lt;p&gt;There are one cow from each N (\(1 \le N \le 1000\)) farms want to go to the number X farm to have a party, hurrah! One cow from each farm need to go to the party and go back. There are M (\(1 \le M \le 100,000\)) weighted (represents time) one-direction roads connects pairs of roads. Cows are smart though, they want to go via the shortest path. The question is, what is the longest time the cow will take.&lt;/p&gt;
+        <description>&lt;p&gt;There are one cow from each N (\(1 \le N \le 1000\)) farms want to go to the number X farm to have a party, hurrah! One cow from each farm need to go to the party and go back. There are M (\(1 \le M \le 100,000\)) weighted (represents time) one-direction roads connects pairs of roads. Cows are smart though, they want to go via the shortest path. The question is, what is the longest time the cow will take.&lt;/p&gt;
 
 &lt;p&gt;Link: [&lt;a href=&quot;http://poj.org/problem?id=3268&quot;&gt;http://poj.org/problem?id=3268&lt;/a&gt;]&lt;/p&gt;
 
@@ -536,9 +530,7 @@
     
       <item>
         <title>POJ 3268 Silver Cow Party</title>
-        <description>&lt;h3 id=&quot;题意&quot;&gt;题意&lt;/h3&gt;
-
-&lt;p&gt;有 N (\(1 \le N \le 1000\)) 个农场， 每个农场有1只奶牛去X号农场参加派对。每只奶牛都要走最短路来回。一共有 M (\(1 \le M \le 100,000\))单向道路，每条道路的权值为所用的时间。求往返所用的最长时间。&lt;/p&gt;
+        <description>&lt;p&gt;有 N (\(1 \le N \le 1000\)) 个农场， 每个农场有1只奶牛去X号农场参加派对。每只奶牛都要走最短路来回。一共有 M (\(1 \le M \le 100,000\))单向道路，每条道路的权值为所用的时间。求往返所用的最长时间。&lt;/p&gt;
 
 &lt;p&gt;链接：[&lt;a href=&quot;http://poj.org/problem?id=3268&quot;&gt;http://poj.org/problem?id=3268&lt;/a&gt;]&lt;/p&gt;
 
@@ -659,9 +651,7 @@
     
       <item>
         <title>UVa 108 Maximum Sum</title>
-        <description>&lt;h3 id=&quot;题意&quot;&gt;题意&lt;/h3&gt;
-
-&lt;p&gt;给定一个\(N \times N (N \le 100)\)的矩阵，找到最大子矩阵和。&lt;/p&gt;
+        <description>&lt;p&gt;给定一个\(N \times N (N \le 100)\)的矩阵，找到最大子矩阵和。&lt;/p&gt;
 
 &lt;p&gt;链接：  &lt;a href=&quot;https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;amp;Itemid=8&amp;amp;page=show_problem&amp;amp;problem=44&quot;&gt;题目UVa&lt;/a&gt;&lt;/p&gt;
 
@@ -806,9 +796,7 @@ k = 列数&lt;/p&gt;
     
       <item>
         <title>UVa 108 Maximum Sum</title>
-        <description>&lt;h3 id=&quot;problem-description&quot;&gt;Problem Description&lt;/h3&gt;
-
-&lt;p&gt;Given an array with size \(N \times N (N \le 100)\), find the maximum value of its subarray.&lt;/p&gt;
+        <description>&lt;p&gt;Given an array with size \(N \times N (N \le 100)\), find the maximum value of its subarray.&lt;/p&gt;
 
 &lt;p&gt;Link: &lt;a href=&quot;https://uva.onlinejudge.org/index.php?option=com_onlinejudge&amp;amp;Itemid=8&amp;amp;page=show_problem&amp;amp;problem=44&quot;&gt;Problem on UVa&lt;/a&gt;&lt;/p&gt;
 
@@ -953,9 +941,7 @@ k = the number of columns&lt;/p&gt;
     
       <item>
         <title>UVa 443 Humble Numbers</title>
-        <description>&lt;h3 id=&quot;problem-description&quot;&gt;Problem Description&lt;/h3&gt;
-
-&lt;p&gt;Find \(n\)th \( (1 \le n \le 5842)\) number whose only prime factors are 2, 3, 5 or 7.&lt;/p&gt;
+        <description>&lt;p&gt;Find \(n\)th \( (1 \le n \le 5842)\) number whose only prime factors are 2, 3, 5 or 7.&lt;/p&gt;
 
 &lt;p&gt;Link: &lt;a href=&quot;https://uva.onlinejudge.org/index.php?option=onlinejudge&amp;amp;page=show_problem&amp;amp;problem=384&quot;&gt;https://uva.onlinejudge.org/index.php?option=onlinejudge&amp;amp;page=show_problem&amp;amp;problem=384&lt;/a&gt;&lt;/p&gt;
 
@@ -1086,9 +1072,7 @@ k = the number of columns&lt;/p&gt;
     
       <item>
         <title>UVa 443 Humble Numbers</title>
-        <description>&lt;h3 id=&quot;题意&quot;&gt;题意&lt;/h3&gt;
-
-&lt;p&gt;找到第\(n\) \( (1 \le n \le 5842)\) 个只有2，3，5或7质因子的数。&lt;/p&gt;
+        <description>&lt;p&gt;找到第\(n\) \( (1 \le n \le 5842)\) 个只有2，3，5或7质因子的数。&lt;/p&gt;
 
 &lt;p&gt;链接： &lt;a href=&quot;https://uva.onlinejudge.org/index.php?option=onlinejudge&amp;amp;page=show_problem&amp;amp;problem=384&quot;&gt;https://uva.onlinejudge.org/index.php?option=onlinejudge&amp;amp;page=show_problem&amp;amp;problem=384&lt;/a&gt;&lt;/p&gt;
 
@@ -1219,9 +1203,7 @@ k = the number of columns&lt;/p&gt;
     
       <item>
         <title>POJ 2376 Cleaning Shifts</title>
-        <description>&lt;h3 id=&quot;problem-description&quot;&gt;Problem Description&lt;/h3&gt;
-
-&lt;p&gt;N (\(1 \le N \le 25,000\)) cows, each cow only available for a interval of time.
+        <description>&lt;p&gt;N (\(1 \le N \le 25,000\)) cows, each cow only available for a interval of time.
 T (\(1 \le T \le 1,000,000\)) shifts.
 Find minimum number of cows to complete T shifts.&lt;/p&gt;
 
@@ -1308,9 +1290,7 @@ Find minimum number of cows to complete T shifts.&lt;/p&gt;
     
       <item>
         <title>POJ 2376 Cleaning Shifts</title>
-        <description>&lt;h3 id=&quot;题意&quot;&gt;题意&lt;/h3&gt;
-
-&lt;p&gt;N(\(1 \le N \le 25,000\))只蛤，每只蛤只能在特定时间段工作。
+        <description>&lt;p&gt;N(\(1 \le N \le 25,000\))只蛤，每只蛤只能在特定时间段工作。
 T (\(1 \le T \le 1,000,000\))个时间段。
 找到最少蛤数能覆盖整个时间段。&lt;/p&gt;
 

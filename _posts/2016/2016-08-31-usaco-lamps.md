@@ -5,7 +5,6 @@ date: '2016-08-31'
 tags: [USACO]
 ---
 
-### Problem Description
 A set of N \\((10 \le N \le 100)\\) lamps, numbered from 1 to N.
 
 Four types of button:

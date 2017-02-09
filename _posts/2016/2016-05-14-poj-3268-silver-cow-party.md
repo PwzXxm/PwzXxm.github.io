@@ -7,7 +7,6 @@ tags:
 - Graph
 ---
 
-###Problem Description
 There are one cow from each N (\\(1 \le N \le 1000\\)) farms want to go to the number X farm to have a party, hurrah! One cow from each farm need to go to the party and go back. There are M (\\(1 \le M \le 100,000\\)) weighted (represents time) one-direction roads connects pairs of roads. Cows are smart though, they want to go via the shortest path. The question is, what is the longest time the cow will take.
 
 Link: [http://poj.org/problem?id=3268]
