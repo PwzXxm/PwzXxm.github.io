@@ -2,6 +2,7 @@
 layout: post
 title: "The Story About the Blog"
 date: 2015-12-12
+lang : en
 tags:
 - blog
 images:

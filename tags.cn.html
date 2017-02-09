@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Tags
+title: 标签
 permalink: /tags/
-lang: en
+lang: cn
 ---
 
 {% include sidebar.html %}
@@ -20,7 +20,7 @@ lang: en
     <li>
       <a class="slide" href="{{ post.url }}">{{ post.title }}</a>
       <div class = "blog-date">
-        {{ post.date | date: "%b %-d, %Y" }}
+        {{ post.date | date: "%Y年%-m月%-d号" }}
       </div>
     </li>
 

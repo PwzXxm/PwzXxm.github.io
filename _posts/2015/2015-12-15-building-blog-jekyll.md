@@ -2,6 +2,7 @@
 layout: post
 title: "Using Jekyll + Github Pages to build a blog"
 date: 2015-12-15
+lang: en
 tags:
 - blog
 ---
@@ -118,11 +119,3 @@ If you like the style or you want to know the codes behind it, just check out:
 - [local site](https://github.com/PwzXxm/local-site).
 
 You can grap and use any code from my site as you wish. However, the content of this site is copyright, if you want to use any posts please contact me.
-
-
-
-
-
-
-
-

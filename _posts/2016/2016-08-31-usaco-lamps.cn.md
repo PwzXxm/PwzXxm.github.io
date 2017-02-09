@@ -3,6 +3,7 @@ layout: post
 title: USACO Party Lamps
 date: '2016-08-31'
 tags: [USACO]
+lang: cn
 ---
 
 有 N \\((10 \le N \le 100)\\) 盏亮瞎眼的灯，从 1 到 N 编号。

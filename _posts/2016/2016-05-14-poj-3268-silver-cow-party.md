@@ -2,6 +2,7 @@
 layout: "post"
 title: "POJ 3268 Silver Cow Party"
 date: "2016-05-14"
+lang: en
 tags:
 - POJ
 - Graph

@@ -2,6 +2,7 @@
 layout: post
 title: "使用Jekyll＋Github Pages搭建博客"
 date: 2015-12-15
+lang: cn
 tags:
 - blog
 ---
