@@ -33,6 +33,7 @@ eval 'cp ./README.md ~/git/local_backup/'
 eval 'rm -rf ./*'
 eval 'cp -r ~/git/local_backup/* ./'
 eval 'touch .nojekyll'
+eval 'rm publish.sh'
 printf "${GREEN}Copied to master branch${NC}\n\n"
 
 # commit and push changes
