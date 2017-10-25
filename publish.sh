@@ -15,7 +15,7 @@ eval 'git add .'
 echo
 eval $push_commit
 echo
-eval 'git push --all origin local'
+eval 'git push origin local'
 echo -e "${GREEN}Pushed to local branch"
 echo
 
@@ -40,7 +40,7 @@ eval 'git add .'
 echo
 eval $push_commit
 echo
-eval 'git push --all origin master'
+eval 'git push origin master'
 echo
 eval 'git checkout local'
 echo -e "${GREEN}Pushed to master branch"
