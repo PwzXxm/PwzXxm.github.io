@@ -19,12 +19,12 @@ eval 'git add .'
 eval $push_commit
 printf "\n"
 eval 'git push origin local'
-printf "${GREEN}Pushed to local branch${NC}\n"
+printf "${GREEN}Pushed to local branch${NC}\n\n"
 
 # copy _site
 eval 'rm -rf ~/git/local_backup/*'
 eval 'cp -r ./_site/* ~/git/local_backup/'
-printf "${GREEN}Copied to local_backup${NC}\n"
+printf "${GREEN}Copied to local_backup${NC}\n\n"
 
 # add changes to master branch
 eval 'git checkout master'
@@ -33,7 +33,7 @@ eval 'cp ./README.md ~/git/local_backup/'
 eval 'rm -rf ./*'
 eval 'cp -r ~/git/local_backup/* ./'
 eval 'touch .nojekyll'
-printf "${GREEN}Copied to master branch${NC}\n"
+printf "${GREEN}Copied to master branch${NC}\n\n"
 
 # commit and push changes
 eval 'git add .'
