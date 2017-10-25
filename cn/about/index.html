@@ -10,6 +10,12 @@
     <title>关于</title>
     <meta name="description" content="Learning and sharing computer science ideas. Enjoy what you are passionated about.">
 
+    <!-- MathJax -->
+    <script type="text/javascript" async
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+
+
     <link rel="stylesheet" href="/css/main.css">
     <link rel="canonical" href="http://www.pwzxxm.com/cn/about/">
     <link rel="alternate" type="application/rss+xml" title="PwzXxm" href="http://www.pwzxxm.com/feed.xml">
@@ -17,9 +23,6 @@
     <link rel="icon" href="/img/favicon.png" type="image/x-icon" />
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
-
-    <!-- MathJax -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js"></script>
 </head>
 
   <script>
@@ -260,11 +263,6 @@ MathJax.Hub.Config({
 });
 </script>
 <script>
-    MathJax.Hub.Config ({
-        "HTML-CSS": { scale: 90 }
-    });
-</script>
-<script>
 var h = $(window).height();
 var h2 = $(document).height();
 if (h2-h > 400 && ($(window).width() > 600)) {
@@ -296,14 +294,6 @@ $(document).on('click', function(event) {
         }
     }
 });
-</script>
-<script>
-(function(){
-    var bp = document.createElement('script');
-    bp.src = '//push.zhanzhang.baidu.com/push.js';
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
 </script>
 <script id="dsq-count-scr" src="//pwzxxm.disqus.com/count.js" async></script>
 
