@@ -1,6 +1,6 @@
 ---
 layout: default
-lang: en
+lang: cn
 ---
 
 <div class="home">
@@ -11,13 +11,13 @@ lang: en
         <li>
             <h2><a class="slide post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
             <div class="post-data">
-                {{ post.excerpt | truncatewords: 100 }}
+                {{ post.excerpt | truncatewords: 50 }}
             </div>
             <div class="post-meta">
-                Posted on {{ post.date | date: "%b %-d, %Y" }}&nbsp&nbsp&nbsp
+                发布于{{ post.date | date: "%Y年%-m月%-d号" }}&nbsp&nbsp&nbsp
                 {% assign sorted_tags = post.tags | sort %}
                 {% for tag in sorted_tags %}
-                <a href="/tags/#{{ tag }}">{{ tag }}</a>
+                <a href="/cn/tags/#{{ tag }}">{{ tag }}</a>
                 {% endfor %}
             </div>
         </li>
