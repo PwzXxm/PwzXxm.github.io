@@ -1,4 +1,3 @@
-# Local generated site
-Generating [www.pwzxxm.com](http://www.pwzxxm.com) using [Jekyll](https://jekyllrb.com/).
+# PwzXxm blog
 
-**Visit [blog](http://www.pwzxxm.com) for details**
+Holds the blog [PwzXxm](http://www.pwzxxm.com), check out for blog building details and other resources.
