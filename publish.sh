@@ -15,7 +15,7 @@ eval 'git add .'
 echo
 eval $push_commit
 echo
-eval 'git push -all origin local'
+eval 'git push --all origin local'
 echo -e "${GREEN}Pushed to local branch"
 echo
 
