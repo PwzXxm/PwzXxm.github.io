@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.5'
 gem 'bundler','1.14.3'
 gem 'execjs','2.6.0'
 gem 'json', '1.8.3'

@@ -151,5 +151,8 @@ DEPENDENCIES
   rouge
   yajl-ruby (= 1.2.1)
 
+RUBY VERSION
+   ruby 2.2.5p319
+
 BUNDLED WITH
    1.14.3
