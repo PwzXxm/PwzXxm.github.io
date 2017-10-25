@@ -47,12 +47,6 @@
 {% assign url_pre =  page.language | prepend: '/' | replace: '//', '/' %}
 {% endif %}
 
-<h5>{{site.paginate_path}}</h5>
-<h5>{{ site.baseurl }}</h5>
-<h5>{{ url_pre }}</h5>
-
-
-
 {% if totalpages != 1 %}
 <p id="pagination-label" class="pagination-label sr-only" aria-hidden="true">Pagination</p>
 

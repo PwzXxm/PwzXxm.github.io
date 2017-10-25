@@ -20,7 +20,7 @@ sass:
     style: compressed
 
 # pagination
-paginate: 5
+paginate: 10
 
 # Build settings
 markdown:  redcarpet-pygments
