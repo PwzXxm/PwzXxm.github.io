@@ -16,7 +16,8 @@ languages:          ['en', 'cn']
 # If not config, the first of languages will be the default
 language_default:   'en'
 fill_default_content: true
-
+sass:
+    style: compressed
 
 # pagination
 paginate: 5
