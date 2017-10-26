@@ -41,7 +41,7 @@ Then
 - for \\(C = 1\\), press each button once
 - for \\( C \ge 2 \\), check every 16 possibilities.
 
-It is a good opportunity to practice `bitset` though. Take care that bitset does not have build-in sort supported in `set` and I don't know how to let `set` :(
+It is a good opportunity to practice `bitset` though. Take care that `bitset` does not have build-in sort supported in `set` :(
 
 <br>
 
