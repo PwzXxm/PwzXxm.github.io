@@ -5,8 +5,8 @@
     <description>Learning and sharing computer science ideas. Enjoy what you are passionated about.</description>
     <link>http://www.pwzxxm.com/</link>
     <atom:link href="http://www.pwzxxm.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 26 Oct 2017 15:03:36 +1100</pubDate>
-    <lastBuildDate>Thu, 26 Oct 2017 15:03:36 +1100</lastBuildDate>
+    <pubDate>Thu, 26 Oct 2017 15:30:48 +1100</pubDate>
+    <lastBuildDate>Thu, 26 Oct 2017 15:30:48 +1100</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -267,7 +267,7 @@
 &lt;li&gt;for \( C \ge 2 \), check every 16 possibilities.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;It is a good opportunity to practice &lt;code class=&quot;inline-code&quot;&gt;bitset&lt;/code&gt; though. Take care that bitset does not have build-in sort supported in &lt;code class=&quot;inline-code&quot;&gt;set&lt;/code&gt; and I don&amp;#39;t know how to let &lt;code class=&quot;inline-code&quot;&gt;set&lt;/code&gt; :(&lt;/p&gt;
+&lt;p&gt;It is a good opportunity to practice &lt;code class=&quot;inline-code&quot;&gt;bitset&lt;/code&gt; though. Take care that &lt;code class=&quot;inline-code&quot;&gt;bitset&lt;/code&gt; does not have build-in sort supported in &lt;code class=&quot;inline-code&quot;&gt;set&lt;/code&gt; :(&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
@@ -683,7 +683,7 @@ Therefore we have &lt;code class=&quot;inline-code&quot;&gt;A = sum[k][l] - sum[
 
 &lt;p&gt;&lt;img src=&quot;/img/post/maximum_sum.png&quot; alt=&quot;max_sum&quot;&gt;&lt;/p&gt;
 
-&lt;p&gt;There is a trick that store the array starts with &lt;code class=&quot;inline-code&quot;&gt;index 1&lt;/code&gt; and initialize &lt;code class=&quot;inline-code&quot;&gt;0&lt;/code&gt;. So you don&amp;#39;t need to do boundary check.  Stuck at first, could not figure out why and then found that I used &lt;code class=&quot;inline-code&quot;&gt;&lt;&lt;/code&gt; instead of &lt;code class=&quot;inline-code&quot;&gt;&lt;=&lt;/code&gt; in the &lt;code class=&quot;inline-code&quot;&gt;for&lt;/code&gt; loop. ヾ(;ﾟ;Д;ﾟ;)ﾉﾞ&lt;/p&gt;
+&lt;p&gt;There is a trick that store the array starts with &lt;code class=&quot;inline-code&quot;&gt;index 1&lt;/code&gt; and initialize &lt;code class=&quot;inline-code&quot;&gt;0&lt;/code&gt;. So you don&amp;#39;t need to do boundary check.  Stuck at first, could not figure out why and then found that I used &lt;code class=&quot;inline-code&quot;&gt;&lt;&lt;/code&gt; instead of &lt;code class=&quot;inline-code&quot;&gt;&lt;=&lt;/code&gt; in the &lt;code class=&quot;inline-code&quot;&gt;for&lt;/code&gt; loop. &lt;img class=&#39;emoji&#39; title=&#39;:boom:&#39; alt=&#39;:boom:&#39; src=&#39;https://assets.github.com/images/icons/emoji/unicode/1f4a5.png&#39; height=&#39;20&#39; width=&#39;20&#39; align=&#39;absmiddle&#39; /&gt;&lt;img class=&#39;emoji&#39; title=&#39;:boom:&#39; alt=&#39;:boom:&#39; src=&#39;https://assets.github.com/images/icons/emoji/unicode/1f4a5.png&#39; height=&#39;20&#39; width=&#39;20&#39; align=&#39;absmiddle&#39; /&gt;&lt;img class=&#39;emoji&#39; title=&#39;:boom:&#39; alt=&#39;:boom:&#39; src=&#39;https://assets.github.com/images/icons/emoji/unicode/1f4a5.png&#39; height=&#39;20&#39; width=&#39;20&#39; align=&#39;absmiddle&#39; /&gt;&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;cpp&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;iostream&amp;gt;&lt;/span&gt;
 &lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;algorithm&amp;gt;&lt;/span&gt;
 &lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#define maxn 100+5&lt;/span&gt;
@@ -828,7 +828,7 @@ $$
 
 &lt;p&gt;&lt;img src=&quot;/img/post/maximum_sum.png&quot; alt=&quot;max_sum&quot;&gt;&lt;/p&gt;
 
-&lt;p&gt;有个小技巧， 保存数组从 &lt;code class=&quot;inline-code&quot;&gt;index 1&lt;/code&gt; 开始，初始化数组为 &lt;code class=&quot;inline-code&quot;&gt;0&lt;/code&gt; 。这样可以省略边界处理。一开始样例都调不出来，找不到原因。后来发现我在 &lt;code class=&quot;inline-code&quot;&gt;for&lt;/code&gt; 循环里用了 &lt;code class=&quot;inline-code&quot;&gt;&lt;&lt;/code&gt; 而不是 &lt;code class=&quot;inline-code&quot;&gt;&lt;=&lt;/code&gt;. ヾ(;ﾟ;Д;ﾟ;)ﾉﾞ&lt;/p&gt;
+&lt;p&gt;有个小技巧， 保存数组从 &lt;code class=&quot;inline-code&quot;&gt;index 1&lt;/code&gt; 开始，初始化数组为 &lt;code class=&quot;inline-code&quot;&gt;0&lt;/code&gt; 。这样可以省略边界处理。一开始样例都调不出来，找不到原因。后来发现我在 &lt;code class=&quot;inline-code&quot;&gt;for&lt;/code&gt; 循环里用了 &lt;code class=&quot;inline-code&quot;&gt;&lt;&lt;/code&gt; 而不是 &lt;code class=&quot;inline-code&quot;&gt;&lt;=&lt;/code&gt;. &lt;img class=&#39;emoji&#39; title=&#39;:boom:&#39; alt=&#39;:boom:&#39; src=&#39;https://assets.github.com/images/icons/emoji/unicode/1f4a5.png&#39; height=&#39;20&#39; width=&#39;20&#39; align=&#39;absmiddle&#39; /&gt;&lt;img class=&#39;emoji&#39; title=&#39;:boom:&#39; alt=&#39;:boom:&#39; src=&#39;https://assets.github.com/images/icons/emoji/unicode/1f4a5.png&#39; height=&#39;20&#39; width=&#39;20&#39; align=&#39;absmiddle&#39; /&gt;&lt;img class=&#39;emoji&#39; title=&#39;:boom:&#39; alt=&#39;:boom:&#39; src=&#39;https://assets.github.com/images/icons/emoji/unicode/1f4a5.png&#39; height=&#39;20&#39; width=&#39;20&#39; align=&#39;absmiddle&#39; /&gt;&lt;/p&gt;
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;cpp&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;iostream&amp;gt;&lt;/span&gt;
 &lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;algorithm&amp;gt;&lt;/span&gt;
 &lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#define maxn 100+5&lt;/span&gt;
