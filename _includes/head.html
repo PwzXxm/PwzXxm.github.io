@@ -7,6 +7,12 @@
     <title>{% if page.title %}{{ page.title }} | PwzXxm {% else %}PwzXxm - Computer Programming Blog{% endif %}</title>
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
+    <!-- google analytics -->
+    {% include google_analytics.html %}
+
+    <!-- google AdSense -->
+    {% include google_adsense.html %}
+
     <!-- MathJax -->
     <script type="text/javascript" async
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
