@@ -98,6 +98,9 @@
     <loc>http://www.pwzxxm.com/about/</loc>
   </url>
   <url>
+    <loc>http://www.pwzxxm.com/black/</loc>
+  </url>
+  <url>
     <loc>http://www.pwzxxm.com/cn/friendsblogs/</loc>
   </url>
   <url>
@@ -125,11 +128,10 @@
     <loc>http://www.pwzxxm.com/cn/404.html</loc>
   </url>
   <url>
-    <loc>http://www.pwzxxm.com/pages/blackpage.html</loc>
-    <lastmod>2018-01-03T19:40:28+11:00</lastmod>
+    <loc>http://www.pwzxxm.com/cn/black/</loc>
   </url>
   <url>
     <loc>http://www.pwzxxm.com/google119f246be574c84f.html</loc>
-    <lastmod>2017-12-12T21:58:57+11:00</lastmod>
+    <lastmod>2018-01-03T21:19:53+11:00</lastmod>
   </url>
 </urlset>
