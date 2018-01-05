@@ -355,6 +355,21 @@
 }
 
 /**
+* Miner
+*/
+.miner {
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    float: right;
+
+    @include media-query($on-palm) {
+        display: none!important;
+        visibility: none!important;
+    }
+}
+
+/**
 * Posts
 */
 .post {
@@ -516,18 +531,6 @@
         h3 {
             display: none;
         }
-    }
-}
-
-.miner {
-    margin-top: 40px;
-    margin-left: 40px;
-    margin-bottom: 40px;
-    float: right;
-
-    @include media-query($on-palm) {
-        display: none!important;
-        visibility: none!important;
     }
 }
 
