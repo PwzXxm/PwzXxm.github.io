@@ -301,6 +301,7 @@
         background-color: #ffffff;
 
         .post-data {
+            text-align: justify;
             //color: #939393;
             color: #757575;
             font-weight: normal;
@@ -381,6 +382,7 @@
 }
 
 .post-content {
+    text-align: justify;
     margin-bottom: $spacing-unit;
 
     a {
