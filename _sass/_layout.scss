@@ -355,16 +355,6 @@
 }
 
 /**
-* Miner
-*/
-.side-miner {
-    @include media-query($on-palm) {
-        display: none!important;
-        visibility: none!important;
-    }
-}
-
-/**
 * Posts
 */
 .post {
