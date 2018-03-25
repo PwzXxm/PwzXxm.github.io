@@ -289,7 +289,8 @@
 
 .post-list {
     color: #000;
-    margin-left: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
 
     @include media-query($on-palm) {
         margin: 0 0 0 0;
