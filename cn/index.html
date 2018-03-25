@@ -145,6 +145,21 @@
         <!-- This loops through the paginated posts -->
         
         <li>
+            <h2><a class="slide post-link" href="/cn/proxy-server-cn-netease-music/">搭建代理服务器以访问国内网络（网易云音乐)</a></h2>
+            <div class="post-data">
+                <p>身在国外，我们有时候需要看看优酷，听听网易云音乐、QQ音乐。看到“仅限中国大陆播放”的时候真的好气啊。公用的代理服务器我又有点强迫症，正好手头上有个阿里云的服务器，就用<a href="https://shadowsocks.org/en/index.html">Shadowsocks</a>搭建了一个，现在可以开心地听歌啦。</p>
+
+            </div>
+            <div class="post-meta">
+                发布于2018年3月23日&nbsp&nbsp&nbsp
+                
+                
+                <a href="/cn/tags/#Tools">Tools</a>
+                
+            </div>
+        </li>
+        
+        <li>
             <h2><a class="slide post-link" href="/cn/usaco-lamps/">USACO Party Lamps</a></h2>
             <div class="post-data">
                 <p>有 N \((10 \le N \le 100)\) 盏亮瞎眼的灯，从 1 到 N 编号。</p>
@@ -288,23 +303,6 @@ $$ 8 $$</p>
                 
                 
                 <a href="/cn/tags/#data-structure">data-structure</a>
-                
-            </div>
-        </li>
-        
-        <li>
-            <h2><a class="slide post-link" href="/cn/building-blog-jekyll/">使用Jekyll＋Github Pages搭建博客</a></h2>
-            <div class="post-data">
-                <h2 id="为什么选择-jekyll-和-github-pages">为什么选择 Jekyll 和 Github Pages</h2>
-
-<p><a href="http://jekyll.bootcss.com/">Jekyll</a>是一个静态网页生成器，使用YAML头信息可以很方便地使用各种布局，内置markdown，新的文章只需加入文件夹即可。<a href="https://pages.github.com/">Github Pages</a>可以提供免费空间，免费无限流量来给网页当虚拟主机。他们俩配合起来相当默契，而且网上也有很多资料。但是有一点美中不足的是Github Pages是在安全模式下运行的，也就是说它并不支持Jekyll的插件。然而我们可以在本地带着插件生成好网站再放到Github上。虽然听起来不太方便，但是有脚本让我们一步实现。这点我们后面详细说。</p>
-
-            </div>
-            <div class="post-meta">
-                发布于2015年12月15日&nbsp&nbsp&nbsp
-                
-                
-                <a href="/cn/tags/#blog">blog</a>
                 
             </div>
         </li>
@@ -498,9 +496,10 @@ MathJax.Hub.Config({
 });
 </script>
 <script>
+var screen_width = screen.width;
 var h = $(window).height();
 var h2 = $(document).height();
-if (h2-h > 400 && ($(window).width() > 600)) {
+if (screen_width > 600 && h2-h > 400 && ($(window).width() > 600)) {
     $(window).scroll(function() {
         if ($(this).scrollTop() > 54){
             if(!($('.header-fixed').hasClass("is-visible"))) {

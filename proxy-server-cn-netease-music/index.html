@@ -7,8 +7,8 @@
     <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <title>POJ 3187 Backward Digits Sums | PwzXxm </title>
-    <meta name="description" content="There are 1 to N digits (\(1\le N \le 10\)) in certain order. Add adjacent numbers together to get the next line, until the there is only one number left.(Ju...">
+    <title>Build a Proxy Server to Access Chinese IP Including Netease Music | PwzXxm </title>
+    <meta name="description" content="Sometimes we need to access Chinese content, like Youku Video, Netease Music(Cloud Music) and QQ music. It is very annoying to get &quot;Can Only Be Streamed...">
 
     <!-- google analytics -->
     <script>
@@ -39,7 +39,7 @@
 
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://www.pwzxxm.com/poj-3187/">
+    <link rel="canonical" href="http://www.pwzxxm.com/proxy-server-cn-netease-music/">
     <link rel="alternate" type="application/rss+xml" title="PwzXxm" href="http://www.pwzxxm.com/feed.xml">
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon" />
     <link rel="icon" href="/img/favicon.png" type="image/x-icon" />
@@ -87,7 +87,7 @@
                 </li>
                 <li>
                     
-                    <a class="header-icon" href="/cn/poj-3187/">中</a>
+                    <a class="header-icon" href="/cn/proxy-server-cn-netease-music/">中</a>
                     
                 </li>
             </ul>
@@ -131,7 +131,7 @@
         </li>
         <li>
             
-            <a class="header-icon" href="/cn/poj-3187/">中</a>
+            <a class="header-icon" href="/cn/proxy-server-cn-netease-music/">中</a>
             
         </li>
     </ul>
@@ -142,76 +142,114 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">POJ 3187 Backward Digits Sums</h1>
+        <h1 class="post-title" itemprop="name headline">Build a Proxy Server to Access Chinese IP Including Netease Music</h1>
         <p class="post-meta">
-            <time datetime="2016-03-14T00:00:00+11:00" itemprop="datePublished">
+            <time datetime="2018-03-23T15:39:00+11:00" itemprop="datePublished">
                 
-                Mar 14, 2016
+                Mar 23, 2018
                 
             </time>
         </p>
     </header>
 
     <div class="post-content" itemprop="articleBody">
-        <p>There are 1 to N digits (\(1\le N \le 10\)) in certain order. Add adjacent numbers together to get the next line, until the there is only one number left.(Just like Pascal&#39;s triangle)
-For example, there are 3 integers:
-$$ 1, 2, 3 $$
-$$ 3, 5 $$
-$$ 8 $$</p>
+        <p>Sometimes we need to access Chinese content, like Youku Video, Netease Music(Cloud Music) and QQ music. It is very annoying to get &quot;Can Only Be Streamed in Mainland China&quot; or similar messages. Being tired of that, fortunately I have got a VPS from Aliyun and I build a proxy server using <a href="https://shadowsocks.org/en/index.html">Shadowsocks</a> on it and everything works smoothly now.</p>
 
-<p>So, given N and the final sum, find the lexicographically least ordering of integers.</p>
+<h3 id="vps">VPS</h3>
 
-<p>Link: <a href="http://poj.org/problem?id=3187">http://poj.org/problem?id=3187</a></p>
+<p>You need to have a VPS with <strong>Chinese</strong> IP address, there are tons of choices, like Aliyun(Alibaba Cloud) and Tencent Cloud etc.</p>
 
-<h3 id="notes">Notes:</h3>
+<h3 id="install-server">Install Server</h3>
+
+<p>Then <code class="inline-code">ssh</code> to your cloud server or any other tools to get into your server and install <strong>Shadowsocks</strong>, you can follow the instruction <a href="https://shadowsocks.org/en/download/servers.html">here</a>. I use the Python version.</p>
+
+<h3 id="config-shadowsocks">Config Shadowsocks</h3>
+
+<p>Config Shadowsocks, I usually write my configuration file in <code class="inline-code">/etc/shadowsocks/ss.json</code>. Please <strong>NOTE</strong> that the <code class="inline-code">server</code> attribute in most of the case should be your VPS&#39; public IP address. However, AFAIK, for Aliyun and AWS, it will not work if you do so (Error message <code class="inline-code">socket.error: [Errno 99] Cannot assign requested address</code> will pop up when you try to run it). The reason is the public IP address is not the &quot;actual&quot; IP when it is used to bind IP and port to the VPS machine, it may refer to other VPS in the local network. Therefore, <code class="inline-code">0.0.0.0</code> to listen to all the IP addresses should be used.</p>
+<div class="highlight"><pre><code class="json"><a name="line-1"></a><span class="p">{</span>
+<a name="line-2"></a>    <span class="nt">&quot;server&quot;</span><span class="p">:</span><span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span>
+<a name="line-3"></a>    <span class="nt">&quot;server_port&quot;</span><span class="p">:</span><span class="mi">8080</span><span class="p">,</span>
+<a name="line-4"></a>    <span class="nt">&quot;local_port&quot;</span><span class="p">:</span><span class="mi">1080</span><span class="p">,</span>
+<a name="line-5"></a>    <span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="s2">&quot;yourpassword&quot;</span><span class="p">,</span>
+<a name="line-6"></a>    <span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="mi">600</span><span class="p">,</span>
+<a name="line-7"></a>    <span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="s2">&quot;chacha20&quot;</span>
+<a name="line-8"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="optional">Optional</h3>
+
+<p>Install <code class="inline-code">m2crypto</code> to make encryption a little bit faster.</p>
+<div class="highlight"><pre><code class="bash"><a name="line-1"></a>pip install m2crypto
+</code></pre></div>
+<p>If you want to use <code class="inline-code">chacha20</code> as encryption method, <code class="inline-code">libsodium</code> must be installed. Otherwise, you could use <code class="inline-code">aes-256-cfb</code>.</p>
+<div class="highlight"><pre><code class="bash"><a name="line-1"></a>wget https://github.com/jedisct1/libsodium/releases/download/1.0.16/libsodium-1.0.16.tar.gz
+<a name="line-2"></a>tar -xf libsodium-1.0.16.tar.gz <span class="o">&amp;&amp;</span> <span class="nb">cd </span>libsodium-1.0.16
+<a name="line-3"></a>./configure <span class="o">&amp;&amp;</span> make -j2 <span class="o">&amp;&amp;</span> make install
+<a name="line-4"></a><span class="nb">echo</span> /usr/local/lib &gt; /etc/ld.so.conf.d/usr_local_lib.conf
+<a name="line-5"></a>ldconfig
+</code></pre></div>
+<h3 id="run">Run</h3>
+
+<p>Run the server as daemon!</p>
+<div class="highlight"><pre><code class="bash"><a name="line-1"></a>ssserver -c /etc/shadowsocks/ss.json -d start
+</code></pre></div>
+<p>Alternatively, you can run the server at the front for debugging purpose, see all the traffic going through when you connected from the client later.</p>
+<div class="highlight"><pre><code class="bash"><a name="line-1"></a>ssserver -c /etc/shadowsocks/ss.json
+</code></pre></div>
+<h3 id="install-client">Install Client</h3>
+
+<p>Finally, install clients on devices and start using it! You could install clients from <a href="https://shadowsocks.org/en/download/clients.html">here</a>. For macOS, I recommend <a href="https://github.com/yangfeicheung/Shadowsocks-X">Shadowsocks X</a> with Overseas mode.</p>
+
+<p>I prefer to use Shadowsocks client with PAC rather than using proxy for the overall system.</p>
+<div class="highlight"><pre><code class="js"><a name="line-1"></a><span class="kd">var</span> <span class="nx">domains</span> <span class="o">=</span> <span class="p">{</span>
+<a name="line-2"></a>  <span class="s2">&quot;music.163.com&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+<a name="line-3"></a>  <span class="s2">&quot;music.126.net&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+<a name="line-4"></a>  <span class="s2">&quot;*.v.163.com&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+<a name="line-5"></a>  <span class="s2">&quot;*.music.163.com&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+<a name="line-6"></a>  <span class="s2">&quot;*.music.126.net&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+<a name="line-7"></a><span class="p">};</span>
+<a name="line-8"></a>
+<a name="line-9"></a><span class="kd">var</span> <span class="nx">proxy</span> <span class="o">=</span> <span class="s2">&quot;__PROXY__&quot;</span><span class="p">;</span>
+<a name="line-10"></a>
+<a name="line-11"></a><span class="kd">var</span> <span class="nx">direct</span> <span class="o">=</span> <span class="s1">&#39;DIRECT;&#39;</span><span class="p">;</span>
+<a name="line-12"></a>
+<a name="line-13"></a><span class="kd">var</span> <span class="nx">hasOwnProperty</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">;</span>
+<a name="line-14"></a>
+<a name="line-15"></a><span class="kd">function</span> <span class="nx">FindProxyForURL</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">host</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-16"></a>    <span class="kd">var</span> <span class="nx">suffix</span><span class="p">;</span>
+<a name="line-17"></a>    <span class="kd">var</span> <span class="nx">pos</span> <span class="o">=</span> <span class="nx">host</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">);</span>
+<a name="line-18"></a>    <span class="nx">pos</span> <span class="o">=</span> <span class="nx">host</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="nx">pos</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+<a name="line-19"></a>    <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-20"></a>        <span class="k">if</span> <span class="p">(</span><span class="nx">pos</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-21"></a>            <span class="k">if</span> <span class="p">(</span><span class="nx">hasOwnProperty</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">domains</span><span class="p">,</span> <span class="nx">host</span><span class="p">))</span> <span class="p">{</span>
+<a name="line-22"></a>                <span class="k">return</span> <span class="nx">proxy</span><span class="p">;</span>
+<a name="line-23"></a>            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a name="line-24"></a>                <span class="k">return</span> <span class="nx">direct</span><span class="p">;</span>
+<a name="line-25"></a>            <span class="p">}</span>
+<a name="line-26"></a>        <span class="p">}</span>
+<a name="line-27"></a>        <span class="nx">suffix</span> <span class="o">=</span> <span class="nx">host</span><span class="p">.</span><span class="nx">substring</span><span class="p">(</span><span class="nx">pos</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+<a name="line-28"></a>        <span class="k">if</span> <span class="p">(</span><span class="nx">hasOwnProperty</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">domains</span><span class="p">,</span> <span class="nx">suffix</span><span class="p">))</span> <span class="p">{</span>
+<a name="line-29"></a>            <span class="k">return</span> <span class="nx">proxy</span><span class="p">;</span>
+<a name="line-30"></a>        <span class="p">}</span>
+<a name="line-31"></a>        <span class="nx">pos</span> <span class="o">=</span> <span class="nx">host</span><span class="p">.</span><span class="nx">lastIndexOf</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="nx">pos</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+<a name="line-32"></a>    <span class="p">}</span>
+<a name="line-33"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="netease-music">Netease Music</h3>
+
+<p>You need to select <em>Using IE proxy</em>.</p>
+
+<h3 id="more-information">More Information</h3>
+
+<p>It&#39;s only the basic setup for Shadowsocks. For advanced topics, check</p>
 
 <ul>
-<li><p>Be aware of that the question is asking 1 to N digits, so we don&#39;t have to test all possible permutations from 1 to 10.</p></li>
-<li><p>The results of <code class="inline-code">next_permutation()</code> in STL are in ascending order in default.</p></li>
+<li><p><a href="https://github.com/shadowsocks/shadowsocks/wiki">https://github.com/shadowsocks/shadowsocks/wiki</a></p></li>
+<li><p><a href="https://shadowsocks.org/en/config/advanced.html">https://shadowsocks.org/en/config/advanced.html</a></p></li>
 </ul>
 
-<p><br>
-<br>
-<br>
-<br>
-<br></p>
+<p><br/>
+<br/></p>
 
-<h3 id="solution">Solution:</h3>
-
-<p>Use <code class="inline-code">next_permutation()</code> to check all possibilities and stimulate the triangle additions. Since the permutation is already in lexicographical order, when we get the find the first result, it is the final answer.</p>
-<div class="highlight"><pre><code class="cpp"><a name="line-1"></a><span class="cp">#include&lt;iostream&gt;</span>
-<a name="line-2"></a><span class="cp">#include&lt;algorithm&gt;</span>
-<a name="line-3"></a><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-<a name="line-4"></a>
-<a name="line-5"></a><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">sum</span><span class="p">,</span> <span class="n">ans</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">11</span><span class="p">];</span>
-<a name="line-6"></a>
-<a name="line-7"></a><span class="kt">void</span> <span class="nf">solve</span><span class="p">()</span> <span class="p">{</span>
-<a name="line-8"></a>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
-<a name="line-9"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">ans</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">sum</span><span class="p">)</span> <span class="p">{</span>
-<a name="line-10"></a>        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">sum</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-<a name="line-11"></a>        <span class="k">return</span><span class="p">;</span>
-<a name="line-12"></a>    <span class="p">}</span>
-<a name="line-13"></a>    <span class="k">do</span> <span class="p">{</span>
-<a name="line-14"></a>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-<a name="line-15"></a>            <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
-<a name="line-16"></a>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
-<a name="line-17"></a>            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
-<a name="line-18"></a>                <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
-<a name="line-19"></a>        <span class="p">}</span>
-<a name="line-20"></a>        <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">sum</span><span class="p">)</span> <span class="p">{</span>
-<a name="line-21"></a>            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
-<a name="line-22"></a>            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-<a name="line-23"></a>            <span class="k">return</span><span class="p">;</span>
-<a name="line-24"></a>        <span class="p">}</span>
-<a name="line-25"></a>    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">next_permutation</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">ans</span><span class="o">+</span><span class="n">n</span><span class="p">));</span>
-<a name="line-26"></a><span class="p">}</span>
-<a name="line-27"></a>
-<a name="line-28"></a><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-<a name="line-29"></a>    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">sum</span><span class="p">;</span>
-<a name="line-30"></a>    <span class="n">solve</span><span class="p">();</span>
-<a name="line-31"></a>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<a name="line-32"></a><span class="p">}</span>
-</code></pre></div>
     </div>
 
 </article>
@@ -223,9 +261,7 @@ $$ 8 $$</p>
         
         Tags:
         
-        <li><a href="/tags/#POJ">POJ</a></li>
-        
-        <li><a href="/tags/#brute force">brute force</a></li>
+        <li><a href="/tags/#Tools">Tools</a></li>
         
         
     </ul>
@@ -234,26 +270,26 @@ $$ 8 $$</p>
 
 <!--
 <span class = "share-f">
-    <a href="http://twitter.com/share?url=http://www.pwzxxm.com/poj-3187/&text=">
+    <a href="http://twitter.com/share?url=http://www.pwzxxm.com/proxy-server-cn-netease-music/&text=">
         Twitter
     </a>
 
-    <a href="https://plus.google.com/share?url=http://www.pwzxxm.com/poj-3187/">
+    <a href="https://plus.google.com/share?url=http://www.pwzxxm.com/proxy-server-cn-netease-music/">
         Google Plus
     </a>
 
-    <a href="http://www.facebook.com/sharer/sharer.php?u=http://www.pwzxxm.com/poj-3187/">
+    <a href="http://www.facebook.com/sharer/sharer.php?u=http://www.pwzxxm.com/proxy-server-cn-netease-music/">
         Facebook
     </a>
 
-    <a href="http://reddit.com/submit?url=http://www.pwzxxm.com/poj-3187/&title=POJ 3187 Backward Digits Sums">
+    <a href="http://reddit.com/submit?url=http://www.pwzxxm.com/proxy-server-cn-netease-music/&title=Build a Proxy Server to Access Chinese IP Including Netease Music">
         Reddit
     </a>
 
     <a href="javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:'',r='http://www.douban.com/recommend/?url='+e(d.location.href)+'&title='+e(d.title)+'&sel='+e(s)+'&v=1',w=450,h=330,x=function(){if(!window.open(r,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width='+w+',height='+h+',left='+(screen.width-w)/2+',top='+(screen.height-h)/2))location.href=r+'&r=1'};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()"><img src="http://img6.douban.com/pics/fw2douban_s.png" alt="推荐到豆瓣" />
     </a>
 
-    <a href="mailto:?subject=POJ 3187 Backward Digits Sums&body=http://www.pwzxxm.com/poj-3187/">
+    <a href="mailto:?subject=Build a Proxy Server to Access Chinese IP Including Netease Music&body=http://www.pwzxxm.com/proxy-server-cn-netease-music/">
         Email
     </a>
 </span>
@@ -271,8 +307,8 @@ var disqus_config = function () {
     //var disqus_developer = 1; // Comment out when the site is live
     var disqus_shortname = 'pwzxxm'
     //this.page.url = http://www.pwzxxm.com; // Replace PAGE_URL with your page's canonical URL variable
-    this.page.url = "http://www.pwzxxm.com/poj-3187/"
-    this.page.identifier = "/poj-3187/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    this.page.url = "http://www.pwzxxm.com/proxy-server-cn-netease-music/"
+    this.page.identifier = "/proxy-server-cn-netease-music/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 
     
     this.language="en";

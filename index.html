@@ -145,6 +145,21 @@
         <!-- This loops through the paginated posts -->
         
         <li>
+            <h2><a class="slide post-link" href="/proxy-server-cn-netease-music/">Build a Proxy Server to Access Chinese IP Including Netease Music</a></h2>
+            <div class="post-data">
+                <p>Sometimes we need to access Chinese content, like Youku Video, Netease Music(Cloud Music) and QQ music. It is very annoying to get &quot;Can Only Be Streamed in Mainland China&quot; or similar messages. Being tired of that, fortunately I have got a VPS from Aliyun and I build a proxy server using <a href="https://shadowsocks.org/en/index.html">Shadowsocks</a> on it and everything works smoothly now.</p>
+
+            </div>
+            <div class="post-meta">
+                Posted on Mar 23, 2018&nbsp&nbsp&nbsp
+                
+                
+                <a href="/tags/#Tools">Tools</a>
+                
+            </div>
+        </li>
+        
+        <li>
             <h2><a class="slide post-link" href="/usaco-lamps/">USACO Party Lamps</a></h2>
             <div class="post-data">
                 <p>A set of N \((10 \le N \le 100)\) lamps, numbered from 1 to N.</p>
@@ -289,20 +304,6 @@ $$ 8 $$</p>
                 
                 
                 <a href="/tags/#data-structure">data-structure</a>
-                
-            </div>
-        </li>
-        
-        <li>
-            <h2><a class="slide post-link" href="/building-blog-jekyll/">Using Jekyll + Github Pages to build a blog</a></h2>
-            <div class="post-data">
-                <h2 id="why-jekyll-and-github-pages">Why Jekyll and Github Pages</h2> <p><a href="https://jekyllrb.com/">Jekyll</a> is an static site generator, it is simple to use with YAML front matter. It is quite convenient to blog with markdown and Jekyll supports it build-in. <a href="https://pages.github.com/">Github Pages</a> provide the space to host the website for free. Both of them are well-documented, and works well with each other. One thing that makes they works well but not perfect is that although Github Pages can generate the website using Jekyll but as it generates in safe mode, it does not support Jekyll plugin. However, the good news is we can generate...
-            </div>
-            <div class="post-meta">
-                Posted on Dec 15, 2015&nbsp&nbsp&nbsp
-                
-                
-                <a href="/tags/#blog">blog</a>
                 
             </div>
         </li>
@@ -496,9 +497,10 @@ MathJax.Hub.Config({
 });
 </script>
 <script>
+var screen_width = screen.width;
 var h = $(window).height();
 var h2 = $(document).height();
-if (h2-h > 400 && ($(window).width() > 600)) {
+if (screen_width > 600 && h2-h > 400 && ($(window).width() > 600)) {
     $(window).scroll(function() {
         if ($(this).scrollTop() > 54){
             if(!($('.header-fixed').hasClass("is-visible"))) {

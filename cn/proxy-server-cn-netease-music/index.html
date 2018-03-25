@@ -7,8 +7,8 @@
     <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <title>POJ 3187 Backward Digits Sums | PwzXxm </title>
-    <meta name="description" content="There are 1 to N digits (\(1\le N \le 10\)) in certain order. Add adjacent numbers together to get the next line, until the there is only one number left.(Ju...">
+    <title>搭建代理服务器以访问国内网络（网易云音乐) | PwzXxm </title>
+    <meta name="description" content="身在国外，我们有时候需要看看优酷，听听网易云音乐、QQ音乐。看到“仅限中国大陆播放”的时候真的好气啊。公用的代理服务器我又有点强迫症，正好手头上有个阿里云的服务器，就用Shadowsocks搭建了一个，现在可以开心地听歌啦。">
 
     <!-- google analytics -->
     <script>
@@ -39,7 +39,7 @@
 
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://www.pwzxxm.com/poj-3187/">
+    <link rel="canonical" href="http://www.pwzxxm.com/cn/proxy-server-cn-netease-music/">
     <link rel="alternate" type="application/rss+xml" title="PwzXxm" href="http://www.pwzxxm.com/feed.xml">
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon" />
     <link rel="icon" href="/img/favicon.png" type="image/x-icon" />
@@ -62,32 +62,32 @@
             <ul>
                 <li>
                     
-                    <a class="header-icon" href="/">Blog</a>
+                    <a class="header-icon" href="/cn/">博客</a>
                     
                 </li>
                 <li>
                     
-                    <a class="header-icon" href="/projects/">Projects</a>
+                    <a class="header-icon" href="/cn/projects/">项目</a>
                     
                 </li>
                 <li>
                     
-                    <a class="header-icon" href="/friendsblogs/">Links</a>
+                    <a class="header-icon" href="/cn/friendsblogs">链接</a>
                     
                 </li>
                 <li>
                     
-                    <a class="header-icon" href="/tags/">Tags</a>
+                    <a class="header-icon" href="/cn/tags/">标签</a>
                     
                 </li>
                 <li>
                     
-                    <a class="header-icon" href="/about/">About</a>
+                    <a class="header-icon" href="/cn/about/">关于</a>
                     
                 </li>
                 <li>
                     
-                    <a class="header-icon" href="/cn/poj-3187/">中</a>
+                    <a class="header-icon" href="/proxy-server-cn-netease-music/">EN</a>
                     
                 </li>
             </ul>
@@ -106,32 +106,32 @@
     <ul>
         <li>
             
-            <a class="header-icon" href="/">Blog</a>
+            <a class="header-icon" href="/cn">博客</a>
             
         </li>
         <li>
             
-            <a class="header-icon" href="/projects">Projects</a>
+            <a class="header-icon" href="/cn/projects">项目</a>
             
         </li>
         <li>
             
-            <a class="header-icon" href="/friendsblogs/">Links</a>
+            <a class="header-icon" href="/cn/friendsblogs">链接</a>
             
         </li>
         <li>
             
-            <a class="header-icon" href="/tags">Tags</a>
+            <a class="header-icon" href="/cn/tags">标签</a>
             
         </li>
         <li>
             
-            <a class="header-icon" href="/about">About</a>
+            <a class="header-icon" href="/cn/about">关于</a>
             
         </li>
         <li>
             
-            <a class="header-icon" href="/cn/poj-3187/">中</a>
+            <a class="header-icon" href="/proxy-server-cn-netease-music/">EN</a>
             
         </li>
     </ul>
@@ -142,76 +142,79 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">POJ 3187 Backward Digits Sums</h1>
+        <h1 class="post-title" itemprop="name headline">搭建代理服务器以访问国内网络（网易云音乐)</h1>
         <p class="post-meta">
-            <time datetime="2016-03-14T00:00:00+11:00" itemprop="datePublished">
+            <time datetime="2018-03-23T15:39:00+11:00" itemprop="datePublished">
                 
-                Mar 14, 2016
+                2018年3月23号
                 
             </time>
         </p>
     </header>
 
     <div class="post-content" itemprop="articleBody">
-        <p>There are 1 to N digits (\(1\le N \le 10\)) in certain order. Add adjacent numbers together to get the next line, until the there is only one number left.(Just like Pascal&#39;s triangle)
-For example, there are 3 integers:
-$$ 1, 2, 3 $$
-$$ 3, 5 $$
-$$ 8 $$</p>
+        <p>身在国外，我们有时候需要看看优酷，听听网易云音乐、QQ音乐。看到“仅限中国大陆播放”的时候真的好气啊。公用的代理服务器我又有点强迫症，正好手头上有个阿里云的服务器，就用<a href="https://shadowsocks.org/en/index.html">Shadowsocks</a>搭建了一个，现在可以开心地听歌啦。</p>
 
-<p>So, given N and the final sum, find the lexicographically least ordering of integers.</p>
+<h3 id="vps">VPS</h3>
 
-<p>Link: <a href="http://poj.org/problem?id=3187">http://poj.org/problem?id=3187</a></p>
+<p>你需要一个有中国公网IP地址地服务器。国内服务器有很多选择，比如阿里云，腾讯云，美团云之类的。</p>
 
-<h3 id="notes">Notes:</h3>
+<h3 id="安装服务器端">安装服务器端</h3>
+
+<p>用<code class="inline-code">ssh</code>或者其他工具进入服务器，然后安装<strong>Shadowsocks</strong>。关于安装的步骤，可以看<a href="https://shadowsocks.org/en/download/servers.html">这里</a>。 我用的是Python的版本。</p>
+
+<h3 id="配置shadowsocks">配置Shadowsocks</h3>
+
+<p>我平常都把配置文件放在<code class="inline-code">/etc/shadowsocks/ss.json</code>。请<strong>注意</strong><code class="inline-code">server</code>那一项平常都改填你VPS的公网IP地址。可是如果在阿里云，等下跑的时候会报错<code class="inline-code">socket.error: [Errno 99] Cannot assign requested address</code>。原因是因为你的“真实”IP地址并不是公网IP在阿里云内，所以在socket捆绑IP和端口的时候会报错。填<code class="inline-code">0.0.0.0</code>来监听所有端口就可以了。</p>
+<div class="highlight"><pre><code class="json"><a name="line-1"></a><span class="p">{</span>
+<a name="line-2"></a>    <span class="nt">&quot;server&quot;</span><span class="p">:</span><span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span>
+<a name="line-3"></a>    <span class="nt">&quot;server_port&quot;</span><span class="p">:</span><span class="mi">8080</span><span class="p">,</span>
+<a name="line-4"></a>    <span class="nt">&quot;local_port&quot;</span><span class="p">:</span><span class="mi">1080</span><span class="p">,</span>
+<a name="line-5"></a>    <span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="s2">&quot;yourpassword&quot;</span><span class="p">,</span>
+<a name="line-6"></a>    <span class="nt">&quot;timeout&quot;</span><span class="p">:</span><span class="mi">600</span><span class="p">,</span>
+<a name="line-7"></a>    <span class="nt">&quot;method&quot;</span><span class="p">:</span><span class="s2">&quot;chacha20&quot;</span>
+<a name="line-8"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="可选项">可选项</h3>
+
+<p>安装<code class="inline-code">m2crypto</code>加解密更快一些</p>
+<div class="highlight"><pre><code class="bash"><a name="line-1"></a>pip install m2crypto
+</code></pre></div>
+<p>如果你想用<code class="inline-code">chacha20</code>来加密，你需要安装<code class="inline-code">libsodium</code>这个包。不然的话也可以用<code class="inline-code">aes-256-cfb</code>，大多数系统都自带这个方法。</p>
+<div class="highlight"><pre><code class="bash"><a name="line-1"></a>wget https://github.com/jedisct1/libsodium/releases/download/1.0.16/libsodium-1.0.16.tar.gz
+<a name="line-2"></a>tar -xf libsodium-1.0.16.tar.gz <span class="o">&amp;&amp;</span> <span class="nb">cd </span>libsodium-1.0.16
+<a name="line-3"></a>./configure <span class="o">&amp;&amp;</span> make -j2 <span class="o">&amp;&amp;</span> make install
+<a name="line-4"></a><span class="nb">echo</span> /usr/local/lib &gt; /etc/ld.so.conf.d/usr_local_lib.conf
+<a name="line-5"></a>ldconfig
+</code></pre></div>
+<h3 id="运行">运行</h3>
+
+<p>当作守护进程运行</p>
+<div class="highlight"><pre><code class="bash"><a name="line-1"></a>ssserver -c /etc/shadowsocks/ss.json -d start
+</code></pre></div>
+<p>当然也可以在前端运行，你可以看到所有代理的IP地址经过服务器。</p>
+<div class="highlight"><pre><code class="bash"><a name="line-1"></a>ssserver -c /etc/shadowsocks/ss.json
+</code></pre></div>
+<h3 id="安装shadowsocks客户端">安装Shadowsocks客户端</h3>
+
+<p>最后一步，在要用的设备上安装相关客户端。你可以在<a href="https://shadowsocks.org/en/download/clients.html">这里</a>找到。苹果系统上我觉得<a href="https://github.com/yangfeicheung/Shadowsocks-X">Shadowsocks X</a>的海外模式比较好用。</p>
+
+<h3 id="网易云音乐">网易云音乐</h3>
+
+<p>请选择<em>使用IE代理</em>。</p>
+
+<h3 id="更多信息">更多信息</h3>
+
+<p>这只是最简单的Shadowsocks服务器搭建，更多信息请查看：</p>
 
 <ul>
-<li><p>Be aware of that the question is asking 1 to N digits, so we don&#39;t have to test all possible permutations from 1 to 10.</p></li>
-<li><p>The results of <code class="inline-code">next_permutation()</code> in STL are in ascending order in default.</p></li>
+<li><p><a href="https://github.com/shadowsocks/shadowsocks/wiki">https://github.com/shadowsocks/shadowsocks/wiki</a></p></li>
+<li><p><a href="https://shadowsocks.org/en/config/advanced.html">https://shadowsocks.org/en/config/advanced.html</a></p></li>
 </ul>
 
-<p><br>
-<br>
-<br>
-<br>
-<br></p>
+<p><br/>
+<br/></p>
 
-<h3 id="solution">Solution:</h3>
-
-<p>Use <code class="inline-code">next_permutation()</code> to check all possibilities and stimulate the triangle additions. Since the permutation is already in lexicographical order, when we get the find the first result, it is the final answer.</p>
-<div class="highlight"><pre><code class="cpp"><a name="line-1"></a><span class="cp">#include&lt;iostream&gt;</span>
-<a name="line-2"></a><span class="cp">#include&lt;algorithm&gt;</span>
-<a name="line-3"></a><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-<a name="line-4"></a>
-<a name="line-5"></a><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">sum</span><span class="p">,</span> <span class="n">ans</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="mi">11</span><span class="p">];</span>
-<a name="line-6"></a>
-<a name="line-7"></a><span class="kt">void</span> <span class="nf">solve</span><span class="p">()</span> <span class="p">{</span>
-<a name="line-8"></a>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
-<a name="line-9"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">ans</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">sum</span><span class="p">)</span> <span class="p">{</span>
-<a name="line-10"></a>        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">sum</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-<a name="line-11"></a>        <span class="k">return</span><span class="p">;</span>
-<a name="line-12"></a>    <span class="p">}</span>
-<a name="line-13"></a>    <span class="k">do</span> <span class="p">{</span>
-<a name="line-14"></a>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-<a name="line-15"></a>            <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
-<a name="line-16"></a>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
-<a name="line-17"></a>            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
-<a name="line-18"></a>                <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">];</span>
-<a name="line-19"></a>        <span class="p">}</span>
-<a name="line-20"></a>        <span class="k">if</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">sum</span><span class="p">)</span> <span class="p">{</span>
-<a name="line-21"></a>            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">ans</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span><span class="p">;</span>
-<a name="line-22"></a>            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-<a name="line-23"></a>            <span class="k">return</span><span class="p">;</span>
-<a name="line-24"></a>        <span class="p">}</span>
-<a name="line-25"></a>    <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">next_permutation</span><span class="p">(</span><span class="n">ans</span><span class="p">,</span> <span class="n">ans</span><span class="o">+</span><span class="n">n</span><span class="p">));</span>
-<a name="line-26"></a><span class="p">}</span>
-<a name="line-27"></a>
-<a name="line-28"></a><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-<a name="line-29"></a>    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">sum</span><span class="p">;</span>
-<a name="line-30"></a>    <span class="n">solve</span><span class="p">();</span>
-<a name="line-31"></a>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<a name="line-32"></a><span class="p">}</span>
-</code></pre></div>
     </div>
 
 </article>
@@ -221,11 +224,9 @@ $$ 8 $$</p>
     <ul>
         
         
-        Tags:
+        标签：
         
-        <li><a href="/tags/#POJ">POJ</a></li>
-        
-        <li><a href="/tags/#brute force">brute force</a></li>
+        <li><a href="/cn/tags/#Tools">Tools</a></li>
         
         
     </ul>
@@ -234,26 +235,26 @@ $$ 8 $$</p>
 
 <!--
 <span class = "share-f">
-    <a href="http://twitter.com/share?url=http://www.pwzxxm.com/poj-3187/&text=">
+    <a href="http://twitter.com/share?url=http://www.pwzxxm.com/cn/proxy-server-cn-netease-music/&text=">
         Twitter
     </a>
 
-    <a href="https://plus.google.com/share?url=http://www.pwzxxm.com/poj-3187/">
+    <a href="https://plus.google.com/share?url=http://www.pwzxxm.com/cn/proxy-server-cn-netease-music/">
         Google Plus
     </a>
 
-    <a href="http://www.facebook.com/sharer/sharer.php?u=http://www.pwzxxm.com/poj-3187/">
+    <a href="http://www.facebook.com/sharer/sharer.php?u=http://www.pwzxxm.com/cn/proxy-server-cn-netease-music/">
         Facebook
     </a>
 
-    <a href="http://reddit.com/submit?url=http://www.pwzxxm.com/poj-3187/&title=POJ 3187 Backward Digits Sums">
+    <a href="http://reddit.com/submit?url=http://www.pwzxxm.com/cn/proxy-server-cn-netease-music/&title=搭建代理服务器以访问国内网络（网易云音乐)">
         Reddit
     </a>
 
     <a href="javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:'',r='http://www.douban.com/recommend/?url='+e(d.location.href)+'&title='+e(d.title)+'&sel='+e(s)+'&v=1',w=450,h=330,x=function(){if(!window.open(r,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width='+w+',height='+h+',left='+(screen.width-w)/2+',top='+(screen.height-h)/2))location.href=r+'&r=1'};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()"><img src="http://img6.douban.com/pics/fw2douban_s.png" alt="推荐到豆瓣" />
     </a>
 
-    <a href="mailto:?subject=POJ 3187 Backward Digits Sums&body=http://www.pwzxxm.com/poj-3187/">
+    <a href="mailto:?subject=搭建代理服务器以访问国内网络（网易云音乐)&body=http://www.pwzxxm.com/cn/proxy-server-cn-netease-music/">
         Email
     </a>
 </span>
@@ -271,11 +272,11 @@ var disqus_config = function () {
     //var disqus_developer = 1; // Comment out when the site is live
     var disqus_shortname = 'pwzxxm'
     //this.page.url = http://www.pwzxxm.com; // Replace PAGE_URL with your page's canonical URL variable
-    this.page.url = "http://www.pwzxxm.com/poj-3187/"
-    this.page.identifier = "/poj-3187/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    this.page.url = "http://www.pwzxxm.com/cn/proxy-server-cn-netease-music/"
+    this.page.identifier = "/cn/proxy-server-cn-netease-music/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 
     
-    this.language="en";
+    this.language="zh";
     
 };
 (function() { // DON'T EDIT BELOW THIS LINE
@@ -303,12 +304,12 @@ s.setAttribute('data-timestamp', +new Date());
                     ʕ •ᴥ•ʔ
                     <li>
                         
-                        <a href="/tags">Tags</a>
+                        <a href="/cn/tags">标签们</a>
                         
                     </li>
                     <li>
                         
-                        <a href="/about">About</a>
+                        <a href="/cn/about">关于我</a>
                         
                     </li>
                 </ul>

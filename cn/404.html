@@ -269,9 +269,10 @@ MathJax.Hub.Config({
 });
 </script>
 <script>
+var screen_width = screen.width;
 var h = $(window).height();
 var h2 = $(document).height();
-if (h2-h > 400 && ($(window).width() > 600)) {
+if (screen_width > 600 && h2-h > 400 && ($(window).width() > 600)) {
     $(window).scroll(function() {
         if ($(this).scrollTop() > 54){
             if(!($('.header-fixed').hasClass("is-visible"))) {

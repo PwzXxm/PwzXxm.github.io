@@ -268,6 +268,45 @@
       
       
       
+      <li class="blog-tag-item" id="Tools-item">
+        <a href onclick="filter('Tools'); return false;">Tools</a>
+        <script>
+        function filter(tag) {
+          setActiveTag(tag);
+          showContainer(tag);
+        }
+        function setActiveTag(tag) {
+          // loop through all items and remove active class
+          var items = document.getElementsByClassName('blog-tag-item');
+          for(var i=0; i < items.length; i++) {
+            items[i].setAttribute('class', 'blog-tag-item');
+          }
+
+          // set the selected tag's item to active
+          var item = document.getElementById(tag + '-item');
+          if(item) {
+            item.setAttribute('class', 'blog-tag-item active');
+          }
+        }
+
+        function showContainer(tag) {
+          // loop through all lists and hide them
+          var lists = document.getElementsByClassName('blog-list-container');
+          for(var i=0; i < lists.length; i++) {
+            lists[i].setAttribute('class', 'blog-list-container hidden');
+          }
+
+          // remove the hidden class from the list corresponding to the selected tag
+          var list = document.getElementById(tag + '-container');
+          if(list) {
+            list.setAttribute('class', 'blog-list-container');
+          }
+        }
+        </script>
+      </li>
+      
+      
+      
       <li class="blog-tag-item" id="USACO-item">
         <a href onclick="filter('USACO'); return false;">USACO</a>
         <script>
@@ -515,10 +554,6 @@
     
     
     
-    
-    
-    
-    
     <li>
       <a class="slide" href="/cn/building-blog-jekyll/">使用Jekyll＋Github Pages搭建博客</a>
       <div class = "blog-date">
@@ -526,6 +561,10 @@
       </div>
     </li>
 
+    
+    
+    
+    
     
     
     
@@ -565,10 +604,6 @@ if(window.location.hash) {
     
     
     
-    
-    
-    
-    
     <li>
       <a class="slide" href="/cn/binary-tree/">二叉树</a>
       <div class = "blog-date">
@@ -576,6 +611,10 @@ if(window.location.hash) {
       </div>
     </li>
 
+    
+    
+    
+    
     
     
     
@@ -612,10 +651,6 @@ if(window.location.hash) {
   
   <span class="single-tag">POJ (4)</span>
   <ul class="blog-list">
-    
-    
-    
-    
     
     
     
@@ -658,6 +693,10 @@ if(window.location.hash) {
       </div>
     </li>
 
+    
+    
+    
+    
     
     
     
@@ -731,6 +770,10 @@ if(window.location.hash) {
     
     
     
+    
+    
+    
+    
     <li>
       <a class="slide" href="/cn/poj-3050/">POJ 3050 Hopscotch</a>
       <div class = "blog-date">
@@ -738,10 +781,6 @@ if(window.location.hash) {
       </div>
     </li>
 
-    
-    
-    
-    
     
     
     
@@ -765,6 +804,10 @@ if(window.location.hash) {
     
     
     
+    
+    
+    
+    
     <li>
       <a class="slide" href="/cn/poj-2376/">POJ 2376 Cleaning Shifts</a>
       <div class = "blog-date">
@@ -772,10 +815,6 @@ if(window.location.hash) {
       </div>
     </li>
 
-    
-    
-    
-    
     
     
     
@@ -815,10 +854,6 @@ if(window.location.hash) {
     
     
     
-    
-    
-    
-    
     <li>
       <a class="slide" href="/cn/uva-443/">UVa 443 Humble Numbers</a>
       <div class = "blog-date">
@@ -826,6 +861,10 @@ if(window.location.hash) {
       </div>
     </li>
 
+    
+    
+    
+    
     
     
     
@@ -849,10 +888,6 @@ if(window.location.hash) {
     
     
     
-    
-    
-    
-    
     <li>
       <a class="slide" href="/cn/poj-3268-silver-cow-party/">POJ 3268 Silver Cow Party</a>
       <div class = "blog-date">
@@ -860,6 +895,10 @@ if(window.location.hash) {
       </div>
     </li>
 
+    
+    
+    
+    
     
     
     
@@ -887,6 +926,40 @@ if(window.location.hash) {
       <a class="slide" href="/cn/usaco-lamps/">USACO Party Lamps</a>
       <div class = "blog-date">
         2016年8月31号
+      </div>
+    </li>
+
+    
+    
+    
+    
+    
+    
+    
+  </ul>
+</div>
+
+<script>
+if(window.location.hash) {
+  var tag = window.location.hash.split('#')[1];
+  filter(tag);
+}
+</script>
+
+
+
+
+<div class="blog-list-container" id="Tools-container">
+  
+  <span class="single-tag">Tools (1)</span>
+  <ul class="blog-list">
+    
+    
+    
+    <li>
+      <a class="slide" href="/cn/proxy-server-cn-netease-music/">搭建代理服务器以访问国内网络（网易云音乐)</a>
+      <div class = "blog-date">
+        2018年3月23号
       </div>
     </li>
 
@@ -1029,9 +1102,10 @@ MathJax.Hub.Config({
 });
 </script>
 <script>
+var screen_width = screen.width;
 var h = $(window).height();
 var h2 = $(document).height();
-if (h2-h > 400 && ($(window).width() > 600)) {
+if (screen_width > 600 && h2-h > 400 && ($(window).width() > 600)) {
     $(window).scroll(function() {
         if ($(this).scrollTop() > 54){
             if(!($('.header-fixed').hasClass("is-visible"))) {
