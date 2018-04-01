@@ -7,7 +7,7 @@ tags:
     - Tools
 ---
 
-Sometimes we need to access Chinese content, like Youku Video, Netease Music(Cloud Music) and QQ music. It is very annoying to get "Can Only Be Streamed in Mainland China" or similar messages. Being tired of that, fortunately I have got a VPS from Aliyun and I build a proxy server using [Shadowsocks](https://shadowsocks.org/en/index.html) on it and everything works smoothly now.
+Sometimes we need to access Chinese content, like Youku Video, Netease Music (Cloud Music) and QQ music. It is very annoying to get "Can Only Be Streamed in Mainland China" or similar messages. Being tired of that, fortunately I have got a VPS from Aliyun and I build a proxy server using [Shadowsocks](https://shadowsocks.org/en/index.html) on it and everything works smoothly now.
 
 ### VPS
 You need to have a VPS with **Chinese** IP address, there are tons of choices, like Aliyun(Alibaba Cloud) and Tencent Cloud etc.
