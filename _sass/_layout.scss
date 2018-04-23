@@ -436,6 +436,12 @@
     img {
         margin: auto;
         overflow-x: auto;
+        display: block;
+    }
+
+    .emoji {
+        display: inline;
+        vertical-align: text-bottom;
     }
 
     .toc {
