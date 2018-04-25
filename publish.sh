@@ -19,12 +19,21 @@ eval 'git add .'
 eval $push_commit
 printf "\n"
 eval 'git push origin local'
-printf "${GREEN}Pushed to local branch${NC}\n\n"
+printf "${GREEN}Pushed to local branch${NC}\n"
 
 # copy _site
+eval 'cp -r ./* ~/git/PwzXxm.github.io.backup/'
 eval 'rm -rf ~/git/local_backup/*'
 eval 'cp -r ./_site/* ~/git/local_backup/'
-printf "${GREEN}Copied to local_backup${NC}\n\n"
+printf "${GREEN}Copied to local_backup${NC}\n"
+
+echo "Commit to master?"
+select yn in "Yes" "No"
+if [ $yn in No ]
+then
+    exit 1;
+fi
+    
 
 # add changes to master branch
 eval 'git checkout master'
@@ -34,7 +43,7 @@ eval 'rm -rf ./*'
 eval 'cp -r ~/git/local_backup/* ./'
 eval 'touch .nojekyll'
 eval 'rm publish.sh'
-printf "${GREEN}Copied to master branch${NC}\n\n"
+printf "${GREEN}Copied to master branch${NC}\n"
 
 # commit and push changes
 eval 'git add .'
