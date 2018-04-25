@@ -7,8 +7,8 @@
     <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <title> PwzXxm - Computer Programming Blog</title>
-    <meta name="description" content="Learning and sharing computer science ideas. Enjoy what you are passionated about.">
+    <title>二叉树 | PwzXxm </title>
+    <meta name="description" content="二叉树之所以叫二叉树，是因为它每一个节点都至多有两个叉，又形似一棵树。树有根，有枝，有叶，只不过一般我们在计算机中所说的树都是根在上，叶在下的。">
 
     <!-- google analytics -->
     <script>
@@ -39,7 +39,7 @@
 
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://www.pwzxxm.com/cn/page2/">
+    <link rel="canonical" href="http://www.pwzxxm.com/cn/2016/binary-tree/">
     <link rel="alternate" type="application/rss+xml" title="PwzXxm" href="http://www.pwzxxm.com/feed.xml">
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon" />
     <link rel="icon" href="/img/favicon.png" type="image/x-icon" />
@@ -87,7 +87,7 @@
                 </li>
                 <li>
                     
-                    <a class="header-icon" href="/page2/">EN</a>
+                    <a class="header-icon" href="/2016/binary-tree/">EN</a>
                     
                 </li>
             </ul>
@@ -131,7 +131,7 @@
         </li>
         <li>
             
-            <a class="header-icon" href="/page2/">EN</a>
+            <a class="header-icon" href="/2016/binary-tree/">EN</a>
             
         </li>
     </ul>
@@ -139,128 +139,276 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
-    
-    <ul class="post-list">
-        <!-- This loops through the paginated posts -->
-        
-        <li>
-            <h2><a class="slide post-link" href="/cn/2015/stack-queue-link-list/">栈，队列和链表</a></h2>
-            <div class="post-data">
-                <p>栈，队列和链表是最基础的数据结构，它们出现在很多生活场景中，比如说堆起来的集装箱，排队坐过山车，人体蜈蚣（如果不知道就别去搜了，啦啦啦）</p>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-            </div>
-            <div class="post-meta">
-                发布于2015年12月25日&nbsp&nbsp&nbsp
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">二叉树</h1>
+        <p class="post-meta">
+            <time datetime="2016-01-15T00:00:00+11:00" itemprop="datePublished">
                 
+                2016年1月15号
                 
-                <a href="/cn/tags/#data-structure">data-structure</a>
-                
-            </div>
-        </li>
-        
-        <li>
-            <h2><a class="slide post-link" href="/cn/2015/building-blog-jekyll/">使用Jekyll＋Github Pages搭建博客</a></h2>
-            <div class="post-data">
-                <h2 id="为什么选择-jekyll-和-github-pages">为什么选择 Jekyll 和 Github Pages</h2>
+            </time>
+        </p>
+    </header>
 
-<p><a href="http://jekyll.bootcss.com/">Jekyll</a>是一个静态网页生成器，使用YAML头信息可以很方便地使用各种布局，内置markdown，新的文章只需加入文件夹即可。<a href="https://pages.github.com/">Github Pages</a>可以提供免费空间，免费无限流量来给网页当虚拟主机。他们俩配合起来相当默契，而且网上也有很多资料。但是有一点美中不足的是Github Pages是在安全模式下运行的，也就是说它并不支持Jekyll的插件。然而我们可以在本地带着插件生成好网站再放到Github上。虽然听起来不太方便，但是有脚本让我们一步实现。这点我们后面详细说。</p>
+    <div class="post-content" itemprop="articleBody">
+        <p>二叉树之所以叫二叉树，是因为它每一个节点都至多有两个叉，又形似一棵树。树有根，有枝，有叶，只不过一般我们在计算机中所说的树都是根在上，叶在下的。</p>
 
-            </div>
-            <div class="post-meta">
-                发布于2015年12月15日&nbsp&nbsp&nbsp
-                
-                
-                <a href="/cn/tags/#blog">blog</a>
-                
-            </div>
-        </li>
-        
-        <li>
-            <h2><a class="slide post-link" href="/cn/2015/the-story-about-the-blog/">这个博客那些事</a></h2>
-            <div class="post-data">
-                <p><a href="http://www.pwzxxm.com/cn/index.html">PwzXxm</a>是我的第一个网站，也是第一个博客。一开始只知道一点点基本的HTML，后来一边学CSS，JavaScript，用<a href="https://jekyllrb.com/">Jekyll</a>东拼西凑，花了7天时间，在2015年12月10日终于把它基本上都写完了。写完的时候真是感觉能内裤外穿一垛冲天。</p>
+<p><br>
+<div class="toc">
+<strong>目录</strong></p>
 
-            </div>
-            <div class="post-meta">
-                发布于2015年12月12日&nbsp&nbsp&nbsp
-                
-                
-                <a href="/cn/tags/#blog">blog</a>
-                
-            </div>
-        </li>
-        
-    </ul>
-    
+<ul>
+<li><a href="#terminologies">关于树的名词</a>
 
+<ul>
+<li><a href="#leaf-node">叶节点</a></li>
+<li><a href="#inner-node">内节点</a></li>
+<li><a href="#height-and-depth">深度和高度</a></li>
+</ul></li>
+<li><a href="#types">树的类型</a>
 
+<ul>
+<li><a href="#full-binary-tree">满二叉树</a></li>
+<li><a href="#complete-binary-tree">完全二叉树</a></li>
+</ul></li>
+<li><a href="#implementation">实现</a>
 
+<ul>
+<li><a href="#array">数组</a></li>
+<li><a href="#struct-or-class">Struct 或者 Class</a></li>
+</ul></li>
+<li><a href="#tree-traversal">树的遍历</a>
 
-
-
-
-
-    
-    
-    
-
-
-
-    
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-<p id="pagination-label" class="pagination-label sr-only" aria-hidden="true">Pagination</p>
-
-<ul class="pagination" role="navigation" aria-labelledby="pagination-label">
-
-    
-    <li class="page previous">
-        
-        <a class="pagination-item" href="/cn" rel="prev"><span class="sr-only"> page</span></a>
-        
-    </li>
-    
-
-    
-    <li class="page first">
-        <a class="pagination-item" href="/cn"><span class="sr-only">page </span>1</a>
-    </li>
-    <li class="pages-indicator pages-indicator--offset-"><span aria-hidden="true">...</span><span class="sr-only">Skipped pages indicator</span></li>
-    
-
-    
-        
-            
-            
-        
-    
-
-    
-    <li class="page last current-page">
-        <span class="pagination-item"><span class="sr-only">current page</span><span aria-hidden="true">2</span></span>
-    </li>
-    
-
-    
-
+<ul>
+<li><a href="#depth-first-search">深度优先遍历(DFS)</a></li>
+<li><a href="#breadth-first-search">广度优先遍历(BFS)</a>
+</div>
+<br></li>
+</ul></li>
 </ul>
 
+<hr>
 
-</div>
+<h2 id="关于树的名词"><a name="terminologies"></a>关于树的名词</h2>
+
+<h3 id="叶节点"><a name="leaf-node"></a> 叶节点</h3>
+
+<p>没有任何子节点的节点。</p>
+
+<h3 id="内节点"><a name="inner-node"></a> 内节点</h3>
+
+<p>在根节点和叶节点中间的节点。</p>
+
+<h3 id="高度和深度"><a name="height-and-depth"></a> 高度和深度</h3>
+
+<p><strong>树</strong>的高度和深度指的都是该树有多少层，一般从0开始数。</p>
+
+<p>但是，<strong>节点</strong>的高度和深度所指的就不同了。节点的高度是指该节点到<strong>叶节点</strong>的最长距离，节点的深度是指该节点到<strong>根节点</strong>的最长距离。</p>
+
+<p><img src="/img/post/depth_height.gif" alt="depth_height"></p>
+
+<p><br></p>
+
+<hr>
+
+<h2 id="二叉树类型"><a name="types"></a> 二叉树类型</h2>
+
+<h3 id="满二叉树"><a name="full-binary-tree"></a> 满二叉树</h3>
+
+<p>每个节点都有0或2个字子节点的树。</p>
+
+<p><img src="/img/post/full_binary_tree.gif" alt="full_bt">
+<img src="/img/post/full_binary_tree_1.gif" alt="full_b_1"></p>
+
+<h3 id="完全二叉树"><a name="complete-binary-tree"></a> 完全二叉树</h3>
+
+<p>一棵深度为\(h\)的树，除了第\(h\)层外，其他各层节点都为最大树，第\(h\)层的所有节点都连续地集中在左边。</p>
+
+<table><thead>
+<tr>
+<th>总节点\(k\)</th>
+<th>树高\(h\)</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>\(2^h \le k \lt 2^{h+1} - 1\)</td>
+<td>\(h = \lfloor\log_2k\rfloor\)</td>
+</tr>
+</tbody></table>
+
+<p><img src="/img/post/complete_binary_tree.gif" alt="complete_bt">
+<img src="/img/post/complete_binary_tree_1.gif" alt="complete_bt_1"></p>
+
+<p><br></p>
+
+<hr>
+
+<h2 id="实现"><a name="implementation"></a> 实现</h2>
+
+<h3 id="数组"><a name="array"></a> 数组</h3>
+
+<p>树可以用数组来存储，一般是广度优先的顺序。数组可以很好地储存完全二叉树，因为完全二叉树不会浪费数组的空间。一般来说，根节点一般储存在\(i = 0\), 它的子节点存在\(i = 1\)和\(i = 2\)，分别代表左节点和右节点。<strong>一个节点在\(i\), 它的左右节点分别在\(2i + 1\)和\(2i+2\)</strong>。但是，数组会浪费很多空间如果树不完全。</p>
+
+<h3 id="struct-或者-class"><a name="struct-or-class"></a> Struct 或者 Class</h3>
+
+<p>创建节点，与父节点关联。</p>
+<div class="highlight"><pre><code class="cpp"><a name="line-1"></a><span class="k">struct</span> <span class="n">node</span> <span class="p">{</span>
+<a name="line-2"></a>    <span class="kt">int</span> <span class="n">data</span><span class="p">;</span>
+<a name="line-3"></a>    <span class="k">struct</span> <span class="n">node</span><span class="o">*</span> <span class="n">left</span><span class="p">;</span>
+<a name="line-4"></a>    <span class="k">struct</span> <span class="n">node</span><span class="o">*</span> <span class="n">right</span><span class="p">;</span>
+<a name="line-5"></a><span class="p">}</span>
+</code></pre></div>
+<p><br></p>
+
+<hr>
+
+<h2 id="树的遍历"><a name="tree-traversal"></a> 树的遍历</h2>
+
+<h3 id="深度优先遍历-dfs"><a name="depth-first-search"></a> 深度优先遍历(DFS)</h3>
+
+<p>遍历树按照深度优先的原则，使用递归一般在遍历中是个好主意。</p>
+
+<h4 id="先序遍历">先序遍历</h4>
+
+<p>根节点－左节点－右节点</p>
+
+<ol>
+<li>从根节点开始</li>
+<li>如果左子树有元素，遍历左子树，不然遍历右子树。</li>
+</ol>
+
+<h4 id="中序遍历">中序遍历</h4>
+
+<p>左－根－右</p>
+
+<h4 id="后序遍历">后序遍历</h4>
+
+<p>左－右－根</p>
+
+<h4 id="确定唯一的树">确定唯一的树</h4>
+
+<p>给定两种遍历顺序，只有两种方法能确定唯一的树。</p>
+
+<h5 id="先序遍历和中序遍历">先序遍历和中序遍历</h5>
+
+<p>先序遍历的第一个元素必定是树的根节点，在中序遍历中找到该节点，就能把树分为两个子树，左子树和右子树。根据左右子树的长度在先序遍历中找到对应的序列，便找到了左右子树的根节点。不断递归直到遍历树。</p>
+
+<h5 id="中序遍历和后序遍历">中序遍历和后序遍历</h5>
+
+<p>和上面说的类似，只是后序遍历的根节点在序列的最后。</p>
+
+<h4 id="小技巧">小技巧</h4>
+
+<p>还有另外一种办法来记住遍历的顺序</p>
+
+<ol>
+<li>画一条连续的线（一笔画），从根节点开始，往左画，包围整棵树，贴着节点，在根节点结束。</li>
+<li>类别：
+
+<ul>
+<li>先序：在每个节点的<strong>左边</strong>画一个点</li>
+<li>中序：在每个节点的<strong>下面</strong>画一个点</li>
+<li>后序：在每个节点的<strong>右边</strong>画一个点</li>
+</ul></li>
+<li>从根节点开始，沿着画线的顺序，碰到点的顺序就是遍历的顺序。</li>
+</ol>
+
+<table><thead>
+<tr>
+<th>先序遍历</th>
+<th>中序遍历</th>
+<th>后序遍历</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><img src="/img/post/Sorted_binary_tree_preorder.svg" alt="preorder_line"></td>
+<td><img src="/img/post/Sorted_binary_tree_inorder.svg" alt="inorder_line"></td>
+<td><img src="/img/post/Sorted_binary_tree_postorder.svg" alt="postorder_line"></td>
+</tr>
+</tbody></table>
+
+<h3 id="广度优先遍历-bfs"><a name="breadth-first-search"></a> 广度优先遍历(BFS)</h3>
+
+<p>从根节点开始，以遍历完每一层为优先原则。</p>
+
+<p><img src="/img/post/Sorted_binary_tree_breadth-first_traversal.svg" alt="bfs"></p>
+
+    </div>
+
+</article>
+
+
+<span class="tags">
+    <ul>
+        
+        
+        标签：
+        
+        <li><a href="/cn/tags/#data-structure">data-structure</a></li>
+        
+        
+    </ul>
+</span>
+
+
+<!--
+<span class = "share-f">
+    <a href="http://twitter.com/share?url=http://www.pwzxxm.com/cn/2016/binary-tree/&text=">
+        Twitter
+    </a>
+
+    <a href="https://plus.google.com/share?url=http://www.pwzxxm.com/cn/2016/binary-tree/">
+        Google Plus
+    </a>
+
+    <a href="http://www.facebook.com/sharer/sharer.php?u=http://www.pwzxxm.com/cn/2016/binary-tree/">
+        Facebook
+    </a>
+
+    <a href="http://reddit.com/submit?url=http://www.pwzxxm.com/cn/2016/binary-tree/&title=二叉树">
+        Reddit
+    </a>
+
+    <a href="javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:'',r='http://www.douban.com/recommend/?url='+e(d.location.href)+'&title='+e(d.title)+'&sel='+e(s)+'&v=1',w=450,h=330,x=function(){if(!window.open(r,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width='+w+',height='+h+',left='+(screen.width-w)/2+',top='+(screen.height-h)/2))location.href=r+'&r=1'};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()"><img src="http://img6.douban.com/pics/fw2douban_s.png" alt="推荐到豆瓣" />
+    </a>
+
+    <a href="mailto:?subject=二叉树&body=http://www.pwzxxm.com/cn/2016/binary-tree/">
+        Email
+    </a>
+</span>
+-->
+
+<p id="ex"></p>
+
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+var disqus_config = function () {
+    //var disqus_developer = 1; // Comment out when the site is live
+    var disqus_shortname = 'pwzxxm'
+    //this.page.url = http://www.pwzxxm.com; // Replace PAGE_URL with your page's canonical URL variable
+    this.page.url = "http://www.pwzxxm.com/cn/2016/binary-tree/"
+    this.page.identifier = "/cn/2016/binary-tree/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+
+    
+    this.language="zh";
+    
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//pwzxxm.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
       </div>
     </div>
