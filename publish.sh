@@ -26,6 +26,7 @@ eval 'cp -r ./* ~/git/PwzXxm.github.io.backup/'
 eval 'rm -rf ~/git/local_backup/*'
 eval 'cp -r ./_site/* ~/git/local_backup/'
 printf "${GREEN}Copied to local_backup${NC}\n"
+printf "${GREEN}Copied to PwzXxm.github.io.backup${NC}\n"
 
 echo "Commit to master?"
 select yn in "Yes" "No"; do
