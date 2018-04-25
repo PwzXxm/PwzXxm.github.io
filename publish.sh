@@ -28,11 +28,13 @@ eval 'cp -r ./_site/* ~/git/local_backup/'
 printf "${GREEN}Copied to local_backup${NC}\n"
 printf "${GREEN}Copied to PwzXxm.github.io.backup${NC}\n"
 
-read -p "Commit to master? (y/n) " yn
-if [$yn in [Yy]*]
-then
-    exit 1;
-fi
+echo "Commit to master?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) break;;
+        No ) exit 1
+    esac
+done
 
 # add changes to master branch
 eval 'git checkout master'
