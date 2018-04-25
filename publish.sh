@@ -29,7 +29,7 @@ printf "${GREEN}Copied to local_backup${NC}\n"
 
 echo "Commit to master?"
 select yn in "Yes" "No"
-if [ $yn in No ]
+if [ $yn = "No" ]
 then
     exit 1;
 fi
