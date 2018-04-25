@@ -31,7 +31,7 @@ printf "${GREEN}Copied to PwzXxm.github.io.backup${NC}\n"
 read -p "Commit to master? (y/n) " yn
 if [$yn != [Yy]*]
 then
-    exit ;;
+    exit 1;
 fi
 
 # add changes to master branch
