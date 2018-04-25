@@ -29,7 +29,7 @@ printf "${GREEN}Copied to local_backup${NC}\n"
 printf "${GREEN}Copied to PwzXxm.github.io.backup${NC}\n"
 
 read -p "Commit to master? (y/n) " yn
-if [$yn != [Yy]*]
+if [$yn in [Yy]*]
 then
     exit 1;
 fi
