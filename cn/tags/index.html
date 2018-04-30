@@ -154,45 +154,6 @@
       
       
       
-      <li class="blog-tag-item" id="DFS-item">
-        <a href onclick="filter('DFS'); return false;">DFS</a>
-        <script>
-        function filter(tag) {
-          setActiveTag(tag);
-          showContainer(tag);
-        }
-        function setActiveTag(tag) {
-          // loop through all items and remove active class
-          var items = document.getElementsByClassName('blog-tag-item');
-          for(var i=0; i < items.length; i++) {
-            items[i].setAttribute('class', 'blog-tag-item');
-          }
-
-          // set the selected tag's item to active
-          var item = document.getElementById(tag + '-item');
-          if(item) {
-            item.setAttribute('class', 'blog-tag-item active');
-          }
-        }
-
-        function showContainer(tag) {
-          // loop through all lists and hide them
-          var lists = document.getElementsByClassName('blog-list-container');
-          for(var i=0; i < lists.length; i++) {
-            lists[i].setAttribute('class', 'blog-list-container hidden');
-          }
-
-          // remove the hidden class from the list corresponding to the selected tag
-          var list = document.getElementById(tag + '-container');
-          if(list) {
-            list.setAttribute('class', 'blog-list-container');
-          }
-        }
-        </script>
-      </li>
-      
-      
-      
       <li class="blog-tag-item" id="Graph-item">
         <a href onclick="filter('Graph'); return false;">Graph</a>
         <script>
@@ -234,6 +195,45 @@
       
       <li class="blog-tag-item" id="POJ-item">
         <a href onclick="filter('POJ'); return false;">POJ</a>
+        <script>
+        function filter(tag) {
+          setActiveTag(tag);
+          showContainer(tag);
+        }
+        function setActiveTag(tag) {
+          // loop through all items and remove active class
+          var items = document.getElementsByClassName('blog-tag-item');
+          for(var i=0; i < items.length; i++) {
+            items[i].setAttribute('class', 'blog-tag-item');
+          }
+
+          // set the selected tag's item to active
+          var item = document.getElementById(tag + '-item');
+          if(item) {
+            item.setAttribute('class', 'blog-tag-item active');
+          }
+        }
+
+        function showContainer(tag) {
+          // loop through all lists and hide them
+          var lists = document.getElementsByClassName('blog-list-container');
+          for(var i=0; i < lists.length; i++) {
+            lists[i].setAttribute('class', 'blog-list-container hidden');
+          }
+
+          // remove the hidden class from the list corresponding to the selected tag
+          var list = document.getElementById(tag + '-container');
+          if(list) {
+            list.setAttribute('class', 'blog-list-container');
+          }
+        }
+        </script>
+      </li>
+      
+      
+      
+      <li class="blog-tag-item" id="Search-item">
+        <a href onclick="filter('Search'); return false;">Search</a>
         <script>
         function filter(tag) {
           setActiveTag(tag);
@@ -689,6 +689,10 @@ if(window.location.hash) {
     
     
     
+    
+    
+    
+    
     <li>
       <a class="slide" href="/cn/2016/poj-2376/">POJ 2376 Cleaning Shifts</a>
       <div class = "blog-date">
@@ -712,10 +716,6 @@ if(window.location.hash) {
       </div>
     </li>
 
-    
-    
-    
-    
     
     
     
@@ -782,14 +782,10 @@ if(window.location.hash) {
 
 
 
-<div class="blog-list-container" id="DFS-container">
+<div class="blog-list-container" id="Search-container">
   
-  <span class="single-tag">DFS (1)</span>
+  <span class="single-tag">Search (1)</span>
   <ul class="blog-list">
-    
-    
-    
-    
     
     
     
@@ -800,6 +796,10 @@ if(window.location.hash) {
       </div>
     </li>
 
+    
+    
+    
+    
     
     
     
@@ -823,6 +823,10 @@ if(window.location.hash) {
     
     
     
+    
+    
+    
+    
     <li>
       <a class="slide" href="/cn/2016/poj-2376/">POJ 2376 Cleaning Shifts</a>
       <div class = "blog-date">
@@ -830,10 +834,6 @@ if(window.location.hash) {
       </div>
     </li>
 
-    
-    
-    
-    
     
     
     
@@ -873,6 +873,10 @@ if(window.location.hash) {
     
     
     
+    
+    
+    
+    
     <li>
       <a class="slide" href="/cn/2016/uva-443/">UVa 443 Humble Numbers</a>
       <div class = "blog-date">
@@ -880,10 +884,6 @@ if(window.location.hash) {
       </div>
     </li>
 
-    
-    
-    
-    
     
     
     
@@ -902,8 +902,24 @@ if(window.location.hash) {
 
 <div class="blog-list-container" id="Graph-container">
   
-  <span class="single-tag">Graph (1)</span>
+  <span class="single-tag">Graph (2)</span>
   <ul class="blog-list">
+    
+    
+    
+    <li>
+      <a class="slide" href="/cn/2018/shortest-path/"></a>
+      <div class = "blog-date">
+        2018年4月29号
+      </div>
+    </li>
+
+    
+    
+    
+    
+    
+    
     
     
     
@@ -941,6 +957,10 @@ if(window.location.hash) {
     
     
     
+    
+    
+    
+    
     <li>
       <a class="slide" href="/cn/2016/usaco-lamps/">USACO Party Lamps</a>
       <div class = "blog-date">
@@ -948,10 +968,6 @@ if(window.location.hash) {
       </div>
     </li>
 
-    
-    
-    
-    
     
     
     
@@ -975,6 +991,10 @@ if(window.location.hash) {
     
     
     
+    
+    
+    
+    
     <li>
       <a class="slide" href="/cn/2018/proxy-server-cn-netease-music/">搭建代理服务器以访问国内网络（网易云音乐)</a>
       <div class = "blog-date">
@@ -982,10 +1002,6 @@ if(window.location.hash) {
       </div>
     </li>
 
-    
-    
-    
-    
     
     
     
