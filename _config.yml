@@ -11,6 +11,7 @@ gems:
 - jekyll-sitemap
 - jekyll-paginate
 - jemoji
+- jekyll-redirect-from
 
 # multi-lang
 languages:          ['en', 'cn']

@@ -3,8 +3,8 @@ layout: post
 title: "使用Jekyll＋Github Pages搭建博客"
 date: 2015-12-15
 lang: cn
-tags:
-- blog
+tags: [blog]
+redirect_from: "/cn/building-blog-jekyll/"
 ---
 
 ## 为什么选择 Jekyll 和 Github Pages

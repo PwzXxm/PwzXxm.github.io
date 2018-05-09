@@ -2,9 +2,9 @@
 layout: post
 title: "这个博客那些事"
 date: 2015-12-12
-tags:
-- blog
+tags: [blog]
 lang: cn
+redirect_from: "/cn/the-story-about-the-blog/"
 ---
 
 [PwzXxm](http://www.pwzxxm.com/cn/index.html)是我的第一个网站，也是第一个博客。一开始只知道一点点基本的HTML，后来一边学CSS，JavaScript，用[Jekyll](https://jekyllrb.com/)东拼西凑，花了7天时间，在2015年12月10日终于把它基本上都写完了。写完的时候真是感觉能内裤外穿一垛冲天。

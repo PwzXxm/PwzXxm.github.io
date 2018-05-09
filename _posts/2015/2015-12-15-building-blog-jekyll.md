@@ -3,8 +3,8 @@ layout: post
 title: "Using Jekyll + Github Pages to build a blog"
 date: 2015-12-15
 lang: en
-tags:
-- blog
+tags: [blog]
+redirect_from: "/building-blog-jekyll/"
 ---
 
 ## Why Jekyll and Github Pages

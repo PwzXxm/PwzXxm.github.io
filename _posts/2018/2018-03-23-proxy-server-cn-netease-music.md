@@ -3,8 +3,8 @@ layout: "post"
 title: "Build a Proxy Server to Access Chinese IP Including Netease Music"
 date: "2018-03-23 15:39"
 lang: en
-tags:
-    - Tools
+tags: Tool
+redirect_from: "/proxy-server-cn-netease-music/"
 ---
 
 Sometimes we need to access Chinese content, like Youku Video, Netease Music (Cloud Music) and QQ music. It is very annoying to get "Can Only Be Streamed in Mainland China" or similar messages. Being tired of that, fortunately I have got a VPS from Aliyun and I build a proxy server using [Shadowsocks](https://shadowsocks.org/en/index.html) on it and everything works smoothly now.

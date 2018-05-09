@@ -6,6 +6,7 @@ tag: data-structure
 lang: cn
 images:
   - url: /img/post/full_binary_tree.gif
+redirect_from: "/cn/binary-tree/"
 ---
 
 二叉树之所以叫二叉树，是因为它每一个节点都至多有两个叉，又形似一棵树。树有根，有枝，有叶，只不过一般我们在计算机中所说的树都是根在上，叶在下的。

@@ -6,6 +6,7 @@ tag: data-structure
 lang: en
 images:
   - url: /img/post/full_binary_tree.gif
+redirect_from: "/binary-tree/"
 ---
 
 Binary tree is called so because of its shape. It's like a tree, it have leaves and a root. In computer science, the "tree" is usually upside down, the root at the top and leaves grow below it. It is binary so it every node only can have 0, 1 or 2 leaves.

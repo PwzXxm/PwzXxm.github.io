@@ -3,8 +3,8 @@ layout: "post"
 title: "搭建代理服务器以访问国内网络（网易云音乐)"
 date: "2018-03-23 15:39"
 lang: cn
-tags:
-    - Tools
+tags: Tool
+redirect_from: "/cn/proxy-server-cn-netease-music/"
 ---
 
 身在国外，我们有时候需要看看优酷，听听网易云音乐、QQ音乐。看到“仅限中国大陆播放”的时候真的好气啊。公用的代理服务器我又有点强迫症，正好手头上有个阿里云的服务器，就用[Shadowsocks](https://shadowsocks.org/en/index.html)搭建了一个，现在可以开心地听歌啦。

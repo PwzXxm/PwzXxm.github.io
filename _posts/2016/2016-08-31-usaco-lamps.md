@@ -4,6 +4,7 @@ title: USACO Party Lamps
 date: '2016-08-31'
 tags: [USACO]
 lang: en
+redirect_from: "/usaco-lamps/"
 ---
 
 A set of N \\((10 \le N \le 100)\\) lamps, numbered from 1 to N.

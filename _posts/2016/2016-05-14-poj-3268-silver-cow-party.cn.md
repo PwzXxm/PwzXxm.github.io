@@ -3,9 +3,8 @@ layout: "post"
 title: "POJ 3268 Silver Cow Party"
 date: "2016-05-14"
 lang: cn
-tags:
-- POJ
-- Graph
+tags: [POJ, Graph]
+redirect_from: "/cn/poj-3268-silver-cow-party/"
 ---
 
 有 N (\\(1 \le N \le 1000\\)) 个农场， 每个农场有1只奶牛去X号农场参加派对。每只奶牛都要走最短路来回。一共有 M (\\(1 \le M \le 100,000\\))单向道路，每条道路的权值为所用的时间。求往返所用的最长时间。

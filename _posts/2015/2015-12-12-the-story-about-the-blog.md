@@ -3,10 +3,10 @@ layout: post
 title: "The Story About the Blog"
 date: 2015-12-12
 lang : en
-tags:
-- blog
+tags: [blog]
 images:
     - url: /img/post/blog_story.jpg
+redirect_from: "/the-story-about-the-blog/"
 ---
 
 [PwzXxm](http://www.pwzxxm.com) is my first blog and also my first website I have ever built. I knew only a little bit of HTML before I started this project. I learned CSS and JavaScript while I'm building the site. I also read a lot of source code and blog posts about how other people build their own site using [Jekyll](http://jekyllrb.com/). It took me seven days. Finally, on the 10th of December, 2015, the site went alive.
