@@ -6,10 +6,10 @@
 
 
 // Our variables
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-family: Lato, "Microsoft Jhenghei", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+$base-font-family: "Lato", "Helvetica Neue", Helvetica, Arial, "Microsoft Jhenghei", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
 $base-font-family:
         -apple-system,
+        "Lato",
         "Helvetica Neue",
         "Arial",
         "PingFang SC",
@@ -36,6 +36,7 @@ $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
 $header-bg-color: #fafafa;
 $footer-color:    #37495F;
+$theme-color:     #607D8B;
 
 // Width of the content area
 $content-width:    1000px;

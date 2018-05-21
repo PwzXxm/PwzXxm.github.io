@@ -173,3 +173,17 @@ blockquote {
         }
     }
 }
+
+
+/**
+ * Selection
+ */
+::selection {
+    color: #fff;
+    background: $theme-color;
+}
+
+::-moz-selection {
+    color: #fff;
+    background: $theme-color;
+}

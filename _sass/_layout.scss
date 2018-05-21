@@ -326,7 +326,7 @@
             font-weight: bold;
             @media only screen and (min-width : 800px) {
                 &:hover {
-                    color: #607D8B;
+                    color: $theme-color;
                 }
             }
         }
@@ -344,7 +344,7 @@
                 color: #9E9E9E;
                 @media only screen and (min-width : 800px) {
                     &:hover {
-                        color: #607D8B;
+                        color: $theme-color;
                     }
                 }
             }
@@ -512,8 +512,8 @@
                 padding: 4.5px 11px 4.5px 11px;
                 @media only screen and (min-width : 800px) {
                     &:hover {
-                        color: #607D8B;
-                        border: 1px solid #607D8B;
+                        color: $theme-color;
+                        border: 1px solid $theme-color;
                     }
                 }
             }
@@ -562,14 +562,14 @@
         .slide:hover:after
         {
             //background: lighten($text-color, 30%);
-            background: #78909C;
+            background: $theme-color;
         }
         a {
             text-decoration: none;
             transition: all 0.5s ease;
         @media only screen and (min-width : 800px) {
                 &:hover {
-                    color: #78909c;
+                    color: $theme-color;
                 }
             }
         }
