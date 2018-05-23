@@ -20,7 +20,7 @@ redirect_from: "/cn/poj-3268-silver-cow-party/"
 ###题解
 第一反应Floyd，观察`N`数据范围，复杂度 \\(V^3\\)，果断弃。
 
-从X号农场会到各个农场比较容易，只要跑一次Dijkstra就好了。复杂度 \\(O(\left|E\right|log\left|V\right|\\))，最坏情况\\(O(\left|E\right|+|V|log|V|)\\)。
+从X号农场回到各个农场比较容易，只要跑一次Dijkstra就好了。复杂度 \\(O(\left|E\right|log\left|V\right|\\))，最坏情况\\(O(\left|E\right|+|V|log|V|)\\)。
 
 但是如何求各个农场到X的最短距离呢？
 
