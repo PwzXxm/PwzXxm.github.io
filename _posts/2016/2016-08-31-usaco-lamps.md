@@ -7,7 +7,7 @@ lang: en
 redirect_from: "/usaco-lamps/"
 ---
 
-A set of N \\((10 \le N \le 100)\\) lamps, numbered from 1 to N.
+A set of \\(N\\) \\((10 \le N \le 100)\\) lamps, numbered from 1 to N.
 
 Four types of button:
 
@@ -20,7 +20,7 @@ Button type | Usage
 
 <br>
 
-Given C (number of button presses, \\(0 \le C \le 10000\\)) and final state of some of the lamps, find all possible distinct configuration.
+Given \\(C\\) (number of button presses, \\(0 \le C \le 10000\\)) and final state of some of the lamps, find all possible distinct configuration.
 
 At the start, all lamps are ON and \\(C = 0\\).
 <br>
