@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <title>POJ 3187 Backward Digits Sums | PwzXxm </title>
-    <meta name="description" content="有特定顺序1到N个数字(\(1\le N \le 10\))，将相邻的两个数字相加得到下一行，直到只剩下一个数字。类似于杨辉三角形。$$ 1, 2, 3 $$$$ 3, 5 $$$$ 8 $$">
+    <meta name="description" content="有特定顺序1到\(N\)个数字(\(1\le N \le 10\))，将相邻的两个数字相加得到下一行，直到只剩下一个数字。类似于杨辉三角形。$$ 1, 2, 3 $$$$ 3, 5 $$$$ 8 $$">
 
     <!-- google analytics -->
     <script>
@@ -156,19 +156,19 @@
     </header>
 
     <div class="post-content" itemprop="articleBody">
-        <p>有特定顺序1到N个数字(\(1\le N \le 10\))，将相邻的两个数字相加得到下一行，直到只剩下一个数字。类似于杨辉三角形。
+        <p>有特定顺序1到\(N\)个数字(\(1\le N \le 10\))，将相邻的两个数字相加得到下一行，直到只剩下一个数字。类似于杨辉三角形。
 $$ 1, 2, 3 $$
 $$ 3, 5 $$
 $$ 8 $$</p>
 
-<p>给定N和最后的和sum，求字典序最小的一组整数。</p>
+<p>给定\(N\)和最后的和sum，求字典序最小的一组整数。</p>
 
 <p>链接：<a href="http://poj.org/problem?id=3187">http://poj.org/problem?id=3187</a></p>
 
 <h3 id="助攻">助攻:</h3>
 
 <ul>
-<li>注意题目是问1到N个整数，不是从1到10内找出所有排列。</li>
+<li>注意题目是问1到\(N\)个整数，不是从1到10内找出所有排列。</li>
 <li>STL中<code class="inline-code">next_permutation()</code>的结果默认是升序排列的。</li>
 </ul>
 
