@@ -154,6 +154,45 @@
       
       
       
+      <li class="blog-tag-item" id="Data-Structure-item">
+        <a href onclick="filter('Data-Structure'); return false;">Data-Structure</a>
+        <script>
+        function filter(tag) {
+          setActiveTag(tag);
+          showContainer(tag);
+        }
+        function setActiveTag(tag) {
+          // loop through all items and remove active class
+          var items = document.getElementsByClassName('blog-tag-item');
+          for(var i=0; i < items.length; i++) {
+            items[i].setAttribute('class', 'blog-tag-item');
+          }
+
+          // set the selected tag's item to active
+          var item = document.getElementById(tag + '-item');
+          if(item) {
+            item.setAttribute('class', 'blog-tag-item active');
+          }
+        }
+
+        function showContainer(tag) {
+          // loop through all lists and hide them
+          var lists = document.getElementsByClassName('blog-list-container');
+          for(var i=0; i < lists.length; i++) {
+            lists[i].setAttribute('class', 'blog-list-container hidden');
+          }
+
+          // remove the hidden class from the list corresponding to the selected tag
+          var list = document.getElementById(tag + '-container');
+          if(list) {
+            list.setAttribute('class', 'blog-list-container');
+          }
+        }
+        </script>
+      </li>
+      
+      
+      
       <li class="blog-tag-item" id="Graph-item">
         <a href onclick="filter('Graph'); return false;">Graph</a>
         <script>
@@ -466,45 +505,6 @@
       
       
       
-      <li class="blog-tag-item" id="data-structure-item">
-        <a href onclick="filter('data-structure'); return false;">data-structure</a>
-        <script>
-        function filter(tag) {
-          setActiveTag(tag);
-          showContainer(tag);
-        }
-        function setActiveTag(tag) {
-          // loop through all items and remove active class
-          var items = document.getElementsByClassName('blog-tag-item');
-          for(var i=0; i < items.length; i++) {
-            items[i].setAttribute('class', 'blog-tag-item');
-          }
-
-          // set the selected tag's item to active
-          var item = document.getElementById(tag + '-item');
-          if(item) {
-            item.setAttribute('class', 'blog-tag-item active');
-          }
-        }
-
-        function showContainer(tag) {
-          // loop through all lists and hide them
-          var lists = document.getElementsByClassName('blog-list-container');
-          for(var i=0; i < lists.length; i++) {
-            lists[i].setAttribute('class', 'blog-list-container hidden');
-          }
-
-          // remove the hidden class from the list corresponding to the selected tag
-          var list = document.getElementById(tag + '-container');
-          if(list) {
-            list.setAttribute('class', 'blog-list-container');
-          }
-        }
-        </script>
-      </li>
-      
-      
-      
       <li class="blog-tag-item" id="greedy-item">
         <a href onclick="filter('greedy'); return false;">greedy</a>
         <script>
@@ -600,10 +600,30 @@ if(window.location.hash) {
 
 
 
-<div class="blog-list-container" id="data-structure-container">
+<div class="blog-list-container" id="Data-Structure-container">
   
-  <span class="single-tag">data-structure (2)</span>
+  <span class="single-tag">Data-Structure (3)</span>
   <ul class="blog-list">
+    
+    
+    
+    
+    
+    
+    
+    <li>
+      <a class="slide" href="/cn/2018/static-linked-list/">静态链表（链式前向星）- 表示图的另一种方法</a>
+      <div class = "blog-date">
+        2018年5月29号
+      </div>
+    </li>
+
+    
+    
+    
+    
+    
+    
     
     
     
@@ -614,10 +634,6 @@ if(window.location.hash) {
       </div>
     </li>
 
-    
-    
-    
-    
     
     
     
@@ -673,10 +689,6 @@ if(window.location.hash) {
     
     
     
-    
-    
-    
-    
     <li>
       <a class="slide" href="/cn/2016/poj-3268-silver-cow-party/">POJ 3268 Silver Cow Party</a>
       <div class = "blog-date">
@@ -689,6 +701,14 @@ if(window.location.hash) {
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <li>
       <a class="slide" href="/cn/2016/poj-2376/">POJ 2376 Cleaning Shifts</a>
       <div class = "blog-date">
@@ -696,10 +716,6 @@ if(window.location.hash) {
       </div>
     </li>
 
-    
-    
-    
-    
     
     
     
@@ -823,6 +839,10 @@ if(window.location.hash) {
     
     
     
+    
+    
+    
+    
     <li>
       <a class="slide" href="/cn/2016/poj-2376/">POJ 2376 Cleaning Shifts</a>
       <div class = "blog-date">
@@ -830,10 +850,6 @@ if(window.location.hash) {
       </div>
     </li>
 
-    
-    
-    
-    
     
     
     
@@ -902,10 +918,22 @@ if(window.location.hash) {
 
 <div class="blog-list-container" id="Graph-container">
   
-  <span class="single-tag">Graph (1)</span>
+  <span class="single-tag">Graph (2)</span>
   <ul class="blog-list">
     
     
+    
+    
+    
+    
+    
+    <li>
+      <a class="slide" href="/cn/2018/static-linked-list/">静态链表（链式前向星）- 表示图的另一种方法</a>
+      <div class = "blog-date">
+        2018年5月29号
+      </div>
+    </li>
+
     
     
     
@@ -918,6 +946,10 @@ if(window.location.hash) {
       </div>
     </li>
 
+    
+    
+    
+    
     
     
     
@@ -975,6 +1007,10 @@ if(window.location.hash) {
     
     
     
+    
+    
+    
+    
     <li>
       <a class="slide" href="/cn/2018/proxy-server-cn-netease-music/">搭建代理服务器以访问国内网络（网易云音乐)</a>
       <div class = "blog-date">
@@ -982,10 +1018,6 @@ if(window.location.hash) {
       </div>
     </li>
 
-    
-    
-    
-    
     
     
     
@@ -1115,9 +1147,9 @@ l-24 -60 0 -460 c0 -458 0 -460 23 -517 30 -74 108 -160 176 -193 39 -19 90
 <script src="/js/jquery.min.js"></script>
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
-    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    tex2jax: {inlineMath: [ ['$','$'], ["\\(","\\)"] ],
     displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-    processEscapes: true
+    processEscapes: true}
 });
 </script>
 <script>

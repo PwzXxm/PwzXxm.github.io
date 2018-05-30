@@ -7,8 +7,8 @@
     <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <title>二叉树 | PwzXxm </title>
-    <meta name="description" content="二叉树之所以叫二叉树，是因为它每一个节点都至多有两个叉，又形似一棵树。树有根，有枝，有叶，只不过一般我们在计算机中所说的树都是根在上，叶在下的。">
+    <title>静态链表（链式前向星）- 表示图的另一种方法 | PwzXxm </title>
+    <meta name="description" content="静态链表是一种用数组静态储存的数据结构。它通常用来表示图。它还有个非常有趣的名字叫“链式前向星”。你可以通过以下两种方式来了解它：">
 
     <!-- google analytics -->
     <script>
@@ -39,7 +39,7 @@
 
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://www.pwzxxm.com/cn/2016/binary-tree/"
+    <link rel="canonical" href="http://www.pwzxxm.com/cn/2018/static-linked-list/"
     
         hreflang = "zh"
     >
@@ -90,7 +90,7 @@
                 </li>
                 <li>
                     
-                    <a class="header-icon" href="/2016/binary-tree/">EN</a>
+                    <a class="header-icon" href="/2018/static-linked-list/">EN</a>
                     
                 </li>
             </ul>
@@ -134,7 +134,7 @@
         </li>
         <li>
             
-            <a class="header-icon" href="/2016/binary-tree/">EN</a>
+            <a class="header-icon" href="/2018/static-linked-list/">EN</a>
             
         </li>
     </ul>
@@ -145,198 +145,242 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">二叉树</h1>
+        <h1 class="post-title" itemprop="name headline">静态链表（链式前向星）- 表示图的另一种方法</h1>
         <p class="post-meta">
-            <time datetime="2016-01-15T00:00:00+11:00" itemprop="datePublished">
+            <time datetime="2018-05-29T00:00:00+10:00" itemprop="datePublished">
                 
-                2016年1月15号
+                2018年5月29号
                 
             </time>
         </p>
     </header>
 
     <div class="post-content" itemprop="articleBody">
-        <p>二叉树之所以叫二叉树，是因为它每一个节点都至多有两个叉，又形似一棵树。树有根，有枝，有叶，只不过一般我们在计算机中所说的树都是根在上，叶在下的。</p>
-
-<p><br>
-<div class="toc">
-<strong>目录</strong></p>
+        <p>静态链表是一种用数组静态储存的数据结构。它通常用来表示图。它还有个非常有趣的名字叫“链式前向星”。你可以通过以下两种方式来了解它：</p>
 
 <ul>
-<li><a href="#terminologies">关于树的名词</a>
-
-<ul>
-<li><a href="#leaf-node">叶节点</a></li>
-<li><a href="#inner-node">内节点</a></li>
-<li><a href="#height-and-depth">深度和高度</a></li>
-</ul></li>
-<li><a href="#types">树的类型</a>
-
-<ul>
-<li><a href="#full-binary-tree">满二叉树</a></li>
-<li><a href="#complete-binary-tree">完全二叉树</a></li>
-</ul></li>
-<li><a href="#implementation">实现</a>
-
-<ul>
-<li><a href="#array">数组</a></li>
-<li><a href="#struct-or-class">Struct 或者 Class</a></li>
-</ul></li>
-<li><a href="#tree-traversal">树的遍历</a>
-
-<ul>
-<li><a href="#depth-first-search">深度优先遍历(DFS)</a></li>
-<li><a href="#breadth-first-search">广度优先遍历(BFS)</a>
-</div>
-<br></li>
-</ul></li>
+<li><p>从<a href="#%E5%89%8D%E5%90%91%E6%98%9F">前向星</a>开始.</p></li>
+<li><p>从<a href="#%E9%A2%86%E6%8E%A5%E8%A1%A8">领接表</a>开始.</p></li>
 </ul>
 
-<hr>
+<p>但是我还是建议两种都了解一下啦。如果你知道其中一种或两种的吧，点<a href="#%E9%93%BE%E5%BC%8F%E5%89%8D%E5%90%91%E6%98%9F">这里</a>跳过。点一下，玩一年。</p>
 
-<h2 id="关于树的名词"><a name="terminologies"></a>关于树的名词</h2>
+<p>在本文中，让<code class="inline-code">u</code>表示边从该节点出发，<code class="inline-code">v</code>表示边到达该节点。</p>
 
-<h3 id="叶节点"><a name="leaf-node"></a> 叶节点</h3>
+<p><br/>
+<br/></p>
 
-<p>没有任何子节点的节点。</p>
+<h2 id="前向星">前向星</h2>
 
-<h3 id="内节点"><a name="inner-node"></a> 内节点</h3>
+<p>前向星也叫做领接数组，边集数组。我们先把所有的边按照出发节点排序，到达节点的顺序不重要。接着分别用两个数组，一个存节点的在边数组的下标，一个存改节点的出度（有多少条边从该节点出发）。</p>
 
-<p>在根节点和叶节点中间的节点。</p>
+<h3 id="范例">范例</h3>
 
-<h3 id="高度和深度"><a name="height-and-depth"></a> 高度和深度</h3>
+<p><img src="/img/post/static_linked_list_example.svg" alt="example"></p>
 
-<p><strong>树</strong>的高度和深度指的都是该树有多少层，一般从0开始数。</p>
-
-<p>但是，<strong>节点</strong>的高度和深度所指的就不同了。节点的高度是指该节点到<strong>叶节点</strong>的最长距离，节点的深度是指该节点到<strong>根节点</strong>的最长距离。</p>
-
-<p><img src="/img/post/depth_height.gif" alt="depth_height"></p>
-
-<p><br></p>
-
-<hr>
-
-<h2 id="二叉树类型"><a name="types"></a> 二叉树类型</h2>
-
-<h3 id="满二叉树"><a name="full-binary-tree"></a> 满二叉树</h3>
-
-<p>每个节点都有0或2个字子节点的树。</p>
-
-<p><img src="/img/post/full_binary_tree.gif" alt="full_bt">
-<img src="/img/post/full_binary_tree_1.gif" alt="full_b_1"></p>
-
-<h3 id="完全二叉树"><a name="complete-binary-tree"></a> 完全二叉树</h3>
-
-<p>一棵深度为\(h\)的树，除了第\(h\)层外，其他各层节点都为最大树，第\(h\)层的所有节点都连续地集中在左边。</p>
-
-<table><thead>
-<tr>
-<th>总节点\(k\)</th>
-<th>树高\(h\)</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>\(2^h \le k \lt 2^{h+1} - 1\)</td>
-<td>\(h = \lfloor\log_2k\rfloor\)</td>
-</tr>
-</tbody></table>
-
-<p><img src="/img/post/complete_binary_tree.gif" alt="complete_bt">
-<img src="/img/post/complete_binary_tree_1.gif" alt="complete_bt_1"></p>
-
-<p><br></p>
-
-<hr>
-
-<h2 id="实现"><a name="implementation"></a> 实现</h2>
-
-<h3 id="数组"><a name="array"></a> 数组</h3>
-
-<p>树可以用数组来存储，一般是广度优先的顺序。数组可以很好地储存完全二叉树，因为完全二叉树不会浪费数组的空间。一般来说，根节点一般储存在\(i = 0\), 它的子节点存在\(i = 1\)和\(i = 2\)，分别代表左节点和右节点。<strong>一个节点在\(i\), 它的左右节点分别在\(2i + 1\)和\(2i+2\)</strong>。但是，数组会浪费很多空间如果树不完全。</p>
-
-<h3 id="struct-或者-class"><a name="struct-or-class"></a> Struct 或者 Class</h3>
-
-<p>创建节点，与父节点关联。</p>
-<div class="highlight"><pre><code class="cpp"><a name="line-1"></a><span class="k">struct</span> <span class="n">node</span> <span class="p">{</span>
-<a name="line-2"></a>    <span class="kt">int</span> <span class="n">data</span><span class="p">;</span>
-<a name="line-3"></a>    <span class="k">struct</span> <span class="n">node</span><span class="o">*</span> <span class="n">left</span><span class="p">;</span>
-<a name="line-4"></a>    <span class="k">struct</span> <span class="n">node</span><span class="o">*</span> <span class="n">right</span><span class="p">;</span>
-<a name="line-5"></a><span class="p">}</span>
+<p>我们的图包含如下这些边（出，入）：</p>
+<div class="highlight"><pre><code class="text"><a name="line-1"></a>(1, 2)
+<a name="line-2"></a>(2, 4)
+<a name="line-3"></a>(3, 4)
+<a name="line-4"></a>(1, 3)
+<a name="line-5"></a>(4, 3)
+<a name="line-6"></a>(3, 2)
+<a name="line-7"></a>(1, 4)
 </code></pre></div>
-<p><br></p>
-
-<hr>
-
-<h2 id="树的遍历"><a name="tree-traversal"></a> 树的遍历</h2>
-
-<h3 id="深度优先遍历-dfs"><a name="depth-first-search"></a> 深度优先遍历(DFS)</h3>
-
-<p>遍历树按照深度优先的原则，使用递归一般在遍历中是个好主意。</p>
-
-<h4 id="先序遍历">先序遍历</h4>
-
-<p>根节点－左节点－右节点</p>
-
-<ol>
-<li>从根节点开始</li>
-<li>如果左子树有元素，遍历左子树，不然遍历右子树。</li>
-</ol>
-
-<h4 id="中序遍历">中序遍历</h4>
-
-<p>左－根－右</p>
-
-<h4 id="后序遍历">后序遍历</h4>
-
-<p>左－右－根</p>
-
-<h4 id="确定唯一的树">确定唯一的树</h4>
-
-<p>给定两种遍历顺序，只有两种方法能确定唯一的树。</p>
-
-<h5 id="先序遍历和中序遍历">先序遍历和中序遍历</h5>
-
-<p>先序遍历的第一个元素必定是树的根节点，在中序遍历中找到该节点，就能把树分为两个子树，左子树和右子树。根据左右子树的长度在先序遍历中找到对应的序列，便找到了左右子树的根节点。不断递归直到遍历树。</p>
-
-<h5 id="中序遍历和后序遍历">中序遍历和后序遍历</h5>
-
-<p>和上面说的类似，只是后序遍历的根节点在序列的最后。</p>
-
-<h4 id="小技巧">小技巧</h4>
-
-<p>还有另外一种办法来记住遍历的顺序</p>
-
-<ol>
-<li>画一条连续的线（一笔画），从根节点开始，往左画，包围整棵树，贴着节点，在根节点结束。</li>
-<li>类别：
+<p>我们首先以出发节点进行排序然后填入数组：</p>
 
 <ul>
-<li>先序：在每个节点的<strong>左边</strong>画一个点</li>
-<li>中序：在每个节点的<strong>下面</strong>画一个点</li>
-<li>后序：在每个节点的<strong>右边</strong>画一个点</li>
-</ul></li>
-<li>从根节点开始，沿着画线的顺序，碰到点的顺序就是遍历的顺序。</li>
-</ol>
-
+<li><p><code class="inline-code">es[]</code>: 所有的到达节点</p></li>
+<li><p><code class="inline-code">head[]</code>: 以<code class="inline-code">u</code>为起点的第一条边的位置</p></li>
+<li><p><code class="inline-code">len[]</code>: <code class="inline-code">u</code>的出度（从该节点出发的边的数量）</p></li>
+</ul>
+<div class="highlight"><pre><code class="text"><a name="line-1"></a>(1, 2) --|
+<a name="line-2"></a>(1, 3) --| =&gt; len[1] = 3
+<a name="line-3"></a>(1, 4) --|
+<a name="line-4"></a>(2, 4)
+<a name="line-5"></a>(3, 2) =&gt; head[3] = 5
+<a name="line-6"></a>(3, 4)
+<a name="line-7"></a>(4, 3)
+<a name="line-8"></a>    ^
+<a name="line-9"></a>  es[]
+</code></pre></div>
 <table><thead>
 <tr>
-<th>先序遍历</th>
-<th>中序遍历</th>
-<th>后序遍历</th>
+<th>Array</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
 </tr>
 </thead><tbody>
 <tr>
-<td><img src="/img/post/Sorted_binary_tree_preorder.svg" alt="preorder_line"></td>
-<td><img src="/img/post/Sorted_binary_tree_inorder.svg" alt="inorder_line"></td>
-<td><img src="/img/post/Sorted_binary_tree_postorder.svg" alt="postorder_line"></td>
+<td><strong>es</strong></td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>4</td>
+<td>2</td>
+<td>4</td>
+<td>3</td>
+</tr>
+<tr>
+<td><strong>head</strong></td>
+<td>1</td>
+<td>4</td>
+<td>5</td>
+<td>7</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>len</strong></td>
+<td>3</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 </tbody></table>
 
-<h3 id="广度优先遍历-bfs"><a name="breadth-first-search"></a> 广度优先遍历(BFS)</h3>
+<p>下面我们来看如何取得所有从节点<code class="inline-code">1</code>出发的所有边。我们可以用<code class="inline-code">head[1] == 1</code>来找到第一条边在<code class="inline-code">es[]</code>中的位置是<code class="inline-code">1</code>。然后从<code class="inline-code">head[1]</code>到<code class="inline-code">head[1]+len[1]</code>遍历<code class="inline-code">es[]</code>，得到<code class="inline-code">es[1+0] == 2</code>, <code class="inline-code">es[1+1] == 3</code>, <code class="inline-code">es[1+2] == 4</code>。这样我们就得到了边(1,2), (1,3), (1,4)。</p>
+<div class="highlight"><pre><code class="cpp"><a name="line-1"></a><span class="c1">// 找到所有从u出发的边</span>
+<a name="line-2"></a><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span><span class="p">[</span><span class="n">u</span><span class="p">];</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-3"></a>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">u</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">es</span><span class="p">[</span><span class="n">head</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">+</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<a name="line-4"></a><span class="p">}</span>
+</code></pre></div>
+<p>因为前向星需要进行一次排序操作，时间复杂度提升到了$ O(E \times log(E)) $， 所以前向星并不是非常常用。然而链式前向星避免了排序，就解决了这个问题。</p>
 
-<p>从根节点开始，以遍历完每一层为优先原则。</p>
+<p><br/></p>
 
-<p><img src="/img/post/Sorted_binary_tree_breadth-first_traversal.svg" alt="bfs"></p>
+<hr>
+
+<p><br/></p>
+
+<h2 id="领接表">领接表</h2>
+
+<p>领接表在C++中通常用<code class="inline-code">vector<int> G[MAXN_V]</code>来实现。<code class="inline-code">G[u]</code>指向一个包含所有从<code class="inline-code">u</code>出发的边的vector。</p>
+
+<h3 id="范例">范例</h3>
+
+<p><img src="/img/post/static_linked_list_example.svg" alt="example"></p>
+
+<p>最后的结果如下图所示，左边的数组表示<code class="inline-code">G[]</code>。当我们读入一条从<code class="inline-code">u</code>出发的边，就推入<code class="inline-code">G[u]</code>的vector.</p>
+
+<p><img src="/img/post/static_linked_list_list.svg" alt="list"></p>
+<div class="highlight"><pre><code class="cpp"><a name="line-1"></a><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">].</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-2"></a>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">u</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<a name="line-3"></a><span class="p">}</span>
+</code></pre></div>
+<p><br/></p>
+
+<hr>
+
+<p><br/></p>
+
+<h2 id="链式前向星">链式前向星</h2>
+
+<p>链式前向星是<a href="#%E5%89%8D%E5%90%91%E6%98%9F">前向星</a>的改进版本，也可以说是<a href="#%E9%A2%86%E6%8E%A5%E8%A1%A8">领接表</a>的静态版本。它不用像前向星那样进行排序。它是怎么做到的？不停地戳自己！：）</p>
+
+<h3 id="范例">范例</h3>
+
+<p>我们和上文使用相同的范例。</p>
+
+<p><img src="/img/post/static_linked_list_example.svg" alt="example"></p>
+
+<p>有如下边（出发，到达）：</p>
+<div class="highlight"><pre><code class="text"><a name="line-1"></a>(1, 2)
+<a name="line-2"></a>(2, 4)
+<a name="line-3"></a>(3, 4)
+<a name="line-4"></a>(1, 3)
+<a name="line-5"></a>(4, 3)
+<a name="line-6"></a>(3, 2)
+<a name="line-7"></a>(1, 4)
+<a name="line-8"></a>    ^
+<a name="line-9"></a>   es[]
+</code></pre></div>
+<p>我们开始构造数组：</p>
+
+<ul>
+<li><p><code class="inline-code">es[]</code>: 所有的到达节点<code class="inline-code">v</code>，出发节点的信息会在<code class="inline-code">head[]</code>中储存。</p></li>
+<li><p><code class="inline-code">head[]</code>: 以<code class="inline-code">u</code>为起点的第一条边的位置。</p></li>
+<li><p><code class="inline-code">next[]</code>: 下一条以<code class="inline-code">u</code>为起点的边在<code class="inline-code">es[]</code>中的位置。用<code class="inline-code">0</code>来代表已经是最后一条了。</p></li>
+</ul>
+
+<p>可以得到</p>
+
+<table><thead>
+<tr>
+<th>Array</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+</tr>
+</thead><tbody>
+<tr>
+<td><strong>es</strong></td>
+<td>2</td>
+<td>4</td>
+<td>4</td>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>head</strong></td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>5</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>next</strong></td>
+<td>4</td>
+<td>0</td>
+<td>6</td>
+<td>7</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody></table>
+
+<p>下面我们来看如何得到从节点<strong>1</strong>出发的所有边：</p>
+
+<ol>
+<li><p>用<code class="inline-code">head[1] == 1</code>来找到第一条边的位置，设<code class="inline-code">i = head[1]</code>，<code class="inline-code">es[i] == 2</code>输出了(1, 2)这条边，更新 <code class="inline-code">i = next[i]</code>，现在<code class="inline-code">i == 4</code>。</p></li>
+<li><p><code class="inline-code">es[i] == 3</code> 输出边(1, 3)，更新<code class="inline-code">i = next[i]</code>，现在<code class="inline-code">i == 7</code>。</p></li>
+<li><p><code class="inline-code">es[i] == 4</code> 输出边(1, 4)，更新<code class="inline-code">i = next[i]</code>, 现在<code class="inline-code">i == 0</code>。</p></li>
+<li><p>因为<code class="inline-code">i == 0</code>，结束。</p></li>
+</ol>
+<div class="highlight"><pre><code class="cpp"><a name="line-1"></a><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">head</span><span class="p">[</span><span class="n">u</span><span class="p">];</span> <span class="n">i</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">next</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="p">{</span>
+<a name="line-2"></a>    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">u</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">es</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<a name="line-3"></a><span class="p">}</span>
+</code></pre></div>
+<p>发现了吗？链式前向星除了第一次使用<code class="inline-code">head[]</code>，其他时候都在<code class="inline-code">es[]</code>和<code class="inline-code">next[]</code>之间左右横跳来得到下一数据。想法和链表很像，不过用的是数组实现的。</p>
+
+<h2 id="比较">比较</h2>
+
+<p>前向星$O(E \times log(E))$的复杂度让人望而却步，有时候可能会变得更糟。</p>
+
+<p>领接表易于理解，用C++ STL vector也易于实践。vector动态分配空间所以我们不用知道边的数量。但是，有时候可能会浪费空间因为vector在需要的时候会加倍分配空间。</p>
+
+<p>链式前向星不改变数组的顺序，它只是建立起了边之间的关系。它比使用STL更快而且在理解之后易于实现。</p>
+
+<p>但是，这些数据结构都在寻找一条特定的边的时候不太优秀，在最坏情况下需要遍历到链表结束。</p>
 
     </div>
 
@@ -351,6 +395,8 @@
         
         <li><a href="/cn/tags/#Data-Structure">Data-Structure</a></li>
         
+        <li><a href="/cn/tags/#Graph">Graph</a></li>
+        
         
     </ul>
 </span>
@@ -358,26 +404,26 @@
 
 <!--
 <span class = "share-f">
-    <a href="http://twitter.com/share?url=http://www.pwzxxm.com/cn/2016/binary-tree/&text=">
+    <a href="http://twitter.com/share?url=http://www.pwzxxm.com/cn/2018/static-linked-list/&text=">
         Twitter
     </a>
 
-    <a href="https://plus.google.com/share?url=http://www.pwzxxm.com/cn/2016/binary-tree/">
+    <a href="https://plus.google.com/share?url=http://www.pwzxxm.com/cn/2018/static-linked-list/">
         Google Plus
     </a>
 
-    <a href="http://www.facebook.com/sharer/sharer.php?u=http://www.pwzxxm.com/cn/2016/binary-tree/">
+    <a href="http://www.facebook.com/sharer/sharer.php?u=http://www.pwzxxm.com/cn/2018/static-linked-list/">
         Facebook
     </a>
 
-    <a href="http://reddit.com/submit?url=http://www.pwzxxm.com/cn/2016/binary-tree/&title=二叉树">
+    <a href="http://reddit.com/submit?url=http://www.pwzxxm.com/cn/2018/static-linked-list/&title=静态链表（链式前向星）- 表示图的另一种方法">
         Reddit
     </a>
 
     <a href="javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:'',r='http://www.douban.com/recommend/?url='+e(d.location.href)+'&title='+e(d.title)+'&sel='+e(s)+'&v=1',w=450,h=330,x=function(){if(!window.open(r,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width='+w+',height='+h+',left='+(screen.width-w)/2+',top='+(screen.height-h)/2))location.href=r+'&r=1'};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()"><img src="http://img6.douban.com/pics/fw2douban_s.png" alt="推荐到豆瓣" />
     </a>
 
-    <a href="mailto:?subject=二叉树&body=http://www.pwzxxm.com/cn/2016/binary-tree/">
+    <a href="mailto:?subject=静态链表（链式前向星）- 表示图的另一种方法&body=http://www.pwzxxm.com/cn/2018/static-linked-list/">
         Email
     </a>
 </span>
@@ -395,8 +441,8 @@ var disqus_config = function () {
     //var disqus_developer = 1; // Comment out when the site is live
     var disqus_shortname = 'pwzxxm'
     //this.page.url = http://www.pwzxxm.com; // Replace PAGE_URL with your page's canonical URL variable
-    this.page.url = "http://www.pwzxxm.com/cn/2016/binary-tree/"
-    this.page.identifier = "/cn/2016/binary-tree/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    this.page.url = "http://www.pwzxxm.com/cn/2018/static-linked-list/"
+    this.page.identifier = "/cn/2018/static-linked-list/"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 
     
     this.language="zh";
