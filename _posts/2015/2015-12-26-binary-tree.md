@@ -2,7 +2,7 @@
 layout: post
 title: Binary Tree
 date: '2016-1-15'
-tag: data-structure
+tag: Data-Structure
 lang: en
 images:
   - url: /img/post/full_binary_tree.gif

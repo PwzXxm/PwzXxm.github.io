@@ -2,7 +2,7 @@
 layout: post
 title: 二叉树
 date: '2016-1-15'
-tag: data-structure
+tag: Data-Structure
 lang: cn
 images:
   - url: /img/post/full_binary_tree.gif

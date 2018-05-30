@@ -2,7 +2,7 @@
 layout: post
 title: "栈，队列和链表"
 date: 2015-12-25
-tag: data-structure
+tag: Data-Structure
 lang: cn
 images:
   - url: /img/post/link_in.gif

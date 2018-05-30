@@ -2,7 +2,7 @@
 layout: post
 title: "Stack, Queue and Linked Lists"
 date: 2015-12-25
-tag: data-structure
+tag: Data-Structure
 lang: en
 images:
   - url: /img/post/link_in.gif
