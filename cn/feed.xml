@@ -5,8 +5,8 @@
     <description>Learning and sharing computer science ideas. Enjoy what you are passionated about.</description>
     <link>http://www.pwzxxm.com/</link>
     <atom:link href="http://www.pwzxxm.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 30 May 2018 12:41:45 +1000</pubDate>
-    <lastBuildDate>Wed, 30 May 2018 12:41:45 +1000</lastBuildDate>
+    <pubDate>Wed, 30 May 2018 16:24:36 +1000</pubDate>
+    <lastBuildDate>Wed, 30 May 2018 16:24:36 +1000</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -167,7 +167,7 @@
 &lt;li&gt;&lt;p&gt;&lt;code class=&quot;inline-code&quot;&gt;next[]&lt;/code&gt;: the index of the next edge that coming from the same &lt;code class=&quot;inline-code&quot;&gt;u&lt;/code&gt;, use &lt;code class=&quot;inline-code&quot;&gt;0&lt;/code&gt; to represent that it is the end of the list.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;During constructing &lt;code class=&quot;inline-code&quot;&gt;next[]&lt;/code&gt;, we need another array to keep track of the position of the last element in each list.&lt;/p&gt;
+&lt;p&gt;During constructing &lt;code class=&quot;inline-code&quot;&gt;next[]&lt;/code&gt;, we need another array to keep track of the position of the last element in each list. Or we can update the &lt;code class=&quot;inline-code&quot;&gt;head[]&lt;/code&gt; constantly and store in reverse order.&lt;/p&gt;
 
 &lt;p&gt;So we have&lt;/p&gt;
 
@@ -453,6 +453,8 @@
 &lt;td&gt;0&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;&lt;/table&gt;
+
+&lt;p&gt;我们需要另一个数组储存每个节点最后一条边的位置来构造&lt;code class=&quot;inline-code&quot;&gt;next[]&lt;/code&gt;数组。当然我们也可以反向构造，不断更新&lt;code class=&quot;inline-code&quot;&gt;head[]&lt;/code&gt;来储存。&lt;/p&gt;
 
 &lt;p&gt;下面我们来看如何得到从节点&lt;strong&gt;1&lt;/strong&gt;出发的所有边：&lt;/p&gt;
 
