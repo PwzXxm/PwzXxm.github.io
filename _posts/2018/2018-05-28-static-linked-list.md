@@ -138,7 +138,7 @@ We construct arrays, let `u` be the vertex where the edge is coming from and `v`
 
 - `next[]`: the index of the next edge that coming from the same `u`, use `0` to represent that it is the end of the list.
 
-During constructing `next[]`, we need another array to keep track of the position of the last element in each list.
+During constructing `next[]`, we need another array to keep track of the position of the last element in each list. Or we can update the `head[]` constantly and store in reverse order.
 
 So we have
 
