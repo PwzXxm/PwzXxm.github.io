@@ -3,7 +3,7 @@ title: PwzXxm
 email: cepheidfov@gmail.com
 description: Learning and sharing computer science ideas. Enjoy what you are passionated about.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://www.pwzxxm.com" # the base hostname & protocol for your site
+url: "https://www.pwzxxm.com" # the base hostname & protocol for your site
 github_username:  PwzXxm
 exclude: ["README.md"]
 gems:
