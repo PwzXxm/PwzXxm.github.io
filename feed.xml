@@ -5,9 +5,137 @@
     <description>Learning and sharing computer science ideas. Enjoy what you are passionated about.</description>
     <link>https://www.pwzxxm.com/</link>
     <atom:link href="https://www.pwzxxm.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 04 Jun 2018 13:31:28 +1000</pubDate>
-    <lastBuildDate>Mon, 04 Jun 2018 13:31:28 +1000</lastBuildDate>
+    <pubDate>Wed, 04 Jul 2018 16:28:39 +1000</pubDate>
+    <lastBuildDate>Wed, 04 Jul 2018 16:28:39 +1000</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>CLDictP: 命令行英文词典工具</title>
+        <description>&lt;p&gt;CLDictP是一个用Perl，韦氏词典API写的命令行英文词典工具。&lt;/p&gt;
+
+&lt;p&gt;这是我第一个用Perl写的小项目。每次想用&lt;a href=&quot;https://quizlet.com/&quot;&gt;Quizlet&lt;/a&gt;做Flashcard（抽认卡？）来记单词的时候，因为想有的地方要加粗之类的，手动很麻烦。而且查单词的时候打开在线词典，太懒了，就想着写一个小工具吧 &lt;img class=&#39;emoji&#39; title=&#39;:wink:&#39; alt=&#39;:wink:&#39; src=&#39;https://assets.github.com/images/icons/emoji/unicode/1f609.png&#39; height=&#39;20&#39; width=&#39;20&#39; align=&#39;absmiddle&#39; /&gt;&lt;/p&gt;
+
+&lt;p&gt;它使用了如下韦氏词典API:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;韦氏学习词典&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;韦氏大学词典&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;每个词条包括:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;音标&lt;/li&gt;
+&lt;li&gt;词性&lt;/li&gt;
+&lt;li&gt;语法&lt;/li&gt;
+&lt;li&gt;释义&lt;/li&gt;
+&lt;li&gt;常用用法&lt;/li&gt;
+&lt;li&gt;例句&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;所有搜索过的单词存在一个集合里，保存在&lt;code class=&quot;inline-code&quot;&gt;searched.txt&lt;/code&gt;里。&lt;/p&gt;
+
+&lt;p&gt;新的搜索结果会使用特定格式被保存在&lt;code class=&quot;inline-code&quot;&gt;quizlet.txt&lt;/code&gt;里：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;单词和定义之间：&lt;code class=&quot;inline-code&quot;&gt;$&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;卡片与卡片之间：&lt;code class=&quot;inline-code&quot;&gt;---&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;用法&quot;&gt;用法&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;获得API密匙：&lt;a href=&quot;https://www.dictionaryapi.com/&quot;&gt;DictionaryAPI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;在&lt;code class=&quot;inline-code&quot;&gt;api_template.json&lt;/code&gt;中加入获得的密匙，更改文件名为&lt;code class=&quot;inline-code&quot;&gt;api.json&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;安装依赖模块：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cpan Term::ANSIColor Term::ReadKey LWP::UserAgent LWP::Protocol::https Readonly XML::LibXML JSON::XS Data::Dumper Set::Light
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;运行脚本：&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;perl dict.pl
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;使用&lt;code class=&quot;inline-code&quot;&gt;Ctrl+D&lt;/code&gt;退出&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;演示&quot;&gt;演示&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/post/CLDictP_demo.gif&quot; alt=&quot;demo_gif&quot;&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;源码&quot;&gt;源码&lt;/h2&gt;
+
+&lt;p&gt;源码在&lt;a href=&quot;https://github.com/PwzXxm/CLDictP&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 04 Jul 2018 00:00:00 +1000</pubDate>
+        <link>https://www.pwzxxm.com/cn/2018/cldictp/</link>
+        <guid isPermaLink="true">https://www.pwzxxm.com/cn/2018/cldictp/</guid>
+        
+        <category>Project</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>CLDictP: A Command-Line Dictionary Tool</title>
+        <description>&lt;p&gt;A command line dictionary written in Perl using Merriam-Webster APIs.&lt;/p&gt;
+
+&lt;p&gt;This is my first project using Perl. I feel it is tedious to type formatted definitions to &lt;a href=&quot;https://quizlet.com/&quot;&gt;Quizlet&lt;/a&gt;(A website which can make flashcards for you) and I&amp;#39;m too lazy to open browser and online dictionary pages. Why not combining these two? &lt;img class=&#39;emoji&#39; title=&#39;:wink:&#39; alt=&#39;:wink:&#39; src=&#39;https://assets.github.com/images/icons/emoji/unicode/1f609.png&#39; height=&#39;20&#39; width=&#39;20&#39; align=&#39;absmiddle&#39; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It uses following APIs:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Merriam-Webster Learner&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Merriam-Webster Collegiate&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For each entry, it contains:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Pronunciation: IPA(International Phonetic Alphabet)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Part of Speech&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Grammar&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Definition&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Common Usage&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Examples&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;All searched words are saved in a set and saved to &lt;code class=&quot;inline-code&quot;&gt;searched.txt&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;It also save searched words and definitions into the file &lt;code class=&quot;inline-code&quot;&gt;quizlet.txt&lt;/code&gt; so that they can be imported into &lt;a href=&quot;https://quizlet.com/&quot;&gt;Quizlet&lt;/a&gt; which makes flashcards. The format is:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;between term and definition: &lt;code class=&quot;inline-code&quot;&gt;$&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;between cards: &lt;code class=&quot;inline-code&quot;&gt;---&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;usage&quot;&gt;Usage&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Get API Keys: &lt;a href=&quot;https://www.dictionaryapi.com/&quot;&gt;DictionaryAPI&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Add API Keys to &lt;code class=&quot;inline-code&quot;&gt;api_template.json&lt;/code&gt; and change the file name to &lt;code class=&quot;inline-code&quot;&gt;api.json&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Install dependencies with&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cpan Term::ANSIColor Term::ReadKey LWP::UserAgent LWP::Protocol::https Readonly XML::LibXML JSON::XS Data::Dumper Set::Light
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Run the script with&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;perl dict.pl
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;To exit, use Ctrl+D.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;demo&quot;&gt;Demo&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/post/CLDictP_demo.gif&quot; alt=&quot;demo_gif&quot;&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;source-files&quot;&gt;Source Files&lt;/h2&gt;
+
+&lt;p&gt;The source files are hosted on &lt;a href=&quot;https://github.com/PwzXxm/CLDictP&quot;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 04 Jul 2018 00:00:00 +1000</pubDate>
+        <link>https://www.pwzxxm.com/2018/cldictp/</link>
+        <guid isPermaLink="true">https://www.pwzxxm.com/2018/cldictp/</guid>
+        
+        <category>Project</category>
+        
+        
+      </item>
     
       <item>
         <title>Static Linked List - Another Way To Represent Graphs</title>
@@ -870,6 +998,79 @@
       </item>
     
       <item>
+        <title>搭建代理服务器以访问国内网络（网易云音乐)</title>
+        <description>&lt;p&gt;身在国外，我们有时候需要看看优酷，听听网易云音乐、QQ音乐。看到“仅限中国大陆播放”的时候真的好气啊。公用的代理服务器我又有点强迫症，正好手头上有个阿里云的服务器，就用&lt;a href=&quot;https://shadowsocks.org/en/index.html&quot;&gt;Shadowsocks&lt;/a&gt;搭建了一个，现在可以开心地听歌啦。&lt;/p&gt;
+
+&lt;h3 id=&quot;vps&quot;&gt;VPS&lt;/h3&gt;
+
+&lt;p&gt;你需要一个有中国公网IP地址地服务器。国内服务器有很多选择，比如阿里云，腾讯云，美团云之类的。&lt;/p&gt;
+
+&lt;h3 id=&quot;安装服务器端&quot;&gt;安装服务器端&lt;/h3&gt;
+
+&lt;p&gt;用&lt;code class=&quot;inline-code&quot;&gt;ssh&lt;/code&gt;或者其他工具进入服务器，然后安装&lt;strong&gt;Shadowsocks&lt;/strong&gt;。关于安装的步骤，可以看&lt;a href=&quot;https://shadowsocks.org/en/download/servers.html&quot;&gt;这里&lt;/a&gt;。 我用的是Python的版本。&lt;/p&gt;
+
+&lt;h3 id=&quot;配置shadowsocks&quot;&gt;配置Shadowsocks&lt;/h3&gt;
+
+&lt;p&gt;我平常都把配置文件放在&lt;code class=&quot;inline-code&quot;&gt;/etc/shadowsocks/ss.json&lt;/code&gt;。请&lt;strong&gt;注意&lt;/strong&gt;&lt;code class=&quot;inline-code&quot;&gt;server&lt;/code&gt;那一项平常都改填你VPS的公网IP地址。可是如果在阿里云，等下跑的时候会报错&lt;code class=&quot;inline-code&quot;&gt;socket.error: [Errno 99] Cannot assign requested address&lt;/code&gt;。原因是因为你的“真实”IP地址并不是公网IP在阿里云内，所以在socket捆绑IP和端口的时候会报错。填&lt;code class=&quot;inline-code&quot;&gt;0.0.0.0&lt;/code&gt;来监听所有端口就可以了。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;quot;server&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;0.0.0.0&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;quot;server_port&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8080&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;quot;local_port&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1080&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;quot;password&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;yourpassword&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;quot;timeout&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;600&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;quot;method&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;chacha20&amp;quot;&lt;/span&gt;
+&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;可选项&quot;&gt;可选项&lt;/h3&gt;
+
+&lt;p&gt;安装&lt;code class=&quot;inline-code&quot;&gt;m2crypto&lt;/code&gt;加解密更快一些&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;pip install m2crypto
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;如果你想用&lt;code class=&quot;inline-code&quot;&gt;chacha20&lt;/code&gt;来加密，你需要安装&lt;code class=&quot;inline-code&quot;&gt;libsodium&lt;/code&gt;这个包。不然的话也可以用&lt;code class=&quot;inline-code&quot;&gt;aes-256-cfb&lt;/code&gt;，大多数系统都自带这个方法。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;wget https://github.com/jedisct1/libsodium/releases/download/1.0.16/libsodium-1.0.16.tar.gz
+&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;tar -xf libsodium-1.0.16.tar.gz &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;libsodium-1.0.16
+&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;./configure &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make -j2 &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make install
+&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; /usr/local/lib &amp;gt; /etc/ld.so.conf.d/usr_local_lib.conf
+&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;ldconfig
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;运行&quot;&gt;运行&lt;/h3&gt;
+
+&lt;p&gt;当作守护进程运行&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;ssserver -c /etc/shadowsocks/ss.json -d start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;当然也可以在前端运行，你可以看到所有代理的IP地址经过服务器。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;ssserver -c /etc/shadowsocks/ss.json
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3 id=&quot;安装shadowsocks客户端&quot;&gt;安装Shadowsocks客户端&lt;/h3&gt;
+
+&lt;p&gt;最后一步，在要用的设备上安装相关客户端。你可以在&lt;a href=&quot;https://shadowsocks.org/en/download/clients.html&quot;&gt;这里&lt;/a&gt;找到。苹果系统上我觉得&lt;a href=&quot;https://github.com/yangfeicheung/Shadowsocks-X&quot;&gt;Shadowsocks X&lt;/a&gt;的海外模式比较好用。&lt;/p&gt;
+
+&lt;h3 id=&quot;网易云音乐&quot;&gt;网易云音乐&lt;/h3&gt;
+
+&lt;p&gt;请选择&lt;em&gt;使用IE代理&lt;/em&gt;。&lt;/p&gt;
+
+&lt;h3 id=&quot;更多信息&quot;&gt;更多信息&lt;/h3&gt;
+
+&lt;p&gt;这只是最简单的Shadowsocks服务器搭建，更多信息请查看：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/shadowsocks/shadowsocks/wiki&quot;&gt;https://github.com/shadowsocks/shadowsocks/wiki&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://shadowsocks.org/en/config/advanced.html&quot;&gt;https://shadowsocks.org/en/config/advanced.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br/&gt;
+&lt;br/&gt;&lt;/p&gt;
+</description>
+        <pubDate>Fri, 23 Mar 2018 15:39:00 +1100</pubDate>
+        <link>https://www.pwzxxm.com/cn/2018/proxy-server-cn-netease-music/</link>
+        <guid isPermaLink="true">https://www.pwzxxm.com/cn/2018/proxy-server-cn-netease-music/</guid>
+        
+        <category>Tool</category>
+        
+        
+      </item>
+    
+      <item>
         <title>Build a Proxy Server to Access Chinese IP Including Netease Music</title>
         <description>&lt;p&gt;Sometimes we need to access Chinese content, like Youku Video, Netease Music (Cloud Music) and QQ music. It is very annoying to get &amp;quot;Can Only Be Streamed in Mainland China&amp;quot; or similar messages. Being tired of that, fortunately I have got a VPS from Aliyun and I build a proxy server using &lt;a href=&quot;https://shadowsocks.org/en/index.html&quot;&gt;Shadowsocks&lt;/a&gt; on it and everything works smoothly now.&lt;/p&gt;
 
@@ -971,79 +1172,6 @@
         <pubDate>Fri, 23 Mar 2018 15:39:00 +1100</pubDate>
         <link>https://www.pwzxxm.com/2018/proxy-server-cn-netease-music/</link>
         <guid isPermaLink="true">https://www.pwzxxm.com/2018/proxy-server-cn-netease-music/</guid>
-        
-        <category>Tool</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>搭建代理服务器以访问国内网络（网易云音乐)</title>
-        <description>&lt;p&gt;身在国外，我们有时候需要看看优酷，听听网易云音乐、QQ音乐。看到“仅限中国大陆播放”的时候真的好气啊。公用的代理服务器我又有点强迫症，正好手头上有个阿里云的服务器，就用&lt;a href=&quot;https://shadowsocks.org/en/index.html&quot;&gt;Shadowsocks&lt;/a&gt;搭建了一个，现在可以开心地听歌啦。&lt;/p&gt;
-
-&lt;h3 id=&quot;vps&quot;&gt;VPS&lt;/h3&gt;
-
-&lt;p&gt;你需要一个有中国公网IP地址地服务器。国内服务器有很多选择，比如阿里云，腾讯云，美团云之类的。&lt;/p&gt;
-
-&lt;h3 id=&quot;安装服务器端&quot;&gt;安装服务器端&lt;/h3&gt;
-
-&lt;p&gt;用&lt;code class=&quot;inline-code&quot;&gt;ssh&lt;/code&gt;或者其他工具进入服务器，然后安装&lt;strong&gt;Shadowsocks&lt;/strong&gt;。关于安装的步骤，可以看&lt;a href=&quot;https://shadowsocks.org/en/download/servers.html&quot;&gt;这里&lt;/a&gt;。 我用的是Python的版本。&lt;/p&gt;
-
-&lt;h3 id=&quot;配置shadowsocks&quot;&gt;配置Shadowsocks&lt;/h3&gt;
-
-&lt;p&gt;我平常都把配置文件放在&lt;code class=&quot;inline-code&quot;&gt;/etc/shadowsocks/ss.json&lt;/code&gt;。请&lt;strong&gt;注意&lt;/strong&gt;&lt;code class=&quot;inline-code&quot;&gt;server&lt;/code&gt;那一项平常都改填你VPS的公网IP地址。可是如果在阿里云，等下跑的时候会报错&lt;code class=&quot;inline-code&quot;&gt;socket.error: [Errno 99] Cannot assign requested address&lt;/code&gt;。原因是因为你的“真实”IP地址并不是公网IP在阿里云内，所以在socket捆绑IP和端口的时候会报错。填&lt;code class=&quot;inline-code&quot;&gt;0.0.0.0&lt;/code&gt;来监听所有端口就可以了。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;json&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;quot;server&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;0.0.0.0&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;quot;server_port&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8080&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;quot;local_port&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1080&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;quot;password&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;yourpassword&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;quot;timeout&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;600&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;quot;method&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;chacha20&amp;quot;&lt;/span&gt;
-&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&quot;可选项&quot;&gt;可选项&lt;/h3&gt;
-
-&lt;p&gt;安装&lt;code class=&quot;inline-code&quot;&gt;m2crypto&lt;/code&gt;加解密更快一些&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;pip install m2crypto
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;如果你想用&lt;code class=&quot;inline-code&quot;&gt;chacha20&lt;/code&gt;来加密，你需要安装&lt;code class=&quot;inline-code&quot;&gt;libsodium&lt;/code&gt;这个包。不然的话也可以用&lt;code class=&quot;inline-code&quot;&gt;aes-256-cfb&lt;/code&gt;，大多数系统都自带这个方法。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;wget https://github.com/jedisct1/libsodium/releases/download/1.0.16/libsodium-1.0.16.tar.gz
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;tar -xf libsodium-1.0.16.tar.gz &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;libsodium-1.0.16
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;./configure &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make -j2 &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make install
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; /usr/local/lib &amp;gt; /etc/ld.so.conf.d/usr_local_lib.conf
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;ldconfig
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&quot;运行&quot;&gt;运行&lt;/h3&gt;
-
-&lt;p&gt;当作守护进程运行&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;ssserver -c /etc/shadowsocks/ss.json -d start
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;当然也可以在前端运行，你可以看到所有代理的IP地址经过服务器。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;ssserver -c /etc/shadowsocks/ss.json
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;h3 id=&quot;安装shadowsocks客户端&quot;&gt;安装Shadowsocks客户端&lt;/h3&gt;
-
-&lt;p&gt;最后一步，在要用的设备上安装相关客户端。你可以在&lt;a href=&quot;https://shadowsocks.org/en/download/clients.html&quot;&gt;这里&lt;/a&gt;找到。苹果系统上我觉得&lt;a href=&quot;https://github.com/yangfeicheung/Shadowsocks-X&quot;&gt;Shadowsocks X&lt;/a&gt;的海外模式比较好用。&lt;/p&gt;
-
-&lt;h3 id=&quot;网易云音乐&quot;&gt;网易云音乐&lt;/h3&gt;
-
-&lt;p&gt;请选择&lt;em&gt;使用IE代理&lt;/em&gt;。&lt;/p&gt;
-
-&lt;h3 id=&quot;更多信息&quot;&gt;更多信息&lt;/h3&gt;
-
-&lt;p&gt;这只是最简单的Shadowsocks服务器搭建，更多信息请查看：&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/shadowsocks/shadowsocks/wiki&quot;&gt;https://github.com/shadowsocks/shadowsocks/wiki&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://shadowsocks.org/en/config/advanced.html&quot;&gt;https://shadowsocks.org/en/config/advanced.html&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br/&gt;
-&lt;br/&gt;&lt;/p&gt;
-</description>
-        <pubDate>Fri, 23 Mar 2018 15:39:00 +1100</pubDate>
-        <link>https://www.pwzxxm.com/cn/2018/proxy-server-cn-netease-music/</link>
-        <guid isPermaLink="true">https://www.pwzxxm.com/cn/2018/proxy-server-cn-netease-music/</guid>
         
         <category>Tool</category>
         
@@ -1446,246 +1574,6 @@
         <guid isPermaLink="true">https://www.pwzxxm.com/cn/2016/usaco-lamps/</guid>
         
         <category>USACO</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>POJ 3268 Silver Cow Party</title>
-        <description>&lt;p&gt;有 \(N\) (\(1 \le N \le 1000\)) 个农场， 每个农场有1只奶牛去X号农场参加派对。每只奶牛都要走最短路来回。一共有 \(M\) (\(1 \le M \le 100,000\))单向道路，每条道路的权值为所用的时间。求往返所用的最长时间。&lt;/p&gt;
-
-&lt;p&gt;链接：[&lt;a href=&quot;http://poj.org/problem?id=3268&quot;&gt;http://poj.org/problem?id=3268&lt;/a&gt;]&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;题解&quot;&gt;题解&lt;/h3&gt;
-
-&lt;p&gt;第一反应Floyd，观察&lt;code class=&quot;inline-code&quot;&gt;N&lt;/code&gt;数据范围，复杂度 \(V^3\)，果断弃。&lt;/p&gt;
-
-&lt;p&gt;从X号农场回到各个农场比较容易，只要跑一次Dijkstra就好了。复杂度 \(O(\left|E\right|log\left|V\right|\))，最坏情况\(O(\left|E\right|+|V|log|V|)\)。&lt;/p&gt;
-
-&lt;p&gt;但是如何求各个农场到X的最短距离呢？&lt;/p&gt;
-
-&lt;p&gt;我们可以把每条边反转，跑一次Dijkstra就好啦～&lt;/p&gt;
-
-&lt;p&gt;所以跑两次Dijkstra就能AC啦。&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;代码&quot;&gt;代码&lt;/h3&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;cpp&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;iostream&amp;gt;&lt;/span&gt;
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;queue&amp;gt;&lt;/span&gt;
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;algorithm&amp;gt;&lt;/span&gt;
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;cstring&amp;gt;&lt;/span&gt;
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;functional&amp;gt;&lt;/span&gt;
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;vector&amp;gt;&lt;/span&gt;
-&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;maxn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x3f3f3f3f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pair&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// first: shortest path, second: vertex num;&lt;/span&gt;
-&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;edge&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;edge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;G1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;maxn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;edge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;G2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;maxn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;go&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;maxn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;maxn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;dijkstra&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;edge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;priority_queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;greater&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;n&quot;&gt;P&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;a name=&quot;line-28&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;a name=&quot;line-29&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-30&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-31&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-32&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-33&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;n&quot;&gt;edge&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;a name=&quot;line-34&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-35&quot;&gt;&lt;/a&gt;                &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-36&quot;&gt;&lt;/a&gt;                &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;a name=&quot;line-37&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;a name=&quot;line-38&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;a name=&quot;line-39&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;a name=&quot;line-40&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;a name=&quot;line-41&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-42&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-43&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-44&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-45&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-46&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;n&quot;&gt;G1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;a name=&quot;line-47&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;n&quot;&gt;G2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;a name=&quot;line-48&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;a name=&quot;line-49&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-50&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-51&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;n&quot;&gt;edge&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-52&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-53&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;n&quot;&gt;G1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push_back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;a name=&quot;line-54&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;a name=&quot;line-55&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-56&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;n&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;back&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;a name=&quot;line-57&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;n&quot;&gt;back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-58&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;n&quot;&gt;dijkstra&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;G1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;a name=&quot;line-59&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-60&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-61&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;n&quot;&gt;edge&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-62&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;G1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-63&quot;&gt;&lt;/a&gt;                &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-64&quot;&gt;&lt;/a&gt;                &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;G1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-65&quot;&gt;&lt;/a&gt;                &lt;span class=&quot;n&quot;&gt;G2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;G1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push_back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;a name=&quot;line-66&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;a name=&quot;line-67&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;a name=&quot;line-68&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-69&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;n&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;go&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;go&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;a name=&quot;line-70&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;n&quot;&gt;go&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-71&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;n&quot;&gt;dijkstra&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;go&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;G2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;a name=&quot;line-72&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-73&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-74&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-75&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;n&quot;&gt;go&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;a name=&quot;line-76&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;go&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;go&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;a name=&quot;line-77&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;a name=&quot;line-78&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-79&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-80&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;a name=&quot;line-81&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-82&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-        <pubDate>Sat, 14 May 2016 00:00:00 +1000</pubDate>
-        <link>https://www.pwzxxm.com/cn/2016/poj-3268-silver-cow-party/</link>
-        <guid isPermaLink="true">https://www.pwzxxm.com/cn/2016/poj-3268-silver-cow-party/</guid>
-        
-        <category>POJ</category>
-        
-        <category>Graph</category>
-        
-        
-      </item>
-    
-      <item>
-        <title>POJ 3268 Silver Cow Party</title>
-        <description>&lt;p&gt;There are one cow from each \(N\) (\(1 \le N \le 1000\)) farms want to go to the number X farm to have a party, hurrah! One cow from each farm need to go to the party and go back. There are \(M\) (\(1 \le M \le 100,000\)) weighted (represents time) one-direction roads connects pairs of roads. Cows are smart though, they want to go via the shortest path. The question is, what is the longest time the cow will take.&lt;/p&gt;
-
-&lt;p&gt;Link: [&lt;a href=&quot;http://poj.org/problem?id=3268&quot;&gt;http://poj.org/problem?id=3268&lt;/a&gt;]&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;solution&quot;&gt;Solution&lt;/h3&gt;
-
-&lt;p&gt;First thought is Floyd algorithm, but look at the data for vertex &lt;code class=&quot;inline-code&quot;&gt;N&lt;/code&gt; is no larger than 1000. We know the complexity of Floyd is \(V^3\) which is 1e9 in this case. This will definitely not work.&lt;/p&gt;
-
-&lt;p&gt;It is easy to find out that if you consider each cow goes back to their farm after the party. It becomes that from one source what’s the shortest path to each vertex. Sounds familiar? We can use Dijkstra for this part since the complexity is \(O(\left|E\right|log\left|V\right|\)), worst case \(O(\left|E\right|+|V|log|V|)\).&lt;/p&gt;
-
-&lt;p&gt;But how can we find the shortest path when each cow goes for the party?&lt;/p&gt;
-
-&lt;p&gt;We can reverse each edge and do Dijkstra from the source X again and it will be our answer for this part.&lt;/p&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;code&quot;&gt;Code&lt;/h3&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;cpp&quot;&gt;&lt;a name=&quot;line-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;iostream&amp;gt;&lt;/span&gt;
-&lt;a name=&quot;line-2&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;queue&amp;gt;&lt;/span&gt;
-&lt;a name=&quot;line-3&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;algorithm&amp;gt;&lt;/span&gt;
-&lt;a name=&quot;line-4&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;cstring&amp;gt;&lt;/span&gt;
-&lt;a name=&quot;line-5&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;functional&amp;gt;&lt;/span&gt;
-&lt;a name=&quot;line-6&quot;&gt;&lt;/a&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;vector&amp;gt;&lt;/span&gt;
-&lt;a name=&quot;line-7&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;using&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-8&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;maxn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-9&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;0x3f3f3f3f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-10&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pair&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// first: shortest path, second: vertex num;&lt;/span&gt;
-&lt;a name=&quot;line-11&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-12&quot;&gt;&lt;/a&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;edge&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-13&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-14&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;a name=&quot;line-15&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-16&quot;&gt;&lt;/a&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;edge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;G1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;maxn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;a name=&quot;line-17&quot;&gt;&lt;/a&gt;&lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;edge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;G2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;maxn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;a name=&quot;line-18&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-19&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-20&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;go&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;maxn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;maxn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;a name=&quot;line-21&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-22&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;dijkstra&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;edge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-23&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;priority_queue&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vector&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;greater&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-24&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;a name=&quot;line-25&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-26&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;empty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-27&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;n&quot;&gt;P&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;a name=&quot;line-28&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;a name=&quot;line-29&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;second&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-30&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-31&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;first&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-32&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-33&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;n&quot;&gt;edge&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;G&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;a name=&quot;line-34&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-35&quot;&gt;&lt;/a&gt;                &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-36&quot;&gt;&lt;/a&gt;                &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;a name=&quot;line-37&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;a name=&quot;line-38&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;a name=&quot;line-39&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;a name=&quot;line-40&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;a name=&quot;line-41&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-42&quot;&gt;&lt;/a&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-43&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-44&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-45&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-46&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;n&quot;&gt;G1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;a name=&quot;line-47&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;n&quot;&gt;G2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;a name=&quot;line-48&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;a name=&quot;line-49&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-50&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-51&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;n&quot;&gt;edge&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-52&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-53&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;n&quot;&gt;G1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push_back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;a name=&quot;line-54&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;a name=&quot;line-55&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-56&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;n&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;back&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;a name=&quot;line-57&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;n&quot;&gt;back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-58&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;n&quot;&gt;dijkstra&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;G1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;a name=&quot;line-59&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-60&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-61&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;n&quot;&gt;edge&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-62&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;G1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-63&quot;&gt;&lt;/a&gt;                &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-64&quot;&gt;&lt;/a&gt;                &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;G1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cost&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-65&quot;&gt;&lt;/a&gt;                &lt;span class=&quot;n&quot;&gt;G2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;G1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push_back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;a name=&quot;line-66&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;a name=&quot;line-67&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;a name=&quot;line-68&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-69&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;n&quot;&gt;fill&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;go&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;go&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;INF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;a name=&quot;line-70&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;n&quot;&gt;go&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-71&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;n&quot;&gt;dijkstra&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;go&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;G2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;a name=&quot;line-72&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-73&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-74&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-&lt;a name=&quot;line-75&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;n&quot;&gt;go&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;back&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;a name=&quot;line-76&quot;&gt;&lt;/a&gt;            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;go&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;go&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;a name=&quot;line-77&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;a name=&quot;line-78&quot;&gt;&lt;/a&gt;
-&lt;a name=&quot;line-79&quot;&gt;&lt;/a&gt;        &lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-80&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;a name=&quot;line-81&quot;&gt;&lt;/a&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;a name=&quot;line-82&quot;&gt;&lt;/a&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-        <pubDate>Sat, 14 May 2016 00:00:00 +1000</pubDate>
-        <link>https://www.pwzxxm.com/2016/poj-3268-silver-cow-party/</link>
-        <guid isPermaLink="true">https://www.pwzxxm.com/2016/poj-3268-silver-cow-party/</guid>
-        
-        <category>POJ</category>
-        
-        <category>Graph</category>
         
         
       </item>
