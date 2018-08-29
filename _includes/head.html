@@ -22,7 +22,13 @@
     <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
     <link rel="alternate" href="{{ page.url_no_language | replace: 'index.html', '' | prepend: site.url }}" hreflang="en" />
+
+    {% if page.is_default_language %}
     <link rel="alternate" href="{{ site.url }}/cn{{ page.url | replace: 'index.html', '' }}" hreflang = "zh" />
+    {% else %}
+    <link rel="alternate" href="{{ site.url }}{{ page.url | replace: 'index.html', '' }}" hreflang = "zh" />
+    {% endif %}
+
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon" />
     <link rel="icon" href="/img/favicon.png" type="image/x-icon" />
