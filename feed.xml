@@ -5,13 +5,15 @@
     <description>Learning and sharing computer science ideas. Enjoy what you are passionated about.</description>
     <link>https://www.pwzxxm.com/</link>
     <atom:link href="https://www.pwzxxm.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 24 Sep 2019 22:22:26 +1000</pubDate>
-    <lastBuildDate>Tue, 24 Sep 2019 22:22:26 +1000</lastBuildDate>
+    <pubDate>Tue, 24 Sep 2019 22:27:56 +1000</pubDate>
+    <lastBuildDate>Tue, 24 Sep 2019 22:27:56 +1000</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
         <title>LeetCode Challenge Week 1 - Weekly Contest 155 and others</title>
-        <description>&lt;p&gt;&lt;br&gt;
+        <description>&lt;p&gt;This is the first week of LeetCode Challenges. It includes weekly contest 155 and other problems.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;
 &lt;div class=&quot;toc&quot;&gt;
 &lt;strong&gt;Contents&lt;/strong&gt;&lt;/p&gt;
 
@@ -205,7 +207,9 @@ Test cases like &lt;code class=&quot;inline-code&quot;&gt;+-123&lt;/code&gt; are
     
       <item>
         <title>LeetCode Challenge Week 1 - Weekly Contest 155 and others</title>
-        <description>&lt;p&gt;&lt;br&gt;
+        <description>&lt;p&gt;This is the first week of LeetCode Challenges. It includes weekly contest 155 and other problems.&lt;/p&gt;
+
+&lt;p&gt;&lt;br&gt;
 &lt;div class=&quot;toc&quot;&gt;
 &lt;strong&gt;Contents&lt;/strong&gt;&lt;/p&gt;
 
