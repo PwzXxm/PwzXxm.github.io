@@ -5,8 +5,8 @@
     <description>Learning and sharing computer science ideas. Enjoy what you are passionated about.</description>
     <link>https://www.pwzxxm.com/</link>
     <atom:link href="https://www.pwzxxm.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 24 Sep 2019 22:45:58 +1000</pubDate>
-    <lastBuildDate>Tue, 24 Sep 2019 22:45:58 +1000</lastBuildDate>
+    <pubDate>Tue, 24 Sep 2019 22:49:21 +1000</pubDate>
+    <lastBuildDate>Tue, 24 Sep 2019 22:49:21 +1000</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -18,17 +18,16 @@
 &lt;strong&gt;Contents&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;#weekly-contest-155&quot;&gt;Weekly Contest 155&lt;/a&gt;&lt;/p&gt;
+&lt;li&gt;&lt;a href=&quot;#weekly-contest-155&quot;&gt;Weekly Contest 155&lt;/a&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#1200-minimum-absolute-difference&quot;&gt;Minimum Absolute Difference&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#1201-ugly-number-iii&quot;&gt;Ugly Number III&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#1202-smallest-string-with-swaps&quot;&gt;Smallest String With Swaps&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;#string-to-integer&quot;&gt;String to Integer(atoi)&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#string-to-integer&quot;&gt;String to Integer(atoi)&lt;/a&gt;
+&lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;p&gt;&lt;/div&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;br&gt;&lt;/p&gt;
 
@@ -214,14 +213,14 @@ Test cases like &lt;code class=&quot;inline-code&quot;&gt;+-123&lt;/code&gt; are
 &lt;strong&gt;Contents&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;#weekly-contest-155&quot;&gt;Weekly Contest 155&lt;/a&gt;&lt;/p&gt;
+&lt;li&gt;&lt;a href=&quot;#weekly-contest-155&quot;&gt;Weekly Contest 155&lt;/a&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#1200-minimum-absolute-difference&quot;&gt;Minimum Absolute Difference&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#1201-ugly-number-iii&quot;&gt;Ugly Number III&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#1202-smallest-string-with-swaps&quot;&gt;Smallest String With Swaps&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;#string-to-integer&quot;&gt;String to Integer(atoi)&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#string-to-integer&quot;&gt;String to Integer(atoi)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;/div&gt;&lt;/p&gt;
