@@ -7,8 +7,8 @@
     <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <title>LeetCode Challenge Week 1 - Weekly Contest 155 and others | PwzXxm </title>
-    <meta name="description" content="This is the first week of LeetCode Challenges. It includes weekly contest 155 and other problems.">
+    <title>力扣挑战第一周 - 周赛 155 + 其他题目 | PwzXxm </title>
+    <meta name="description" content="这是力扣第一周挑战，包括周赛 155 和其他一些题目。">
 
     <!-- google analytics -->
     <script>
@@ -148,7 +148,7 @@
         <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">LeetCode Challenge Week 1 - Weekly Contest 155 and others</h1>
+        <h1 class="post-title" itemprop="name headline">力扣挑战第一周 - 周赛 155 + 其他题目</h1>
         <p class="post-meta">
             <time datetime="2019-09-19T00:00:00+10:00" itemprop="datePublished">
                 
@@ -159,7 +159,7 @@
     </header>
 
     <div class="post-content" itemprop="articleBody">
-        <p>This is the first week of LeetCode Challenges. It includes weekly contest 155 and other problems.</p>
+        <p>这是力扣第一周挑战，包括周赛 155 和其他一些题目。</p>
 
 <p><br>
 <div class="toc">
@@ -184,7 +184,7 @@
 
 <h3 id="1200-minimum-absolute-difference"><a href="https://leetcode.com/contest/weekly-contest-155/problems/minimum-absolute-difference/">1200. Minimum Absolute Difference</a></h3>
 
-<p>Brute force. Find the minimum absolute difference and then iterate the list again to output the pairs with minimum absolute difference.</p>
+<p>暴力。先遍历找到最小绝对差，接着再遍历一遍输出差值是该值的整数对。</p>
 <div class="highlight"><pre><code class="cpp"><a name="line-1"></a><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <a name="line-2"></a><span class="k">public</span><span class="o">:</span>
 <a name="line-3"></a>    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">minimumAbsDifference</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
@@ -214,9 +214,9 @@
 
 <h3 id="1201-ugly-number-iii"><a href="https://leetcode.com/contest/weekly-contest-155/problems/ugly-number-iii/">1201. Ugly Number III</a></h3>
 
-<p>Binary search + inclusion/exclusion principle. The number of integers that is divisible by <code class="inline-code">A</code> and <code class="inline-code">B</code> is equal to the number of integers divisible by <code class="inline-code">A</code> plus the number of integers divisible by <code class="inline-code">b</code> and minus the number of integers divisible by both <code class="inline-code">A</code> and <code class="inline-code">B</code>. The theory can be applied to the case when it is divisible by three numbers.</p>
+<p>二分 + 容斥。能被<code class="inline-code">A</code>或<code class="inline-code">B</code>整除的数的个数等于能被<code class="inline-code">A</code>整除的数的个数加上能被<code class="inline-code">B</code>整除的数的个数，减去能被<code class="inline-code">A</code>，<code class="inline-code">B</code>同时整除的数的个数。相同的理论也可以用于三个数。</p>
 
-<p>Also, the range of <code class="inline-code">n</code> is $[1, 2*10^9]$, the time complexity of binary search is $\log_2(2*10^9)$, which is totally feasible.</p>
+<p>这题<code class="inline-code">n</code>的范围是 $[1, 2*10^9]$，二分的时间复杂度为 $\log_2(2*10^9)$，所以是可行的。</p>
 <div class="highlight"><pre><code class="cpp"><a name="line-1"></a><span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">LL</span><span class="p">;</span>
 <a name="line-2"></a><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <a name="line-3"></a>    <span class="n">LL</span> <span class="n">gcd</span><span class="p">(</span><span class="n">LL</span> <span class="n">x</span><span class="p">,</span> <span class="n">LL</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
@@ -251,9 +251,9 @@
 
 <h3 id="1202-smallest-string-with-swaps"><a href="https://leetcode.com/contest/weekly-contest-155/problems/smallest-string-with-swaps/">1202. Smallest String With Swaps</a></h3>
 
-<p>Union find. We can find that if it is swappable for the letters at index <code class="inline-code">(1,2)</code> and <code class="inline-code">(2,5)</code>, the letters at <code class="inline-code">1, 2, 5</code> can be in arbitrary order.</p>
+<p>并查集。我们可以看出如果在<code class="inline-code">(1,2)</code>，<code class="inline-code">(2,5)</code>上的元素分别可以被交换，那它们三个元素可以被任意交换，组成任意排列。</p>
 
-<p>Having said that, we can use union find to group them together, then append the character with the smallest lexicographical order in each group. </p>
+<p>所以我们可以先把能互相交换的元素用并查集捆绑起来，最后构造答案时优先选用各个组里字典序最小的。</p>
 <div class="highlight"><pre><code class="cpp"><a name="line-1"></a><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
 <a name="line-2"></a>    <span class="k">const</span> <span class="k">static</span> <span class="kt">int</span> <span class="n">MAXN</span> <span class="o">=</span> <span class="mf">1e5</span><span class="o">+</span><span class="mi">5</span><span class="p">;</span>
 <a name="line-3"></a>    <span class="kt">int</span> <span class="n">par</span><span class="p">[</span><span class="n">MAXN</span><span class="p">];</span>
@@ -309,10 +309,9 @@
 
 <h2 id="leetcode-8-string-to-integer-atoi"><a href="https://leetcode.com/problems/string-to-integer-atoi/">LeetCode 8 - String to Integer (atoi)</a> <a name="string-to-integer"></a></h2>
 
-<p>This question is a bit odd.
-Test cases like <code class="inline-code">+-123</code> are not explicitly stated in the description of the problem.</p>
+<p>这题有点奇怪。像<code class="inline-code">+-123</code>这样的数据没有在题目解释中说明。</p>
 
-<p>The tricky part is to check the condition of overflow. Note that the last digits of <code class="inline-code">INT_MAX</code> is <code class="inline-code">7</code>, don&#39;t forget to check.</p>
+<p>需要注意的是检查溢出的条件。注意<code class="inline-code">int</code>的最后一位是<code class="inline-code">7</code>。</p>
 
 <h3 id="solution">Solution</h3>
 <div class="highlight"><pre><code class="cpp"><a name="line-1"></a><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
@@ -376,14 +375,14 @@ Test cases like <code class="inline-code">+-123</code> are not explicitly stated
         Facebook
     </a>
 
-    <a href="http://reddit.com/submit?url=https://www.pwzxxm.com/cn/2019/lc-8/&title=LeetCode Challenge Week 1 - Weekly Contest 155 and others">
+    <a href="http://reddit.com/submit?url=https://www.pwzxxm.com/cn/2019/lc-8/&title=力扣挑战第一周 - 周赛 155 + 其他题目">
         Reddit
     </a>
 
     <a href="javascript:void(function(){var d=document,e=encodeURIComponent,s1=window.getSelection,s2=d.getSelection,s3=d.selection,s=s1?s1():s2?s2():s3?s3.createRange().text:'',r='http://www.douban.com/recommend/?url='+e(d.location.href)+'&title='+e(d.title)+'&sel='+e(s)+'&v=1',w=450,h=330,x=function(){if(!window.open(r,'douban','toolbar=0,resizable=1,scrollbars=yes,status=1,width='+w+',height='+h+',left='+(screen.width-w)/2+',top='+(screen.height-h)/2))location.href=r+'&r=1'};if(/Firefox/.test(navigator.userAgent)){setTimeout(x,0)}else{x()}})()"><img src="http://img6.douban.com/pics/fw2douban_s.png" alt="推荐到豆瓣" />
     </a>
 
-    <a href="mailto:?subject=LeetCode Challenge Week 1 - Weekly Contest 155 and others&body=https://www.pwzxxm.com/cn/2019/lc-8/">
+    <a href="mailto:?subject=力扣挑战第一周 - 周赛 155 + 其他题目&body=https://www.pwzxxm.com/cn/2019/lc-8/">
         Email
     </a>
 </span>
