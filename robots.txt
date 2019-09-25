@@ -4,4 +4,5 @@ Allow: /
 # Disallow: /cn/tags
 # Disallow: /about
 # Disallow: /cn/about
+# Disallow: /cn/black/
 Sitemap: https://www.pwzxxm.com/sitemap.xml
