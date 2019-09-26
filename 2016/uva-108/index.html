@@ -191,7 +191,7 @@ Therefore we have <code class="inline-code">A = sum[k][l] - sum[i-1][l] - sum[j-
 
 <p><img src="/img/post/maximum_sum.png" alt="max_sum"></p>
 
-<p>There is a trick that store the array starts with <code class="inline-code">index 1</code> and initialize <code class="inline-code">0</code>. So you don&#39;t need to do boundary check.  Stuck at first, could not figure out why and then found that I used <code class="inline-code"><</code> instead of <code class="inline-code"><=</code> in the <code class="inline-code">for</code> loop. <img class='emoji' title=':boom:' alt=':boom:' src='https://assets.github.com/images/icons/emoji/unicode/1f4a5.png' height='20' width='20' align='absmiddle' /><img class='emoji' title=':boom:' alt=':boom:' src='https://assets.github.com/images/icons/emoji/unicode/1f4a5.png' height='20' width='20' align='absmiddle' /><img class='emoji' title=':boom:' alt=':boom:' src='https://assets.github.com/images/icons/emoji/unicode/1f4a5.png' height='20' width='20' align='absmiddle' /></p>
+<p>There is a trick that store the array starts with <code class="inline-code">index 1</code> and initialize <code class="inline-code">0</code>. So you don&#39;t need to do boundary check.  Stuck at first, could not figure out why and then found that I used <code class="inline-code"><</code> instead of <code class="inline-code"><=</code> in the <code class="inline-code">for</code> loop.</p>
 <div class="highlight"><pre><code class="cpp"><a name="line-1"></a><span class="cp">#include&lt;iostream&gt;</span>
 <a name="line-2"></a><span class="cp">#include&lt;algorithm&gt;</span>
 <a name="line-3"></a><span class="cp">#define maxn 100+5</span>

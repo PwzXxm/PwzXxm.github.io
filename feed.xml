@@ -5,8 +5,8 @@
     <description>Learning and sharing computer science ideas. Enjoy what you are passionated about.</description>
     <link>https://www.pwzxxm.com/</link>
     <atom:link href="https://www.pwzxxm.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 26 Sep 2019 19:13:55 +1000</pubDate>
-    <lastBuildDate>Thu, 26 Sep 2019 19:13:55 +1000</lastBuildDate>
+    <pubDate>Fri, 27 Sep 2019 00:23:09 +1000</pubDate>
+    <lastBuildDate>Fri, 27 Sep 2019 00:23:09 +1000</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -588,7 +588,7 @@ Test cases like &lt;code class=&quot;inline-code&quot;&gt;+-123&lt;/code&gt; are
         <title>CLDictP: A Command-Line Dictionary Tool</title>
         <description>&lt;p&gt;A command line dictionary written in Perl using Merriam-Webster APIs.&lt;/p&gt;
 
-&lt;p&gt;This is my first project using Perl. I feel it is tedious to type formatted definitions to &lt;a href=&quot;https://quizlet.com/&quot;&gt;Quizlet&lt;/a&gt;(A website which can make flashcards for you) and I&amp;#39;m too lazy to open browser and online dictionary pages. Why not combining these two? &lt;img class=&#39;emoji&#39; title=&#39;:wink:&#39; alt=&#39;:wink:&#39; src=&#39;https://assets.github.com/images/icons/emoji/unicode/1f609.png&#39; height=&#39;20&#39; width=&#39;20&#39; align=&#39;absmiddle&#39; /&gt;&lt;/p&gt;
+&lt;p&gt;This is my first project using Perl. I feel it is tedious to type formatted definitions to &lt;a href=&quot;https://quizlet.com/&quot;&gt;Quizlet&lt;/a&gt;(A website which can make flashcards for you) and I&amp;#39;m too lazy to open browser and online dictionary pages. Why not combining these two?&lt;/p&gt;
 
 &lt;p&gt;It uses following APIs:&lt;/p&gt;
 
@@ -652,7 +652,7 @@ Test cases like &lt;code class=&quot;inline-code&quot;&gt;+-123&lt;/code&gt; are
         <title>CLDictP: 命令行英文词典工具</title>
         <description>&lt;p&gt;CLDictP是一个用Perl，韦氏词典API写的命令行英文词典工具。&lt;/p&gt;
 
-&lt;p&gt;这是我第一个用Perl写的小项目。每次想用&lt;a href=&quot;https://quizlet.com/&quot;&gt;Quizlet&lt;/a&gt;做Flashcard（抽认卡？）来记单词的时候，因为想有的地方要加粗之类的，手动很麻烦。而且查单词的时候打开在线词典，太懒了，就想着写一个小工具吧 &lt;img class=&#39;emoji&#39; title=&#39;:wink:&#39; alt=&#39;:wink:&#39; src=&#39;https://assets.github.com/images/icons/emoji/unicode/1f609.png&#39; height=&#39;20&#39; width=&#39;20&#39; align=&#39;absmiddle&#39; /&gt;&lt;/p&gt;
+&lt;p&gt;这是我第一个用Perl写的小项目。每次想用&lt;a href=&quot;https://quizlet.com/&quot;&gt;Quizlet&lt;/a&gt;做Flashcard（抽认卡？）来记单词的时候，因为想有的地方要加粗之类的，手动很麻烦。而且查单词的时候打开在线词典，太懒了，就想着写一个小工具吧。&lt;/p&gt;
 
 &lt;p&gt;它使用了如下韦氏词典API:&lt;/p&gt;
 
@@ -1219,7 +1219,7 @@ Test cases like &lt;code class=&quot;inline-code&quot;&gt;+-123&lt;/code&gt; are
 &lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img class=&#39;emoji&#39; title=&#39;:warning:&#39; alt=&#39;:warning:&#39; src=&#39;https://assets.github.com/images/icons/emoji/unicode/26a0.png&#39; height=&#39;20&#39; width=&#39;20&#39; align=&#39;absmiddle&#39; /&gt;再努力想想&lt;/p&gt;
+&lt;p&gt;:warning:再努力想想&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;
@@ -1407,7 +1407,7 @@ Test cases like &lt;code class=&quot;inline-code&quot;&gt;+-123&lt;/code&gt; are
 &lt;br /&gt;
 &lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img class=&#39;emoji&#39; title=&#39;:warning:&#39; alt=&#39;:warning:&#39; src=&#39;https://assets.github.com/images/icons/emoji/unicode/26a0.png&#39; height=&#39;20&#39; width=&#39;20&#39; align=&#39;absmiddle&#39; /&gt;THINK HARDER&lt;/p&gt;
+&lt;p&gt;:warning:THINK HARDER&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;
 &lt;br /&gt;

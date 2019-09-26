@@ -191,7 +191,7 @@ $$
 
 <p><img src="/img/post/maximum_sum.png" alt="max_sum"></p>
 
-<p>有个小技巧， 保存数组从 <code class="inline-code">index 1</code> 开始，初始化数组为 <code class="inline-code">0</code> 。这样可以省略边界处理。一开始样例都调不出来，找不到原因。后来发现我在 <code class="inline-code">for</code> 循环里用了 <code class="inline-code"><</code> 而不是 <code class="inline-code"><=</code>. <img class='emoji' title=':boom:' alt=':boom:' src='https://assets.github.com/images/icons/emoji/unicode/1f4a5.png' height='20' width='20' align='absmiddle' /><img class='emoji' title=':boom:' alt=':boom:' src='https://assets.github.com/images/icons/emoji/unicode/1f4a5.png' height='20' width='20' align='absmiddle' /><img class='emoji' title=':boom:' alt=':boom:' src='https://assets.github.com/images/icons/emoji/unicode/1f4a5.png' height='20' width='20' align='absmiddle' /></p>
+<p>有个小技巧， 保存数组从 <code class="inline-code">index 1</code> 开始，初始化数组为 <code class="inline-code">0</code> 。这样可以省略边界处理。一开始样例都调不出来，找不到原因。后来发现我在 <code class="inline-code">for</code> 循环里用了 <code class="inline-code"><</code> 而不是 <code class="inline-code"><=</code>. </p>
 <div class="highlight"><pre><code class="cpp"><a name="line-1"></a><span class="cp">#include&lt;iostream&gt;</span>
 <a name="line-2"></a><span class="cp">#include&lt;algorithm&gt;</span>
 <a name="line-3"></a><span class="cp">#define maxn 100+5</span>
