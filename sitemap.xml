@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.pwzxxm.com/2019/lc-week-2/</loc>
+    <lastmod>2019-10-02T00:00:00+10:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.pwzxxm.com/cn/2019/lc-week-2/</loc>
+    <lastmod>2019-10-02T00:00:00+10:00</lastmod>
+  </url>
+  <url>
     <loc>https://www.pwzxxm.com/cn/2019/lc-week-1/</loc>
     <lastmod>2019-09-19T00:00:00+10:00</lastmod>
   </url>
@@ -9,11 +17,11 @@
     <lastmod>2019-09-19T00:00:00+10:00</lastmod>
   </url>
   <url>
-    <loc>https://www.pwzxxm.com/2018/cldictp/</loc>
+    <loc>https://www.pwzxxm.com/cn/2018/cldictp/</loc>
     <lastmod>2018-07-04T00:00:00+10:00</lastmod>
   </url>
   <url>
-    <loc>https://www.pwzxxm.com/cn/2018/cldictp/</loc>
+    <loc>https://www.pwzxxm.com/2018/cldictp/</loc>
     <lastmod>2018-07-04T00:00:00+10:00</lastmod>
   </url>
   <url>
@@ -49,11 +57,11 @@
     <lastmod>2016-08-31T00:00:00+10:00</lastmod>
   </url>
   <url>
-    <loc>https://www.pwzxxm.com/cn/2016/poj-3268-silver-cow-party/</loc>
+    <loc>https://www.pwzxxm.com/2016/poj-3268-silver-cow-party/</loc>
     <lastmod>2016-05-14T00:00:00+10:00</lastmod>
   </url>
   <url>
-    <loc>https://www.pwzxxm.com/2016/poj-3268-silver-cow-party/</loc>
+    <loc>https://www.pwzxxm.com/cn/2016/poj-3268-silver-cow-party/</loc>
     <lastmod>2016-05-14T00:00:00+10:00</lastmod>
   </url>
   <url>
@@ -172,6 +180,6 @@
   </url>
   <url>
     <loc>https://www.pwzxxm.com/google119f246be574c84f.html</loc>
-    <lastmod>2019-09-26T19:14:07+10:00</lastmod>
+    <lastmod>2019-09-27T00:23:21+10:00</lastmod>
   </url>
 </urlset>
