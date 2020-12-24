@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+# Disallow: /tags
+# Disallow: /cn/tags
+# Disallow: /about
+# Disallow: /cn/about
+# Disallow: /black/
+# Disallow: /cn/black/
+Sitemap: https://www.pwzxxm.com/sitemap.xml
