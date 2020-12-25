@@ -1,49 +1,158 @@
 baseURL = "https://www.pwzxxm.com/"
 # [en, zh-cn, fr, ...] determines default content language
 defaultContentLanguage = "en"
-# language code
-languageCode = "en"
-title = "PwzXxm"
 
 # Change the default theme to be use when building the site with Hugo
 theme = "LoveIt"
 
-[menu]
-  [[menu.main]]
-    identifier = "posts"
-    # you can add extra information before the name (HTML format is supported), such as icons
-    pre = ""
-    # you can add extra information after the name (HTML format is supported), such as icons
-    post = ""
-    name = "Posts"
-    url = "/posts/"
-    # title will be shown when you hover on this menu link
-    title = ""
+title = "PwzXxm"
+
+enableRobotsTXT = true
+enableEmoji = true
+
+[languages]
+  [languages.en]
     weight = 1
-  [[menu.main]]
-    identifier = "tags"
-    pre = ""
-    post = ""
-    name = "Tags"
-    url = "/tags/"
-    title = ""
+    # language code
+    languageCode = "en"
+    # language name
+    languageName = "English"
+    # whether to include Chinese/Japanese/Korean
+    hasCJKLanguage = false
+    # default amount of posts in each pages
+    paginate = 12
+    # [UA-XXXXXXXX-X] google analytics code
+    googleAnalytics = ""
+    # copyright description used only for seo schema
+    copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
+    # Menu config
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "posts"
+        # you can add extra information before the name (HTML format is supported), such as icons
+        pre = ""
+        # you can add extra information after the name (HTML format is supported), such as icons
+        post = ""
+        name = "Posts"
+        url = "/posts/"
+        # title will be shown when you hover on this menu link.
+        title = ""
+        weight = 1
+      [[languages.en.menu.main]]
+        identifier = "tags"
+        pre = ""
+        post = ""
+        name = "Tags"
+        url = "/tags/"
+        title = ""
+        weight = 2
+      [[languages.en.menu.main]]
+        identifier = "categories"
+        pre = ""
+        post = ""
+        name = "Categories"
+        url = "/categories/"
+        title = ""
+        weight = 3
+    [languages.en.params]
+      # site description
+      description = "Learning and sharing ideas. Enjoy what you are passionated about."
+      # site keywords
+      keywords = ["Blog", "Computer Science", "Security"]
+      # Home page config
+      [languages.en.params.home]
+        # amount of RSS pages
+        rss = 10
+        # Home page profile
+        [languages.en.params.home.profile]
+          enable = true
+          # Gravatar Email for preferred avatar in home page
+          gravatarEmail = ""
+          # URL of avatar shown in home page
+          avatarURL = "avatar.png"
+          #  title shown in home page (HTML format is supported)
+          title = "Patrick Wezhi Xu"
+          # subtitle shown in home page
+          subtitle = "A muggle tries to learn magic."
+          # whether to use typeit animation for subtitle
+          typeit = true
+          # whether to show social links
+          social = true
+          #  disclaimer (HTML format is supported)
+          disclaimer = ""
+
+  [languages.zh-cn]
     weight = 2
-  [[menu.main]]
-    identifier = "categories"
-    pre = ""
-    post = ""
-    name = "Categories"
-    url = "/categories/"
-    title = ""
-    weight = 3
+    # 网站语言, 仅在这里 CN 大写
+    languageCode = "zh-CN"
+    # 语言名称
+    languageName = "简体中文"
+    # 是否包括中日韩文字
+    hasCJKLanguage = true
+    # 默认每页列表显示的文章数目
+    paginate = 12
+    # [UA-XXXXXXXX-X] 谷歌分析代号
+    googleAnalytics = ""
+    # 版权描述，仅仅用于 SEO
+    copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
+    # 菜单配置
+    [languages.zh-cn.menu]
+      [[languages.zh-cn.menu.main]]
+        identifier = "posts"
+        # 你可以在名称 (允许 HTML 格式) 之前添加其他信息, 例如图标
+        pre = ""
+        # 你可以在名称 (允许 HTML 格式) 之后添加其他信息, 例如图标
+        post = ""
+        name = "所有文章"
+        url = "/posts/"
+        title = ""
+        weight = 1
+      [[languages.zh-cn.menu.main]]
+        identifier = "tags"
+        pre = ""
+        post = ""
+        name = "标签"
+        url = "/tags/"
+        title = ""
+        weight = 2
+      [[languages.zh-cn.menu.main]]
+        identifier = "categories"
+        pre = ""
+        post = ""
+        name = "分类"
+        url = "/categories/"
+        title = ""
+        weight = 3
+    [languages.zh-cn.params]
+      # 网站描述
+      description = "分享、学习各种想法。"
+      # 网站关键词
+      keywords = ["博客", "计算机", "安全"]
+      # 主页信息设置
+      [languages.zh-cn.params.home]
+        # RSS 文章数目
+        rss = 10
+        # 主页个人信息
+        [languages.zh-cn.params.home.profile]
+          enable = true
+          # Gravatar 邮箱，用于优先在主页显示的头像
+          gravatarEmail = ""
+          # 主页显示头像的 URL
+          avatarURL = "/avatar.png"
+          # 主页显示的网站标题 (支持 HTML 格式)
+          title = "Patrick Weizhi Xu"
+          # 主页显示的网站副标题
+          subtitle = "一个努力学习魔法的麻瓜"
+          # 是否为副标题显示打字机动画
+          typeit = true
+          # 是否显示社交账号
+          social = true
+          # 免责声明 (支持 HTML 格式)
+          disclaimer = ""
 
 [params]
   #  LoveIt theme version
   version = "0.2.X"
-  # site description
-  description = "Learning and sharing ideas. Enjoy what you are passionated about."
-  # site keywords
-  keywords = ["Blog", "Computer Science", "Security"]
   # site default theme ("light", "dark", "auto")
   defaultTheme = "auto"
   # public git repo url only then enableGitInfo is true
@@ -54,7 +163,7 @@ theme = "LoveIt"
   #  date format
   dateFormat = "Jan 2 2006"
   # website images for Open Graph and Twitter Cards
-  images = ["/images/favicon.png"]
+  images = [""]
 
   #  App icon config
   [params.app]
@@ -63,7 +172,7 @@ theme = "LoveIt"
     # whether to omit favicon resource links
     noFavicon = false
     # modern SVG favicon to use in place of older style .png and .ico files
-    svgFavicon = "/images/favicon.png"
+    svgFavicon = ""
     # Android browser theme color
     themeColor = "#ffffff"
     # Safari mask icon color
@@ -153,23 +262,6 @@ theme = "LoveIt"
   [params.home]
     #  amount of RSS pages
     rss = 10
-    # Home page profile
-    [params.home.profile]
-      enable = true
-      # Gravatar Email for preferred avatar in home page
-      gravatarEmail = ""
-      # URL of avatar shown in home page
-      avatarURL = "/images/avatar.png"
-      #  title shown in home page (HTML format is supported)
-      title = "Patrick Wezhi Xu"
-      # subtitle shown in home page
-      subtitle = "A muggle tries to learn magic."
-      # whether to use typeit animation for subtitle
-      typeit = true
-      # whether to show social links
-      social = true
-      #  disclaimer (HTML format is supported)
-      disclaimer = ""
     # Home page posts
     [params.home.posts]
       enable = true
@@ -224,7 +316,7 @@ theme = "LoveIt"
     Strava = ""
     Skype = ""
     Whatsapp = ""
-    Zhihu = ""
+    Zhihu = "PwzXxm"
     Douban = ""
     Angellist = ""
     Slidershare = ""
@@ -483,7 +575,7 @@ theme = "LoveIt"
     # located in "themes/LoveIt/assets/data/cdn/" directory
     # you can store your own data files in the same path under your project:
     # "assets/data/cdn/"
-    data = "jsdelivr.yml"
+    data = ""
 
   #  Compatibility config
   [params.compatibility]
@@ -525,7 +617,7 @@ theme = "LoveIt"
 [author]
   name = "PwzXxm"
   email = "patrick.weizhixu@hotmail.com"
-  link = ""
+  link = "https://www.pwzxxm.com"
 
 # Sitemap config
 [sitemap]
@@ -535,7 +627,7 @@ theme = "LoveIt"
 
 # Permalinks config
 [Permalinks]
-  posts = ":year/:month/:filename"
+  posts = ":filename"
 
 # Privacy config
 [privacy]
@@ -547,22 +639,21 @@ theme = "LoveIt"
   [privacy.youtube]
     privacyEnhanced = true
 
-# # Options to make output .md files
-# [mediaTypes]
-#   [mediaTypes."text/plain"]
-#     suffixes = ["md"]
-# 
-# # Options to make output .md files
-# [outputFormats.MarkDown]
-#   mediaType = "text/plain"
-#   isPlainText = true
-#   isHTML = false
-# 
-# # Options to make hugo output files
-# [outputs]
-#   
-#   home = ["HTML", "RSS", "JSON"]
-#   page = ["HTML", "MarkDown"]
-#   section = ["HTML", "RSS"]
-#   taxonomy = ["HTML", "RSS"]
-#   taxonomyTerm = ["HTML"]
+# Options to make output .md files
+[mediaTypes]
+  [mediaTypes."text/plain"]
+    suffixes = ["md"]
+
+# Options to make output .md files
+[outputFormats.MarkDown]
+  mediaType = "text/plain"
+  isPlainText = true
+  isHTML = false
+
+# Options to make hugo output files
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML", "MarkDown"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  taxonomyTerm = ["HTML"]
