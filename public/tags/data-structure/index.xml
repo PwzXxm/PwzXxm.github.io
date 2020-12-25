@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Data-Structure - Tag - PwzXxm</title>
+        <link>https://www.pwzxxm.com/tags/data-structure/</link>
+        <description>Data-Structure - Tag - PwzXxm</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>patrick.weizhixu@hotmail.com (PwzXxm)</managingEditor>
+            <webMaster>patrick.weizhixu@hotmail.com (PwzXxm)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="https://www.pwzxxm.com/tags/data-structure/" rel="self" type="application/rss+xml" /><item>
+    <title>Binary Tree</title>
+    <link>https://www.pwzxxm.com/binary-tree/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://www.pwzxxm.com/binary-tree/</guid>
+    <description><![CDATA[Binary tree is called so because of its shape. It&rsquo;s like a tree, it have leaves and a root. In computer science, the &ldquo;tree&rdquo; is usually upside down, the root at the top and leaves grow below it. It is binary so it every node only can have 0, 1 or 2 leaves.
+**Contents**  Terminologies  Leaf Node Inner Node Height and Depth   Types  Full Binary Tree Complete Binary Tree   Implementation  Array Struct or Class   Tree Traversal  Depth First Search (DFS) Breadth First Search (BFS)      Terminologies Leaf Node The node do NOT have any child nodes.]]></description>
+</item></channel>
+</rss>
