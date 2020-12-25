@@ -1,0 +1,6 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Perl - Tag - PwzXxm</title><link>https://www.pwzxxm.com/tags/perl/</link><description>Perl - Tag - PwzXxm</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>patrick.weizhixu@hotmail.com (PwzXxm)</managingEditor><webMaster>patrick.weizhixu@hotmail.com (PwzXxm)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 04 Jul 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.pwzxxm.com/tags/perl/" rel="self" type="application/rss+xml"/><item><title>CLDictP: A Command-Line Dictionary Tool</title><link>https://www.pwzxxm.com/cldictp/</link><pubDate>Wed, 04 Jul 2018 00:00:00 +0000</pubDate><author>Author</author><guid>https://www.pwzxxm.com/cldictp/</guid><description>A command line dictionary written in Perl using Merriam-Webster APIs.
+This is my first project using Perl. I feel it is tedious to type formatted definitions to Quizlet(A website which can make flashcards for you) and I&amp;rsquo;m too lazy to open browser and online dictionary pages. Why not combining these two?
+It uses following APIs:
+Merriam-Webster Learner
+Merriam-Webster Collegiate
+For each entry, it contains:</description></item></channel></rss>

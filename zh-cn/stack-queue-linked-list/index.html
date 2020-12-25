@@ -1,0 +1,249 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>栈，队列和链表 - PwzXxm</title><meta name=Description content="分享、学习各种想法。"><meta property="og:title" content="栈，队列和链表"><meta property="og:description" content="栈，队列和链表是最基础的数据结构，它们出现在很多生活场景中，比如说堆起来的集装箱，排队坐过山车，人体蜈蚣（如果不知道就别去搜了，啦啦啦） 栈 简"><meta property="og:type" content="article"><meta property="og:url" content="https://www.pwzxxm.com/zh-cn/stack-queue-linked-list/"><meta property="og:image" content="https://www.pwzxxm.com/"><meta property="article:published_time" content="2015-12-25T00:00:00+00:00"><meta property="article:modified_time" content="2015-12-25T00:00:00+00:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://www.pwzxxm.com/"><meta name=twitter:title content="栈，队列和链表"><meta name=twitter:description content="栈，队列和链表是最基础的数据结构，它们出现在很多生活场景中，比如说堆起来的集装箱，排队坐过山车，人体蜈蚣（如果不知道就别去搜了，啦啦啦） 栈 简"><meta name=application-name content="PwzXxm"><meta name=apple-mobile-web-app-title content="PwzXxm"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://www.pwzxxm.com/zh-cn/stack-queue-linked-list/><link rel=prev href=https://www.pwzxxm.com/zh-cn/building-blog-jekyll/><link rel=next href=https://www.pwzxxm.com/zh-cn/binary-tree/><link rel=stylesheet href=/lib/normalize/normalize.min.1d6e6517c44074bf1c692657d249d106a5e98bb9db25f7773715b24eda7aa575354611c095c23092aa17916f1b5be527.css integrity=sha384-HW5lF8RAdL8caSZX0knRBqXpi7nbJfd3NxWyTtp6pXU1RhHAlcIwkqoXkW8bW+Un><link rel=stylesheet href=/css/style.min.ce9a11dfb32280457e47b0567d950abc6e0826f6e174d089b868eaeaab21ae6ec9a141d3705aa73c0fbe720fbd6b5da2.css integrity=sha384-zpoR37MigEV+R7BWfZUKvG4IJvbhdNCJuGjq6qshrm7JoUHTcFqnPA++cg+9a12i><link rel=stylesheet href=/lib/fontawesome-free/all.min.05f69de822c29277dc9685c53b2167960b4436bca1ae96427b6f514e27ca122c57419dfc5a1795fa2ffa6164b3933dd5.css integrity=sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V><link rel=stylesheet href=/lib/animate/animate.min.eff4e5d24eb9393bc34afb6eabb68f47b69ad1a0b3ed92aa1ec6cc44bc61cee7a5756fbd319a427bd2c1d5ce5406e352.css integrity=sha384-7/Tl0k65OTvDSvtuq7aPR7aa0aCz7ZKqHsbMRLxhzueldW+9MZpCe9LB1c5UBuNS><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"栈，队列和链表","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/www.pwzxxm.com\/zh-cn\/stack-queue-linked-list\/"},"genre":"posts","keywords":"Data-Structure","wordcount":1696,"url":"https:\/\/www.pwzxxm.com\/zh-cn\/stack-queue-linked-list\/","datePublished":"2015-12-25T00:00:00+00:00","dateModified":"2015-12-25T00:00:00+00:00","license":"This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher":{"@type":"Organization","name":"PwzXxm"},"author":{"@type":"Person","name":"PwzXxm"},"description":""}</script></head><body header-desktop=fixed header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':('auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark'))&&document.body.setAttribute('theme','dark');</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/zh-cn/ title=PwzXxm>PwzXxm</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/zh-cn/posts/>所有文章 </a><a class=menu-item href=/zh-cn/tags/>标签 </a><span class="menu-item delimiter"></span><a href=javascript:void(0); class="menu-item language" title=选择语言>简体中文<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select id=language-select-desktop onchange="location=this.value;"><option value=/stack-queue-linked-list/>English</option><option value=/zh-cn/stack-queue-linked-list/ selected>简体中文</option></select>
+</a><span class="menu-item search" id=search-desktop><input type=text placeholder=搜索文章标题或内容... id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=搜索><i class="fas fa-search fa-fw"></i></a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=清空><i class="fas fa-times-circle fa-fw"></i></a><span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span></span><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/zh-cn/ title=PwzXxm>PwzXxm</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder=搜索文章标题或内容... id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=搜索><i class="fas fa-search fa-fw"></i></a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=清空><i class="fas fa-times-circle fa-fw"></i></a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>取消</a></div><a class=menu-item href=/zh-cn/posts/>所有文章</a><a class=menu-item href=/zh-cn/tags/>标签</a><a href=javascript:void(0); class="menu-item theme-switch" title=切换主题>
+<i class="fas fa-adjust fa-fw"></i></a><a href=javascript:void(0); class=menu-item title=选择语言>简体中文<i class="fas fa-chevron-right fa-fw"></i>
+<select class=language-select onchange="location=this.value;"><option value=/stack-queue-linked-list/>English</option><option value=/zh-cn/stack-queue-linked-list/ selected>简体中文</option></select></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>目录</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">栈，队列和链表</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://www.pwzxxm.com title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>PwzXxm</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Dec 25 2015">Dec 25 2015</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 1696 字&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 4 分钟&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>目录</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#栈>栈</a><ul><li><a href=#简介>简介</a></li><li><a href=#数组实现>数组实现</a></li><li><a href=#链表实现>链表实现</a></li><li><a href=#c-stl---stack>C++ STL - stack</a></li></ul></li><li><a href=#队列>队列</a><ul><li><a href=#简介-1>简介</a></li><li><a href=#链表实现-1>链表实现</a></li><li><a href=#c-stl---queue>C++ STL - queue</a></li></ul></li><li><a href=#链表>链表</a><ul><li><a href=#简介-2>简介</a></li><li><a href=#c-struct-实现>C++ struct 实现</a></li></ul></li></ul></nav></div></div><div class=content id=content><p>栈，队列和链表是最基础的数据结构，它们出现在很多生活场景中，比如说堆起来的集装箱，排队坐过山车，人体蜈蚣（如果不知道就别去搜了，啦啦啦）</p><h2 id=栈>栈</h2><h3 id=简介>简介</h3><p>栈就像堆起来的集装箱，或者是一堆书，每次加入新的元素只能在旧的之上，每次移出元素只能拿出最新加入的，所以有“<strong>后进先出</strong>”的原则(后进去的元素先出来)。</p><p>常见操作有:</p><table><thead><tr><th style=text-align:center>进栈</th><th style=text-align:center>出栈</th></tr></thead><tbody><tr><td style=text-align:center><img class=lazyload src=/svg/loading.min.svg data-src=stack_push.gif data-srcset="/zh-cn/stack-queue-linked-list/stack_push.gif, stack_push.gif 1.5x, /zh-cn/stack-queue-linked-list/stack_push.gif 2x" data-sizes=auto alt=/zh-cn/stack-queue-linked-list/stack_push.gif title=stack_push></td><td style=text-align:center><img class=lazyload src=/svg/loading.min.svg data-src=stack_pop.gif data-srcset="/zh-cn/stack-queue-linked-list/stack_pop.gif, stack_pop.gif 1.5x, /zh-cn/stack-queue-linked-list/stack_pop.gif 2x" data-sizes=auto alt=/zh-cn/stack-queue-linked-list/stack_pop.gif title=stack_pop></td></tr></tbody></table><h3 id=数组实现>数组实现</h3><p>一般我们用数组的第一个元素<code>array[0]</code>作为栈底，创建一个变量<code>max_index</code>来存储栈的最顶部元素在数组中的下标，也就是数组最后一个栈中元素的下标。</p><p>进栈：<code>max_index += 1</code>，然后在该下标插入进栈的元素</p><p>出栈：初始化在<code>max_index</code>下标的元素，<code>max_index -= 1</code></p><h3 id=链表实现>链表实现</h3><p>单向链表，用<code>head</code>记录栈头，每个元素都有<code>next</code>指向下一个元素，栈顶的<code>next</code>指向<code>NULL</code>，<code>size</code>纪录链表大小（栈的大小）。</p><p>进栈：让在栈顶（链表尾部）元素的<code>next</code>指向新的元素，新元素的<code>next</code>为<code>null</code>，<code>size += 1</code></p><p>出栈：初始化栈顶（链表尾部）元素，移动到上一个元素，设置<code>next</code>为<code>null</code>, <code>size -= 1</code></p><h3 id=c-stl---stack>C++ STL - stack</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cpp data-lang=cpp><span class=cp>#include</span><span class=cpf>&lt;iostream&gt;</span><span class=cp>
+</span><span class=cp>#include</span><span class=cpf>&lt;stack&gt;</span><span class=cp>
+</span><span class=cp></span><span class=k>using</span> <span class=k>namespace</span> <span class=n>std</span><span class=p>;</span>
+
+<span class=kt>int</span> <span class=nf>main</span><span class=p>(</span><span class=kt>void</span><span class=p>)</span> <span class=p>{</span>
+    <span class=cm>/* 创建一个栈，名为stk，元素类型为int */</span>
+	<span class=n>stack</span> <span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;</span> <span class=n>stk</span><span class=p>;</span>
+
+    <span class=cm>/* 使一个元素进栈 */</span>
+	<span class=n>stk</span><span class=p>.</span><span class=n>push</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>	<span class=c1>// 1
+</span><span class=c1></span>	<span class=n>stk</span><span class=p>.</span><span class=n>push</span><span class=p>(</span><span class=mi>2</span><span class=p>);</span>	<span class=c1>// 1 2
+</span><span class=c1></span>
+	<span class=cm>/*
+</span><span class=cm>	 * cout &lt;&lt; stk.push(3) &lt;&lt; endl;
+</span><span class=cm>	 * 错误！！ stk.push(3) 返回void类型
+</span><span class=cm>	 */</span>
+
+    <span class=cm>/* top() 返回栈最顶部的元素，且不改变栈 */</span>
+	<span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>stk</span><span class=p>.</span><span class=n>top</span><span class=p>()</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span> <span class=c1>// print out 2
+</span><span class=c1></span>
+	<span class=n>stk</span><span class=p>.</span><span class=n>push</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
+
+    <span class=cm>/* 返回栈的大小，有多少元素 */</span>
+	<span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>stk</span><span class=p>.</span><span class=n>size</span><span class=p>()</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span> <span class=c1>// print out 3
+</span><span class=c1></span>
+    <span class=cm>/* 使栈顶部的元素出栈，返回void类型 */</span>
+	<span class=n>stk</span><span class=p>.</span><span class=n>pop</span><span class=p>();</span>
+	<span class=n>stk</span><span class=p>.</span><span class=n>pop</span><span class=p>();</span>
+
+	<span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>stk</span><span class=p>.</span><span class=n>top</span><span class=p>()</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span> <span class=c1>// print out 1
+</span><span class=c1></span>
+    <span class=cm>/* 查看栈是否为空，如果为空，返回真(1) */</span>
+	<span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>stk</span><span class=p>.</span><span class=n>empty</span><span class=p>()</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span>
+
+	<span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></td></tr></table></div></div><h2 id=队列>队列</h2><h3 id=简介-1>简介</h3><p>队列就像排队一样，在队尾加入新的元素，在队首出队。所以队列有着“<strong>先进先出</strong>”的原则。</p><p>常见操作有：</p><table><thead><tr><th style=text-align:center>入队</th><th style=text-align:center>出队</th></tr></thead><tbody><tr><td style=text-align:center><img class=lazyload src=/svg/loading.min.svg data-src=queue_enqueue.gif data-srcset="/zh-cn/stack-queue-linked-list/queue_enqueue.gif, queue_enqueue.gif 1.5x, /zh-cn/stack-queue-linked-list/queue_enqueue.gif 2x" data-sizes=auto alt=/zh-cn/stack-queue-linked-list/queue_enqueue.gif title=queue_enqueue></td><td style=text-align:center><img class=lazyload src=/svg/loading.min.svg data-src=queue_dequeue.gif data-srcset="/zh-cn/stack-queue-linked-list/queue_dequeue.gif, queue_dequeue.gif 1.5x, /zh-cn/stack-queue-linked-list/queue_dequeue.gif 2x" data-sizes=auto alt=/zh-cn/stack-queue-linked-list/queue_dequeue.gif title=queue_dequeue></td></tr></tbody></table><h3 id=链表实现-1>链表实现</h3><p>使用单向链表，用<code>head</code>记录队列头，每个元素都有<code>next</code>指向下一个元素，队尾元素的<code>next</code>指向<code>NULL</code>，<code>size</code>纪录队列的长度。</p><p>入队：在队尾（链表尾部）插入元素，即旧队尾的<code>next</code>指向新元素，新元素的<code>next</code>指向<code>null</code>，<code>size += 1</code></p><p>出队：通过<code>next</code>移动到第二个元素，<code>head</code>指向第二个元素，初始化原队首（链表头部），<code>size -= 1</code></p><h3 id=c-stl---queue>C++ STL - queue</h3><p>基本用法和栈相同，</p><div class="details admonition info open"><div class="details-summary admonition-title"><i class="icon fas fa-info-circle fa-fw"></i>信息<i class="details-icon fas fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content>队列分别使用<code>front</code>和<code>back</code>来返回队首和队尾元素。</div></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cpp data-lang=cpp><span class=cp>#include</span><span class=cpf>&lt;iostream&gt;</span><span class=cp>
+</span><span class=cp>#include</span><span class=cpf>&lt;queue&gt;</span><span class=cp>
+</span><span class=cp></span><span class=k>using</span> <span class=k>namespace</span> <span class=n>std</span><span class=p>;</span>
+
+<span class=kt>int</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+	<span class=n>queue</span><span class=o>&lt;</span><span class=kt>int</span><span class=o>&gt;</span> <span class=n>q</span><span class=p>;</span>
+	<span class=n>q</span><span class=p>.</span><span class=n>push</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span> <span class=c1>// q: 1
+</span><span class=c1></span>	<span class=n>q</span><span class=p>.</span><span class=n>push</span><span class=p>(</span><span class=mi>2</span><span class=p>);</span> <span class=c1>// q: 1 2
+</span><span class=c1></span>
+	<span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>q</span><span class=p>.</span><span class=n>front</span><span class=p>()</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span> <span class=c1>// 1
+</span><span class=c1></span>	<span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>q</span><span class=p>.</span><span class=n>back</span><span class=p>()</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span> <span class=c1>// 2
+</span><span class=c1></span>
+	<span class=n>q</span><span class=p>.</span><span class=n>push</span><span class=p>(</span><span class=mi>3</span><span class=p>);</span> <span class=c1>// q: 1 2 3
+</span><span class=c1></span>	<span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>q</span><span class=p>.</span><span class=n>size</span><span class=p>()</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span> <span class=c1>// 3
+</span><span class=c1></span>	<span class=n>q</span><span class=p>.</span><span class=n>pop</span><span class=p>();</span> <span class=c1>// q: 2 3
+</span><span class=c1></span>	<span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>q</span><span class=p>.</span><span class=n>front</span><span class=p>()</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span> <span class=c1>// 2
+</span><span class=c1></span>	<span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>q</span><span class=p>.</span><span class=n>back</span><span class=p>()</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span> <span class=c1>// 3
+</span><span class=c1></span>	<span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>q</span><span class=p>.</span><span class=n>empty</span><span class=p>()</span> <span class=o>&lt;&lt;</span> <span class=n>endl</span><span class=p>;</span> <span class=c1>// 0
+</span><span class=c1></span>
+	<span class=k>return</span> <span class=mi>0</span><span class=p>;</span>
+<span class=p>}</span>
+</code></pre></td></tr></table></div></div><p>###<a name=q-priority-queue></a> 优先队列
+优先队列类似于队列，只不过每个元素都有一个优先级，出队的元素不一定是最先入队的元素，而是当前队列中优先级最高的元素。就像有人有VIP卡的可以走专属通道，有人可以插队一样，对每个元素来说并不公平，叹气。</p><p>在C++ STL中，如果把<code>int</code>作为优先队列的类型， 默认情况下如果是整数的优先队列，那整数越小，则优先级越低。如果想整数越大，优先级越低，可以用<code>greater&lt;int></code>, 完整声明<code>std::priority_queue&lt;int, std::vector&lt;int>, std::greater&lt;int> q_name</code>。如有其它需求，可自定义<code>cmp</code>函数来完成优先级的比较。</p><div class="details admonition warning open"><div class="details-summary admonition-title"><i class="icon fas fa-exclamation-triangle fa-fw"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content>优先队列取队首元素不再是用队列的<code>front()</code>，而是用<code>top()</code>。</div></div></div><h2 id=链表>链表</h2><h3 id=简介-2>简介</h3><p>链表像一个个回形针串起来的链子。链表有多种结构：单向链表，双向链表，循环链表等等。主要介绍单向链表，其他类型脑补脑补ok的。</p><p>常见操作有：</p><ul><li>添加节点</li><li>销毁节点</li><li>下一节点</li></ul><p><img class=lazyload src=/svg/loading.min.svg data-src=link_in.gif data-srcset="/zh-cn/stack-queue-linked-list/link_in.gif, link_in.gif 1.5x, /zh-cn/stack-queue-linked-list/link_in.gif 2x" data-sizes=auto alt=/zh-cn/stack-queue-linked-list/link_in.gif title=link_in></p><h3 id=c-struct-实现>C++ struct 实现</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-cpp data-lang=cpp><span class=cp>#include</span><span class=cpf>&lt;iostream&gt;</span><span class=cp>
+</span><span class=cp></span>
+<span class=k>struct</span> <span class=nc>Node</span> <span class=p>{</span>
+	<span class=kt>int</span> <span class=n>value</span><span class=p>;</span>
+	<span class=n>Node</span> <span class=o>*</span><span class=n>next</span><span class=p>;</span>
+<span class=p>};</span>
+
+<span class=kt>int</span> <span class=nf>main</span><span class=p>()</span> <span class=p>{</span>
+	<span class=n>Node</span> <span class=o>*</span><span class=n>root</span><span class=p>;</span>
+	<span class=n>Node</span> <span class=o>*</span><span class=n>cur</span><span class=p>;</span>
+
+	<span class=cm>/* 初始化链表 */</span>
+	<span class=n>root</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Node</span><span class=p>;</span>
+	<span class=n>root</span><span class=o>-&gt;</span><span class=n>value</span> <span class=o>=</span> <span class=mi>1</span><span class=p>;</span>
+	<span class=n>root</span><span class=o>-&gt;</span><span class=n>next</span> <span class=o>=</span> <span class=nb>NULL</span><span class=p>;</span>
+	<span class=n>cur</span> <span class=o>=</span> <span class=n>root</span><span class=p>;</span>
+
+	<span class=cm>/* 在链表尾部加入节点 */</span>
+	<span class=n>cur</span> <span class=o>=</span> <span class=n>cur</span><span class=o>-&gt;</span><span class=n>next</span><span class=p>;</span>
+	<span class=n>cur</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Node</span><span class=p>;</span>
+	<span class=n>cur</span><span class=o>-&gt;</span><span class=n>value</span> <span class=o>=</span> <span class=mi>2</span><span class=p>;</span>
+	<span class=n>cur</span><span class=o>-&gt;</span><span class=n>next</span> <span class=o>=</span> <span class=nb>NULL</span><span class=p>;</span> <span class=c1>// linked list: 1 2
+</span><span class=c1></span>
+	<span class=cm>/* 在节点中间 */</span>
+	<span class=n>Node</span> <span class=o>*</span><span class=n>second</span> <span class=o>=</span> <span class=k>new</span> <span class=n>Node</span><span class=p>;</span>
+	<span class=n>second</span><span class=o>-&gt;</span><span class=n>value</span> <span class=o>=</span> <span class=mi>3</span><span class=p>;</span>
+	<span class=n>second</span><span class=o>-&gt;</span><span class=n>next</span> <span class=o>=</span> <span class=n>cur</span><span class=p>;</span>
+	<span class=n>root</span><span class=o>-&gt;</span><span class=n>next</span> <span class=o>=</span> <span class=n>second</span><span class=p>;</span> <span class=c1>// linked list: 1 3 2
+</span><span class=c1></span>
+	<span class=cm>/* 知道数据，寻找节点 */</span>
+	<span class=n>cur</span> <span class=o>=</span> <span class=n>root</span><span class=p>;</span>
+	<span class=k>while</span> <span class=p>(</span><span class=n>cur</span><span class=o>-&gt;</span><span class=n>value</span> <span class=o>!=</span> <span class=mi>3</span><span class=p>)</span> <span class=p>{</span>
+		<span class=n>cur</span> <span class=o>=</span> <span class=n>cur</span><span class=o>-&gt;</span><span class=n>next</span><span class=p>;</span>
+	<span class=p>}</span>
+	<span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>cur</span><span class=o>-&gt;</span><span class=n>value</span> <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span>  <span class=c1>// 3
+</span><span class=c1></span>
+	<span class=cm>/* 遍历到链表尾部 */</span>
+	<span class=k>while</span> <span class=p>(</span><span class=n>cur</span><span class=o>-&gt;</span><span class=n>next</span> <span class=o>!=</span> <span class=nb>NULL</span><span class=p>)</span> <span class=p>{</span>
+		<span class=n>cur</span> <span class=o>=</span> <span class=n>cur</span><span class=o>-&gt;</span><span class=n>next</span><span class=p>;</span>
+	<span class=p>}</span>
+	<span class=n>std</span><span class=o>::</span><span class=n>cout</span> <span class=o>&lt;&lt;</span> <span class=n>cur</span><span class=o>-&gt;</span><span class=n>value</span> <span class=o>&lt;&lt;</span> <span class=n>std</span><span class=o>::</span><span class=n>endl</span><span class=p>;</span> <span class=c1>// 2
+</span><span class=c1></span>
+	<span class=cm>/* 删除节点 */</span>
+	<span class=n>Node</span> <span class=o>*</span><span class=n>last</span><span class=p>;</span>
+	<span class=n>cur</span> <span class=o>=</span> <span class=n>root</span><span class=p>;</span>
+	<span class=k>if</span> <span class=p>(</span><span class=n>cur</span> <span class=o>==</span> <span class=nb>NULL</span><span class=p>)</span>
+		<span class=p>;</span> <span class=c1>// empty list
+</span><span class=c1></span>	<span class=k>if</span> <span class=p>(</span><span class=n>cur</span><span class=o>-&gt;</span><span class=n>value</span> <span class=o>==</span> <span class=mi>1</span><span class=p>)</span> <span class=p>{</span> <span class=c1>// if we want to delete the first node
+</span><span class=c1></span>		<span class=n>root</span> <span class=o>=</span> <span class=n>cur</span><span class=o>-&gt;</span><span class=n>next</span><span class=p>;</span>
+		<span class=k>delete</span> <span class=n>cur</span><span class=p>;</span>
+	<span class=p>}</span> <span class=k>else</span> <span class=p>{</span>
+		<span class=k>while</span> <span class=p>(</span><span class=n>cur</span><span class=o>-&gt;</span><span class=n>value</span> <span class=o>!=</span> <span class=mi>1</span> <span class=o>&amp;&amp;</span> <span class=n>cur</span><span class=o>-&gt;</span><span class=n>next</span> <span class=o>!=</span> <span class=nb>NULL</span><span class=p>)</span> <span class=p>{</span>
+			<span class=n>last</span> <span class=o>=</span> <span class=n>cur</span><span class=p>;</span>
+			<span class=n>cur</span> <span class=o>=</span> <span class=n>cur</span><span class=o>-&gt;</span><span class=n>next</span><span class=p>;</span>
+		<span class=p>}</span>
+
+		<span class=k>if</span> <span class=p>(</span><span class=n>cur</span><span class=o>-&gt;</span><span class=n>value</span> <span class=o>==</span> <span class=mi>1</span><span class=p>)</span> <span class=p>{</span>
+			<span class=n>last</span><span class=o>-&gt;</span><span class=n>next</span> <span class=o>=</span> <span class=n>cur</span><span class=o>-&gt;</span><span class=n>next</span><span class=p>;</span>
+			<span class=k>delete</span> <span class=n>cur</span><span class=p>;</span>
+		<span class=p>}</span>
+	<span class=p>}</span>
+<span class=p>}</span>
+</code></pre></td></tr></table></div></div></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新于 Dec 25 2015</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md><span><a class=link-to-markdown href=/zh-cn/stack-queue-linked-list/index.md target=_blank>阅读原始文档</a></span></div><div class=post-info-share><span><a href=javascript:void(0); title="分享到 Twitter" data-sharer=twitter data-url=https://www.pwzxxm.com/zh-cn/stack-queue-linked-list/ data-title=栈，队列和链表 data-hashtags=Data-Structure><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="分享到 Facebook" data-sharer=facebook data-url=https://www.pwzxxm.com/zh-cn/stack-queue-linked-list/ data-hashtag=Data-Structure><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="分享到 Linkedin" data-sharer=linkedin data-url=https://www.pwzxxm.com/zh-cn/stack-queue-linked-list/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="分享到 WhatsApp" data-sharer=whatsapp data-url=https://www.pwzxxm.com/zh-cn/stack-queue-linked-list/ data-title=栈，队列和链表 data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="分享到 Line" data-sharer=line data-url=https://www.pwzxxm.com/zh-cn/stack-queue-linked-list/ data-title=栈，队列和链表><i data-svg-src=/lib/simple-icons/icons/line.min.svg></i></a><a href=javascript:void(0); title="分享到 微博" data-sharer=weibo data-url=https://www.pwzxxm.com/zh-cn/stack-queue-linked-list/ data-title=栈，队列和链表 data-ralateuid=5606826929><i class="fab fa-weibo fa-fw"></i></a><a href=javascript:void(0); title="分享到 Blogger" data-sharer=blogger data-url=https://www.pwzxxm.com/zh-cn/stack-queue-linked-list/ data-title=栈，队列和链表 data-description><i class="fab fa-blogger fa-fw"></i></a><a href=javascript:void(0); title="分享到 Evernote" data-sharer=evernote data-url=https://www.pwzxxm.com/zh-cn/stack-queue-linked-list/ data-title=栈，队列和链表><i class="fab fa-evernote fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/zh-cn/tags/data-structure/>数据结构</a></section><section><span><a href=javascript:void(0); onclick=window.history.back();>返回</a></span>&nbsp;|&nbsp;<span><a href=/zh-cn/>主页</a></span></section></div><div class=post-nav><a href=/zh-cn/building-blog-jekyll/ class=prev rel=prev title="使用Jekyll＋Github Pages搭建博客"><i class="fas fa-angle-left fa-fw"></i>使用Jekyll＋Github Pages搭建博客</a>
+<a href=/zh-cn/binary-tree/ class=next rel=next title=二叉树>二叉树<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=disqus_thread class=comment></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://disqus.com/?ref_noscript>Disqus</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>ʕ •ᴥ•ʔ</div><div class=footer-line>由 <a href=https://gohugo.io/ target=_blank rel="noopener noreffer" title="Hugo 0.79.1">Hugo</a> 强力驱动 | 主题 - <a href=https://github.com/dillonzq/LoveIt target=_blank rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i>LoveIt</a></div><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2015 - 2020</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://www.pwzxxm.com target=_blank>PwzXxm</a></span>&nbsp;|&nbsp;<span class=license><a rel="license external nofollow noopener noreffer" href=https://creativecommons.org/licenses/by-nc/4.0/ target=_blank>CC BY-NC 4.0</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title=回到顶部><i class="fas fa-arrow-up fa-fw"></i></a><a href=# id=view-comments class=fixed-button title=查看评论><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=/lib/katex/katex.min.255fb27a8827ae4a343bd61c40758c8109004c324bf2cf22bebfc454290b53eae5211c5a37591014c58f01ef58afaeeb.css integrity=sha384-JV+yeognrko0O9YcQHWMgQkATDJL8s8ivr/EVCkLU+rlIRxaN1kQFMWPAe9Yr67r><link rel=stylesheet href=/lib/katex/copy-tex.min.5ade5917b93a802e112d44bad2a860690c161e89ed7a0ff99665c59f4524ac33389c7a0cd1c616592c18010a1ff1465c.css integrity=sha384-Wt5ZF7k6gC4RLUS60qhgaQwWHonteg/5lmXFn0UkrDM4nHoM0cYWWSwYAQof8UZc><script type=text/javascript src=https://PwzXxm.disqus.com/embed.js defer></script><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.4fc20718747ff46144177b2fd0371f2a8552aadea17b9c4e4a0bd3f993444bf5e3af9052d8a011d49f3572efd06b0d8d.js integrity=sha384-T8IHGHR/9GFEF3sv0DcfKoVSqt6he5xOSgvT+ZNES/Xjr5BS2KAR1J81cu/Qaw2N></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.f35302a0961c40c63ea7fff0368ccd63f2464e79b9fa3ab3dfa325269af34e87b6c444ab682194659094a6a9f51aa0a8.js integrity=sha384-81MCoJYcQMY+p//wNozNY/JGTnm5+jqz36MlJprzToe2xESraCGUZZCUpqn1GqCo></script><script type=text/javascript src=/lib/lunr/lunr.min.bd143d6c3c84d169eefa531f9b9ec19582ced3f5dab85b8aa55b193ececa103c182a4b568b9f8acf730ff3ef83165458.js integrity=sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY></script><script type=text/javascript src=/lib/lunr/lunr.stemmer.support.min.8519327f8e0ddb51ffd37fa8972a891361693da1e7e29f7a793d3e25346fbe73335cc2ba01780a5a2cb4d3be7ada9fec.js integrity=sha384-hRkyf44N21H/03+olyqJE2FpPaHn4p96eT0+JTRvvnMzXMK6AXgKWiy007562p/s></script><script type=text/javascript src=/lib/lunr/lunr.zh.min.ae1e6ed811dfa9c546d5e8fc7998e50a35f9a9c7fd41e747ec51cefe4db5271d4e6e94d8b90c045ef2e5aab95bd37145.js integrity=sha384-rh5u2BHfqcVG1ej8eZjlCjX5qcf9QedH7FHO/k21Jx1ObpTYuQwEXvLlqrlb03FF></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.d4df188c8b0d4510865432b2021bb3732a67fde805f31dc760ea23256a712a162dfd86f260b79f2ab409046491a29730.js integrity=sha384-1N8YjIsNRRCGVDKyAhuzcypn/egF8x3HYOojJWpxKhYt/YbyYLefKrQJBGSRopcw></script><script type=text/javascript src=/lib/clipboard/clipboard.min.c7a9d14a47d2b0a181b2f94b1471cd8eef9bb92df3614ced5674d1cffd092a0388937ba54ba6cd71efef1cebd8136798.js integrity=sha384-x6nRSkfSsKGBsvlLFHHNju+buS3zYUztVnTRz/0JKgOIk3ulS6bNce/vHOvYE2eY></script><script type=text/javascript src=/lib/sharer/sharer.min.33a8e56039bce9774cc3cfb16a8b14a66b50356f2f03fd5123aedada43a3b1e30cc330166792d7ab98e5d7c974c832ca.js integrity=sha384-M6jlYDm86XdMw8+xaosUpmtQNW8vA/1RI67a2kOjseMMwzAWZ5LXq5jl18l0yDLK></script><script type=text/javascript src=/lib/katex/katex.min.cb6dc8e50ea5f81eaf6ad69f030c51bbfd282bfefd5656d2cfb43d6a249952fc9660862c77eaa3fa8db81b9654db3273.js integrity=sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz></script><script type=text/javascript src=/lib/katex/auto-render.min.9163cb51530e92ce40405af293022ea79968d26de2324907ac3d2e2781f97237868a102eb6a3f4c96d09e9da45895908.js integrity=sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI></script><script type=text/javascript src=/lib/katex/copy-tex.min.5e15807ba06d55cbc4752dc514a4fb31c7ede072633ea310be2e55e188731fd431c38f7b8c2d774eea4e12f8e820fcbb.js integrity=sha384-XhWAe6BtVcvEdS3FFKT7Mcft4HJjPqMQvi5V4YhzH9Qxw497jC13TupOEvjoIPy7></script><script type=text/javascript src=/lib/katex/mhchem.min.a1ad257f10868da5352dd61c921abc2d970ff894dff1cc895deebd3ba544e94ad28735af793e8a88212526b724fecb66.js integrity=sha384-oa0lfxCGjaU1LdYckhq8LZcP+JTf8cyJXe69O6VE6UrShzWveT6KiCElJrck/stm></script><script type=text/javascript>window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/zh-cn/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"}};</script><script type=text/javascript src=/js/theme.min.f0e4096f68a24e87589ba7942f64874a24befc1ce05399522b0178ac9d3fb20b351b96e095dd6b5bfbe89cb6834a4b3a.js integrity=sha384-8OQJb2iiTodYm6eUL2SHSiS+/BzgU5lSKwF4rJ0/sgs1G5bgld1rW/vonLaDSks6></script></body></html>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="300px" height="300px" viewBox="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Untitled</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="125" y="125" width="50" height="50"></rect>
+        <rect id="path-2" x="75" y="125" width="50" height="50"></rect>
+        <rect id="path-3" x="75" y="175" width="50" height="50"></rect>
+        <rect id="path-4" x="75" y="75" width="50" height="50"></rect>
+        <rect id="path-5" x="25" y="75" width="50" height="50"></rect>
+        <rect id="path-6" x="25" y="125" width="50" height="50"></rect>
+        <rect id="path-7" x="25" y="175" width="50" height="50"></rect>
+        <rect id="path-8" x="25" y="225" width="50" height="50"></rect>
+        <rect id="path-9" x="75" y="225" width="50" height="50"></rect>
+        <rect id="path-10" x="125" y="225" width="50" height="50"></rect>
+        <rect id="path-11" x="25" y="25" width="50" height="50"></rect>
+        <rect id="path-12" x="75" y="25" width="50" height="50"></rect>
+        <rect id="path-13" x="125" y="25" width="50" height="50"></rect>
+        <rect id="path-14" x="175" y="25" width="50" height="50"></rect>
+        <rect id="path-15" x="225" y="25" width="50" height="50"></rect>
+        <rect id="path-16" x="225" y="75" width="50" height="50"></rect>
+        <rect id="path-17" x="225" y="125" width="50" height="50"></rect>
+        <rect id="path-18" x="225" y="175" width="50" height="50"></rect>
+        <rect id="path-19" x="225" y="225" width="50" height="50"></rect>
+        <rect id="path-20" x="175" y="75" width="50" height="50"></rect>
+        <rect id="path-21" x="125" y="175" width="50" height="50"></rect>
+        <rect id="path-22" x="175" y="175" width="50" height="50"></rect>
+        <rect id="path-23" x="175" y="225" width="50" height="50"></rect>
+        <rect id="path-24" x="125" y="75" width="50" height="50"></rect>
+        <rect id="path-25" x="175" y="125" width="50" height="50"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Rectangle">
+            <use fill="#627D89" fill-rule="evenodd" xlink:href="#path-1"></use>
+            <rect stroke="#FFFFFF" stroke-width="1" x="125.5" y="125.5" width="49" height="49"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill="#627D89" fill-rule="evenodd" xlink:href="#path-2"></use>
+            <rect stroke="#FFFFFF" stroke-width="1" x="75.5" y="125.5" width="49" height="49"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill="#CFD8DC" fill-rule="evenodd" xlink:href="#path-3"></use>
+            <rect stroke="#FFFFFF" stroke-width="1" x="75.5" y="175.5" width="49" height="49"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill="#CFD8DC" fill-rule="evenodd" xlink:href="#path-4"></use>
+            <rect stroke="#FFFFFF" stroke-width="1" x="75.5" y="75.5" width="49" height="49"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill="#CFD8DC" fill-rule="evenodd" xlink:href="#path-5"></use>
+            <rect stroke="#FFFFFF" stroke-width="1" x="25.5" y="75.5" width="49" height="49"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill="#CFD8DC" fill-rule="evenodd" xlink:href="#path-6"></use>
+            <rect stroke="#FFFFFF" stroke-width="1" x="25.5" y="125.5" width="49" height="49"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill="#CFD8DC" fill-rule="evenodd" xlink:href="#path-7"></use>
+            <rect stroke="#FFFFFF" stroke-width="1" x="25.5" y="175.5" width="49" height="49"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill="#CFD8DC" fill-rule="evenodd" xlink:href="#path-8"></use>
+            <rect stroke="#FFFFFF" stroke-width="1" x="25.5" y="225.5" width="49" height="49"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill="#CFD8DC" fill-rule="evenodd" xlink:href="#path-9"></use>
+            <rect stroke="#FFFFFF" stroke-width="1" x="75.5" y="225.5" width="49" height="49"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill="#CFD8DC" fill-rule="evenodd" xlink:href="#path-10"></use>
+            <rect stroke="#FFFFFF" stroke-width="1" x="125.5" y="225.5" width="49" height="49"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill="#CFD8DC" fill-rule="evenodd" xlink:href="#path-11"></use>
+            <rect stroke="#FFFFFF" stroke-width="1" x="25.5" y="25.5" width="49" height="49"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill="#CFD8DC" fill-rule="evenodd" xlink:href="#path-12"></use>
+            <rect stroke="#FFFFFF" stroke-width="1" x="75.5" y="25.5" width="49" height="49"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill="#CFD8DC" fill-rule="evenodd" xlink:href="#path-13"></use>
+            <rect stroke="#FFFFFF" stroke-width="1" x="125.5" y="25.5" width="49" height="49"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill="#CFD8DC" fill-rule="evenodd" xlink:href="#path-14"></use>
+            <rect stroke="#FFFFFF" stroke-width="1" x="175.5" y="25.5" width="49" height="49"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill="#CFD8DC" fill-rule="evenodd" xlink:href="#path-15"></use>
+            <rect stroke="#FFFFFF" stroke-width="1" x="225.5" y="25.5" width="49" height="49"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill="#CFD8DC" fill-rule="evenodd" xlink:href="#path-16"></use>
+            <rect stroke="#FFFFFF" stroke-width="1" x="225.5" y="75.5" width="49" height="49"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill="#CFD8DC" fill-rule="evenodd" xlink:href="#path-17"></use>
+            <rect stroke="#FFFFFF" stroke-width="1" x="225.5" y="125.5" width="49" height="49"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill="#CFD8DC" fill-rule="evenodd" xlink:href="#path-18"></use>
+            <rect stroke="#FFFFFF" stroke-width="1" x="225.5" y="175.5" width="49" height="49"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill="#CFD8DC" fill-rule="evenodd" xlink:href="#path-19"></use>
+            <rect stroke="#FFFFFF" stroke-width="1" x="225.5" y="225.5" width="49" height="49"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill="#CFD8DC" fill-rule="evenodd" xlink:href="#path-20"></use>
+            <rect stroke="#FFFFFF" stroke-width="1" x="175.5" y="75.5" width="49" height="49"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill="#627D89" fill-rule="evenodd" xlink:href="#path-21"></use>
+            <rect stroke="#FFFFFF" stroke-width="1" x="125.5" y="175.5" width="49" height="49"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill="#CFD8DC" fill-rule="evenodd" xlink:href="#path-22"></use>
+            <rect stroke="#FFFFFF" stroke-width="1" x="175.5" y="175.5" width="49" height="49"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill="#CFD8DC" fill-rule="evenodd" xlink:href="#path-23"></use>
+            <rect stroke="#FFFFFF" stroke-width="1" x="175.5" y="225.5" width="49" height="49"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill="#627D89" fill-rule="evenodd" xlink:href="#path-24"></use>
+            <rect stroke="#FFFFFF" stroke-width="1" x="125.5" y="75.5" width="49" height="49"></rect>
+        </g>
+        <g id="Rectangle">
+            <use fill="#627D89" fill-rule="evenodd" xlink:href="#path-25"></use>
+            <rect stroke="#FFFFFF" stroke-width="1" x="175.5" y="125.5" width="49" height="49"></rect>
+        </g>
+        <text id="Flip" font-family="Helvetica-Bold, Helvetica" font-size="14" font-weight="bold" fill="#FFFFFF">
+            <tspan x="138" y="154">Flip</tspan>
+        </text>
+    </g>
+</svg>
