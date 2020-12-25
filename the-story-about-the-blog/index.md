@@ -1,7 +1,7 @@
 # The Story About the Blog
 
 
-[PwzXxm](http://www.pwzxxm.com) is my first blog and also my first website I have ever built. I knew only a little bit of HTML before I started this project. I learned CSS and JavaScript while I'm building the site. I also read a lot of source code and blog posts about how other people build their own site using [Jekyll](http://jekyllrb.com/). It took me seven days. Finally, on the 10th of December, 2015, the site went alive.
+[PwzXxm](https://www.pwzxxm.com) is my first blog and also my first website I have ever built. I knew only a little bit of HTML before I started this project. I learned CSS and JavaScript while I'm building the site. I also read a lot of source code and blog posts about how other people build their own site using [Jekyll](http://jekyllrb.com/). It took me seven days. Finally, on the 10th of December, 2015, the site went alive.
 
 Details about building the site, [click me]({{ site.baseurl }}/2015/building-blog-jekyll/).
 
