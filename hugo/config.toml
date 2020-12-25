@@ -46,14 +46,6 @@ enableEmoji = true
         url = "/tags/"
         title = ""
         weight = 2
-      [[languages.en.menu.main]]
-        identifier = "categories"
-        pre = ""
-        post = ""
-        name = "Categories"
-        url = "/categories/"
-        title = ""
-        weight = 3
     [languages.en.params]
       # site description
       description = "Learning and sharing ideas. Enjoy what you are passionated about."
@@ -69,7 +61,7 @@ enableEmoji = true
           # Gravatar Email for preferred avatar in home page
           gravatarEmail = ""
           # URL of avatar shown in home page
-          avatarURL = "avatar.png"
+          avatarURL = "/images/avatar.png"
           #  title shown in home page (HTML format is supported)
           title = "Patrick Wezhi Xu"
           # subtitle shown in home page
@@ -115,14 +107,6 @@ enableEmoji = true
         url = "/tags/"
         title = ""
         weight = 2
-      [[languages.zh-cn.menu.main]]
-        identifier = "categories"
-        pre = ""
-        post = ""
-        name = "分类"
-        url = "/categories/"
-        title = ""
-        weight = 3
     [languages.zh-cn.params]
       # 网站描述
       description = "分享、学习各种想法。"
@@ -138,7 +122,7 @@ enableEmoji = true
           # Gravatar 邮箱，用于优先在主页显示的头像
           gravatarEmail = ""
           # 主页显示头像的 URL
-          avatarURL = "/avatar.png"
+          avatarURL = "/images/avatar.png"
           # 主页显示的网站标题 (支持 HTML 格式)
           title = "Patrick Weizhi Xu"
           # 主页显示的网站副标题
@@ -363,7 +347,7 @@ enableEmoji = true
       # whether to enable the table of the contents
       enable = true
       #  whether to keep the static table of the contents in front of the post
-      keepStatic = true
+      keepStatic = false
       # whether to make the table of the contents in the sidebar automatically collapsed
       auto = true
     #  KaTeX mathematical formulas
@@ -454,7 +438,7 @@ enableEmoji = true
         appId = ""
         appKey = ""
         placeholder = ""
-        avatar = "mp"
+        avatar = ""
         meta= ""
         pageSize = 10
         lang = ""
