@@ -1,6 +1,6 @@
 ---
 layout: "post"
-title: "力扣挑战第二周 - 周赛 156 + 其他题目"
+title: "力扣周赛 156 + 其他题目"
 date: "2019-10-02"
 lang: cn
 tags:
@@ -9,21 +9,11 @@ tags:
 
 力扣挑战第二周。因为有事，所以参加了模拟比赛。
 
-<br>
-<div class="toc">
-**Contents**
-
-- [Weekly Contest 156](#weekly-contest-156)
-    - [1207. Unique Number of Occurrences](#1207-unique-number-of-occurrences)
-    - [1208. Get Equal Substrings Within Budget](#1208-get-equal-substrings-within-budget)
-    - [1209. Remove All Adjacent Duplicates in String II](#1209-remove-all-adjacent-duplicates-in-string-ii)
-    - [1210. Minimum Moves to Reach Target with Rotations](#1210-minimum-moves-to-reach-target-with-rotations)
-</div>
-<br>
 
 ## Weekly Contest 156
 
-### [1207. Unique Number of Occurrences](https://leetcode.com/contest/weekly-contest-156/problems/unique-number-of-occurrences/)
+### 1207. Unique Number of Occurrences
+https://leetcode.com/contest/weekly-contest-156/problems/unique-number-of-occurrences/
 
 暴力。记下每个数出现的次数，遍历次数看有没有相同的。
 
@@ -51,7 +41,8 @@ public:
 };
 ```
 
-### [1208. Get Equal Substrings Within Budget](https://leetcode.com/contest/weekly-contest-156/problems/get-equal-substrings-within-budget/)
+### 1208. Get Equal Substrings Within Budget
+https://leetcode.com/contest/weekly-contest-156/problems/get-equal-substrings-within-budget/
 
 两个指针分别记录当前子字符串的起点和终点。可以这样想：在一开始，我们看更换下一个字符的操作花费是否大于`maxCost`，如果小于或等于，终点指针就向后移一位。重复这个操作直到操作失败。
 然后如果我们想再加入下一个字符，因为我们的`total_cost`已经“满了”，就必须从开头省出一个操作的花费：减去更换开头字符的操作并往右移动一位起点指针。
@@ -84,7 +75,8 @@ public:
 };
 ```
 
-### [1209. Remove All Adjacent Duplicates in String II](https://leetcode.com/contest/weekly-contest-156/problems/remove-all-adjacent-duplicates-in-string-ii/)
+### 1209. Remove All Adjacent Duplicates in String II
+https://leetcode.com/contest/weekly-contest-156/problems/remove-all-adjacent-duplicates-in-string-ii/
 
 栈。每次我们碰到一个新的字符，就往栈顶加入这个字符和一个初始为`1`的计数器。如果下一个字符和栈顶的字符相同，就增加计数器的计数。当计数和`k`相同时，把该字符从栈中扔掉。
 
@@ -123,7 +115,8 @@ public:
 };
 ```
 
-### [1210. Minimum Moves to Reach Target with Rotations](https://leetcode.com/contest/weekly-contest-156/problems/minimum-moves-to-reach-target-with-rotations/)
+### 1210. Minimum Moves to Reach Target with Rotations
+https://leetcode.com/contest/weekly-contest-156/problems/minimum-moves-to-reach-target-with-rotations/
 
 广度遍历搜索。这题不难只要把实现写对了就行。
 

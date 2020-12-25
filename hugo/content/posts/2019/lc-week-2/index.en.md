@@ -11,7 +11,8 @@ Second week of LeetCode Challenge. Participated the virtual contest.
 
 ## Weekly Contest 156
 
-### [1207. Unique Number of Occurrences](https://leetcode.com/contest/weekly-contest-156/problems/unique-number-of-occurrences/)
+### 1207. Unique Number of Occurrences
+https://leetcode.com/contest/weekly-contest-156/problems/unique-number-of-occurrences/
 
 Brute force. Record total occurrence of each number and iterate over it to see if there is any duplication.
 
@@ -39,7 +40,8 @@ public:
 };
 ```
 
-### [1208. Get Equal Substrings Within Budget](https://leetcode.com/contest/weekly-contest-156/problems/get-equal-substrings-within-budget/)
+### 1208. Get Equal Substrings Within Budget
+https://leetcode.com/contest/weekly-contest-156/problems/get-equal-substrings-within-budget/
 
 Two pointers. Let's think it in this way: at the starting position, if we can go to the next character in the string and does not exceed the maximum cost, do so and keep doing it until we can't.
 Then in order to extend the length of sub-string, we must "release" the cost of changing one character at the beginning of the sub-string, so that the next character has some costs available to use in order to hold the maximum bound.
@@ -72,7 +74,8 @@ public:
 };
 ```
 
-### [1209. Remove All Adjacent Duplicates in String II](https://leetcode.com/contest/weekly-contest-156/problems/remove-all-adjacent-duplicates-in-string-ii/)
+### 1209. Remove All Adjacent Duplicates in String II
+https://leetcode.com/contest/weekly-contest-156/problems/remove-all-adjacent-duplicates-in-string-ii/
 
 Stack approach. Whenever encounter a new character, push the character with count `1` into the stack. Increment the counter if the next character is the same as the top of the stack.
 If the counter reaches `k`, then just remove it from the stack as it's valid adjacent duplicates.
@@ -112,7 +115,8 @@ public:
 };
 ```
 
-### [1210. Minimum Moves to Reach Target with Rotations](https://leetcode.com/contest/weekly-contest-156/problems/minimum-moves-to-reach-target-with-rotations/)
+### 1210. Minimum Moves to Reach Target with Rotations
+https://leetcode.com/contest/weekly-contest-156/problems/minimum-moves-to-reach-target-with-rotations/
 
 BFS. This question is not hard while you got the implementation right. Check all possible moves.
 

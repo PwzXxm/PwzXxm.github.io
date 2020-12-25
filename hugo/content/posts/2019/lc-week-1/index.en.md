@@ -8,9 +8,12 @@ tags: ["LeetCode"]
 
 This is the first week of LeetCode Challenges. It includes weekly contest 155 and other problems.
 
-## [Weekly Contest 155](https://leetcode.com/contest/weekly-contest-155)
+## Weekly Contest 155
+https://leetcode.com/contest/weekly-contest-155
 
-### [1200. Minimum Absolute Difference](https://leetcode.com/contest/weekly-contest-155/problems/minimum-absolute-difference/)
+### 1200. Minimum Absolute Difference
+https://leetcode.com/contest/weekly-contest-155/problems/minimum-absolute-difference/
+
 Brute force. Find the minimum absolute difference and then iterate the list again to output the pairs with minimum absolute difference.
 
 ``` cpp
@@ -40,12 +43,13 @@ public:
 };
 ```
 
-<br>
 
-### [1201. Ugly Number III](https://leetcode.com/contest/weekly-contest-155/problems/ugly-number-iii/)
+### 1201. Ugly Number III
+https://leetcode.com/contest/weekly-contest-155/problems/ugly-number-iii/
+
 Binary search + inclusion/exclusion principle. The number of integers that is divisible by `A` and `B` is equal to the number of integers divisible by `A` plus the number of integers divisible by `b` and minus the number of integers divisible by both `A` and `B`. The theory can be applied to the case when it is divisible by three numbers.
 
-Also, the range of `n` is $[1, 2*10^9]$, the time complexity of binary search is $\log_2(2*10^9)$, which is totally feasible.
+Also, the range of `n` is $[1, 2 \cdot 10^9]$, the time complexity of binary search is $\log_2(2 \cdot 10^9)$, which is totally feasible.
 
 ``` cpp
 typedef long long LL;
@@ -79,9 +83,10 @@ public:
 };
 ```
 
-<br>
 
-### [1202. Smallest String With Swaps](https://leetcode.com/contest/weekly-contest-155/problems/smallest-string-with-swaps/)
+### 1202. Smallest String With Swaps
+https://leetcode.com/contest/weekly-contest-155/problems/smallest-string-with-swaps/
+
 Union find. We can find that if it is swappable for the letters at index `(1,2)` and `(2,5)`, the letters at `1, 2, 5` can be in arbitrary order.
 
 Having said that, we can use union find to group them together, then append the character with the smallest lexicographical order in each group. 
@@ -139,9 +144,8 @@ public:
 };
 ```
 
-<br>
-
-## [1203. Sort Items by Groups Respecting Dependencies](https://leetcode.com/contest/weekly-contest-155/problems/sort-items-by-groups-respecting-dependencies/)
+## 1203. Sort Items by Groups Respecting Dependencies
+https://leetcode.com/contest/weekly-contest-155/problems/sort-items-by-groups-respecting-dependencies/
 
 Topological sort twice.
 
@@ -233,9 +237,9 @@ public:
 };
 ```
 
-------
 
-## [LeetCode 8 - String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/) <a name="string-to-integer"></a>
+## LeetCode 8 - String to Integer (atoi)
+https://leetcode.com/problems/string-to-integer-atoi/
 
 This question is a bit odd.
 Test cases like `+-123` are not explicitly stated in the description of the problem.

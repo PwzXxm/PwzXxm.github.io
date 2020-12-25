@@ -8,24 +8,12 @@ tags: [LeetCode]
 
 这是力扣第一周挑战，包括周赛 155 和其他一些题目。
 
-<br>
-<div class="toc">
-**Contents**
+## Weekly Contest 155
+https://leetcode.com/contest/weekly-contest-155
 
-- [Weekly Contest 155](#weekly-contest-155)
-    - [Minimum Absolute Difference](#1200-minimum-absolute-difference)
-    - [Ugly Number III](#1201-ugly-number-iii)
-    - [Smallest String With Swaps](#1202-smallest-string-with-swaps)
-    - [Sort Items by Groups Respecting Dependencies](#1203-sort-items-by-groups-respecting-dependencies)
-- [String to Integer(atoi)](#string-to-integer)
+### 1200. Minimum Absolute Difference
+https://leetcode.com/contest/weekly-contest-155/problems/minimum-absolute-difference/
 
-</div>
-
-<br>
-
-## [Weekly Contest 155](https://leetcode.com/contest/weekly-contest-155)
-
-### [1200. Minimum Absolute Difference](https://leetcode.com/contest/weekly-contest-155/problems/minimum-absolute-difference/)
 暴力。先遍历找到最小绝对差，接着再遍历一遍输出差值是该值的整数对。
 
 ``` cpp
@@ -55,12 +43,13 @@ public:
 };
 ```
 
-<br>
 
-### [1201. Ugly Number III](https://leetcode.com/contest/weekly-contest-155/problems/ugly-number-iii/)
+### 1201. Ugly Number III
+https://leetcode.com/contest/weekly-contest-155/problems/ugly-number-iii/
+
 二分 + 容斥。能被`A`或`B`整除的数的个数等于能被`A`整除的数的个数加上能被`B`整除的数的个数，减去能被`A`，`B`同时整除的数的个数。相同的理论也可以用于三个数。
 
-这题`n`的范围是 $[1, 2*10^9]$，二分的时间复杂度为 $\log_2(2*10^9)$，所以是可行的。
+这题`n`的范围是 $[1, 2 \cdot 10^9]$，二分的时间复杂度为 $\log_2(2 \cdot 10^9)$，所以是可行的。
 
 ``` cpp
 typedef long long LL;
@@ -94,9 +83,10 @@ public:
 };
 ```
 
-<br>
 
-### [1202. Smallest String With Swaps](https://leetcode.com/contest/weekly-contest-155/problems/smallest-string-with-swaps/)
+### 1202. Smallest String With Swaps
+https://leetcode.com/contest/weekly-contest-155/problems/smallest-string-with-swaps/
+
 并查集。我们可以看出如果在`(1,2)`，`(2,5)`上的元素分别可以被交换，那它们三个元素可以被任意交换，组成任意排列。
 
 所以我们可以先把能互相交换的元素用并查集捆绑起来，最后构造答案时优先选用各个组里字典序最小的。
@@ -154,9 +144,8 @@ public:
 };
 ```
 
-<br>
-
-## [1203. Sort Items by Groups Respecting Dependencies](https://leetcode.com/contest/weekly-contest-155/problems/sort-items-by-groups-respecting-dependencies/)
+## 1203. Sort Items by Groups Respecting Dependencies
+https://leetcode.com/contest/weekly-contest-155/problems/sort-items-by-groups-respecting-dependencies/
 
 拓扑排序两次。
 
@@ -247,11 +236,9 @@ public:
 };
 ```
 
-<br>
+## LeetCode 8 - String to Integer (atoi)
+https://leetcode.com/problems/string-to-integer-atoi/
 
-------
-
-## [LeetCode 8 - String to Integer (atoi)](https://leetcode.com/problems/string-to-integer-atoi/) <a name="string-to-integer"></a>
 
 这题有点奇怪。像`+-123`这样的数据没有在题目解释中说明。
 

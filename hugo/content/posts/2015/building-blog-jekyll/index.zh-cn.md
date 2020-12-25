@@ -3,7 +3,7 @@ title: "使用Jekyll＋Github Pages搭建博客"
 date: 2015-12-15
 draft: false
 
-tags: ["Blog"]
+tags: ["Blog", "Practice"]
 ---
 
 ## 为什么选择 Jekyll 和 Github Pages

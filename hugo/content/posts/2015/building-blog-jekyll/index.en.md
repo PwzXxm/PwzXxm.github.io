@@ -3,7 +3,7 @@ title: "Using Jekyll + Github Pages to build a blog"
 date: 2015-12-15
 draft: false
 
-tags: ["Blog"]
+tags: ["Blog", "Practice"]
 ---
 
 ## Why Jekyll and Github Pages
