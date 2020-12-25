@@ -48,7 +48,7 @@ title | 网站名，默认下将是网站在搜索引擎出现的名字
 email | 在contac-list中显示的邮箱地址, 默认下出现在页脚
 description | 网站描述，默认下将出现在页脚
 baseurl | 网站的子路径, 例如设置成`/blog`，完整url将会变成`www.pwzxxm./com/blog`
-url | 主机名和使用协议，完整url, 例如`http://www.pwzxxm.com`
+url | 主机名和使用协议，完整url, 例如`https://www.pwzxxm.com`
 github\_username<br>twitter\_username | 用于链接Github和Twitter, 默认下出现在页脚
 markdown | 使用的markdown引擎, e.g. `kramdown` `redcarpet`
 highlighter | 语法高亮引擎, e.g. `pygments` `rouge`
