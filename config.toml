@@ -466,7 +466,7 @@ enableEmoji = true
         recordIP = true
         highlight = true
         enableQQ = false
-        serverURLs = ""
+        serverURLs = "https://0kowAMd2.api.lncldglobal.com"
         #  emoji data file name, default is "google.yml"
         # ("apple.yml", "google.yml", "facebook.yml", "twitter.yml")
         # located in "themes/LoveIt/assets/data/emoji/" directory
