@@ -82,9 +82,6 @@ enableEmoji = true
         cursorChar = "|"
         # cursor duration after typing finishing (measured in milliseconds, "-1" means unlimited)
         duration = -1
-      [languages.en.params.page.comment.valine]
-        placeholder = "Comment here :)"
-        lang = "en"
 
   [languages.zh-cn]
     weight = 2
@@ -156,9 +153,6 @@ enableEmoji = true
         cursorChar = "|"
         # cursor duration after typing finishing (measured in milliseconds, "-1" means unlimited)
         duration = -1
-      [languages.zh-cn.params.page.comment.valine]
-        placeholder = "快来评论吧 :)"
-        lang = "zh-CN"
 
 [params]
   #  LoveIt theme version
@@ -466,7 +460,7 @@ enableEmoji = true
         avatar = "hide"
         meta= ""
         placeholder = ""
-        lang = "en"
+        lang = ""
         pageSize = 10
         visitor = true
         recordIP = true
