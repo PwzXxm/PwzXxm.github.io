@@ -72,16 +72,19 @@ enableEmoji = true
           social = true
           #  disclaimer (HTML format is supported)
           disclaimer = ""
-        #  TypeIt config
-        [languages.en.params.typeit]
-          # typing speed between each step (measured in milliseconds)
-          speed = 85 
-          # blinking speed of the cursor (measured in milliseconds)
-          cursorSpeed = 1000
-          # character used for the cursor (HTML format is supported)
-          cursorChar = "|"
-          # cursor duration after typing finishing (measured in milliseconds, "-1" means unlimited)
-          duration = -1
+      #  TypeIt config
+      [languages.en.params.typeit]
+        # typing speed between each step (measured in milliseconds)
+        speed = 85 
+        # blinking speed of the cursor (measured in milliseconds)
+        cursorSpeed = 1000
+        # character used for the cursor (HTML format is supported)
+        cursorChar = "|"
+        # cursor duration after typing finishing (measured in milliseconds, "-1" means unlimited)
+        duration = -1
+      [languages.en.params.page.comment.valine]
+        placeholder = "Comment here :)"
+        lang = "en"
 
   [languages.zh-cn]
     weight = 2
@@ -146,13 +149,16 @@ enableEmoji = true
       #  TypeIt config
       [languages.zh-cn.params.typeit]
         # typing speed between each step (measured in milliseconds)
-        speed = 120
+        speed = 150
         # blinking speed of the cursor (measured in milliseconds)
         cursorSpeed = 1000
         # character used for the cursor (HTML format is supported)
         cursorChar = "|"
         # cursor duration after typing finishing (measured in milliseconds, "-1" means unlimited)
         duration = -1
+      [languages.zh-cn.params.page.comment.valine]
+        placeholder = "快来评论吧 :)"
+        lang = "zh-CN"
 
 [params]
   #  LoveIt theme version
@@ -441,7 +447,7 @@ enableEmoji = true
       # Disqus comment config
       [params.page.comment.disqus]
         # 
-        enable = true
+        enable = false
         # Disqus shortname to use Disqus in posts
         shortname = "PwzXxm"
       # Gitalk comment config
@@ -454,14 +460,14 @@ enableEmoji = true
         clientSecret = ""
       # Valine comment config
       [params.page.comment.valine]
-        enable = false
-        appId = ""
-        appKey = ""
-        placeholder = ""
-        avatar = ""
+        enable = true
+        appId = "0kowAMd2eacnEvO8yycu50Dw-MdYXbMMI"
+        appKey = "8PPEhr6foiJQLSjIqO6udNmL"
+        avatar = "hide"
         meta= ""
+        placeholder = ""
+        lang = "en"
         pageSize = 10
-        lang = ""
         visitor = true
         recordIP = true
         highlight = true
