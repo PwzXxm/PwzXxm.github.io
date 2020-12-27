@@ -15,8 +15,7 @@
                     {{- $url = .RelPermalink -}}
                 {{- end -}}
                 <a href="{{ $url }}"{{ with .Title | default .Name }} title="{{ . }}"{{ end }}{{ if (urls.Parse $url).Host }} rel="noopener noreffer" target="_blank"{{ end }}>
-                    <img class="lazyautosizes lazyloaded" src="/images/avatar.png" data-src="/images/avatar.png" data-srcset="/images/avatar.png, /images/avatar.png 1.5x, /images/avatar.png 2x" data-sizes="auto" alt="me" srcset="/images/avatar.png, /images/avatar.png 1.5x, /images/avatar.png 2x">
-                    <!-- {{- dict "Src" $avatar | partial "plugin/image.html" -}} -->
+                    {{- dict "Src" $avatar "Alt" "Me" | partial "plugin/image.html" -}}
                 </a>
             {{- else -}}
                 {{- dict "Src" $avatar | partial "plugin/image.html" -}}
