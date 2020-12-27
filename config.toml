@@ -22,7 +22,7 @@ enableEmoji = true
     # default amount of posts in each pages
     paginate = 12
     # [UA-XXXXXXXX-X] google analytics code
-    googleAnalytics = ""
+    # googleAnalytics = ""
     # copyright description used only for seo schema
     copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
     # Menu config
@@ -94,7 +94,7 @@ enableEmoji = true
     # 默认每页列表显示的文章数目
     paginate = 12
     # [UA-XXXXXXXX-X] 谷歌分析代号
-    googleAnalytics = ""
+    # googleAnalytics = ""
     # 版权描述，仅仅用于 SEO
     copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
     # 菜单配置
@@ -540,10 +540,10 @@ enableEmoji = true
 
   #  Analytics config
   [params.analytics]
-    enable = false
+    enable = true
     # Google Analytics
     [params.analytics.google]
-      id = ""
+      id = "UA-71107137-1"
       # whether to anonymize IP
       anonymizeIP = true
     # Fathom Analytics
