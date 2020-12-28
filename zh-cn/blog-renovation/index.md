@@ -19,7 +19,7 @@
 放弃 [Disqus](https://disqus.com/) 的原因主要是有些地方对它的限制。
 Valine 基于 LeanCloud, 按照官网的[快速开始](https://valine.js.org/quickstart.html)只需要几步就能轻松部署。
 
-Valine 并没有内置的评论管理系统。这就需要在 LeanCloud 上部署另一个服务———— [Valine-Admin](https://github.com/DesertsP/Valine-Admin)。它支持
+Valine 并没有内置的评论管理系统。这就需要在 LeanCloud 上部署另一个服务—— [Valine-Admin](https://github.com/DesertsP/Valine-Admin)。它支持
 
 - 新评论邮件提醒
 - 评论管理
