@@ -1,4 +1,4 @@
 // disable Valine browser and system info
-.vsys{
-    display:none !important;
+.v[data-class=v] .vsys {
+    display:none;
 }
