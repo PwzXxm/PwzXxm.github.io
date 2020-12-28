@@ -9,7 +9,7 @@ tags: ["UVa"]
 Given an array with size \\(N \times N (N \le 100)\\), find the maximum value of its subarray.
 
 
-Link: [Problem on UVa] (https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=44)
+Link: [Problem on UVa](https://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&page=show_problem&problem=44)
 
 <br>
 <br>
