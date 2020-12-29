@@ -1,4 +1,4 @@
-baseURL = "https://www.pwzxxm.com/"
+baseURL = "https://pwzxxm.com/"
 # [en, zh-cn, fr, ...] determines default content language
 defaultContentLanguage = "en"
 
@@ -610,7 +610,7 @@ enableEmoji = true
 [author]
   name = "PwzXxm"
   email = "patrick.weizhixu@hotmail.com"
-  link = "https://www.pwzxxm.com"
+  link = "https://pwzxxm.com"
 
 # Sitemap config
 [sitemap]
