@@ -1,17 +1,20 @@
-
-# Created by https://www.toptal.com/developers/gitignore/api/hugo,macos,visualstudiocode,windows,linux
-# Edit at https://www.toptal.com/developers/gitignore?templates=hugo,macos,visualstudiocode,windows,linux
+# Created by https://www.toptal.com/developers/gitignore/api/hugo,macos,visualstudiocode,windows,linux,vim
+# Edit at https://www.toptal.com/developers/gitignore?templates=hugo,macos,visualstudiocode,windows,linux,vim
 
 ### Hugo ###
 # Generated files by hugo
 /public/
 /resources/_gen/
+/assets/jsconfig.json
 hugo_stats.json
 
 # Executable may be added to repository
 hugo.exe
 hugo.darwin
 hugo.linux
+
+# Temporary lock file while building
+/.hugo_build.lock
 
 ### Linux ###
 *~
@@ -57,11 +60,43 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+### macOS Patch ###
+# iCloud generated files
+*.icloud
+
+### Vim ###
+# Swap
+[._]*.s[a-v][a-z]
+!*.svg  # comment out if you don't need vector files
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+# Session
+Session.vim
+Sessionx.vim
+
+# Temporary
+.netrwhist
+# Auto-generated tag files
+tags
+# Persistent undo
+[._]*.un~
+
 ### VisualStudioCode ###
 .vscode/*
+!.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
-*.code-workspace
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
@@ -94,4 +129,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/hugo,macos,visualstudiocode,windows,linux
+# End of https://www.toptal.com/developers/gitignore/api/hugo,macos,visualstudiocode,windows,linux,vim
