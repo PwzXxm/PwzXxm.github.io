@@ -18,7 +18,7 @@
 
 ### 范例
 
-![example](static_linked_list_example.svg)
+![example](static_linked_list_example.png)
 
 我们的图包含如下这些边（出，入）：
 
@@ -76,11 +76,11 @@ for (int i = 0; i < len[u]; i++) {
 
 ### 范例
 
-![example](static_linked_list_example.svg)
+![example](static_linked_list_example.png)
 
 最后的结果如下图所示，左边的数组表示`G[]`。当我们读入一条从`u`出发的边，就推入`G[u]`的vector.
 
-![list](static_linked_list_list.svg)
+![list](static_linked_list_list.png)
 
 ``` cpp
 for (int i = 0; i < G[u].size(); i++) {

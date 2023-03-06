@@ -18,7 +18,7 @@ Forward Star is also known as Adjacency Array and . We first store edges in an a
 
 ### Example
 
-![example](static_linked_list_example.svg)
+![example](static_linked_list_example.png)
 
 We have these edges (from, to) in the example graph:
 
@@ -78,11 +78,11 @@ Adjacency List is usually implemented by `vector<int> G[MAXN_V]`. `G[u]` points 
 
 ### Example
 
-![example](static_linked_list_example.svg)
+![example](static_linked_list_example.png)
 
 The result is like the figure shown below, the array at the left represents each `G[]` respectively. Every time we read a edge from `u`, we push it back to the vector `G[u]` points to.
 
-![list](static_linked_list_list.svg)
+![list](static_linked_list_list.png)
 
 ``` cpp
 for (int i = 0; i < G[u].size(); i++) {
@@ -98,7 +98,7 @@ Static Linked List is an improved version of [Forward Star](#forward-star) and t
 
 We use the same example as above.
 
-![example](static_linked_list_example.svg)
+![example](static_linked_list_example.png)
 
 With edges (from, to):
 

@@ -11,7 +11,7 @@ If there is no solution, print "IMPOSSIBLE".
 
 Link: http://poj.org/problem?id=3279
 
-![flip_1](fliptile_1.svg)
+![flip_1](fliptile_1.png)
 
 <sub>*1 lexicographical order: When you read from left to right, compare each of character of them, see which one is less in alphabetically order. For example, \\(AA \lt AB \lt BA \lt BB\\). In this case, we read from left to right, up to down* </sub>
 
@@ -56,7 +56,7 @@ Another way to think about this is that if you know the tile's left, upper, righ
 > 4 flip states => color => flip?
 
 
-![flip_2](fliptile_2.svg)
+![flip_2](fliptile_2.png)
 
 
 Final two questions, how should we start and check if it success after flips? 
