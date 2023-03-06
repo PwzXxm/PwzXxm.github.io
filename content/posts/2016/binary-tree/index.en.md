@@ -99,9 +99,9 @@ Rather than remembering the sequence, there is another way to remembering the  o
 
 Pre-order|In-order|Post-order
 ---|---|---
-![preorder_line](Sorted_binary_tree_preorder.svg)|![inorder_line](Sorted_binary_tree_inorder.svg)|![postorder_line](Sorted_binary_tree_postorder.svg)
+![preorder_line](Sorted_binary_tree_preorder.png)|![inorder_line](Sorted_binary_tree_inorder.png)|![postorder_line](Sorted_binary_tree_postorder.png)
 
 ### Breadth First Search (BFS)
 Traverse from the root to bottom, go thought each level first.
 
-![bfs](Sorted_binary_tree_breadth-first_traversal.svg)
+![bfs](Sorted_binary_tree_breadth-first_traversal.png)

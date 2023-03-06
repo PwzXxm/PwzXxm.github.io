@@ -17,7 +17,7 @@ tags: ["POJ"]
 
 链接: http://poj.org/problem?id=3279
 
-![flip_1](fliptile_1.svg)
+![flip_1](fliptile_1.png)
 
 <sub>*1 字典序：从左往右读，比较每个字符在字典中出现的先后顺序， 比如说：\\((AA \lt AB \lt BA \lt BB \\))。在今天瓷砖的这个情境下，我们从左往右然后从上往下读* </sub>
 
@@ -59,7 +59,7 @@ tags: ["POJ"]
 
 > 4 翻转状态 => 颜色 => 需要翻转?
 
-![flip_2](fliptile_2.svg)
+![flip_2](fliptile_2.png)
 
 最后两个问题，我们怎么开始呢？如何知道全部翻转完成后是否成功呢？
 

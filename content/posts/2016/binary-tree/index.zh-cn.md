@@ -100,9 +100,9 @@ struct node {
 
 先序遍历|中序遍历|后序遍历
 ---|---|---
-![preorder_line](Sorted_binary_tree_preorder.svg)|![inorder_line](Sorted_binary_tree_inorder.svg)|![postorder_line](Sorted_binary_tree_postorder.svg)
+![preorder_line](Sorted_binary_tree_preorder.png)|![inorder_line](Sorted_binary_tree_inorder.png)|![postorder_line](Sorted_binary_tree_postorder.png)
 
 ### 广度优先遍历(BFS)
 从根节点开始，以遍历完每一层为优先原则。
 
-![bfs](Sorted_binary_tree_breadth-first_traversal.svg)
+![bfs](Sorted_binary_tree_breadth-first_traversal.png)
