@@ -502,7 +502,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
         appId = "0kowAMd2eacnEvO8yycu50Dw-MdYXbMMI"
         appKey = "8PPEhr6foiJQLSjIqO6udNmL"
         placeholder = ""
-        avatar = "mp"
+        avatar = "hide"
         meta= ""
         pageSize = 10
         # automatically adapt the current theme i18n configuration when empty
@@ -512,7 +512,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
         recordIP = true
         highlight = true
         enableQQ = false
-        serverURLs = "https://lc.pwzxxm.com"
+        serverURLs = "https://0kowAMd2.api.lncldglobal.com"
         # emoji data file name, default is "google.yml"
         # ["apple.yml", "google.yml", "facebook.yml", "twitter.yml"]
         # located in "themes/LoveIt/assets/lib/valine/emoji/" directory
