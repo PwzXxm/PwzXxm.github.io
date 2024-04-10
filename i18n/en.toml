@@ -1,0 +1,2 @@
+[publishedOnDate]
+other = "{{ .Date }}"

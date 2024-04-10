@@ -93,7 +93,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
   # ["sha256", "sha384", "sha512", "md5"]
   # 哪种哈希函数用来 SRI, 为空时表示不使用 SRI
   # ["sha256", "sha384", "sha512", "md5"]
-  fingerprint = "sha256"
+  fingerprint = "sha384"
   # date format
   # 日期格式
   dateFormat = "Jan 02 2006"
@@ -255,7 +255,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       gravatarEmail = ""
       # URL of avatar shown in home page
       # 主页显示头像的 URL
-      avatarURL = "/images/avatar.png"
+      avatarURL = "images/avatar.png"
       # title shown in home page (HTML format is supported)
       # 主页显示的网站标题 (支持 HTML 格式)
       title = "Patrick Wezhi Xu"
@@ -410,7 +410,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
     # KaTeX mathematical formulas config (KaTeX https://katex.org/)
     # KaTeX 数学公式配置 (KaTeX https://katex.org/)
     [params.page.math]
-      enable = false
+      enable = true
       # default inline delimiter is $ ... $ and \( ... \)
       # 默认行内定界符是 $ ... $ 和 \( ... \)
       inlineLeftDelimiter = ""
@@ -602,7 +602,7 @@ ignoreErrors = ["error-remote-getjson", "error-missing-instagram-accesstoken"]
       # 出版者信息
       [params.page.seo.publisher]
         name = "PwzXxm"
-        logoUrl = "/images/avatar.png"
+        logoUrl = "images/avatar.png"
 
   # TypeIt config
   # TypeIt 配置
