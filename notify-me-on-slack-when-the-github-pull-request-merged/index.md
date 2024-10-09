@@ -5,6 +5,7 @@ Tired of refreshing the GitHub web pages and waiting for the PR from colleagues 
 Try to dump these things out of my head to concentrate on real work.
 
 ## Steps
+There are only three steps and step 2 is optional.
 
 1. Creating a Slack App via https://api.slack.com/messaging/webhooks. What you want is the Webhook URLs under **Incoming Webhooks** which starts with `https://hooks.slack.com/services/`, so that you can send the notification message to it.
 2. Aware of the [Rate Limit of GitHub API](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api) and create a personal access token or creating GitHub Apps depending on your needs.
@@ -86,6 +87,6 @@ if __name__ == '__main__':
 After aliasing, you could do `ntfslk https://github.com/owner/repo/pull/123 &` to put it in the background.
 When the script scans and finds out the PR is merged, a notification will pop up in the channel.
 
-{{< image src="./msg.png">}}
+{{<image src="/notify-me-on-slack-when-the-github-pull-request-merged/msg.png" caption="Slack Message Example" alt="slack message example image">}}
 
 If you need to mention someone in the channel, put `<@userID>` in the text. You could find the user ID or member ID in the Profile -> "three dots" -> Copy member ID.
