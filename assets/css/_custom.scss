@@ -2,3 +2,56 @@
 .v[data-class=v] .vsys {
     display:none !important;
 }
+
+// normalize the font size of headers in home page
+.home[data-home=posts] {
+  .summary {
+    .content {
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-size: 1rem;
+        font-weight: normal;
+        margin: 0;
+        padding: 0;
+        line-height: 1.5;
+        color: inherit;
+        font-family: inherit;
+      }
+    }
+  }
+}
+
+.single .content {
+    .highlight {
+        margin: 1rem;
+    }
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+// .single .content .highlight {
+//     /* Comment */
+//     .c,
+//     /* CommentHashbang */
+//     .ch,
+//     /* CommentMultiline */
+//     .cm,
+//     /* CommentSingle */
+//     .c1,
+//     /* CommentSpecial */
+//     .cs,
+//     /* CommentPreproc */
+//     .cp,
+//     /* CommentPreprocFile */
+//     .cpf {
+//         font-style: normal;
+//     }
+// }

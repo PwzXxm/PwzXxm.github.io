@@ -20,7 +20,8 @@
 
     <article class="page single">
         {{- /* Title */ -}}
-        <h1 class="single-title animate__animated animate__flipInX">{{ .Title | emojify }}</h1>
+        <!-- <h1 class="single-title animate__animated animate__flipInX">{{ .Title | emojify }}</h1> -->
+        <h1 class="single-title animate__animated animate__pulse">{{ .Title | emojify }}</h1>
 
         {{- /* Subtitle */ -}}
         {{- with $params.subtitle -}}
@@ -32,10 +33,10 @@
             <div class="post-meta-line">
                 {{- $author := $params.author | default .Site.Author.name | default (T "author") -}}
                 {{- $authorLink := $params.authorlink | default .Site.Author.link | default .Site.Home.RelPermalink -}}
-                <span class="post-author">
+                <!-- <span class="post-author">
                     {{- $options := dict "Class" "author" "Destination" $authorLink "Title" "Author" "Rel" "author" "Icon" (dict "Class" "fas fa-user-circle fa-fw") "Content" $author -}}
                     {{- partial "plugin/a.html" $options -}}
-                </span>
+                </span> -->
 
                 {{- $categories := slice -}}
                 {{- range .Params.categories -}}
