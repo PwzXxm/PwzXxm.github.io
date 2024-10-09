@@ -88,6 +88,7 @@
             </div>
         {{- end -}}
 
+        <br>
         {{- /* Content */ -}}
         <div class="content" id="content">
             {{- dict "Content" .Content "Ruby" $params.ruby "Fraction" $params.fraction "Fontawesome" $params.fontawesome | partial "function/content.html" | safeHTML -}}

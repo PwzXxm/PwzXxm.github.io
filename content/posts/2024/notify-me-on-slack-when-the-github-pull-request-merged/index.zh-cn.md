@@ -10,6 +10,7 @@ tags: ["Practice"]
 试着把这些事情从我脑子里赶走，集中精力做真正的工作。
 
 ## 步骤
+只需要三步
 
 1. 通过 https://api.slack.com/messaging/webhooks 创建 Slack 应用程序。您需要的是在 **Incoming Webhooks** 下的 以 `https://hooks.slack.com/services/` 开头的 Webhook URL，以便向其发送通知消息。
 2. 注意 [GitHub API 的速率限制](https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api)，并根据需要创建个人访问令牌或创建 GitHub 应用程序。
@@ -96,6 +97,6 @@ ntfslk https://github.com/owner/repo/pull/123 &
 
 将其置于后台，当扫描到 PR 合入时就会收到消息。
 
-{{< image src="./msg.png">}}
+{{<image src="/notify-me-on-slack-when-the-github-pull-request-merged/msg.png" caption="消息示例" alt="slack message example image">}}
 
 如果您需要提及频道中的某个人，请在`<@userID>`。您可以在简介->“三个点”->复制成员 ID 中找到用户 ID 或成员 ID。
