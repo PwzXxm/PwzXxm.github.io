@@ -1,2 +1,311 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>所有文章 - PwzXxm</title><link>https://pwzxxm.com/zh-cn/posts/</link><description>所有文章 | PwzXxm</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>patrick.weizhixu@hotmail.com (PwzXxm)</managingEditor><webMaster>patrick.weizhixu@hotmail.com (PwzXxm)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Mon, 28 Dec 2020 17:54:42 +1100</lastBuildDate><atom:link href="https://pwzxxm.com/zh-cn/posts/" rel="self" type="application/rss+xml"/><item><title>博客装修啦 - 从 Jekyll 到 Hugo</title><link>https://pwzxxm.com/zh-cn/blog-renovation/</link><pubDate>Mon, 28 Dec 2020 17:54:42 +1100</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/blog-renovation/</guid><description><![CDATA[<p>过去几年这个博客一直用的 <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreffer ">Jekyll</a> 来生成。
-最近我决定把它迁移到 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer ">Hugo</a> 上，把评论系统也换成了 <a href="https://valine.js.org/" target="_blank" rel="noopener noreffer ">Valine</a>。</p>]]></description></item><item><title>力扣周赛 156 + 其他题目</title><link>https://pwzxxm.com/zh-cn/lc-week-2/</link><pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/lc-week-2/</guid><description>力扣挑战第二周。因为有事，所以参加了模拟比赛。 Weekly Contest 156 1207. Unique Number of Occurrences https://leetcode.com/contest/weekly-contest-156/problems/unique-number-of-occurrences/ 暴力。记下每个数出现的次数，遍历次数看有没有相同的。 1 2 3 4 5 6 7 8 9 10 11 12</description></item><item><title>力扣周赛 155 + 其他题目</title><link>https://pwzxxm.com/zh-cn/lc-week-1/</link><pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/lc-week-1/</guid><description>这是力扣第一周挑战，包括周赛 155 和其他一些题目。 Weekly Contest 155 https://leetcode.com/contest/weekly-contest-155 1200. Minimum Absolute Difference https://leetcode.com/contest/weekly-contest-155/problems/minimum-absolute-difference/ 暴力。先遍历找到最小绝对差，接着再遍历一遍输出差值是该值的整数对。 1 2 3 4 5</description></item><item><title>CLDictP: 命令行英文词典工具</title><link>https://pwzxxm.com/zh-cn/cldictp/</link><pubDate>Wed, 04 Jul 2018 00:00:00 +0000</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/cldictp/</guid><description>CLDictP是一个用Perl，韦氏词典API写的命令行英文词典工具。 这是我第一个用Perl写的小项目。每次想用Quizlet做Flashc</description></item><item><title>静态链表（链式前向星）- 表示图的另一种方法</title><link>https://pwzxxm.com/zh-cn/static-linked-list/</link><pubDate>Tue, 29 May 2018 00:00:00 +0000</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/static-linked-list/</guid><description>静态链表是一种用数组静态储存的数据结构。它通常用来表示图。它还有个非常有趣的名字叫“链式前向星”。你可以通过以下两种方式来了解它： 从前向星开</description></item><item><title>POJ 3279 Fliptile</title><link>https://pwzxxm.com/zh-cn/poj-3279/</link><pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/poj-3279/</guid><description>遥远的那边有\(M \times N\) \((1 \le M, N \le 15)\)块瓷砖。每块瓷砖都能被翻转，它的两面分别是白色（0）和黑色（1）。 当你翻转一块砖的时候，相邻的四块</description></item><item><title>搭建代理服务器以访问国内网络（网易云音乐)</title><link>https://pwzxxm.com/zh-cn/proxy-server-cn-netease-music/</link><pubDate>Fri, 23 Mar 2018 15:39:00 +1100</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/proxy-server-cn-netease-music/</guid><description>身在国外，我们有时候需要看看优酷，听听网易云音乐、QQ音乐。看到“仅限中国大陆播放”的时候真的好气啊。公用的代理服务器我又有点强迫症，正好手</description></item><item><title>USACO Party Lamps</title><link>https://pwzxxm.com/zh-cn/usaco-lamps/</link><pubDate>Wed, 31 Aug 2016 00:00:00 +0000</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/usaco-lamps/</guid><description>有 \(N\) \((10 \le N \le 100)\) 盏亮瞎眼的灯，从 1 到 N 编号。 有四种按钮： 按钮 用途 1 反转所有的灯（开变为关，关变为开） 2 反转编号为奇数的灯（如 1，3，5） 3 反转</description></item><item><title>POJ 3268 Silver Cow Party</title><link>https://pwzxxm.com/zh-cn/poj-3268/</link><pubDate>Sat, 14 May 2016 00:00:00 +0000</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/poj-3268/</guid><description>有 \(N\) (\(1 \le N \le 1000\)) 个农场， 每个农场有1只奶牛去X号农场参加派对。每只奶牛都要走最短路来回。一共有 \(M\) (\(1 \le M \le 100,000\))单向道路，每条道路</description></item><item><title>UVa 108 Maximum Sum</title><link>https://pwzxxm.com/zh-cn/uva-108/</link><pubDate>Thu, 24 Mar 2016 00:00:00 +0000</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/uva-108/</guid><description>给定一个\(N \times N (N \le 100)\)的矩阵，找到最大子矩阵和。 链接： 题目UVa 题解 首先想到暴力，复杂度\(O(N^6)\)，肯定超时。 然后有一</description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>所有文章 - PwzXxm</title><link>https://pwzxxm.com/zh-cn/posts/</link><description>所有文章 | PwzXxm</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>patrick.weizhixu@hotmail.com (PwzXxm)</managingEditor><webMaster>patrick.weizhixu@hotmail.com (PwzXxm)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 08 Oct 2024 18:21:55 +0800</lastBuildDate><atom:link href="https://pwzxxm.com/zh-cn/posts/" rel="self" type="application/rss+xml"/><item><title>GitHub Pull Request 合并时在 Slack 上通知我</title><link>https://pwzxxm.com/zh-cn/notify-me-on-slack-when-the-github-pull-request-merged/</link><pubDate>Tue, 08 Oct 2024 18:21:55 +0800</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/notify-me-on-slack-when-the-github-pull-request-merged/</guid><description><![CDATA[<p>厌倦了刷新 GitHub 网页和等待同事的 PR 合并。
+试着把这些事情从我脑子里赶走，集中精力做真正的工作。</p>
+<h2 id="步骤">步骤</h2>
+<ol>
+<li>通过 <a href="https://api.slack.com/messaging/webhooks" target="_blank" rel="noopener noreffer ">https://api.slack.com/messaging/webhooks</a> 创建 Slack 应用程序。您需要的是在 <strong>Incoming Webhooks</strong> 下的 以 <code>https://hooks.slack.com/services/</code> 开头的 Webhook URL，以便向其发送通知消息。</li>
+<li>注意 <a href="https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api" target="_blank" rel="noopener noreffer ">GitHub API 的速率限制</a>，并根据需要创建个人访问令牌或创建 GitHub 应用程序。</li>
+<li>借助 ChatGPT 和一些修正，我们得到了以下脚本</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">argparse</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">time</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Could be none or personal access token https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api</span>
+</span></span><span class="line"><span class="cl"><span class="n">GITHUB_TOKEN</span><span class="o">=</span><span class="s2">&#34;&lt;your_github_token&gt;&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># On how to get webhooks token https://api.slack.com/messaging/webhooks</span>
+</span></span><span class="line"><span class="cl"><span class="n">SLACK_WEBHOOK</span><span class="o">=</span><span class="s2">&#34;https://hooks.slack.com/services/XXXXXXXXXXX/YYYYYYYYYY/ZZZZZZZZZZZZZZ&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="n">WAIT_DURATION_SEC</span><span class="o">=</span><span class="mi">600</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">parse_args</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s1">&#39;Check if a GitHub pull request was merged and send a Slack message.&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;pr_url&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s1">&#39;GitHub pull request URL.&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">parse_pr_url</span><span class="p">(</span><span class="n">pr_url</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Parses the PR URL and returns the owner, repository, and PR number.
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">    Example URL: https://github.com/owner/repo/pull/123
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;https?://github\.com/(?P&lt;owner&gt;[^/]+)/(?P&lt;repo&gt;[^/]+)/pull/(?P&lt;pr_number&gt;\d+)&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="k">match</span><span class="p">(</span><span class="n">pattern</span><span class="p">,</span> <span class="n">pr_url</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="k">match</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;owner&#39;</span><span class="p">),</span> <span class="k">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;repo&#39;</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="k">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s1">&#39;pr_number&#39;</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Invalid GitHub pull request URL.&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">check_if_pr_merged</span><span class="p">(</span><span class="n">owner</span><span class="p">,</span> <span class="n">repo</span><span class="p">,</span> <span class="n">pr_number</span><span class="p">,</span> <span class="n">github_token</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;https://api.github.com/repos/</span><span class="si">{</span><span class="n">owner</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">repo</span><span class="si">}</span><span class="s1">/pulls/</span><span class="si">{</span><span class="n">pr_number</span><span class="si">}</span><span class="s1">&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/vnd.github.v3+json&#39;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">github_token</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">headers</span><span class="p">[</span><span class="s1">&#39;Authorization&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;token </span><span class="si">{</span><span class="n">github_token</span><span class="si">}</span><span class="s1">&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pr_data</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">pr_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;merged&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Error fetching PR data: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">reason</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">send_slack_message</span><span class="p">(</span><span class="n">slack_webhook_url</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">message</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">slack_webhook_url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Error sending Slack message: </span><span class="si">{</span><span class="n">slack_webhook_url</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">reason</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">args</span> <span class="o">=</span> <span class="n">parse_args</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">owner</span><span class="p">,</span> <span class="n">repo</span><span class="p">,</span> <span class="n">pr_number</span> <span class="o">=</span> <span class="n">parse_pr_url</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">pr_url</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;Monitoring PR #</span><span class="si">{</span><span class="n">pr_number</span><span class="si">}</span><span class="s2"> in repository &#39;</span><span class="si">{</span><span class="n">owner</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">repo</span><span class="si">}</span><span class="s2">&#39; for merge status.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">is_merged</span> <span class="o">=</span> <span class="n">check_if_pr_merged</span><span class="p">(</span><span class="n">owner</span><span class="p">,</span> <span class="n">repo</span><span class="p">,</span> <span class="n">pr_number</span><span class="p">,</span> <span class="n">GITHUB_TOKEN</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">is_merged</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;Pull request </span><span class="si">{</span><span class="n">args</span><span class="o">.</span><span class="n">pr_url</span><span class="si">}</span><span class="s1"> has been merged.&#39;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">send_slack_message</span><span class="p">(</span><span class="n">SLACK_WEBHOOK</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">break</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">WAIT_DURATION_SEC</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">main</span><span class="p">()</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>保存脚本并进行别名后，您可以使用</p>]]></description></item><item><title>博客装修啦 - 从 Jekyll 到 Hugo</title><link>https://pwzxxm.com/zh-cn/blog-renovation/</link><pubDate>Mon, 28 Dec 2020 17:54:42 +1100</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/blog-renovation/</guid><description><![CDATA[<p>过去几年这个博客一直用的 <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreffer ">Jekyll</a> 来生成。
+最近我决定把它迁移到 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer ">Hugo</a> 上，把评论系统也换成了 <a href="https://valine.js.org/" target="_blank" rel="noopener noreffer ">Valine</a>。</p>]]></description></item><item><title>力扣周赛 156 + 其他题目</title><link>https://pwzxxm.com/zh-cn/lc-week-2/</link><pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/lc-week-2/</guid><description><![CDATA[<p>力扣挑战第二周。因为有事，所以参加了模拟比赛。</p>
+<h2 id="weekly-contest-156">Weekly Contest 156</h2>
+<h3 id="1207-unique-number-of-occurrences">1207. Unique Number of Occurrences</h3>
+<p><a href="https://leetcode.com/contest/weekly-contest-156/problems/unique-number-of-occurrences/" target="_blank" rel="noopener noreffer ">https://leetcode.com/contest/weekly-contest-156/problems/unique-number-of-occurrences/</a></p>
+<p>暴力。记下每个数出现的次数，遍历次数看有没有相同的。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">uniqueOccurrences</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">occ</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">bool</span><span class="o">&gt;</span> <span class="n">flag</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">occ</span><span class="p">[</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="nl">x</span> <span class="p">:</span> <span class="n">occ</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">flag</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">second</span><span class="p">)</span> <span class="o">!=</span> <span class="n">flag</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">flag</span><span class="p">[</span><span class="n">x</span><span class="p">.</span><span class="n">second</span><span class="p">])</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">flag</span><span class="p">[</span><span class="n">x</span><span class="p">.</span><span class="n">second</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="1208-get-equal-substrings-within-budget">1208. Get Equal Substrings Within Budget</h3>
+<p><a href="https://leetcode.com/contest/weekly-contest-156/problems/get-equal-substrings-within-budget/" target="_blank" rel="noopener noreffer ">https://leetcode.com/contest/weekly-contest-156/problems/get-equal-substrings-within-budget/</a></p>]]></description></item><item><title>力扣周赛 155 + 其他题目</title><link>https://pwzxxm.com/zh-cn/lc-week-1/</link><pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/lc-week-1/</guid><description><![CDATA[<p>这是力扣第一周挑战，包括周赛 155 和其他一些题目。</p>
+<h2 id="weekly-contest-155">Weekly Contest 155</h2>
+<p><a href="https://leetcode.com/contest/weekly-contest-155" target="_blank" rel="noopener noreffer ">https://leetcode.com/contest/weekly-contest-155</a></p>
+<h3 id="1200-minimum-absolute-difference">1200. Minimum Absolute Difference</h3>
+<p><a href="https://leetcode.com/contest/weekly-contest-155/problems/minimum-absolute-difference/" target="_blank" rel="noopener noreffer ">https://leetcode.com/contest/weekly-contest-155/problems/minimum-absolute-difference/</a></p>
+<p>暴力。先遍历找到最小绝对差，接着再遍历一遍输出差值是该值的整数对。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">minimumAbsDifference</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">ans</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">arr</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">mini</span> <span class="o">=</span> <span class="mh">0x3f3f3f3f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">mini</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">mini</span><span class="p">,</span> <span class="n">abs</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]));</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="n">mini</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">({</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]});</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">({</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]});</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="1201-ugly-number-iii">1201. Ugly Number III</h3>
+<p><a href="https://leetcode.com/contest/weekly-contest-155/problems/ugly-number-iii/" target="_blank" rel="noopener noreffer ">https://leetcode.com/contest/weekly-contest-155/problems/ugly-number-iii/</a></p>]]></description></item><item><title>CLDictP: 命令行英文词典工具</title><link>https://pwzxxm.com/zh-cn/cldictp/</link><pubDate>Wed, 04 Jul 2018 00:00:00 +0000</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/cldictp/</guid><description><![CDATA[<p>CLDictP是一个用Perl，韦氏词典API写的命令行英文词典工具。</p>
+<p>这是我第一个用Perl写的小项目。每次想用<a href="https://quizlet.com/" target="_blank" rel="noopener noreffer ">Quizlet</a>做Flashcard（抽认卡？）来记单词的时候，因为想有的地方要加粗之类的，手动很麻烦。而且查单词的时候打开在线词典，太懒了，就想着写一个小工具吧。</p>]]></description></item><item><title>静态链表（链式前向星）- 表示图的另一种方法</title><link>https://pwzxxm.com/zh-cn/static-linked-list/</link><pubDate>Tue, 29 May 2018 00:00:00 +0000</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/static-linked-list/</guid><description><![CDATA[<p>静态链表是一种用数组静态储存的数据结构。它通常用来表示图。它还有个非常有趣的名字叫“链式前向星”。你可以通过以下两种方式来了解它：</p>
+<ul>
+<li>
+<p>从<a href="#%e5%89%8d%e5%90%91%e6%98%9f" rel="">前向星</a>开始.</p>
+</li>
+<li>
+<p>从<a href="#%e9%a2%86%e6%8e%a5%e8%a1%a8" rel="">领接表</a>开始.</p>
+</li>
+</ul>
+<p>但是我还是建议两种都了解一下啦。如果你知道其中一种或两种的吧，点<a href="#%e9%93%be%e5%bc%8f%e5%89%8d%e5%90%91%e6%98%9f" rel="">这里</a>跳过。点一下，玩一年。</p>]]></description></item><item><title>POJ 3279 Fliptile</title><link>https://pwzxxm.com/zh-cn/poj-3279/</link><pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/poj-3279/</guid><description>&lt;p>遥远的那边有\(M \times N\) \((1 \le M, N \le 15)\)块瓷砖。每块瓷砖都能被翻转，它的两面分别是白色（0）和黑色（1）。&lt;/p>
+&lt;p>当你翻转一块砖的时候，相邻的四块砖也会被翻转。注意它们的翻转不会带动它们相邻的再继续翻转喔。&lt;/p></description></item><item><title>搭建代理服务器以访问国内网络（网易云音乐)</title><link>https://pwzxxm.com/zh-cn/proxy-server-cn-netease-music/</link><pubDate>Fri, 23 Mar 2018 15:39:00 +1100</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/proxy-server-cn-netease-music/</guid><description>&lt;p>身在国外，我们有时候需要看看优酷，听听网易云音乐、QQ音乐。看到“仅限中国大陆播放”的时候真的好气啊。公用的代理服务器我又有点强迫症，正好手头上有个阿里云的服务器，就用&lt;a href="https://shadowsocks.org/en/index.html" target="_blank" rel="noopener noreffer ">Shadowsocks&lt;/a>搭建了一个，现在可以开心地听歌啦。&lt;/p></description></item><item><title>USACO Party Lamps</title><link>https://pwzxxm.com/zh-cn/usaco-lamps/</link><pubDate>Wed, 31 Aug 2016 00:00:00 +0000</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/usaco-lamps/</guid><description><![CDATA[<p>有 \(N\) \((10 \le N \le 100)\) 盏亮瞎眼的灯，从 1 到 N 编号。</p>
+<p>有四种按钮：</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">按钮</th>
+          <th style="text-align: left">用途</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">反转所有的灯（开变为关，关变为开）</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">反转编号为奇数的灯（如 1，3，5）</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">3</td>
+          <td style="text-align: left">反转编号为偶数的灯（如 2，4，6）</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">4</td>
+          <td style="text-align: left">反转编号为 \(3k+1 ; 当 ; k \ge 0\) 的灯 （如 1，4，7）</td>
+      </tr>
+  </tbody>
+</table>
+<br>
+<p>给出 \(C\)（按下按钮的次数, \(0 \le C \le 10000\)）和一些灯最后的状态，找出所有组不同的灯的状态。</p>]]></description></item><item><title>POJ 3268 Silver Cow Party</title><link>https://pwzxxm.com/zh-cn/poj-3268/</link><pubDate>Sat, 14 May 2016 00:00:00 +0000</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/poj-3268/</guid><description>&lt;p>有 \(N\) (\(1 \le N \le 1000\)) 个农场， 每个农场有1只奶牛去X号农场参加派对。每只奶牛都要走最短路来回。一共有 \(M\) (\(1 \le M \le 100,000\))单向道路，每条道路的权值为所用的时间。求往返所用的最长时间。&lt;/p></description></item></channel></rss>

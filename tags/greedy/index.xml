@@ -1,3 +1,18 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Greedy - Tag - PwzXxm</title><link>https://pwzxxm.com/tags/greedy/</link><description>Greedy - Tag - PwzXxm</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>patrick.weizhixu@hotmail.com (PwzXxm)</managingEditor><webMaster>patrick.weizhixu@hotmail.com (PwzXxm)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 16 Mar 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://pwzxxm.com/tags/greedy/" rel="self" type="application/rss+xml"/><item><title>POJ 2376 Cleaning Shifts</title><link>https://pwzxxm.com/poj-2376/</link><pubDate>Wed, 16 Mar 2016 00:00:00 +0000</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/poj-2376/</guid><description>\(N\) (\(1 \le N \le 25,000\)) cows, each cow only available for a interval of time. \(T\) (\(1 \le T \le 1,000,000\)) shifts. Find minimum number of cows to complete \(T\) shifts.
-Link: http://poj.org/problem?id=2376
-Notes Each shift must has at least one cow assigned to it. A cow finishes after the end time. That is, if there are two cows, start and end at \((1, 3)\) and \((4, 10)\) respectively. It is considered as an continuous internal and accepted case for \(T = 10\).</description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Greedy - Tag - PwzXxm</title><link>https://pwzxxm.com/tags/greedy/</link><description>Greedy - Tag - PwzXxm</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>patrick.weizhixu@hotmail.com (PwzXxm)</managingEditor><webMaster>patrick.weizhixu@hotmail.com (PwzXxm)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 16 Mar 2016 00:00:00 +0000</lastBuildDate><atom:link href="https://pwzxxm.com/tags/greedy/" rel="self" type="application/rss+xml"/><item><title>POJ 2376 Cleaning Shifts</title><link>https://pwzxxm.com/poj-2376/</link><pubDate>Wed, 16 Mar 2016 00:00:00 +0000</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/poj-2376/</guid><description><![CDATA[<p>\(N\) (\(1 \le N \le 25,000\)) cows, each cow only available for a interval of time.
+\(T\) (\(1 \le T \le 1,000,000\)) shifts.
+Find minimum number of cows to complete \(T\) shifts.</p>
+<p>Link: <a href="http://poj.org/problem?id=2376" target="_blank" rel="noopener noreffer ">http://poj.org/problem?id=2376</a></p>
+<h3 id="notes">Notes</h3>
+<ul>
+<li>Each shift must has at least one cow assigned to it.</li>
+<li>A cow finishes after the end time. That is, if there are two cows, start and end at \((1, 3)\) and \((4, 10)\) respectively. It is considered as an continuous internal and accepted case for \(T = 10\).</li>
+<li>There can not have any gap between these cows&rsquo;s working intervals.</li>
+<li>Use <code>scanf()</code> for input otherwise it will run out of the time limit.</li>
+</ul>
+<br>
+<br>
+<br>
+<br>
+<br>
+<h3 id="solution">Solution</h3>
+<p>Sort cows by ending time. Using greedy that for each interval, find the cow which has latest end time and before the current end time. As the vector is sorted, the first cow we find is the answer.</p>]]></description></item></channel></rss>

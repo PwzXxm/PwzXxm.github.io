@@ -1,1 +1,116 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>LeetCode - 标签 - PwzXxm</title><link>https://pwzxxm.com/zh-cn/tags/leetcode/</link><description>LeetCode - 标签 - PwzXxm</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>patrick.weizhixu@hotmail.com (PwzXxm)</managingEditor><webMaster>patrick.weizhixu@hotmail.com (PwzXxm)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 02 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://pwzxxm.com/zh-cn/tags/leetcode/" rel="self" type="application/rss+xml"/><item><title>力扣周赛 156 + 其他题目</title><link>https://pwzxxm.com/zh-cn/lc-week-2/</link><pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/lc-week-2/</guid><description>力扣挑战第二周。因为有事，所以参加了模拟比赛。 Weekly Contest 156 1207. Unique Number of Occurrences https://leetcode.com/contest/weekly-contest-156/problems/unique-number-of-occurrences/ 暴力。记下每个数出现的次数，遍历次数看有没有相同的。 1 2 3 4 5 6 7 8 9 10 11 12</description></item><item><title>力扣周赛 155 + 其他题目</title><link>https://pwzxxm.com/zh-cn/lc-week-1/</link><pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/lc-week-1/</guid><description>这是力扣第一周挑战，包括周赛 155 和其他一些题目。 Weekly Contest 155 https://leetcode.com/contest/weekly-contest-155 1200. Minimum Absolute Difference https://leetcode.com/contest/weekly-contest-155/problems/minimum-absolute-difference/ 暴力。先遍历找到最小绝对差，接着再遍历一遍输出差值是该值的整数对。 1 2 3 4 5</description></item></channel></rss>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>LeetCode - 标签 - PwzXxm</title><link>https://pwzxxm.com/zh-cn/tags/leetcode/</link><description>LeetCode - 标签 - PwzXxm</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>patrick.weizhixu@hotmail.com (PwzXxm)</managingEditor><webMaster>patrick.weizhixu@hotmail.com (PwzXxm)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Wed, 02 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://pwzxxm.com/zh-cn/tags/leetcode/" rel="self" type="application/rss+xml"/><item><title>力扣周赛 156 + 其他题目</title><link>https://pwzxxm.com/zh-cn/lc-week-2/</link><pubDate>Wed, 02 Oct 2019 00:00:00 +0000</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/lc-week-2/</guid><description><![CDATA[<p>力扣挑战第二周。因为有事，所以参加了模拟比赛。</p>
+<h2 id="weekly-contest-156">Weekly Contest 156</h2>
+<h3 id="1207-unique-number-of-occurrences">1207. Unique Number of Occurrences</h3>
+<p><a href="https://leetcode.com/contest/weekly-contest-156/problems/unique-number-of-occurrences/" target="_blank" rel="noopener noreffer ">https://leetcode.com/contest/weekly-contest-156/problems/unique-number-of-occurrences/</a></p>
+<p>暴力。记下每个数出现的次数，遍历次数看有没有相同的。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">uniqueOccurrences</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">occ</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">bool</span><span class="o">&gt;</span> <span class="n">flag</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">occ</span><span class="p">[</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="nl">x</span> <span class="p">:</span> <span class="n">occ</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">flag</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">second</span><span class="p">)</span> <span class="o">!=</span> <span class="n">flag</span><span class="p">.</span><span class="n">end</span><span class="p">())</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">flag</span><span class="p">[</span><span class="n">x</span><span class="p">.</span><span class="n">second</span><span class="p">])</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">flag</span><span class="p">[</span><span class="n">x</span><span class="p">.</span><span class="n">second</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="1208-get-equal-substrings-within-budget">1208. Get Equal Substrings Within Budget</h3>
+<p><a href="https://leetcode.com/contest/weekly-contest-156/problems/get-equal-substrings-within-budget/" target="_blank" rel="noopener noreffer ">https://leetcode.com/contest/weekly-contest-156/problems/get-equal-substrings-within-budget/</a></p>]]></description></item><item><title>力扣周赛 155 + 其他题目</title><link>https://pwzxxm.com/zh-cn/lc-week-1/</link><pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/lc-week-1/</guid><description><![CDATA[<p>这是力扣第一周挑战，包括周赛 155 和其他一些题目。</p>
+<h2 id="weekly-contest-155">Weekly Contest 155</h2>
+<p><a href="https://leetcode.com/contest/weekly-contest-155" target="_blank" rel="noopener noreffer ">https://leetcode.com/contest/weekly-contest-155</a></p>
+<h3 id="1200-minimum-absolute-difference">1200. Minimum Absolute Difference</h3>
+<p><a href="https://leetcode.com/contest/weekly-contest-155/problems/minimum-absolute-difference/" target="_blank" rel="noopener noreffer ">https://leetcode.com/contest/weekly-contest-155/problems/minimum-absolute-difference/</a></p>
+<p>暴力。先遍历找到最小绝对差，接着再遍历一遍输出差值是该值的整数对。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="k">public</span><span class="o">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">minimumAbsDifference</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">arr</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">ans</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sort</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">arr</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">mini</span> <span class="o">=</span> <span class="mh">0x3f3f3f3f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">mini</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">mini</span><span class="p">,</span> <span class="n">abs</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]));</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">abs</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="n">mini</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">({</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]});</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">ans</span><span class="p">.</span><span class="n">push_back</span><span class="p">({</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]});</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="1201-ugly-number-iii">1201. Ugly Number III</h3>
+<p><a href="https://leetcode.com/contest/weekly-contest-155/problems/ugly-number-iii/" target="_blank" rel="noopener noreffer ">https://leetcode.com/contest/weekly-contest-155/problems/ugly-number-iii/</a></p>]]></description></item></channel></rss>
