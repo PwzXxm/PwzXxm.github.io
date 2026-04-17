@@ -105,3 +105,8 @@ $pagination-link-color: #4d6d9a;
 // );
 
 // $code-color: #5f6366;
+
+h1.animate__animated {
+    -webkit-animation-duration: 0s !important;
+    animation-duration: 0s !important;
+  }

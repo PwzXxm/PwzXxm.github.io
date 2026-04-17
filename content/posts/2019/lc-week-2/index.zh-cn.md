@@ -2,7 +2,6 @@
 layout: "post"
 title: "力扣周赛 156 + 其他题目"
 date: "2019-10-02"
-lang: cn
 tags:
     [LeetCode]
 ---
