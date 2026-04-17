@@ -1,4 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Practice - Tag - PwzXxm</title><link>https://pwzxxm.com/tags/practice/</link><description>Practice - Tag - PwzXxm</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>patrick.weizhixu@hotmail.com (PwzXxm)</managingEditor><webMaster>patrick.weizhixu@hotmail.com (PwzXxm)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 08 Oct 2024 18:21:55 +0800</lastBuildDate><atom:link href="https://pwzxxm.com/tags/practice/" rel="self" type="application/rss+xml"/><item><title>Notify Me on Slack when the GitHub Pull Request Merged</title><link>https://pwzxxm.com/notify-me-on-slack-when-the-github-pull-request-merged/</link><pubDate>Tue, 08 Oct 2024 18:21:55 +0800</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/notify-me-on-slack-when-the-github-pull-request-merged/</guid><description><![CDATA[<p>Tired of refreshing the GitHub web pages and waiting for the PR from colleagues to be merged.
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Practice - Tag - PwzXxm</title><link>https://pwzxxm.com/tags/practice/</link><description>Practice - Tag - PwzXxm</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>patrick.weizhixu@gmail.com (PwzXxm)</managingEditor><webMaster>patrick.weizhixu@gmail.com (PwzXxm)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 08 Oct 2024 18:21:55 +0800</lastBuildDate><atom:link href="https://pwzxxm.com/tags/practice/" rel="self" type="application/rss+xml"/><item><title>Notify Me on Slack when the GitHub Pull Request Merged</title><link>https://pwzxxm.com/notify-me-on-slack-when-the-github-pull-request-merged/</link><pubDate>Tue, 08 Oct 2024 18:21:55 +0800</pubDate><author>patrick.weizhixu@gmail.com (PwzXxm)</author><guid>https://pwzxxm.com/notify-me-on-slack-when-the-github-pull-request-merged/</guid><description><![CDATA[<p>Tired of refreshing the GitHub web pages and waiting for the PR from colleagues to be merged.
 Try to dump these things out of my head to concentrate on real work.</p>
 <h2 id="steps">Steps</h2>
 <p>There are only three steps and step 2 is optional.</p>
@@ -7,81 +7,12 @@ Try to dump these things out of my head to concentrate on real work.</p>
 <li>Aware of the <a href="https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api" target="_blank" rel="noopener noreffer ">Rate Limit of GitHub API</a> and create a personal access token or creating GitHub Apps depending on your needs.</li>
 <li>With help of ChatGPT and a few fixes, we derived at this script</li>
 </ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span><span class="lnt">62
-</span><span class="lnt">63
-</span><span class="lnt">64
-</span><span class="lnt">65
-</span><span class="lnt">66
-</span><span class="lnt">67
-</span><span class="lnt">68
-</span><span class="lnt">69
-</span><span class="lnt">70
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="Copy to clipboard"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">argparse</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">time</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
@@ -150,11 +81,9 @@ Try to dump these things out of my head to concentrate on real work.</p>
 </span></span><span class="line"><span class="cl">            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">WAIT_DURATION_SEC</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">main</span><span class="p">()</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>After aliasing, you could do <code>ntfslk https://github.com/owner/repo/pull/123 &amp;</code> to put it in the background.
-When the script scans and finds out the PR is merged, a notification will pop up in the channel.</p>]]></description></item><item><title>Build a Proxy Server to Access Chinese IP Including Netease Music</title><link>https://pwzxxm.com/proxy-server-cn-netease-music/</link><pubDate>Fri, 23 Mar 2018 15:39:00 +1100</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/proxy-server-cn-netease-music/</guid><description><![CDATA[<p>Sometimes we need to access Chinese content, like Youku Video, Netease Music (Cloud Music) and QQ music. It is very annoying to get &ldquo;Can Only Be Streamed in Mainland China&rdquo; or similar messages. Being tired of that, fortunately I have got a VPS from Aliyun and I build a proxy server using <a href="https://shadowsocks.org/en/index.html" target="_blank" rel="noopener noreffer ">Shadowsocks</a> on it and everything works smoothly now.</p>
+</span></span><span class="line"><span class="cl">    <span class="n">main</span><span class="p">()</span></span></span></code></pre></div></div>
+<p>After aliasing, you could do <code>ntfslk https://github.com/owner/repo/pull/123 &amp;</code> to put it in the background.
+When the script scans and finds out the PR is merged, a notification will pop up in the channel.</p>]]></description></item><item><title>Build a Proxy Server to Access Chinese IP Including Netease Music</title><link>https://pwzxxm.com/proxy-server-cn-netease-music/</link><pubDate>Fri, 23 Mar 2018 15:39:00 +1100</pubDate><author>patrick.weizhixu@gmail.com (PwzXxm)</author><guid>https://pwzxxm.com/proxy-server-cn-netease-music/</guid><description><![CDATA[<p>Sometimes we need to access Chinese content, like Youku Video, Netease Music (Cloud Music) and QQ music. It is very annoying to get &ldquo;Can Only Be Streamed in Mainland China&rdquo; or similar messages. Being tired of that, fortunately I have got a VPS from Aliyun and I build a proxy server using <a href="https://shadowsocks.org/en/index.html" target="_blank" rel="noopener noreffer ">Shadowsocks</a> on it and everything works smoothly now.</p>
 <h3 id="vps">VPS</h3>
-<p>You need to have a VPS with <strong>Chinese</strong> IP address, there are tons of choices, like Aliyun(Alibaba Cloud) and Tencent Cloud etc.</p>]]></description></item><item><title>Using Jekyll + Github Pages to build a blog</title><link>https://pwzxxm.com/building-blog-jekyll/</link><pubDate>Tue, 15 Dec 2015 00:00:00 +0000</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/building-blog-jekyll/</guid><description><![CDATA[<h2 id="why-jekyll-and-github-pages">Why Jekyll and Github Pages</h2>
+<p>You need to have a VPS with <strong>Chinese</strong> IP address, there are tons of choices, like Aliyun(Alibaba Cloud) and Tencent Cloud etc.</p>]]></description></item><item><title>Using Jekyll + Github Pages to build a blog</title><link>https://pwzxxm.com/building-blog-jekyll/</link><pubDate>Tue, 15 Dec 2015 00:00:00 +0000</pubDate><author>patrick.weizhixu@gmail.com (PwzXxm)</author><guid>https://pwzxxm.com/building-blog-jekyll/</guid><description><![CDATA[<h2 id="why-jekyll-and-github-pages">Why Jekyll and Github Pages</h2>
 <p><a href="https://jekyllrb.com/" target="_blank" rel="noopener noreffer ">Jekyll</a> is an static site generator, it is simple to use with YAML front matter. It is quite convenient to blog with markdown and Jekyll supports it build-in. <a href="https://pages.github.com/" target="_blank" rel="noopener noreffer ">Github Pages</a> provide the space to host the website for free. Both of them are well-documented, and works well with each other. One thing that makes they works well but not perfect is that although Github Pages can generate the website using Jekyll but as it generates in safe mode, it does not support Jekyll plugin. However, the good news is we can generate the site locally and then push it to Github. It sounds like not convenient but we can write a bash script to do so automatically in one step. We will talk about it later.</p>]]></description></item></channel></rss>

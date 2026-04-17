@@ -1,4 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>实践 - 标签 - PwzXxm</title><link>https://pwzxxm.com/zh-cn/tags/practice/</link><description>实践 - 标签 - PwzXxm</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>patrick.weizhixu@hotmail.com (PwzXxm)</managingEditor><webMaster>patrick.weizhixu@hotmail.com (PwzXxm)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="https://pwzxxm.com/zh-cn/tags/practice/" rel="self" type="application/rss+xml"/><item><title>GitHub Pull Request 合并时在 Slack 上通知我</title><link>https://pwzxxm.com/zh-cn/notify-me-on-slack-when-the-github-pull-request-merged/</link><pubDate>Tue, 08 Oct 2024 18:21:55 +0800</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/notify-me-on-slack-when-the-github-pull-request-merged/</guid><description><![CDATA[<p>厌倦了刷新 GitHub 网页和等待同事的 PR 合并。
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>实践 - 标签 - PwzXxm</title><link>https://pwzxxm.com/zh-cn/tags/practice/</link><description>实践 - 标签 - PwzXxm</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>patrick.weizhixu@gmail.com (PwzXxm)</managingEditor><webMaster>patrick.weizhixu@gmail.com (PwzXxm)</webMaster><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="https://pwzxxm.com/zh-cn/tags/practice/" rel="self" type="application/rss+xml"/><item><title>GitHub Pull Request 合并时在 Slack 上通知我</title><link>https://pwzxxm.com/zh-cn/notify-me-on-slack-when-the-github-pull-request-merged/</link><pubDate>Tue, 08 Oct 2024 18:21:55 +0800</pubDate><author>patrick.weizhixu@gmail.com (PwzXxm)</author><guid>https://pwzxxm.com/zh-cn/notify-me-on-slack-when-the-github-pull-request-merged/</guid><description><![CDATA[<p>厌倦了刷新 GitHub 网页和等待同事的 PR 合并。
 试着把这些事情从我脑子里赶走，集中精力做真正的工作。</p>
 <h2 id="步骤">步骤</h2>
 <p>只需要三步</p>
@@ -7,81 +7,12 @@
 <li>注意 <a href="https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api" target="_blank" rel="noopener noreffer ">GitHub API 的速率限制</a>，并根据需要创建个人访问令牌或创建 GitHub 应用程序。</li>
 <li>借助 ChatGPT 和一些修正，我们得到了以下脚本</li>
 </ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span><span class="lnt">62
-</span><span class="lnt">63
-</span><span class="lnt">64
-</span><span class="lnt">65
-</span><span class="lnt">66
-</span><span class="lnt">67
-</span><span class="lnt">68
-</span><span class="lnt">69
-</span><span class="lnt">70
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
+<div class="code-block code-line-numbers" style="counter-reset: code-block 0">
+    <div class="code-header language-python">
+        <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
+        <span class="ellipses"><i class="fas fa-ellipsis-h" aria-hidden="true"></i></span>
+        <span class="copy" title="复制到剪贴板"><i class="far fa-copy" aria-hidden="true"></i></span>
+    </div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">requests</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">argparse</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">time</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
@@ -150,8 +81,6 @@
 </span></span><span class="line"><span class="cl">            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">WAIT_DURATION_SEC</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-</span></span><span class="line"><span class="cl">    <span class="n">main</span><span class="p">()</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>保存脚本并进行别名后，您可以使用</p>]]></description></item><item><title>搭建代理服务器以访问国内网络（网易云音乐)</title><link>https://pwzxxm.com/zh-cn/proxy-server-cn-netease-music/</link><pubDate>Fri, 23 Mar 2018 15:39:00 +1100</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/proxy-server-cn-netease-music/</guid><description>&lt;p>身在国外，我们有时候需要看看优酷，听听网易云音乐、QQ音乐。看到“仅限中国大陆播放”的时候真的好气啊。公用的代理服务器我又有点强迫症，正好手头上有个阿里云的服务器，就用&lt;a href="https://shadowsocks.org/en/index.html" target="_blank" rel="noopener noreffer ">Shadowsocks&lt;/a>搭建了一个，现在可以开心地听歌啦。&lt;/p></description></item><item><title>使用Jekyll＋Github Pages搭建博客</title><link>https://pwzxxm.com/zh-cn/building-blog-jekyll/</link><pubDate>Tue, 15 Dec 2015 00:00:00 +0000</pubDate><author>PwzXxm</author><guid>https://pwzxxm.com/zh-cn/building-blog-jekyll/</guid><description><![CDATA[<h2 id="为什么选择-jekyll-和-github-pages">为什么选择 Jekyll 和 Github Pages</h2>
+</span></span><span class="line"><span class="cl">    <span class="n">main</span><span class="p">()</span></span></span></code></pre></div></div>
+<p>保存脚本并进行别名后，您可以使用</p>]]></description></item><item><title>搭建代理服务器以访问国内网络（网易云音乐)</title><link>https://pwzxxm.com/zh-cn/proxy-server-cn-netease-music/</link><pubDate>Fri, 23 Mar 2018 15:39:00 +1100</pubDate><author>patrick.weizhixu@gmail.com (PwzXxm)</author><guid>https://pwzxxm.com/zh-cn/proxy-server-cn-netease-music/</guid><description>&lt;p>身在国外，我们有时候需要看看优酷，听听网易云音乐、QQ音乐。看到“仅限中国大陆播放”的时候真的好气啊。公用的代理服务器我又有点强迫症，正好手头上有个阿里云的服务器，就用&lt;a href="https://shadowsocks.org/en/index.html" target="_blank" rel="noopener noreffer ">Shadowsocks&lt;/a>搭建了一个，现在可以开心地听歌啦。&lt;/p></description></item><item><title>使用Jekyll＋Github Pages搭建博客</title><link>https://pwzxxm.com/zh-cn/building-blog-jekyll/</link><pubDate>Tue, 15 Dec 2015 00:00:00 +0000</pubDate><author>patrick.weizhixu@gmail.com (PwzXxm)</author><guid>https://pwzxxm.com/zh-cn/building-blog-jekyll/</guid><description><![CDATA[<h2 id="为什么选择-jekyll-和-github-pages">为什么选择 Jekyll 和 Github Pages</h2>
 <p><a href="http://jekyll.bootcss.com/" target="_blank" rel="noopener noreffer ">Jekyll</a>是一个静态网页生成器，使用YAML头信息可以很方便地使用各种布局，内置markdown，新的文章只需加入文件夹即可。<a href="https://pages.github.com/" target="_blank" rel="noopener noreffer ">Github Pages</a>可以提供免费空间，免费无限流量来给网页当虚拟主机。他们俩配合起来相当默契，而且网上也有很多资料。但是有一点美中不足的是Github Pages是在安全模式下运行的，也就是说它并不支持Jekyll的插件。然而我们可以在本地带着插件生成好网站再放到Github上。虽然听起来不太方便，但是有脚本让我们一步实现。这点我们后面详细说。</p>]]></description></item></channel></rss>
